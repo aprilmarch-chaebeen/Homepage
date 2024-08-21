@@ -7,9 +7,14 @@
 
 @font-face {
   font-family: 'NotoSans KR';
-  font-style: bold;
+  font-style: normal;
   font-weight: 700;
-  src:
-    local('NotoSansKR'),
-    url(./assets/font/NotoSansKR-Bold.ttf) format('ttf');
+  src: url('./assets/font/NotoSansKR-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/font/Poppins-SemiBold.ttf') format('truetype');
 }
