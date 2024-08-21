@@ -1,23 +1,24 @@
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 function Navbar() {
   return (
     <Nav>
-      <Link href="/">
+      <GoToPage to="/">
         <h1>APRILMARCH</h1>
-      </Link>
+      </GoToPage>
       <List>
         <ListItem>
-          <Link href="">Portfolio</Link>
+          <GoToPage to="/portfolio">Portfolio</GoToPage>
         </ListItem>
         <ListItem>
-          <Link href="">Voucher</Link>
+          <GoToPage to="/voucher">Voucher</GoToPage>
         </ListItem>
         <ListItem>
-          <Link href="">중소기업 서포트</Link>
+          <GoToPage to="/support">중소기업 서포트</GoToPage>
         </ListItem>
         <ListItem>
-          <Link href="">About us</Link>
+          <GoToPage to="/about">About us</GoToPage>
         </ListItem>
       </List>
     </Nav>
@@ -40,9 +41,10 @@ const List = styled.ul`
 const ListItem = styled.li`
   list-style: none;
   margin-right: 70px;
+  font-size: 1.2vw;
 `;
 
-const Link = styled.a`
+const GoToPage = styled(Link)`
   text-decoration: none;
   color: #000;
   font-weight: 600;
