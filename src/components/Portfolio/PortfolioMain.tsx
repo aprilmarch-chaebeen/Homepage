@@ -15,14 +15,13 @@ function PortfolioMain() {
         <br />
         <Highlight>경험</Highlight>을 <Highlight>만듭니다</Highlight>
       </BigText>
-      <Swiper
+      <SlideContainer
         spaceBetween={20}
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
         pagination={{
           clickable: true,
-          dynamicBullets: true,
         }}
         modules={[Pagination]}
       >
@@ -30,7 +29,7 @@ function PortfolioMain() {
         <Slide>slide2</Slide>
         <Slide>slide3</Slide>
         <Slide>slide4</Slide>
-      </Swiper>
+      </SlideContainer>
     </MainSection>
   );
 }
@@ -57,6 +56,23 @@ const BigText = styled.h1`
 
 const Highlight = styled.span`
   color: #000;
+`;
+
+const SlideContainer = styled(Swiper)`
+  & .swiper-wrapper {
+    margin-bottom: 3rem;
+  }
+  & .swiper-pagination-bullet-active {
+    width: 1.2vw !important;
+    height: 0.5vw !important;
+    background-color: #ff553e !important;
+    border-radius: 6px !important;
+  }
+  & .swiper-pagination-bullet {
+    width: 0.5vw;
+    height: 0.5vw;
+    background-color: #ddd;
+  }
 `;
 
 const Slide = styled(SwiperSlide)`
