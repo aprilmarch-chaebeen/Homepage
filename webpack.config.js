@@ -31,6 +31,10 @@ module.exports = {
           name: 'assets/[contenthash].[ext]',
         },
       },
+      {
+        test: /\.(woff|woff2|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   output: {

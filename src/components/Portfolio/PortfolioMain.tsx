@@ -44,14 +44,18 @@ const SmallText = styled.p`
   color: #ff553e;
   font-size: 1.5vw;
   margin-top: 3rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: 'S-CoreDream-3Light';
 `;
 
 const BigText = styled.h1`
   color: #999;
-  font-size: 4vw;
+  font-size: 3.5vw;
   margin-top: 1rem;
   margin-bottom: 6rem;
+  font-family: 'NotoSans KR';
+  font-weight: bold;
+  line-height: 1.4;
 `;
 
 const Highlight = styled.span`
