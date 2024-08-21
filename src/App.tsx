@@ -1,7 +1,14 @@
+import Navbar from './components/Navbar';
 import './index';
+import Portfolio from './pages/Portfolio';
 
 function App() {
-  return <div>Hello World!</div>;
+  return (
+    <section>
+      <Navbar />
+      <Portfolio />
+    </section>
+  );
 }
 
 export default App;
