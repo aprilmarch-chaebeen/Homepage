@@ -16,7 +16,7 @@ function PortfolioMain() {
         <Highlight>경험</Highlight>을 <Highlight>만듭니다</Highlight>
       </BigText>
       <Swiper
-        spaceBetween={10}
+        spaceBetween={20}
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
@@ -43,12 +43,14 @@ const MainSection = styled.section`
 
 const SmallText = styled.p`
   color: #ff553e;
-  font-size: 28px;
+  font-size: 1.5vw;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
 `;
 
 const BigText = styled.h1`
   color: #999;
-  font-size: 70px;
+  font-size: 4vw;
   margin-top: 1rem;
   margin-bottom: 6rem;
 `;
@@ -58,7 +60,7 @@ const Highlight = styled.span`
 `;
 
 const Slide = styled(SwiperSlide)`
-  width: 886px;
-  height: 481px;
+  width: 50vw;
+  height: 30vw;
   border: 1px solid;
 `;

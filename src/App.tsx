@@ -1,5 +1,4 @@
 import Navbar from './components/Navbar';
-import './index';
 import Portfolio from './pages/Portfolio';
 
 function App() {
