@@ -21,4 +21,5 @@ const Title = styled.h2`
   font-size: 3.5vw;
   font-family: 'Poppins';
   font-weight: 600;
+  margin-bottom: 3rem;
 `;
