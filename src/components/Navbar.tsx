@@ -1,11 +1,12 @@
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import logosrc from '../assets/svg/BI_logo.svg';
 
 function Navbar() {
   return (
     <Nav>
       <GoToPage to="/">
-        <h1>APRILMARCH</h1>
+        <Logo src={logosrc} alt="Main Logo" />
       </GoToPage>
       <List>
         <ListItem>
@@ -30,7 +31,11 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0px 0px 0px 30px;
-  height: 100px;
+  height: 3.5rem;
+`;
+
+const Logo = styled.img`
+  width: 14vw;
 `;
 
 const List = styled.ul`
@@ -41,7 +46,8 @@ const List = styled.ul`
 const ListItem = styled.li`
   list-style: none;
   margin-right: 70px;
-  font-size: 1.2vw;
+  font-size: 1.25vw;
+  font-family: 'Gotham';
 `;
 
 const GoToPage = styled(Link)`
