@@ -5,10 +5,11 @@ import Portfolio from './pages/Portfolio';
 import Voucher from './pages/Voucher';
 import Support from './pages/Support';
 import About from './pages/About';
+import styled from 'styled-components';
 
 function App() {
   return (
-    <section>
+    <AppSection>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,8 +18,12 @@ function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/about" element={<About />} />
       </Routes>
-    </section>
+    </AppSection>
   );
 }
 
 export default App;
+
+const AppSection = styled.section`
+  height: 100vh;
+`;
