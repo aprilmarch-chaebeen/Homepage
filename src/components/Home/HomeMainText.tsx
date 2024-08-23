@@ -40,7 +40,7 @@ const TextContainer = styled.div<{$hovered: boolean | undefined}>`
   width: max-content;
   position: relative;
   transition: transform 0.6s;
-  transform: ${(p) => (p.$hovered ? css`translateY(-5rem)` : css`translateY(0)`)};
+  transform: ${(p) => (p.$hovered ? css`translateY(-7.5vw)` : css`translateY(0)`)};
 `;
 
 const NonTextContainer = styled.div`
@@ -56,7 +56,7 @@ const BigText = styled.h1<{$hovered: boolean | undefined}>`
   margin: 0;
   line-height: 0.9;
   transition: transform 0.6s;
-  transform: ${(p) => (p.$hovered ? css`translateY(-5rem)` : css`translateY(0)`)};
+  transform: ${(p) => (p.$hovered ? css`translateY(-7.5vw)` : css`translateY(0)`)};
 `;
 
 const FadeIn = keyframes`
@@ -84,7 +84,7 @@ const BlurText = styled.h1`
   transition:
     opacity 0.3s ease-in-out 0.1s,
     visibility 0.3s ease-in-out;
-  animation: ${FadeIn} 0.3s;
+  animation: ${FadeIn} 0.2s;
   ${TextContainer}:hover & {
     opacity: 1;
     visibility: visible;
