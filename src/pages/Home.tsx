@@ -2,6 +2,7 @@ import HomeCounsel from '../components/Home/HomeCounsel';
 import HomeMain from '../components/Home/HomeMain';
 import styled from 'styled-components';
 import WhatWeDo from '../components/Home/WhatWeDo';
+import Customers from '../components/Home/Customers';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <HomeCounsel organ={'공공기관 상담'} />
       </CounselContainer>
       <WhatWeDo />
+      <Customers />
     </HomeSection>
   );
 }
