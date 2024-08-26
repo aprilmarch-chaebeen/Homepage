@@ -5,6 +5,7 @@ import WhatWeDo from '../components/Home/WhatWeDo';
 import Customers from '../components/Home/Customers';
 import HowItWorks from '../components/Home/HowItWorks';
 import HomeContact from '../components/Home/HomeContact';
+import HomeLook from '../components/Home/HomeLook';
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
       <Customers />
       <HowItWorks />
       <HomeContact />
+      <HomeLook />
     </HomeSection>
   );
 }
