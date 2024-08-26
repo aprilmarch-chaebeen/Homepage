@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import WhatWeDo from '../components/Home/WhatWeDo';
 import Customers from '../components/Home/Customers';
 import HowItWorks from '../components/Home/HowItWorks';
+import HomeContact from '../components/Home/HomeContact';
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <WhatWeDo />
       <Customers />
       <HowItWorks />
+      <HomeContact />
     </HomeSection>
   );
 }
