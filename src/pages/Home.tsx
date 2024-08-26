@@ -6,6 +6,7 @@ import Customers from '../components/Home/Customers';
 import HowItWorks from '../components/Home/HowItWorks';
 import HomeContact from '../components/Home/HomeContact';
 import HomeLook from '../components/Home/HomeLook';
+import HomeExpertise from '../components/Home/HomeExpertise';
 
 function Home() {
   return (
@@ -21,6 +22,7 @@ function Home() {
       <HowItWorks />
       <HomeContact />
       <HomeLook />
+      <HomeExpertise />
     </HomeSection>
   );
 }
