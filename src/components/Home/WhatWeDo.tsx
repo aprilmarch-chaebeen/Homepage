@@ -18,11 +18,16 @@ function WhatWeDo() {
   };
 
   return (
-    <section>
+    <WhatWeDoSec>
       <BigText>What we do</BigText>
       <SmallText>가나다라마바사가나다라마바사</SmallText>
       <SmallText>가나다라마바사아자차카타파하</SmallText>
       <WhatWeDoFilter />
+      <SlideCover></SlideCover>
+      <PageNumberContainer>
+        <PageNumber>{nowIndex}</PageNumber>
+        <PageNumber>30</PageNumber>
+      </PageNumberContainer>
       <SlideContainer
         slidesPerView="auto"
         centeredSlides={true}
@@ -53,19 +58,19 @@ function WhatWeDo() {
           </Slide>
         ))}
       </SlideContainer>
-      <PageNumberContainer>
-        <PageNumber>{nowIndex}</PageNumber>
-        <PageNumber>30</PageNumber>
-      </PageNumberContainer>
       <ViewMore>
         <ViewText>View More</ViewText>
         <Arrow src={arrowsrc} alt="Arrow" />
       </ViewMore>
-    </section>
+    </WhatWeDoSec>
   );
 }
 
 export default WhatWeDo;
+
+const WhatWeDoSec = styled.section`
+  position: relative;
+`;
 
 const BigText = styled.h1`
   margin-top: 20rem;
@@ -79,9 +84,30 @@ const SmallText = styled.p`
   margin: 0;
   color: #555;
 `;
+const SlideCover = styled.div`
+  background-color: #fff;
+  width: 100vw;
+  height: 5.5vw;
+  position: absolute;
+  z-index: 10;
+  margin-top: 16vw;
+`;
 
+const PageNumberContainer = styled.div`
+  width: 55vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 1.1vw;
+  top: 40.6vw;
+  z-index: 12;
+`;
 const SlideContainer = styled(Swiper)`
   width: 97vw;
+  height: 25vw;
   & .swiper-wrapper {
     margin-bottom: 3rem;
   }
@@ -89,7 +115,7 @@ const SlideContainer = styled(Swiper)`
   & .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    top: 90%;
+    top: 22vw;
   }
 
   & .swiper-button-prev::after {
@@ -107,9 +133,9 @@ const SlideContainer = styled(Swiper)`
   }
 
   & .swiper-pagination-progressbar {
-    top: 88.7%;
+    top: 21.5vw;
     width: 50vw;
-    left: 49.5%;
+    left: 50%;
     transform: translate(-50%, 50%);
     background: #ccc;
     height: 0.2vw;
@@ -138,17 +164,6 @@ const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
 const SlideImg = styled.img`
   width: 20vw;
   height: 20vw;
-`;
-
-const PageNumberContainer = styled.div`
-  width: 55vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  left: 50.1%;
-  transform: translate(-50%, 0);
-  font-size: 1.1vw;
 `;
 
 const PageNumber = styled.span``;
