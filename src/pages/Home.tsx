@@ -7,6 +7,7 @@ import HowItWorks from '../components/Home/HowItWorks';
 import HomeContact from '../components/Home/HomeContact';
 import HomeLook from '../components/Home/HomeLook';
 import HomeExpertise from '../components/Home/HomeExpertise';
+import HomeJourney from '../components/Home/HomeJourney';
 
 function Home() {
   return (
@@ -23,6 +24,7 @@ function Home() {
       <HomeContact />
       <HomeLook />
       <HomeExpertise />
+      <HomeJourney />
     </HomeSection>
   );
 }
