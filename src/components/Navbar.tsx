@@ -10,19 +10,19 @@ function Navbar() {
       </GoToPage>
       <List>
         <ListItem>
-          <GoToPage to="/portfolio">포트폴리오</GoToPage>
+          <GoToPage to="/">포트폴리오</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/voucher">바우처</GoToPage>
+          <GoToPage to="/">바우처</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/support">중소기업 서포트</GoToPage>
+          <GoToPage to="/">중소기업 서포트</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/support">공공기관</GoToPage>
+          <GoToPage to="/">공공기관</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/about">About us</GoToPage>
+          <GoToPage to="/">About us</GoToPage>
         </ListItem>
       </List>
     </Nav>
