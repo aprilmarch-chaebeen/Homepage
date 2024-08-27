@@ -68,7 +68,7 @@ const LookSection = styled.section`
   height: 62vw;
   text-align: left;
   line-height: 1.2;
-  margin-top: 15vw;
+  margin-top: 10vw;
 
   &::before {
     content: '';
