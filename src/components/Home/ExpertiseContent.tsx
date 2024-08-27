@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 import linesrc from '../../assets/svg/expertise_line.svg';
 import plussrc from '../../assets/svg/expertise_plus.svg';
+import {motion} from 'framer-motion';
+
+const transition = {
+  ease: 'easeInOut',
+  duration: 0.7,
+  opacity: {duration: 0.7},
+};
 
 function ExpertiseContent() {
   return (
@@ -8,23 +15,29 @@ function ExpertiseContent() {
       <ExpertLine src={linesrc} alt="expertise line" />
       <LineContainer>
         <LineContent $left={0} $bottom={0}>
-          <Ratio $height={34.8}>35</Ratio>
+          <Ratio>35</Ratio>
+          <Line $height={34.8} initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{once: false}} transition={transition}></Line>
+
           <Content>RESEARCH</Content>
         </LineContent>
         <LineContent $left={6.5} $bottom={12.5}>
-          <Ratio $height={20}>10</Ratio>
+          <Ratio>10</Ratio>
+          <Line $height={20}></Line>
           <Content>PLAN</Content>
         </LineContent>
         <LineContent $left={45} $bottom={27.6}>
-          <Ratio $height={12.2}>80</Ratio>
+          <Ratio>80</Ratio>
+          <Line $height={12.2}></Line>
           <Content>DESIGN</Content>
         </LineContent>
         <LineContent $bottom={9.5} $right={5.1}>
-          <Ratio $height={3.5}>15</Ratio>
+          <Ratio>15</Ratio>
+          <Line $height={3.5}></Line>
           <Content>DEVELOP</Content>
         </LineContent>
         <LineContent $right={0} $bottom={0}>
-          <Ratio $height={34.8}>30</Ratio>
+          <Ratio>30</Ratio>
+          <Line $height={34.8}></Line>
           <Content>MANAGE</Content>
         </LineContent>
         <SmallText>DESIGN</SmallText>
@@ -64,7 +77,7 @@ const LineContainer = styled.div`
   }
 `;
 
-const LineContent = styled.p<{$left?: number; $bottom: number; $right?: number}>`
+const LineContent = styled.div<{$left?: number; $bottom: number; $right?: number}>`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -76,18 +89,16 @@ const LineContent = styled.p<{$left?: number; $bottom: number; $right?: number}>
   right: ${(p) => p.$right}vw;
 `;
 
-const Ratio = styled.span<{$height: number}>`
+const Line = styled(motion.div)<{$height: number}>`
+  width: 0.05vw;
+  background-color: #000;
+  margin: 1.4vw auto 2.1vw;
+  height: ${(p) => p.$height}vw;
+`;
+
+const Ratio = styled.span`
   font-size: 1.25vw;
   font-family: 'Gotham';
-
-  &::before {
-    display: block;
-    content: '';
-    width: 0.05vw;
-    background-color: #000;
-    margin: 1.4vw auto 2.1vw;
-    height: ${(p) => p.$height}vw;
-  }
 `;
 
 const Content = styled.span`
