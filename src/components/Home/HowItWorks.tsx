@@ -156,6 +156,6 @@ const StepDescript = styled.p`
 const BigLogo = styled.img`
   height: 12vw;
   position: absolute;
-  top: 56vw;
-  left: 70vw;
+  top: 57.5vw;
+  left: 65.5vw;
 `;
