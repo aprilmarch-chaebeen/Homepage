@@ -40,13 +40,14 @@ const Card = styled.div`
 const Title = styled.h3`
   font-family: 'GmarketSansMedium';
   margin: 0;
+  font-size: 2vw;
   ${Card}:hover & {
     color: #000;
   }
 `;
 
 const Descript = styled.p`
-  font-size: 1vw;
+  font-size: 0.9vw;
   width: 15.5vw;
   margin-bottom: 1.5vw;
   line-height: 1.5;
@@ -54,10 +55,14 @@ const Descript = styled.p`
 
 const Button = styled.button`
   border: none;
-  padding: 0.5rem 2rem;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #fff;
   display: flex;
+  font-size: 1vw;
+  justify-content: center;
+  align-items: center;
+  width: 9vw;
+  height: 2.6vw;
 
   ${Card}:hover & {
     background-color: #000;
@@ -69,8 +74,9 @@ const Arrow = styled.div`
   background-image: url(${arrowsrc});
   background-size: contain;
   background-repeat: no-repeat;
-  width: 1.2vw;
-  height: 1.2vw;
+  width: 1.1vw;
+  height: 1.1vw;
+  margin-left: 0.7vw;
   ${Card}:hover & {
     background-image: url(${arrowwhitesrc});
   }

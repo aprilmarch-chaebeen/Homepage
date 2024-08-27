@@ -24,20 +24,21 @@ function HomeContact() {
 export default HomeContact;
 
 const BigText = styled.h2`
-  margin-top: 12rem;
+  margin-top: 12vw;
   font-family: 'Gotham';
-  font-size: 3.5vw;
+  font-size: 2.8vw;
+  margin-bottom: 2vw;
 `;
 
 const SmallText = styled.p`
   font-family: 'Pretendard-Light';
   color: #555;
-  margin-bottom: 4rem;
-  font-size: 1.3vw;
+  margin-bottom: 4vw;
+  font-size: 1vw;
 `;
 
 const CardContainer = styled.div`
   display: flex;
-  gap: 1px;
+  gap: 0.1vw;
   width: 100vw;
 `;
