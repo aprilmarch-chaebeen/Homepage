@@ -53,7 +53,7 @@ function WhatWeDo() {
       >
         {Array.from({length: 30}, (_, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg src={` https://github.com/aprilmarch-chaebeen/Homepage/blob/main/public/img/img${i + 1}.webp`} alt="" />
+            <SlideImg src={`https://github.com/aprilmarch-chaebeen/Homepage/blob/main/public/img/img${i + 1}.webp`} alt="" />
           </Slide>
         ))}
       </SlideContainer>
