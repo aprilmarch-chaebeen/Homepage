@@ -51,9 +51,13 @@ function WhatWeDo() {
         }}
         onSlideChange={(swiper) => handleSlideChange(swiper)}
       >
+        {' '}
         {Array.from({length: 30}, (_, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg src={process.env.PUBLIC_URL + `/img/img${i + 1}.webp`} alt="" />
+            <SlideImg
+              src={`https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/main/public/img/img1.webp?token=GHSAT0AAAAAACWNQYPYV2TEG64JX5FM7SFCZWNVBZA`}
+              alt=""
+            />
           </Slide>
         ))}
       </SlideContainer>
