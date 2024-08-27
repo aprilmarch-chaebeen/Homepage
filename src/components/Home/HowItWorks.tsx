@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 const transition = {
   ease: 'easeInOut',
   duration: 5,
-  y: {duration: 0.5},
+  y: {duration: 1},
 };
 
 function HowItWorks() {
@@ -31,7 +31,7 @@ function HowItWorks() {
             transition={{transition, delay: 0.3}}
           >
             <Step>Step 1</Step>
-            <Line $border={0.1} $width={24} $margin_top={0.5} />
+            <Line $border={0.1} $width={24} $margin_top={0.5} $margin_btm={0.6} />
             <StepTitle>마케팅 상담 진단</StepTitle>
             <StepDescript>
               보완 요청 시 신속하고 꼼꼼한 대응
@@ -45,10 +45,10 @@ function HowItWorks() {
             initial={{opacity: 0, y: 60}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: false}}
-            transition={{transition, delay: 0.6}}
+            transition={{transition, delay: 1}}
           >
             <Step>Step 2</Step>
-            <Line $border={0.1} $width={24} $margin_top={0.5} />
+            <Line $border={0.1} $width={24} $margin_top={0.6} $margin_btm={0.6} />
             <StepTitle>마케팅 상담 진단</StepTitle>
             <StepDescript>
               보완 요청 시 신속하고 꼼꼼한 대응
@@ -62,13 +62,13 @@ function HowItWorks() {
             initial={{opacity: 0, y: 60}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: false}}
-            transition={{transition, delay: 0.9}}
+            transition={{transition, delay: 1.7}}
           >
             <Step>Step 3</Step>
-            <Line $border={1.1} $width={45} $margin_top={0.7} />
-            <Line $border={0.6} $width={45} $margin_top={1.5} />
-            <Line $border={0.3} $width={45} $margin_top={2} />
-            <Line $border={0.2} $width={45} $margin_top={2.4} />
+            <Line $border={1.1} $width={45} $margin_top={0.7} $margin_btm={0} />
+            <Line $border={0.6} $width={45} $margin_top={1.5} $margin_btm={0} />
+            <Line $border={0.3} $width={45} $margin_top={2} $margin_btm={0} />
+            <Line $border={0.2} $width={45} $margin_top={2.4} $margin_btm={0} />
             <Line $border={0.1} $width={45} $margin_top={3} $margin_btm={1} />
             <StepTitle>디자인 작업</StepTitle>
             <StepDescript>
@@ -90,7 +90,7 @@ const WorkSection = styled.section`
   background-color: #050505;
   padding: 8vw 7vw;
   text-align: left;
-  margin-top: 10rem;
+  margin-top: 10vw;
   color: #fff;
   padding-bottom: 0;
   width: 100vw;
@@ -108,8 +108,8 @@ const MediumText = styled.p`
 
 const BigText = styled.h2`
   font-family: 'Gotham';
-  margin-top: 0.7rem;
-  margin-bottom: 2rem;
+  margin-top: 0.7vw;
+  margin-bottom: 2vw;
   line-height: 1.1;
   font-size: 4vw;
 `;
@@ -131,7 +131,7 @@ const Step = styled.p`
   margin: 0;
 `;
 
-const Line = styled.hr<{$border: number; $width: number; $margin_top: number; $margin_btm?: number}>`
+const Line = styled.hr<{$border: number; $width: number; $margin_top: number; $margin_btm: number}>`
   border: 0;
   height: 0;
   border-top: ${(p) => p.$border}vw solid;
