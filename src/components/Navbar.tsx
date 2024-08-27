@@ -10,13 +10,16 @@ function Navbar() {
       </GoToPage>
       <List>
         <ListItem>
-          <GoToPage to="/portfolio">Portfolio</GoToPage>
+          <GoToPage to="/portfolio">포트폴리오</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/voucher">Voucher</GoToPage>
+          <GoToPage to="/voucher">바우처</GoToPage>
         </ListItem>
         <ListItem>
           <GoToPage to="/support">중소기업 서포트</GoToPage>
+        </ListItem>
+        <ListItem>
+          <GoToPage to="/support">공공기관</GoToPage>
         </ListItem>
         <ListItem>
           <GoToPage to="/about">About us</GoToPage>
@@ -30,24 +33,28 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 0px 0px 30px;
-  height: 3.5rem;
+  padding: 0.8vw 3.5vw;
+  height: 3.5vw;
 `;
 
 const Logo = styled.img`
-  width: 14vw;
+  width: 11vw;
 `;
 
 const List = styled.ul`
   display: flex;
+  align-items: center;
+  gap: 4.5vw;
   padding: 0;
 `;
 
 const ListItem = styled.li`
   list-style: none;
-  margin-right: 70px;
-  font-size: 1.25vw;
-  font-family: 'Gotham';
+  font-size: 0.9vw;
+
+  &:nth-child(5) {
+    font-family: 'Gotham';
+  }
 `;
 
 const GoToPage = styled(Link)`
