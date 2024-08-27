@@ -1,22 +1,36 @@
 import styled from 'styled-components';
+import {motion} from 'framer-motion';
+
+const transitionY = {
+  ease: 'easeInOut',
+  duration: 0.7,
+  y: {duration: 0.7},
+};
 
 interface ExpertiseTextBoxProp {
-  text: {title: string; num: string; descript: string[]};
+  text: {title: string; num: string; descript: string[]; idx: number};
 }
 
 function ExpertiseTextBox({text}: ExpertiseTextBoxProp) {
   return (
     <ExpertiseBox>
-      <TitleBox>
+      <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transitionY}>
         <TitleBox>
-          {text.num} <br /> {text.title}
+          <TitleBox>
+            {text.num} <br /> {text.title}
+          </TitleBox>
         </TitleBox>
-      </TitleBox>
-      <DescriptContainer>
-        {text.descript.map((data, index) => (
-          <Descript key={index}>{data}</Descript>
-        ))}
-      </DescriptContainer>
+      </motion.div>
+      <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transitionY}>
+        <DescriptContainer>
+          {text.descript.map((data, index) => (
+            <Descript key={index}>{data}</Descript>
+          ))}
+        </DescriptContainer>
+      </motion.div>
+      <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transitionY}>
+        {text.idx <= 2 && <Line />}
+      </motion.div>
     </ExpertiseBox>
   );
 }
@@ -28,16 +42,6 @@ const ExpertiseBox = styled.div`
   position: relative;
   padding-bottom: 1.8vw;
 
-  &:nth-child(-n + 2)::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 100%;
-    height: 0.05vw;
-    background-color: #000;
-  }
-
   &:nth-child(2) {
     padding: 5.8vw 0;
   }
@@ -45,6 +49,17 @@ const ExpertiseBox = styled.div`
   &:nth-child(3) {
     padding-top: 1.8vw;
   }
+`;
+
+const Line = styled.hr`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.05vw;
+  background-color: #000;
+  margin: 0;
+  border: none;
 `;
 
 const TitleBox = styled.div`

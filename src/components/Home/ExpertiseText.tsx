@@ -1,28 +1,40 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import ExpertiseTextBox from './ExpertiseTextBox';
+import {motion} from 'framer-motion';
+
+const transition = {
+  ease: 'easeInOut',
+  duration: 0.7,
+  y: {duration: 0.7},
+};
 
 const expertise = [
   {
     title: 'Brand Concepting',
     num: '01',
     descript: ['Brand Strategy', 'Customer Experience', 'Brand Slogan & Visual Identity', 'Space Concept'],
+    idx: 1,
   },
   {
     title: 'Brand Experience Design',
     num: '02',
     descript: ['Brand Experience', 'Space Design', 'Motion & Sensory Identity', 'Brand Behavior System'],
+    idx: 2,
   },
   {
     title: 'Creative & Activation',
     num: '03',
     descript: ['Brand Communication', 'Branded Contents', 'Digital Marketing', 'Advertising', 'Training & Education'],
+    idx: 3,
   },
 ];
 
 function ExpertiseText() {
   return (
     <TextContainer>
-      <BigText>Expertise</BigText>
+      <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transition}>
+        <BigText>Expertise</BigText>
+      </motion.div>
       <ExpertiseContainer>
         {expertise.map((data, index) => (
           <ExpertiseTextBox text={data} key={index} />
@@ -55,17 +67,27 @@ const ExpertiseContainer = styled.div`
 const BigLogoContainer = styled.div`
   position: absolute;
   right: -3.6vw;
-  top: -16.1vw;
-  font-size: 18vw;
+  top: 1.1vw;
+  font-size: 16vw;
   font-family: 'Gotham';
+  line-height: 1.09;
+`;
+
+const Spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 `;
 
 const SpinIcon = styled.span`
-  position: relative;
-  top: 14vw;
-  left: 8vw;
+  position: absolute;
+  top: 0vw;
+  left: 7vw;
   margin-right: 2.6vw;
-  animation: spain 10s linear infinite;
+  animation: ${Spin} 10s linear infinite;
   transform-origin: center;
   height: 5.8vw;
   line-height: 11.8vw;

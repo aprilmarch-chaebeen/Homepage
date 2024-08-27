@@ -34,6 +34,7 @@ const Card = styled.div`
 
   &:hover {
     background-color: #ff5900;
+    transition: background-color 0.5s;
   }
 `;
 
@@ -43,6 +44,7 @@ const Title = styled.h3`
   font-size: 2vw;
   ${Card}:hover & {
     color: #000;
+    transition: color 0.5s;
   }
 `;
 
@@ -67,6 +69,8 @@ const Button = styled.button`
   ${Card}:hover & {
     background-color: #000;
     color: #fff;
+    transition: background-color 0.5s;
+    transition: color 0.5s;
   }
 `;
 
