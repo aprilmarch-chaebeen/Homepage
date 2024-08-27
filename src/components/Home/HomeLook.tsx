@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import seciconsrc from '../../assets/svg/sec_icon_black.svg';
 import looktextsrc from '../../assets/svg/look_txt.svg';
+import arrowsrc from '../../assets/svg/right_arrow.svg';
 
 const transition = {
   ease: 'easeInOut',
@@ -48,14 +49,15 @@ function HomeLook() {
           and meaningful concerns.
         </SmallText>
       </Text2>
-      <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transition}>
-        <GoodContainer>
+      <GoodContainer>
+        <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transition}>
           <LookText src={looktextsrc} alt="look txt" />
           <ImgBox>
             <LookImg src={imgSrc[imgIndex]} alt="look imgages" />
           </ImgBox>
-        </GoodContainer>
-      </motion.div>
+        </motion.div>
+      </GoodContainer>
+      <ArrowImg src={arrowsrc} alt="arrow img" />
     </LookSection>
   );
 }
@@ -134,4 +136,11 @@ const LookImg = styled.img`
   top: 0;
   left: 0;
   width: 100%;
+`;
+
+const ArrowImg = styled.img`
+  position: absolute;
+  bottom: -4.5vw;
+  right: 2vw;
+  width: 1vw;
 `;
