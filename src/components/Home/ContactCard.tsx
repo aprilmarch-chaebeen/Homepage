@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import arrowsrc from '../../assets/svg/arrow_outward.svg';
 import arrowwhitesrc from '../../assets/svg/arrow_outward_w.svg';
+import starsrc from '../../assets/svg/star.svg';
+import starbsrc from '../../assets/svg/star_b.svg';
+import React, {useState} from 'react';
 
 interface ContactCardProps {
   title: string;
@@ -8,9 +11,18 @@ interface ContactCardProps {
 }
 
 function ContactCard({title, descript}: ContactCardProps) {
+  const [cardHovered, setCardHovered] = useState(false);
+
+  const modifiedTitle = title.split(',').map((part, index) => (
+    <React.Fragment key={index}>
+      {part}
+      {index < title.split(',').length - 1 && (cardHovered ? <StarImg src={starbsrc} alt="star" /> : <StarImg src={starsrc} alt="star" />)}
+    </React.Fragment>
+  ));
+
   return (
-    <Card>
-      <Title>{title}</Title>
+    <Card onMouseEnter={() => setCardHovered(true)} onMouseLeave={() => setCardHovered(false)}>
+      <Title>{modifiedTitle}</Title>
       <Descript>{descript}</Descript>
       <Button>
         상담하기
@@ -50,9 +62,19 @@ const Title = styled.h3`
 
 const Descript = styled.p`
   font-size: 0.9vw;
-  width: 15.5vw;
-  margin-bottom: 1.5vw;
+  width: 15vw;
+  margin: 2vw 0;
   line-height: 1.5;
+  color: #ebebeb;
+`;
+
+const StarImg = styled.img`
+  margin: 0 0.5vw;
+  width: 1.5vw;
+  ${Card}:hover & {
+    color: #000;
+    transition: color 0.5s;
+  }
 `;
 
 const Button = styled.button`
