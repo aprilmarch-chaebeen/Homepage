@@ -6,26 +6,26 @@ function WhatWeDoFilter() {
 
   return (
     <FilterContainer>
-      <li>
+      <Container>
         <FilterBtn onClick={() => setNowFilter('all')} $clicked={nowFilter === 'all'}>
           전체
         </FilterBtn>
-      </li>
-      <li>
+      </Container>
+      <Container>
         <FilterBtn onClick={() => setNowFilter('web')} $clicked={nowFilter === 'web'}>
           Web
         </FilterBtn>
-      </li>
-      <li>
+      </Container>
+      <Container>
         <FilterBtn onClick={() => setNowFilter('bx')} $clicked={nowFilter === 'bx'}>
           BX
         </FilterBtn>
-      </li>
-      <li>
+      </Container>
+      <Container>
         <FilterBtn onClick={() => setNowFilter('package')} $clicked={nowFilter === 'package'}>
           Package
         </FilterBtn>
-      </li>
+      </Container>
     </FilterContainer>
   );
 }
@@ -37,18 +37,27 @@ const FilterContainer = styled.ul`
   align-items: center;
   list-style: none;
   width: 25vw;
+  height: 2.5vw;
   background-color: #f2f2f2;
-  padding: 0.5vw;
-  margin: 2rem auto;
+  padding: 0.3vw;
+  margin: 4vw auto;
   border-radius: 29px;
 `;
+
+const Container = styled.li`
+  display: flex;
+  justify-content: center;
+`;
+
 const FilterBtn = styled.button<{$clicked: boolean}>`
   border: none;
   cursor: pointer;
   color: #222;
-  padding: 0.5vw 1.6vw;
+  height: 2.3vw;
+  width: 5.8vw;
   background-color: transparent;
-  font-size: 1.3vw;
+  font-size: 1vw;
+  padding: 0;
   ${(p) =>
     p.$clicked &&
     css`

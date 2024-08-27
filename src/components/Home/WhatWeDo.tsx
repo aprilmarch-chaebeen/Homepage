@@ -72,39 +72,57 @@ const WhatWeDoSec = styled.section`
   position: relative;
 `;
 
-const BigText = styled.h1`
-  margin-top: 20rem;
+const BigText = styled.h3`
+  margin-top: 22vw;
+  margin-bottom: 2vw;
   font-family: 'Gotham';
-  font-size: 3.5vw;
+  font-size: 2.8vw;
 `;
 
 const SmallText = styled.p`
   font-family: 'Pretendard-Light';
-  font-size: 1.4vw;
+  font-size: 1vw;
   margin: 0;
   color: #555;
 `;
 const SlideCover = styled.div`
   background-color: #fff;
   width: 100vw;
-  height: 5.5vw;
+  height: 4.6vw;
   position: absolute;
   z-index: 10;
-  margin-top: 16vw;
+  margin-top: 17.5vw;
 `;
 
 const PageNumberContainer = styled.div`
-  width: 55vw;
+  width: 53.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  font-size: 1.1vw;
-  top: 40.6vw;
+  font-size: 0.9vw;
+  top: 73%;
   z-index: 12;
+
+  @media (max-width: 1024px) {
+    top: 73.2%;
+  }
+  @media (max-width: 600px) {
+    top: 73.5%;
+  }
+  @media (max-width: 450px) {
+    top: 73.3%;
+  }
+  @media (max-width: 380px) {
+    top: 73%;
+  }
+  @media (max-width: 360px) {
+    top: 73.4%;
+  }
 `;
+
 const SlideContainer = styled(Swiper)`
   width: 97vw;
   height: 25vw;
@@ -115,7 +133,7 @@ const SlideContainer = styled(Swiper)`
   & .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    top: 22vw;
+    top: 23.4vw;
   }
 
   & .swiper-button-prev::after {
@@ -133,7 +151,7 @@ const SlideContainer = styled(Swiper)`
   }
 
   & .swiper-pagination-progressbar {
-    top: 21.5vw;
+    top: 23vw;
     width: 50vw;
     left: 50%;
     transform: translate(-50%, 50%);
@@ -149,7 +167,7 @@ const SlideContainer = styled(Swiper)`
 
 const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
   width: 20vw;
-  height: 20vw;
+  height: 22vw;
   position: relative;
   ${(p) =>
     p.$idx === p.$nowIdx &&
@@ -163,7 +181,7 @@ const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
 
 const SlideImg = styled.img`
   width: 20vw;
-  height: 20vw;
+  height: 22vw;
 `;
 
 const PageNumber = styled.span``;
@@ -172,11 +190,12 @@ const ViewMore = styled.button`
   border: none;
   background-color: #000;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.7vw 1.5vw;
   border-radius: 8px;
-  margin-top: 3rem;
-  margin-bottom: 7rem;
+  margin-top: 3vw;
+  margin-bottom: 7vw;
   cursor: pointer;
+  font-size: 1vw;
 `;
 
 const ViewText = styled.span``;
