@@ -63,9 +63,11 @@ const BigText = styled.h1<{$hovered: boolean | undefined}>`
 const FadeIn = keyframes`
   from {
     opacity: 0;
+visibility: visible;
   }
   to {
     opacity: 1;
+visibility: visible;
   }
 `;
 
@@ -82,14 +84,12 @@ const BlurText = styled.h1`
   opacity: 0;
   visibility: hidden;
   z-index: -1;
-  transition:
-    opacity ease-in-out,
-    visibility ease-in-out;
-  animation: ${FadeIn} 0.7s;
   ${TextContainer}:hover & {
     opacity: 1;
     visibility: visible;
-    animation: ${FadeIn} 0.7s ease-in-out;
+    transition:
+      opacity 1s ease-in-out,
+      visibility 1s ease-in-out;
   }
 `;
 
