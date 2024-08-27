@@ -20,8 +20,7 @@ function WhatWeDo() {
   return (
     <WhatWeDoSec>
       <BigText>What we do</BigText>
-      <SmallText>가나다라마바사가나다라마바사</SmallText>
-      <SmallText>가나다라마바사아자차카타파하</SmallText>
+      <SmallText>디자인과 브랜딩을 향한 우리의 전문성과 열정, 진심의 영향력은 든든한 믿음과 새로운 기쁨을 전달합니다.</SmallText>
       <WhatWeDoFilter />
       <SlideCover></SlideCover>
       <PageNumberContainer>
@@ -95,7 +94,7 @@ const SlideCover = styled.div`
 `;
 
 const PageNumberContainer = styled.div`
-  width: 53.5vw;
+  width: 54.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,7 +102,7 @@ const PageNumberContainer = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 0.9vw;
-  top: 73%;
+  top: 72.5%;
   z-index: 12;
 
   @media (max-width: 1024px) {
