@@ -21,9 +21,11 @@ const CounselContainer = styled.a`
   color: #000;
   cursor: pointer;
   font-family: 'Pretendard-Regular';
-  font-size: 1.1vw;
+  font-size: 0.7vw;
+  display: flex;
+  align-items: center;
 `;
 
 const Arrow = styled.img`
-  width: 1vw;
+  width: 0.9vw;
 `;

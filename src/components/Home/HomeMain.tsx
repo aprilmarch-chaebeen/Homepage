@@ -50,15 +50,15 @@ const MainSection = styled.section`
   justify-content: center;
   align-items: center;
   line-height: 1;
-  margin-bottom: 7rem;
+  margin-bottom: 7vw;
 `;
 
 const SmallText = styled.p`
   color: #ff5900;
   margin: 0;
   font-weight: 600;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
   font-family: 'Gotham';
-  font-size: 0.8rem;
+  font-size: 1vw;
 `;
