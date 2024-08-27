@@ -44,13 +44,13 @@ function Customers() {
       <Marquee autoFill={true} direction="right" speed={20}>
         <ImageFlow srcSet={[svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg9, svg10]} />
       </Marquee>
-      <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={500}>
+      <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={300}>
         <ImageFlow srcSet={[svg11, svg12, svg13, svg14, svg15, svg16, svg17, svg18, svg19]} />
       </Marquee>
-      <Marquee autoFill={true} direction="right" speed={20} gradient={true} gradientWidth={700}>
+      <Marquee autoFill={true} direction="right" speed={20} gradient={true} gradientWidth={500}>
         <ImageFlow srcSet={[svg20, svg21, svg22, svg23, svg24, svg25, svg26, svg27, svg28]} />
       </Marquee>
-      <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={1000}>
+      <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={700}>
         <ImageFlow srcSet={[svg29, svg30, svg31, svg32, svg33, svg34, svg35, svg36, svg37]} />
       </Marquee>
     </section>

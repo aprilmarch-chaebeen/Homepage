@@ -18,10 +18,10 @@ export default ImageFlow;
 
 const ImgContainer = styled.div`
   display: flex;
-  margin: 1.5rem 0;
+  margin: 2.3vw 0;
 `;
 
 const Logo = styled.img`
-  height: 1.5vw;
-  margin-right: 5rem;
+  height: 1.3vw;
+  margin-right: 10vw;
 `;
