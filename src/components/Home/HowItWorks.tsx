@@ -20,7 +20,7 @@ function HowItWorks() {
       <MediumText>
         에이프릴마치는
         <br />
-        브랜드 컨설팅부터 디자인까지 생각합니다
+        디자인, 브랜딩, 마케팅 캠페인에 이르는 Full Service Creative를 창출하여 고객사를 지원합니다.
       </MediumText>
       <Steps>
         <StepContainer $top={70} $left={0}>
@@ -30,30 +30,46 @@ function HowItWorks() {
             viewport={{once: false}}
             transition={{transition, delay: 0.3}}
           >
-            <Step>Step 1</Step>
-            <Line $border={0.1} $width={24} $margin_top={0.5} $margin_btm={0.6} />
-            <StepTitle>마케팅 상담 진단</StepTitle>
-            <StepDescript>
-              보완 요청 시 신속하고 꼼꼼한 대응
+            <Step>
+              01
               <br />
-              보완 요청 시 신속하고 꼼꼼한 대응
+              Brand Concepting
+            </Step>
+            <Line $border={0.1} $width={24} $margin_top={0.5} $margin_btm={0.6} />
+            <StepTitle>브랜드스러움에 대한 고민</StepTitle>
+            <StepDescript>
+              Brand Strategy
+              <br />
+              Customer Experience
+              <br />
+              Brand slogan & Visual Identity
+              <br />
+              Space Concept
             </StepDescript>
           </motion.div>
         </StepContainer>
-        <StepContainer $top={50} $left={30}>
+        <StepContainer $top={50} $left={28}>
           <motion.div
             initial={{opacity: 0, y: 60}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: false}}
             transition={{transition, delay: 1}}
           >
-            <Step>Step 2</Step>
-            <Line $border={0.1} $width={24} $margin_top={0.6} $margin_btm={0.6} />
-            <StepTitle>마케팅 상담 진단</StepTitle>
-            <StepDescript>
-              보완 요청 시 신속하고 꼼꼼한 대응
+            <Step>
+              02
               <br />
-              보완 요청 시 신속하고 꼼꼼한 대응
+              Brand Experience Design
+            </Step>
+            <Line $border={0.1} $width={29} $margin_top={0.6} $margin_btm={0.6} />
+            <StepTitle>브랜드 경험에 대한 A부터 Z까지</StepTitle>
+            <StepDescript>
+              Brand Experience Design
+              <br />
+              Space Design & Experience
+              <br />
+              Motion & Sensory Identity
+              <br />
+              Brand Behavior System
             </StepDescript>
           </motion.div>
         </StepContainer>
@@ -64,17 +80,27 @@ function HowItWorks() {
             viewport={{once: false}}
             transition={{transition, delay: 1.7}}
           >
-            <Step>Step 3</Step>
+            <Step>
+              03
+              <br />
+              Creative & Activation
+            </Step>
             <Line $border={1.1} $width={45} $margin_top={0.7} $margin_btm={0} />
             <Line $border={0.6} $width={45} $margin_top={1.5} $margin_btm={0} />
             <Line $border={0.3} $width={45} $margin_top={2} $margin_btm={0} />
             <Line $border={0.2} $width={45} $margin_top={2.4} $margin_btm={0} />
             <Line $border={0.1} $width={45} $margin_top={3} $margin_btm={1} />
-            <StepTitle>디자인 작업</StepTitle>
+            <StepTitle>전략적 마케팅에 대한 제안과 리딩</StepTitle>
             <StepDescript>
-              보완 요청 시 신속하고 꼼꼼한 대응
+              Brand Communication
               <br />
-              보완 요청 시 신속하고 꼼꼼한 대응
+              Branded Contents
+              <br />
+              Digital Marketing
+              <br />
+              Advertising
+              <br />
+              Training & Education
             </StepDescript>
           </motion.div>
         </StepContainer>
@@ -100,7 +126,6 @@ const WorkSection = styled.section`
 
 const MediumText = styled.p`
   font-size: 1.2vw;
-
   font-family: 'Pretendard-Regular';
   margin: 0;
   line-height: 1.6;
@@ -126,12 +151,13 @@ const StepContainer = styled.div<{$top: number; $left: number}>`
 `;
 
 const Step = styled.p`
-  font-size: 2vw;
+  font-size: 1.5vw;
   font-family: 'Gotham-light';
   margin: 0;
+  line-height: 1.1;
 `;
 
-const Line = styled.hr<{$border: number; $width: number; $margin_top: number; $margin_btm: number}>`
+const Line = styled.hr<{$border: number; $width?: number; $margin_top: number; $margin_btm: number}>`
   border: 0;
   height: 0;
   border-top: ${(p) => p.$border}vw solid;
@@ -144,7 +170,7 @@ const StepTitle = styled.h3`
   font-family: 'GmarketSansMedium';
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 2.7vw;
+  font-size: 2vw;
 `;
 
 const StepDescript = styled.p`
