@@ -2,21 +2,22 @@ import styled, {css, keyframes} from 'styled-components';
 import Marquee from 'react-fast-marquee';
 
 const hoverDescriptions = [
-  '우리는 마음속에 기억되는 강렬한 브랜드를 만듭니다',
-  '우리는 마음속에 기억되는 강렬한 브랜드를 만듭니다',
-  '우리는 마음속에 기억되는 강렬한 브랜드를 만듭니다',
-  '우리는 마음속에 기억되는 강렬한 브랜드를 만듭니다',
+  '당신의 꿈을 담은 브랜드를 만듭니다',
+  '모든 순간 모든 곳에서 브랜드 경험을 고민합니다',
+  '브랜딩과 마케팅의 시작, 함께 고민하고 지원하겠습니다',
+  '공공기관을 누구보다 잘 이해하며 가치있는 디자인 경험을 만들어갑니다',
 ];
 
 interface HomeMainTextProp {
   title: string;
+  idx: number;
   hovered?: boolean;
   nowHovered: boolean;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 }
 
-function HomeMainText({title, hovered, nowHovered, onMouseEnter, onMouseLeave}: HomeMainTextProp) {
+function HomeMainText({title, idx, hovered, nowHovered, onMouseEnter, onMouseLeave}: HomeMainTextProp) {
   return (
     <TextContainer onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} $hovered={hovered}>
       <BigText $hovered={nowHovered}>{title}</BigText>
@@ -24,7 +25,7 @@ function HomeMainText({title, hovered, nowHovered, onMouseEnter, onMouseLeave}: 
         {nowHovered && (
           <DescriptContainer>
             <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={300}>
-              <Descript>{hoverDescriptions[0]}</Descript>
+              <Descript>{hoverDescriptions[idx]}</Descript>
             </Marquee>
           </DescriptContainer>
         )}
@@ -71,7 +72,7 @@ const FadeIn = keyframes`
 const BlurText = styled.h1`
   font-family: 'Gotham';
   font-size: 7vw;
-  filter: blur(7px);
+  filter: blur(5px);
   color: #999;
   margin: 0;
   pointer-events: none;

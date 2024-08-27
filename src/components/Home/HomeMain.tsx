@@ -6,37 +6,41 @@ function HomeMain() {
   const [bxHovered, setBxHovered] = useState(false);
   const [uxuiHovered, setUxuiHovered] = useState(false);
   const [voucherHovered, setVoucherHovered] = useState(false);
-  const [supportHovered, setSupportHovered] = useState(false);
+  const [publicHovered, setPublicHovered] = useState(false);
 
   return (
     <MainSection>
       <SmallText>We think.</SmallText>
       <HomeMainText
         title="BX"
+        idx={0}
         onMouseEnter={() => setBxHovered(true)}
         onMouseLeave={() => setBxHovered(false)}
-        hovered={uxuiHovered || voucherHovered || supportHovered}
+        hovered={uxuiHovered || voucherHovered || publicHovered}
         nowHovered={bxHovered}
       />
       <HomeMainText
         title="UX/UI"
+        idx={1}
         onMouseEnter={() => setUxuiHovered(true)}
         onMouseLeave={() => setUxuiHovered(false)}
-        hovered={voucherHovered || supportHovered}
+        hovered={voucherHovered || publicHovered}
         nowHovered={uxuiHovered}
       />
       <HomeMainText
+        idx={2}
         title="VOUCHER"
         onMouseEnter={() => setVoucherHovered(true)}
         onMouseLeave={() => setVoucherHovered(false)}
-        hovered={supportHovered}
+        hovered={publicHovered}
         nowHovered={voucherHovered}
       />
       <HomeMainText
-        title="SUPPORT"
-        onMouseEnter={() => setSupportHovered(true)}
-        onMouseLeave={() => setSupportHovered(false)}
-        nowHovered={supportHovered}
+        title="PUBLIC"
+        idx={3}
+        onMouseEnter={() => setPublicHovered(true)}
+        onMouseLeave={() => setPublicHovered(false)}
+        nowHovered={publicHovered}
       />
     </MainSection>
   );
