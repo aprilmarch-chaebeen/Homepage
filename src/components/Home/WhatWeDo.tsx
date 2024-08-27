@@ -17,7 +17,7 @@ function WhatWeDo() {
     setNowIndex(swiper.realIndex + 1);
   };
 
-  return (
+  https: return (
     <WhatWeDoSec>
       <BigText>What we do</BigText>
       <SmallText>디자인과 브랜딩을 향한 우리의 전문성과 열정, 진심의 영향력은 든든한 믿음과 새로운 기쁨을 전달합니다.</SmallText>
@@ -53,7 +53,7 @@ function WhatWeDo() {
       >
         {Array.from({length: 30}, (_, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg src={`/img/img${i + 1}.webp`} alt="" />
+            <SlideImg src={` https://github.com/aprilmarch-chaebeen/Homepage/blob/main/public/img/img${i + 1}.webp`} alt="" />
           </Slide>
         ))}
       </SlideContainer>
