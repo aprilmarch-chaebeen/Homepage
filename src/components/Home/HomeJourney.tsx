@@ -7,20 +7,41 @@ import websrc from '../../assets/svg/web.svg';
 import uxsrc from '../../assets/svg/ux.svg';
 import designsrc from '../../assets/svg/creative_design.svg';
 import videosrc from '../../assets/svg/video_production.svg';
+import {motion} from 'framer-motion';
+
+const transitionValues = {
+  duration: 2,
+  repeat: Infinity,
+  ease: 'easeOut',
+};
 
 function HomeJourney() {
   return (
     <JourneySection>
       <BigText>Work Journey Map.</BigText>
-      <Marquee autoFill={true} direction="right" speed={20}>
-        <WorkImg src={identitysrc} alt="identity" />
-        <WorkImg src={besrc} alt="be" />
-        <WorkImg src={trendsrc} alt="trend" />
-        <WorkImg src={websrc} alt="web" />
-        <WorkImg src={uxsrc} alt="ux" />
-        <WorkImg src={designsrc} alt="design" />
-        <WorkImg src={videosrc} alt="video" />
-      </Marquee>
+      <MarqueeDiv autoFill={true} direction="right" speed={20}>
+        <motion.div animate={{y: [30, 0, 30]}} transition={transitionValues}>
+          <WorkImg src={identitysrc} alt="identity" />
+        </motion.div>
+        <motion.div animate={{y: [0, 30, 0]}} transition={transitionValues}>
+          <WorkImg src={besrc} alt="be" />
+        </motion.div>
+        <motion.div animate={{y: [30, 0, 30]}} transition={transitionValues}>
+          <WorkImg src={trendsrc} alt="trend" />
+        </motion.div>
+        <motion.div animate={{y: [0, 30, 0]}} transition={transitionValues}>
+          <WorkImg src={websrc} alt="web" />
+        </motion.div>
+        <motion.div animate={{y: [30, 0, 30]}} transition={transitionValues}>
+          <WorkImg src={uxsrc} alt="ux" />
+        </motion.div>
+        <motion.div animate={{y: [0, 30, 0]}} transition={transitionValues}>
+          <WorkImg src={designsrc} alt="design" />
+        </motion.div>
+        <motion.div animate={{y: [30, 0, 30]}} transition={transitionValues}>
+          <WorkImg src={videosrc} alt="video" />
+        </motion.div>
+      </MarqueeDiv>
     </JourneySection>
   );
 }
@@ -30,7 +51,7 @@ export default HomeJourney;
 const JourneySection = styled.section`
   background-color: #000;
   color: #fff;
-  padding: 16vw 0;
+  padding: 13vw 0;
 `;
 
 const BigText = styled.h3`
@@ -40,6 +61,10 @@ const BigText = styled.h3`
   margin-left: 7vw;
   margin-bottom: 5vw;
   font-size: 3.4vw;
+`;
+
+const MarqueeDiv = styled(Marquee)`
+  height: 25vw;
 `;
 
 const WorkImg = styled.img`
