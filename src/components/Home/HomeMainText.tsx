@@ -1,4 +1,4 @@
-import styled, {css, keyframes} from 'styled-components';
+import styled, {css} from 'styled-components';
 import Marquee from 'react-fast-marquee';
 
 const hoverDescriptions = [
@@ -58,17 +58,6 @@ const BigText = styled.h1<{$hovered: boolean | undefined}>`
   line-height: 0.9;
   transition: transform 0.6s;
   transform: ${(p) => (p.$hovered ? css`translateY(-5vw)` : css`translateY(0)`)};
-`;
-
-const FadeIn = keyframes`
-  from {
-    opacity: 0;
-visibility: visible;
-  }
-  to {
-    opacity: 1;
-visibility: visible;
-  }
 `;
 
 const BlurText = styled.h1`
