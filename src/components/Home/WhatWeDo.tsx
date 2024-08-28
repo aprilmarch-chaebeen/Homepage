@@ -11,7 +11,7 @@ import {useState} from 'react';
 import WhatWeDoFilter from './WhatWeDoFilter';
 
 const imgsrc = [
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img1.svg?token=BKTX2MH6UXQXVH2KL72PW33GZ2BQQ',
+  './img/img1.svg',
   'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img2.svg?token=BKTX2MGHNTNIHVXA55EPUGDGZ2BR2',
   'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img3.svg?token=BKTX2MG2FIOI7O2JPJEX4DTGZ2BTK',
   'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img4.svg?token=BKTX2MCYQ3AP6GCRJCRP7STGZ2BUG',
