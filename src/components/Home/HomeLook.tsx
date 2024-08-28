@@ -4,13 +4,6 @@ import styled from 'styled-components';
 import seciconsrc from '../../assets/svg/sec_icon_black.svg';
 import looktextsrc from '../../assets/svg/look_txt.svg';
 import arrowsrc from '../../assets/svg/right_arrow.svg';
-import imgsrc1 from '../../assets/svg/look_img01.svg';
-import imgsrc2 from '../../assets/svg/look_img02.svg';
-import imgsrc3 from '../../assets/svg/look_img03.svg';
-import imgsrc4 from '../../assets/svg/look_img04.svg';
-import imgsrc5 from '../../assets/svg/look_img05.svg';
-import imgsrc6 from '../../assets/svg/look_img06.svg';
-import imgsrc7 from '../../assets/svg/look_img07.svg';
 
 const transition = {
   ease: 'easeInOut',
@@ -51,7 +44,7 @@ function HomeLook() {
         <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transition}>
           <LookText src={looktextsrc} alt="look txt" />
           <ImgBox>
-            <LookImg src={`imgsrc${imgIndex}`} alt="look imgages" />
+            <LookImg src={`/img/look_img0${imgIndex}.webp`} alt="look imgages" />
           </ImgBox>
         </motion.div>
       </GoodContainer>
