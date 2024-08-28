@@ -1,5 +1,5 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import arrowsrc from '../../assets/svg/arrow_outward_w.svg';
 
 import 'swiper/css';
@@ -10,41 +10,43 @@ import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules'
 import {useState} from 'react';
 import WhatWeDoFilter from './WhatWeDoFilter';
 
-import img1src from '../../assets/svg/img1.svg';
-import img2src from '../../assets/svg/img2.svg';
-import img3src from '../../assets/svg/img3.svg';
-import img4src from '../../assets/svg/img4.svg';
-import img5src from '../../assets/svg/img5.svg';
-import img6src from '../../assets/svg/img6.svg';
-import img7src from '../../assets/svg/img7.svg';
-import img8src from '../../assets/svg/img8.svg';
-import img9src from '../../assets/svg/img9.svg';
-import img10src from '../../assets/svg/img10.svg';
-import img11src from '../../assets/svg/img11.svg';
-import img12src from '../../assets/svg/img12.svg';
-import img13src from '../../assets/svg/img13.svg';
-import img14src from '../../assets/svg/img14.svg';
-import img15src from '../../assets/svg/img15.svg';
-import img16src from '../../assets/svg/img16.svg';
-import img17src from '../../assets/svg/img17.svg';
-import img18src from '../../assets/svg/img18.svg';
-import img19src from '../../assets/svg/img19.svg';
-import img20src from '../../assets/svg/img20.svg';
-import img21src from '../../assets/svg/img21.svg';
-import img22src from '../../assets/svg/img22.svg';
-import img23src from '../../assets/svg/img23.svg';
-import img24src from '../../assets/svg/img24.svg';
-import img25src from '../../assets/svg/img25.svg';
-import img26src from '../../assets/svg/img26.svg';
-import img27src from '../../assets/svg/img27.svg';
-import img28src from '../../assets/svg/img28.svg';
-import img29src from '../../assets/svg/img29.svg';
-import img30src from '../../assets/svg/img30.svg';
-import img31src from '../../assets/svg/img31.svg';
-import img32src from '../../assets/svg/img32.svg';
-import img33src from '../../assets/svg/img33.svg';
-import img34src from '../../assets/svg/img34.svg';
-import img35src from '../../assets/svg/img35.svg';
+const imgsrc = [
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img1.svg?token=BKTX2MH6UXQXVH2KL72PW33GZ2BQQ',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img2.svg?token=BKTX2MGHNTNIHVXA55EPUGDGZ2BR2',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img3.svg?token=BKTX2MG2FIOI7O2JPJEX4DTGZ2BTK',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img4.svg?token=BKTX2MCYQ3AP6GCRJCRP7STGZ2BUG',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img5.svg?token=BKTX2MGGITDHXFCJXCUHIE3GZ2BWS',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img6.svg?token=BKTX2MANMFJ5VHZKQKIL3N3GZ2BXS',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img7.svg?token=BKTX2MBTDUHZTXGK4X7R4ALGZ2BYO',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img8.svg?token=BKTX2MGGOJFUKGGS674B6XLGZ2BZG',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img9.svg?token=BKTX2MESGD25TB5SDWYN4TDGZ2B2E',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img10.svg?token=BKTX2MDIUAKP5MQD6A3QBILGZ2B3A',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img11.svg?token=BKTX2MERF4VUKV6WB4DARZDGZ2B46',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img12.svg?token=BKTX2MC57MIYAVFL6ELI5GDGZ2B5W',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img13.svg?token=BKTX2MEVYCR2X554C5UCN2LGZ2B6M',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img14.svg?token=BKTX2MBJCE4V6DPPISASNZLGZ2B7M',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img15.svg?token=BKTX2MCAGS37XN42HOUYJ3DGZ2CAI',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img16.svg?token=BKTX2MG5ZWF2LGKCRBX4LVLGZ2CA6',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img17.svg?token=BKTX2MC7MSPICAV23FXCDUDGZ2CB4',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img18.svg?token=BKTX2MFUOWPMSR7BHYGST73GZ2CC2',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img19.svg?token=BKTX2MF3PEYTJHRSYTWODNTGZ2CDS',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img20.svg?token=BKTX2MF4MQH4ERA7TQG4DMDGZ2CE6',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img21.svg?token=BKTX2MD65LNMETY7SA25Q4TGZ2CF6',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img22.svg?token=BKTX2MG7RX2GSOB5EAJPVS3GZ2CGW',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img23.svg?token=BKTX2MCC6D3OKGUUIAPLANLGZ2CHQ',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img24.svg?token=BKTX2MEYNBEIZMJZR2TI5MDGZ2CII',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img25.svg?token=BKTX2MCM56HUIYCGLTKQ2LTGZ2CJC',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img26.svg?token=BKTX2MHVTXEMDEGDSF63N5LGZ2CJY',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img27.svg?token=BKTX2MDQND5JTNX4VKMMKGLGZ2CKQ',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img28.svg?token=BKTX2MCUPQIMFHSDIXPRNO3GZ2CLI',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img29.svg?token=BKTX2MGY4SUEGTHQTRCUZQTGZ2CMI',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img30.svg?token=BKTX2MHNIZVWY4MC2SZCHODGZ2CNI',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img31.svg?token=BKTX2MEAPVOMMWV5L7WN3NLGZ2COG',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img32.svg?token=BKTX2MBNSTHRSSBY3UK75N3GZ2CO4',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img33.svg?token=BKTX2MDJYFPNTMKSEMRE5FDGZ2CP6',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img34.svg?token=BKTX2MGVHWNSCZVAPVXWCT3GZ2CQW',
+  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img35.svg?token=BKTX2MBFIG7GB5G5ESRINODGZ2CRQ',
+];
 
 function WhatWeDo() {
   const [nowIndex, setNowIndex] = useState(0);
@@ -87,111 +89,11 @@ function WhatWeDo() {
         }}
         onSlideChange={(swiper) => handleSlideChange(swiper)}
       >
-        <Slide>
-          <SlideImg src={img1src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img2src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img3src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img4src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img5src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img6src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img7src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img8src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img9src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img10src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img11src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img12src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img13src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img14src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img15src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img16src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img17src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img18src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img19src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img20src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img21src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img22src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img23src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img24src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img25src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img26src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img27src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img28src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img29src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img30src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img31src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img32src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img33src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img34src} alt="img1" />
-        </Slide>
-        <Slide>
-          <SlideImg src={img35src} alt="img1" />
-        </Slide>
+        {Array.from({length: imgsrc.length}, (_, i) => (
+          <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
+            <SlideImg src={imgsrc[i]} alt={`img ${i}`} $idx={i} $nowIdx={nowIndex - 1} />
+          </Slide>
+        ))}
       </SlideContainer>
       <ViewMore>
         <ViewText>View More</ViewText>
@@ -300,20 +202,32 @@ const SlideContainer = styled(Swiper)`
   }
 `;
 
-const Slide = styled(SwiperSlide)`
+const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
   width: 20vw;
   height: 22vw;
   position: relative;
+  ${(p) =>
+    p.$idx === p.$nowIdx &&
+    css`
+      &:hover {
+        width: 31vw !important;
+        transition: width 0.5s ease-in-out !important;
+      }
+    `}
 `;
 
-const SlideImg = styled.img`
+const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
   height: 20vw;
   width: 20vw;
   object-fit: cover;
-  &:hover {
-    width: 31vw;
-    transition: width 0.5s ease-in-out;
-  }
+  ${(p) =>
+    p.$idx === p.$nowIdx &&
+    css`
+      &:hover {
+        width: 31vw !important;
+        transition: width 0.5s ease-in-out !important;
+      }
+    `}
 `;
 
 const PageNumber = styled.span``;
