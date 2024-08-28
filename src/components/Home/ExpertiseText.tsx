@@ -42,7 +42,10 @@ function ExpertiseText() {
       </ExpertiseContainer>
       <BigLogoContainer>
         <SpinIcon>*</SpinIcon>
-        <BigLogo>CRE</BigLogo>
+        <BigLogo>
+          <SpinText>C</SpinText>
+          <span style={{color: '#0066FF'}}>C</span>RE
+        </BigLogo>
         <BigLogo>MAKE</BigLogo>
       </BigLogoContainer>
     </TextContainer>
@@ -52,6 +55,11 @@ export default ExpertiseText;
 
 const TextContainer = styled.div`
   position: relative;
+`;
+
+const SpinText = styled.span`
+  position: absolute;
+  transform: translateY(-0.2vw);
 `;
 
 const BigText = styled.h3`

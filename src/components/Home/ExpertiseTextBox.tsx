@@ -7,6 +7,12 @@ const transitionY = {
   y: {duration: 0.7},
 };
 
+const transition = {
+  ease: 'easeInOut',
+  scaleX: {duration: 0.7},
+  opacity: {duration: 0.7},
+};
+
 interface ExpertiseTextBoxProp {
   text: {title: string; num: string; descript: string[]; idx: number};
 }
@@ -28,7 +34,13 @@ function ExpertiseTextBox({text}: ExpertiseTextBoxProp) {
           ))}
         </DescriptContainer>
       </motion.div>
-      <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transitionY}>
+      <motion.div
+        initial={{opacity: 0, scaleX: 0}}
+        whileInView={{opacity: 1, scaleX: 1}}
+        viewport={{once: false}}
+        transition={transition}
+        style={{originX: 0}}
+      >
         {text.idx <= 2 && <Line />}
       </motion.div>
     </ExpertiseBox>

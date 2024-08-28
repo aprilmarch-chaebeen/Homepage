@@ -16,28 +16,67 @@ function ExpertiseContent() {
       <LineContainer>
         <LineContent $left={0} $bottom={0}>
           <Ratio>35</Ratio>
-          <Line $height={34.8} initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{once: false}} transition={transition}></Line>
-
+          <motion.div
+            initial={{opacity: 0, scaleY: 0}}
+            whileInView={{opacity: 1, scaleY: 1}}
+            viewport={{once: false}}
+            transition={transition}
+            style={{originY: 1}}
+          >
+            <Line $height={34.8}></Line>
+          </motion.div>
           <Content>RESEARCH</Content>
         </LineContent>
         <LineContent $left={6.5} $bottom={12.5}>
           <Ratio>10</Ratio>
-          <Line $height={20}></Line>
+          <motion.div
+            initial={{opacity: 0, scaleY: 0}}
+            whileInView={{opacity: 1, scaleY: 1}}
+            viewport={{once: false}}
+            transition={transition}
+            style={{originY: 1}}
+          >
+            <Line $height={20}></Line>
+          </motion.div>
           <Content>PLAN</Content>
         </LineContent>
         <LineContent $left={45} $bottom={27.6}>
           <Ratio>80</Ratio>
-          <Line $height={12.2}></Line>
+          <motion.div
+            initial={{opacity: 0, scaleY: 0}}
+            whileInView={{opacity: 1, scaleY: 1}}
+            viewport={{once: false}}
+            transition={transition}
+            style={{originY: 1}}
+          >
+            <Line $height={12.2}></Line>
+          </motion.div>
           <Content>DESIGN</Content>
         </LineContent>
         <LineContent $bottom={9.5} $right={5.1}>
           <Ratio>15</Ratio>
-          <Line $height={3.5}></Line>
+          <motion.div
+            initial={{opacity: 0, scaleY: 0}}
+            whileInView={{opacity: 1, scaleY: 1}}
+            viewport={{once: false}}
+            transition={transition}
+            style={{originY: 1}}
+          >
+            <Line $height={3.5}></Line>
+          </motion.div>
           <Content>DEVELOP</Content>
         </LineContent>
         <LineContent $right={0} $bottom={0}>
           <Ratio>30</Ratio>
-          <Line $height={34.8}></Line>
+          <motion.div
+            initial={{opacity: 0, scaleY: 0}}
+            whileInView={{opacity: 1, scaleY: 1}}
+            viewport={{once: false}}
+            transition={transition}
+            style={{originY: 1}}
+          >
+            <Line $height={34.8}></Line>
+          </motion.div>
           <Content>MANAGE</Content>
         </LineContent>
         <SmallText>DESIGN</SmallText>
@@ -89,7 +128,7 @@ const LineContent = styled.div<{$left?: number; $bottom: number; $right?: number
   right: ${(p) => p.$right}vw;
 `;
 
-const Line = styled(motion.div)<{$height: number}>`
+const Line = styled.div<{$height: number}>`
   width: 0.05vw;
   background-color: #000;
   margin: 1.4vw auto 2.1vw;
