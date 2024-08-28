@@ -1,5 +1,5 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import arrowsrc from '../../assets/svg/arrow_outward_w.svg';
 
 import 'swiper/css';
@@ -10,6 +10,42 @@ import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules'
 import {useState} from 'react';
 import WhatWeDoFilter from './WhatWeDoFilter';
 
+import img1src from '../../assets/svg/img1.svg';
+import img2src from '../../assets/svg/img2.svg';
+import img3src from '../../assets/svg/img3.svg';
+import img4src from '../../assets/svg/img4.svg';
+import img5src from '../../assets/svg/img5.svg';
+import img6src from '../../assets/svg/img6.svg';
+import img7src from '../../assets/svg/img7.svg';
+import img8src from '../../assets/svg/img8.svg';
+import img9src from '../../assets/svg/img9.svg';
+import img10src from '../../assets/svg/img10.svg';
+import img11src from '../../assets/svg/img11.svg';
+import img12src from '../../assets/svg/img12.svg';
+import img13src from '../../assets/svg/img13.svg';
+import img14src from '../../assets/svg/img14.svg';
+import img15src from '../../assets/svg/img15.svg';
+import img16src from '../../assets/svg/img16.svg';
+import img17src from '../../assets/svg/img17.svg';
+import img18src from '../../assets/svg/img18.svg';
+import img19src from '../../assets/svg/img19.svg';
+import img20src from '../../assets/svg/img20.svg';
+import img21src from '../../assets/svg/img21.svg';
+import img22src from '../../assets/svg/img22.svg';
+import img23src from '../../assets/svg/img23.svg';
+import img24src from '../../assets/svg/img24.svg';
+import img25src from '../../assets/svg/img25.svg';
+import img26src from '../../assets/svg/img26.svg';
+import img27src from '../../assets/svg/img27.svg';
+import img28src from '../../assets/svg/img28.svg';
+import img29src from '../../assets/svg/img29.svg';
+import img30src from '../../assets/svg/img30.svg';
+import img31src from '../../assets/svg/img31.svg';
+import img32src from '../../assets/svg/img32.svg';
+import img33src from '../../assets/svg/img33.svg';
+import img34src from '../../assets/svg/img34.svg';
+import img35src from '../../assets/svg/img35.svg';
+
 function WhatWeDo() {
   const [nowIndex, setNowIndex] = useState(0);
 
@@ -17,7 +53,7 @@ function WhatWeDo() {
     setNowIndex(swiper.realIndex + 1);
   };
 
-  https: return (
+  return (
     <WhatWeDoSec>
       <BigText>What we do</BigText>
       <SmallText>디자인과 브랜딩을 향한 우리의 전문성과 열정, 진심의 영향력은 든든한 믿음과 새로운 기쁨을 전달합니다.</SmallText>
@@ -51,15 +87,111 @@ function WhatWeDo() {
         }}
         onSlideChange={(swiper) => handleSlideChange(swiper)}
       >
-        {' '}
-        {Array.from({length: 30}, (_, i) => (
-          <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg
-              src={`https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/main/public/img/img1.webp?token=GHSAT0AAAAAACWNQYPYV2TEG64JX5FM7SFCZWNVBZA`}
-              alt=""
-            />
-          </Slide>
-        ))}
+        <Slide>
+          <SlideImg src={img1src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img2src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img3src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img4src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img5src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img6src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img7src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img8src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img9src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img10src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img11src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img12src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img13src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img14src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img15src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img16src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img17src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img18src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img19src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img20src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img21src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img22src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img23src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img24src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img25src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img26src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img27src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img28src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img29src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img30src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img31src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img32src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img33src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img34src} alt="img1" />
+        </Slide>
+        <Slide>
+          <SlideImg src={img35src} alt="img1" />
+        </Slide>
       </SlideContainer>
       <ViewMore>
         <ViewText>View More</ViewText>
@@ -168,23 +300,20 @@ const SlideContainer = styled(Swiper)`
   }
 `;
 
-const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
+const Slide = styled(SwiperSlide)`
   width: 20vw;
   height: 22vw;
   position: relative;
-  ${(p) =>
-    p.$idx === p.$nowIdx &&
-    css`
-      &:hover {
-        transform: scaleX(1.5) !important;
-        transition: transform 0.5s 0.5s !important;
-      }
-    `}
 `;
 
 const SlideImg = styled.img`
+  height: 20vw;
   width: 20vw;
-  height: 22vw;
+  object-fit: cover;
+  &:hover {
+    width: 31vw;
+    transition: width 0.5s ease-in-out;
+  }
 `;
 
 const PageNumber = styled.span``;
