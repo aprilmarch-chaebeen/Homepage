@@ -1,25 +1,21 @@
-import Marquee from 'react-fast-marquee';
+// import Marquee from 'react-fast-marquee';
 import styled from 'styled-components';
-import identitysrc from '../../assets/svg/Identity.svg';
-import besrc from '../../assets/svg/brand_experience.svg';
-import trendsrc from '../../assets/svg/trend_insight.svg';
-import websrc from '../../assets/svg/web.svg';
-import uxsrc from '../../assets/svg/ux.svg';
-import designsrc from '../../assets/svg/creative_design.svg';
-import videosrc from '../../assets/svg/video_production.svg';
-import {motion} from 'framer-motion';
+// import {motion} from 'framer-motion';
+// import {useEffect, useRef} from 'react';
+import BallAnimation from './BallAnimation';
 
-const transitionValues = {
-  duration: 2,
-  repeat: Infinity,
-  ease: 'easeOut',
-};
+// const transitionValues = {
+//   duration: 2,
+//   repeat: Infinity,
+//   ease: 'easeOut',
+// };
 
 function HomeJourney() {
   return (
     <JourneySection>
       <BigText>Work Journey Map.</BigText>
-      <MarqueeDiv autoFill={true} direction="right" speed={20}>
+      <BallAnimation />
+      {/* <MarqueeDiv autoFill={true} direction="right" speed={20}>
         <motion.div animate={{y: [30, 0, 30]}} transition={transitionValues}>
           <WorkImg src={identitysrc} alt="identity" />
         </motion.div>
@@ -41,7 +37,7 @@ function HomeJourney() {
         <motion.div animate={{y: [30, 0, 30]}} transition={transitionValues}>
           <WorkImg src={videosrc} alt="video" />
         </motion.div>
-      </MarqueeDiv>
+      </MarqueeDiv> */}
     </JourneySection>
   );
 }
@@ -52,6 +48,7 @@ const JourneySection = styled.section`
   background-color: #000;
   color: #fff;
   padding: 13vw 0;
+  height: 40vw;
 `;
 
 const BigText = styled.h3`
@@ -63,11 +60,11 @@ const BigText = styled.h3`
   font-size: 3.4vw;
 `;
 
-const MarqueeDiv = styled(Marquee)`
-  height: 25vw;
-`;
+// const MarqueeDiv = styled(Marquee)`
+//   height: 25vw;
+// `;
 
-const WorkImg = styled.img`
-  margin-right: 24px;
-  width: 16vw;
-`;
+// const WorkImg = styled.img`
+//   margin-right: 24px;
+//   width: 16vw;
+// `;
