@@ -10,8 +10,8 @@ import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules'
 import {useState} from 'react';
 import WhatWeDoFilter from './WhatWeDoFilter';
 
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || '';
+// const env = process.env;
+// env.PUBLIC_URL = env.PUBLIC_URL || '';
 
 function WhatWeDo() {
   const [nowIndex, setNowIndex] = useState(0);
@@ -56,7 +56,7 @@ function WhatWeDo() {
       >
         {Array.from({length: 35}, (_, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg src={process.env.PUBLIC_URL + `/images/img${i + 1}.svg`} alt={`img ${i + 1}`} $idx={i} $nowIdx={nowIndex - 1} />
+            <SlideImg src={`/images/img${i + 1}.svg`} alt={`img ${i + 1}`} $idx={i} $nowIdx={nowIndex - 1} />
           </Slide>
         ))}
       </SlideContainer>
