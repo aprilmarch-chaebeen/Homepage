@@ -11,15 +11,8 @@ const transition = {
   y: {duration: 0.7},
 };
 
-const imgsrc = [
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/main/public/img/look_img01.webp?token=GHSAT0AAAAAACWNQYPYABFCCMPLYEAAUYPMZWOPEPA',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/main/public/img/look_img02.webp?token=GHSAT0AAAAAACWNQYPZONXJ6MRKUOUN4GGEZWOPFGQ',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/main/public/img/look_img03.webp?token=GHSAT0AAAAAACWNQYPZH5XMDUOQYL5YUP74ZWOPFQQ',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/main/public/img/look_img04.webp?token=GHSAT0AAAAAACWNQYPZPJJVUKQJU43D4NZ2ZWOPFZA',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/main/public/img/look_img05.webp?token=GHSAT0AAAAAACWNQYPYRIJR3377TKGC3ZYQZWOPGAQ',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/main/public/img/look_img06.webp?token=GHSAT0AAAAAACWNQYPYFNKGYC4U4ZUVZIJQZWOPGKA',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/main/public/img/look_img07.webp?token=GHSAT0AAAAAACWNQYPZ4YUQA7CAIEF657VUZWOPHMQ',
-];
+const env = process.env;
+env.PUBLIC_URL = env.PUBLIC_URL || '';
 
 function HomeLook() {
   const [imgIndex, setImgIndex] = useState(0);
@@ -54,7 +47,7 @@ function HomeLook() {
         <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transition}>
           <LookText src={looktextsrc} alt="look txt" />
           <ImgBox>
-            <LookImg src={imgsrc[imgIndex]} alt="look imgages" />
+            <LookImg src={process.env.PUBLIC_URL + `/images/look_img0${imgIndex + 1}.webp`} alt={`look imgages ${imgIndex}`} />
           </ImgBox>
         </motion.div>
       </GoodContainer>

@@ -52,6 +52,9 @@ module.exports = {
     }),
     // 환경 정보를 제공
     new webpack.EnvironmentPlugin(['MODE', 'PORT']),
+    new webpack.ProvidePlugin({
+      process: 'process/browser.js',
+    }),
   ],
   devServer: {
     host: 'localhost',

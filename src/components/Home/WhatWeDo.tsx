@@ -10,43 +10,8 @@ import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules'
 import {useState} from 'react';
 import WhatWeDoFilter from './WhatWeDoFilter';
 
-const imgsrc = [
-  './img/img1.svg',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img2.svg?token=BKTX2MGHNTNIHVXA55EPUGDGZ2BR2',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img3.svg?token=BKTX2MG2FIOI7O2JPJEX4DTGZ2BTK',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img4.svg?token=BKTX2MCYQ3AP6GCRJCRP7STGZ2BUG',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img5.svg?token=BKTX2MGGITDHXFCJXCUHIE3GZ2BWS',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img6.svg?token=BKTX2MANMFJ5VHZKQKIL3N3GZ2BXS',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img7.svg?token=BKTX2MBTDUHZTXGK4X7R4ALGZ2BYO',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img8.svg?token=BKTX2MGGOJFUKGGS674B6XLGZ2BZG',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img9.svg?token=BKTX2MESGD25TB5SDWYN4TDGZ2B2E',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img10.svg?token=BKTX2MDIUAKP5MQD6A3QBILGZ2B3A',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img11.svg?token=BKTX2MERF4VUKV6WB4DARZDGZ2B46',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img12.svg?token=BKTX2MC57MIYAVFL6ELI5GDGZ2B5W',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img13.svg?token=BKTX2MEVYCR2X554C5UCN2LGZ2B6M',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img14.svg?token=BKTX2MBJCE4V6DPPISASNZLGZ2B7M',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img15.svg?token=BKTX2MCAGS37XN42HOUYJ3DGZ2CAI',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img16.svg?token=BKTX2MG5ZWF2LGKCRBX4LVLGZ2CA6',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img17.svg?token=BKTX2MC7MSPICAV23FXCDUDGZ2CB4',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img18.svg?token=BKTX2MFUOWPMSR7BHYGST73GZ2CC2',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img19.svg?token=BKTX2MF3PEYTJHRSYTWODNTGZ2CDS',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img20.svg?token=BKTX2MF4MQH4ERA7TQG4DMDGZ2CE6',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img21.svg?token=BKTX2MD65LNMETY7SA25Q4TGZ2CF6',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img22.svg?token=BKTX2MG7RX2GSOB5EAJPVS3GZ2CGW',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img23.svg?token=BKTX2MCC6D3OKGUUIAPLANLGZ2CHQ',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img24.svg?token=BKTX2MEYNBEIZMJZR2TI5MDGZ2CII',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img25.svg?token=BKTX2MCM56HUIYCGLTKQ2LTGZ2CJC',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img26.svg?token=BKTX2MHVTXEMDEGDSF63N5LGZ2CJY',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img27.svg?token=BKTX2MDQND5JTNX4VKMMKGLGZ2CKQ',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img28.svg?token=BKTX2MCUPQIMFHSDIXPRNO3GZ2CLI',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img29.svg?token=BKTX2MGY4SUEGTHQTRCUZQTGZ2CMI',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img30.svg?token=BKTX2MHNIZVWY4MC2SZCHODGZ2CNI',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img31.svg?token=BKTX2MEAPVOMMWV5L7WN3NLGZ2COG',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img32.svg?token=BKTX2MBNSTHRSSBY3UK75N3GZ2CO4',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img33.svg?token=BKTX2MDJYFPNTMKSEMRE5FDGZ2CP6',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img34.svg?token=BKTX2MGVHWNSCZVAPVXWCT3GZ2CQW',
-  'https://raw.githubusercontent.com/aprilmarch-chaebeen/Homepage/6f9aa05cf64df8ba017597e82c560a3583b4d8a3/public/img/img35.svg?token=BKTX2MBFIG7GB5G5ESRINODGZ2CRQ',
-];
+const env = process.env;
+env.PUBLIC_URL = env.PUBLIC_URL || '';
 
 function WhatWeDo() {
   const [nowIndex, setNowIndex] = useState(0);
@@ -89,9 +54,9 @@ function WhatWeDo() {
         }}
         onSlideChange={(swiper) => handleSlideChange(swiper)}
       >
-        {Array.from({length: imgsrc.length}, (_, i) => (
+        {Array.from({length: 35}, (_, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg src={imgsrc[i]} alt={`img ${i}`} $idx={i} $nowIdx={nowIndex - 1} />
+            <SlideImg src={process.env.PUBLIC_URL + `/images/img${i + 1}.svg`} alt={`img ${i + 1}`} $idx={i} $nowIdx={nowIndex - 1} />
           </Slide>
         ))}
       </SlideContainer>
