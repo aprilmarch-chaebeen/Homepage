@@ -25,7 +25,7 @@ function HowItWorks() {
       <Steps>
         <StepContainer $top={70} $left={0}>
           <motion.div
-            initial={{opacity: 0, y: 60}}
+            initial={{opacity: 0, y: 80}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: false}}
             transition={{transition, delay: 0.3}}
@@ -36,7 +36,21 @@ function HowItWorks() {
               Brand Concepting
             </Step>
             <Line $border={0.1} $width={24} $margin_top={0.5} $margin_btm={0.6} />
+          </motion.div>
+          <motion.div
+            initial={{opacity: 0, y: 80}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: false}}
+            transition={{transition, delay: 0.4}}
+          >
             <StepTitle>브랜드스러움에 대한 고민</StepTitle>
+          </motion.div>
+          <motion.div
+            initial={{opacity: 0, y: 80}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: false}}
+            transition={{transition, delay: 0.5}}
+          >
             <StepDescript>
               Brand Strategy
               <br />
@@ -50,10 +64,10 @@ function HowItWorks() {
         </StepContainer>
         <StepContainer $top={50} $left={28}>
           <motion.div
-            initial={{opacity: 0, y: 60}}
+            initial={{opacity: 0, y: 80}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: false}}
-            transition={{transition, delay: 1}}
+            transition={{transition, delay: 0.65}}
           >
             <Step>
               02
@@ -61,7 +75,21 @@ function HowItWorks() {
               Brand Experience Design
             </Step>
             <Line $border={0.1} $width={29} $margin_top={0.6} $margin_btm={0.6} />
+          </motion.div>
+          <motion.div
+            initial={{opacity: 0, y: 80}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: false}}
+            transition={{transition, delay: 0.75}}
+          >
             <StepTitle>브랜드 경험에 대한 A부터 Z까지</StepTitle>
+          </motion.div>
+          <motion.div
+            initial={{opacity: 0, y: 80}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: false}}
+            transition={{transition, delay: 0.85}}
+          >
             <StepDescript>
               Brand Experience Design
               <br />
@@ -75,22 +103,43 @@ function HowItWorks() {
         </StepContainer>
         <StepContainer $top={-10} $left={60}>
           <motion.div
-            initial={{opacity: 0, y: 60}}
+            initial={{opacity: 0, y: 80}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: false}}
-            transition={{transition, delay: 1.7}}
+            transition={{transition, delay: 1}}
           >
             <Step>
               03
               <br />
               Creative & Activation
             </Step>
+          </motion.div>
+          <motion.div
+            initial={{opacity: 0, y: 80}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: false}}
+            transition={{transition, delay: 1.1}}
+          >
             <Line $border={1.1} $width={45} $margin_top={0.7} $margin_btm={0} />
             <Line $border={0.6} $width={45} $margin_top={1.5} $margin_btm={0} />
             <Line $border={0.3} $width={45} $margin_top={2} $margin_btm={0} />
             <Line $border={0.2} $width={45} $margin_top={2.4} $margin_btm={0} />
             <Line $border={0.1} $width={45} $margin_top={3} $margin_btm={1} />
+          </motion.div>
+          <motion.div
+            initial={{opacity: 0, y: 80}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: false}}
+            transition={{transition, delay: 1.2}}
+          >
             <StepTitle>전략적 마케팅에 대한 제안과 리딩</StepTitle>
+          </motion.div>
+          <motion.div
+            initial={{opacity: 0, y: 80}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: false}}
+            transition={{transition, delay: 1.3}}
+          >
             <StepDescript>
               Brand Communication
               <br />
