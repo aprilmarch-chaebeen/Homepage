@@ -11,9 +11,6 @@ const transition = {
   y: {duration: 0.7},
 };
 
-// const env = process.env;
-// env.PUBLIC_URL = env.PUBLIC_URL || '';
-
 function HomeLook() {
   const [imgIndex, setImgIndex] = useState(0);
 
@@ -47,7 +44,7 @@ function HomeLook() {
         <motion.div initial={{opacity: 0, y: 130}} whileInView={{opacity: 1, y: 0}} viewport={{once: false}} transition={transition}>
           <LookText src={looktextsrc} alt="look txt" />
           <ImgBox>
-            <LookImg src={`/images/look_img0${imgIndex + 1}.webp`} alt={`look imgages ${imgIndex}`} />
+            <LookImg src={require(`../../assets/images/look_img0${imgIndex + 1}.webp`).default} alt={`look imgages ${imgIndex}`} />
           </ImgBox>
         </motion.div>
       </GoodContainer>
