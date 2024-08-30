@@ -5,6 +5,7 @@ import websrc from '../../assets/svg/web.svg';
 import uxsrc from '../../assets/svg/ux.svg';
 import designsrc from '../../assets/svg/creative_design.svg';
 import videosrc from '../../assets/svg/video_production.svg';
+import marketingsrc from '../../assets/svg/digital_marketing.svg';
 import {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 
@@ -31,7 +32,7 @@ function useQuadBounce({duration = 1200, start = 0, end = 10} = {}) {
   return value;
 }
 
-const Circlesbgimg = [identitysrc, besrc, trendsrc, websrc, uxsrc, designsrc, videosrc];
+const Circlesbgimg = [identitysrc, besrc, trendsrc, websrc, uxsrc, designsrc, videosrc, marketingsrc];
 
 function BallAnimation() {
   const ballSettings = [
@@ -42,6 +43,7 @@ function BallAnimation() {
     {duration: 2000, start: 5, end: 20},
     {duration: 1900, start: 6, end: 20},
     {duration: 2200, start: 2, end: 20},
+    {duration: 1700, start: 3, end: 20},
   ];
 
   return (
@@ -62,7 +64,7 @@ const BallContainer = styled.div`
 `;
 
 const Ball = styled.img<{$y: number}>`
-  width: 10vw;
+  width: 9.5vw;
   margin-right: 2vw;
   transform: translate3d(0, ${(p) => p.$y}vw, 0);
 `;
