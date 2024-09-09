@@ -72,7 +72,7 @@ const WhatWeDoSec = styled.section`
 `;
 
 const BigText = styled.h3`
-  margin-top: 22vw;
+  margin-top: 12vw;
   margin-bottom: 2vw;
   font-family: 'Gotham';
   font-size: 2.8vw;
