@@ -9,6 +9,7 @@ import HomeExpertise from '../components/Home/HomeExpertise';
 import HomeJourney from '../components/Home/HomeJourney';
 import HomeAbout from '../components/Home/HomeAbout';
 import HomeFooter from '../components/Home/HomeFooter';
+import FlowText from '../components/Home/FlowText';
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <WhatWeDo />
       <Customers />
       <HowItWorks />
+      <FlowText />
       <HomeContact />
       <HomeLook />
       <HomeExpertise />
