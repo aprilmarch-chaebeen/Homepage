@@ -1,47 +1,61 @@
-import styled from 'styled-components';
+import styled, {css, keyframes} from 'styled-components';
 import HomeMainText from './HomeMainText';
 import {useState} from 'react';
+import creativesrc from '../../assets/svg/creative.svg';
+import circlesrc from '../../assets/svg/circle_back.svg';
+import logosrc from '../../assets/svg/circle_logo.svg';
 
 function HomeMain() {
-  const [bxHovered, setBxHovered] = useState(false);
+  const [brandingHovered, setBrandingHovered] = useState(false);
   const [uxuiHovered, setUxuiHovered] = useState(false);
-  const [voucherHovered, setVoucherHovered] = useState(false);
-  const [publicHovered, setPublicHovered] = useState(false);
+  const [digitalHovered, setDigitalHovered] = useState(false);
+  const [dashboardHovered, setDashboardHovered] = useState(false);
 
   return (
     <MainSection>
-      <SmallText>We think.</SmallText>
       <HomeMainText
-        title="BX"
         idx={0}
-        onMouseEnter={() => setBxHovered(true)}
-        onMouseLeave={() => setBxHovered(false)}
-        hovered={uxuiHovered || voucherHovered || publicHovered}
-        nowHovered={bxHovered}
+        onMouseEnter={() => setBrandingHovered(true)}
+        onMouseLeave={() => setBrandingHovered(false)}
+        hovered={uxuiHovered || digitalHovered || dashboardHovered}
+        nowHovered={brandingHovered}
+        width={25}
       />
       <HomeMainText
-        title="UX/UI"
         idx={1}
         onMouseEnter={() => setUxuiHovered(true)}
         onMouseLeave={() => setUxuiHovered(false)}
-        hovered={voucherHovered || publicHovered}
+        hovered={digitalHovered || dashboardHovered}
         nowHovered={uxuiHovered}
+        width={35}
       />
+      <SmallText src={creativesrc} alt="creative design svg" $hovered={digitalHovered || dashboardHovered} />
       <HomeMainText
         idx={2}
-        title="VOUCHER"
-        onMouseEnter={() => setVoucherHovered(true)}
-        onMouseLeave={() => setVoucherHovered(false)}
-        hovered={publicHovered}
-        nowHovered={voucherHovered}
+        onMouseEnter={() => setDigitalHovered(true)}
+        onMouseLeave={() => setDigitalHovered(false)}
+        hovered={dashboardHovered}
+        nowHovered={digitalHovered}
+        width={20}
       />
       <HomeMainText
-        title="PUBLIC"
         idx={3}
-        onMouseEnter={() => setPublicHovered(true)}
-        onMouseLeave={() => setPublicHovered(false)}
-        nowHovered={publicHovered}
+        onMouseEnter={() => setDashboardHovered(true)}
+        onMouseLeave={() => setDashboardHovered(false)}
+        nowHovered={dashboardHovered}
+        width={42}
       />
+      <Container>
+        <div style={{width: '10vw'}}></div>
+        <TextContainer>
+          <Text>Marketing</Text>
+          <Text>Data Infographics</Text>
+        </TextContainer>
+        <CircleContainer>
+          <Circle src={circlesrc} alt="circle img" />
+          <CircleLogo src={logosrc} alt="circle logo img" />
+        </CircleContainer>
+      </Container>
     </MainSection>
   );
 }
@@ -54,15 +68,71 @@ const MainSection = styled.section`
   justify-content: center;
   align-items: center;
   line-height: 1;
-  margin-bottom: 7vw;
+  margin: 7vw 0;
 `;
 
-const SmallText = styled.p`
-  color: #ff5900;
+const SmallText = styled.img<{$hovered: boolean | undefined}>`
+  width: 12vw;
+  transition: transform 0.6s;
+  transform: ${(p) => (p.$hovered ? css`translateY(-6vw)` : css`translateY(0)`)};
+  margin: 1vw 0;
+`;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+`;
+
+const TextContainer = styled.div`
+  margin: 3.5vw 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, 0%);
+    width: 3.5vw;
+    height: 0.25vw;
+    background-color: #000;
+  }
+`;
+
+const Text = styled.p`
+  font-size: 1.5vw;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
   margin: 0;
-  font-weight: 600;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
-  font-family: 'Gotham';
-  font-size: 1vw;
+  margin-bottom: 0.5vw;
+
+  &:nth-child(1) {
+    margin-top: 3vw;
+  }
+`;
+
+const CircleContainer = styled.div`
+  position: relative;
+  margin: auto 0;
+  margin-right: 5vw;
+`;
+
+const CircleAnimation = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const Circle = styled.img`
+  width: 6vw;
+  animation: ${CircleAnimation} 7s linear infinite;
+`;
+
+const CircleLogo = styled.img`
+  position: absolute;
+  width: 3.5vw;
+  left: 0;
+  transform: translate(35%, 110%);
 `;
