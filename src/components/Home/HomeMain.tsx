@@ -100,7 +100,7 @@ const TextContainer = styled.div`
 
 const Text = styled.p`
   font-size: 1.5vw;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Satoshi';
   font-weight: 500;
   margin: 0;
   margin-bottom: 0.5vw;
