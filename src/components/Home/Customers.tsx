@@ -37,10 +37,22 @@ import svg34 from '../../assets/svg/hanssem.svg';
 import svg35 from '../../assets/svg/lotte.svg';
 import svg36 from '../../assets/svg/cd.svg';
 import svg37 from '../../assets/svg/jakorea.svg';
+import styled from 'styled-components';
 
 function Customers() {
   return (
     <section>
+      <BigText>Clients</BigText>
+      <MediumText>
+        에이프릴마치와 함께한
+        <br />
+        <BoldText>500+ 고객사</BoldText>
+      </MediumText>
+      <SmallText>
+        지난 8년간 500여개의 브랜드와 함께하며
+        <br />
+        쌓아온 노하우를 바탕으로 브랜드가 직면한 어려움을 해결해 드립니다.
+      </SmallText>
       <Marquee autoFill={true} direction="right" speed={20}>
         <ImageFlow srcSet={[svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg9, svg10]} />
       </Marquee>
@@ -58,3 +70,32 @@ function Customers() {
 }
 
 export default Customers;
+
+const BigText = styled.p`
+  margin-top: 10vw;
+  margin-bottom: 1.2vw;
+  font-family: 'Cardo';
+  font-size: 1.2vw;
+  color: #1c46f5;
+`;
+
+const MediumText = styled.p`
+  font-family: 'Pretendard-Light';
+  font-size: 2.3vw;
+  margin: 0;
+  margin-bottom: 1.5vw;
+  line-height: 1.4;
+`;
+
+const BoldText = styled.span`
+  font-family: 'Pretendard-SemiBold';
+`;
+
+const SmallText = styled.p`
+  font-family: 'Pretendard-Light';
+  font-size: 1.2vw;
+  margin: 0;
+  color: #555;
+  margin-bottom: 3vw;
+  line-height: 1.7;
+`;

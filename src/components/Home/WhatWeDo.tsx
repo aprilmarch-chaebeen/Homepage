@@ -1,6 +1,6 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
 import styled, {css} from 'styled-components';
-import arrowsrc from '../../assets/svg/arrow_outward_w.svg';
+import moresrc from '../../assets/svg/read_more.svg';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -20,11 +20,14 @@ function WhatWeDo() {
   return (
     <WhatWeDoSec>
       <BigText>What we do</BigText>
+      <MediumText>
+        고객사에 가장 최적화된 <br /> <BoldText>브랜딩을 제안합니다</BoldText>
+      </MediumText>
       <SmallText>디자인과 브랜딩을 향한 우리의 전문성과 열정, 진심의 영향력은 든든한 믿음과 새로운 기쁨을 전달합니다.</SmallText>
       <WhatWeDoFilter />
       <SlideCover></SlideCover>
       <PageNumberContainer>
-        <PageNumber>{nowIndex}</PageNumber>
+        <PageNumber>{nowIndex < 10 ? '0' + nowIndex : nowIndex}</PageNumber>
         <PageNumber>30</PageNumber>
       </PageNumberContainer>
       <SlideContainer
@@ -44,10 +47,10 @@ function WhatWeDo() {
         effect="coverflow"
         coverflowEffect={{
           rotate: 0,
-          stretch: 70,
-          depth: 250,
-          modifier: 0.8,
-          slideShadows: false,
+          stretch: 0.5,
+          depth: 100,
+          modifier: 3,
+          slideShadows: true,
         }}
         onSlideChange={(swiper) => handleSlideChange(swiper)}
       >
@@ -57,10 +60,10 @@ function WhatWeDo() {
           </Slide>
         ))}
       </SlideContainer>
-      <ViewMore>
-        <ViewText>View More</ViewText>
-        <Arrow src={arrowsrc} alt="Arrow" />
-      </ViewMore>
+      <Gradient></Gradient>
+      <ReadMoreBtn>
+        <ReadMore src={moresrc} alt="read more button" />
+      </ReadMoreBtn>
     </WhatWeDoSec>
   );
 }
@@ -71,19 +74,33 @@ const WhatWeDoSec = styled.section`
   position: relative;
 `;
 
-const BigText = styled.h3`
-  margin-top: 12vw;
-  margin-bottom: 2vw;
-  font-family: 'Gotham';
-  font-size: 2.8vw;
+const BigText = styled.p`
+  margin-top: 15vw;
+  margin-bottom: 1.2vw;
+  font-family: 'Cardo';
+  font-size: 1.2vw;
+  color: #1c46f5;
+`;
+
+const MediumText = styled.p`
+  font-family: 'Pretendard-Light';
+  font-size: 2.3vw;
+  margin: 0;
+  margin-bottom: 1.5vw;
+  line-height: 1.4;
+`;
+
+const BoldText = styled.span`
+  font-family: 'Pretendard-SemiBold';
 `;
 
 const SmallText = styled.p`
   font-family: 'Pretendard-Light';
-  font-size: 1vw;
+  font-size: 1.2vw;
   margin: 0;
   color: #555;
 `;
+
 const SlideCover = styled.div`
   background-color: #fff;
   width: 100vw;
@@ -94,7 +111,7 @@ const SlideCover = styled.div`
 `;
 
 const PageNumberContainer = styled.div`
-  width: 54.5vw;
+  width: 56vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,10 +119,10 @@ const PageNumberContainer = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 0.9vw;
-  top: 72.5%;
+  top: 66.1%;
   z-index: 12;
 
-  @media (max-width: 1024px) {
+  /* @media (max-width: 1024px) {
     top: 73.2%;
   }
   @media (max-width: 600px) {
@@ -119,12 +136,14 @@ const PageNumberContainer = styled.div`
   }
   @media (max-width: 360px) {
     top: 73.4%;
-  }
+  } */
 `;
 
 const SlideContainer = styled(Swiper)`
-  width: 97vw;
-  height: 25vw;
+  width: 100vw;
+  height: 33vw;
+  position: relative;
+
   & .swiper-wrapper {
     margin-bottom: 3rem;
   }
@@ -136,17 +155,17 @@ const SlideContainer = styled(Swiper)`
   }
 
   & .swiper-button-prev::after {
-    font-size: 1vw !important;
+    font-size: 0.9vw !important;
     color: #000;
     position: absolute;
-    left: 18vw;
+    left: 19vw;
   }
 
   & .swiper-button-next::after {
-    font-size: 1vw !important;
+    font-size: 0.9vw !important;
     color: #000 !important;
     position: absolute;
-    right: 18vw;
+    right: 19vw;
   }
 
   & .swiper-pagination-progressbar {
@@ -182,6 +201,7 @@ const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
   height: 20vw;
   width: 20vw;
   object-fit: cover;
+  border-radius: 10px;
   ${(p) =>
     p.$idx === p.$nowIdx &&
     css`
@@ -192,22 +212,34 @@ const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
     `}
 `;
 
+const Gradient = styled.div`
+  width: 100vw;
+  position: absolute;
+  height: 20vw;
+  top: 30%;
+  z-index: 1;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.8) 5%,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0) 90%,
+    rgba(255, 255, 255, 0.8) 95%,
+    rgba(255, 255, 255, 1) 100%
+  );
+`;
+
 const PageNumber = styled.span``;
 
-const ViewMore = styled.button`
+const ReadMoreBtn = styled.button`
   border: none;
-  background-color: #000;
+  background-color: transparent;
   color: #fff;
-  padding: 0.7vw 1.5vw;
-  border-radius: 8px;
   margin-top: 3vw;
   margin-bottom: 7vw;
   cursor: pointer;
-  font-size: 1vw;
 `;
 
-const ViewText = styled.span``;
-
-const Arrow = styled.img`
-  width: 1vw;
+const ReadMore = styled.img`
+  width: 11.5vw;
 `;
