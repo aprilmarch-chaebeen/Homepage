@@ -1,4 +1,4 @@
-import identitysrc from '../../assets/svg/identity.svg';
+import identitysrc from '../../assets/svg/identity_1.svg';
 import besrc from '../../assets/svg/brand_experience.svg';
 import trendsrc from '../../assets/svg/trend_insight.svg';
 import websrc from '../../assets/svg/web_build.svg';
