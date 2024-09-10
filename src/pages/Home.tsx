@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import WhatWeDo from '../components/Home/WhatWeDo';
 import Customers from '../components/Home/Customers';
 import HowItWorks from '../components/Home/HowItWorks';
-import HomeContact from '../components/Home/HomeContact';
-import HomeLook from '../components/Home/HomeLook';
 import HomeExpertise from '../components/Home/HomeExpertise';
 import HomeJourney from '../components/Home/HomeJourney';
-import HomeAbout from '../components/Home/HomeAbout';
 import HomeFooter from '../components/Home/HomeFooter';
 import FlowText from '../components/Home/FlowText';
+import HomeField from '../components/Home/HomeField';
+import HomeJoy from '../components/Home/HomeJoy';
 
 function Home() {
   return (
@@ -19,11 +18,10 @@ function Home() {
       <Customers />
       <HowItWorks />
       <FlowText />
-      <HomeContact />
-      <HomeLook />
+      <HomeField />
+      <HomeJoy />
       <HomeExpertise />
       <HomeJourney />
-      <HomeAbout />
       <HomeFooter />
     </HomeSection>
   );
