@@ -1,16 +1,86 @@
 import styled from 'styled-components';
-// import { motion } from 'framer-motion';
 import imgsrc from '../../assets/svg/howitworks.svg';
+import gsap from 'gsap';
+import {useGSAP} from '@gsap/react';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useRef} from 'react';
 
-// const transition = {
-//   ease: 'easeInOut',
-//   duration: 5,
-//   y: {duration: 1},
-// };
+gsap.registerPlugin(ScrollTrigger);
 
 function HowItWorks() {
+  const containerRef = useRef<HTMLElement>(null);
+  const stepsRef = useRef<HTMLDivElement[] | null[]>([]);
+  const linesRef = useRef<HTMLElement[] | null[]>([]);
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        containerRef.current,
+        {scale: 0.3, borderRadius: 500, ease: 'none'},
+        {
+          scale: 1,
+          borderRadius: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            pin: false,
+            scrub: 1,
+            start: 'top top',
+          },
+        }
+      );
+    },
+    {scope: containerRef}
+  );
+
+  useGSAP(
+    () => {
+      stepsRef.current.forEach((step, index) => {
+        gsap.fromTo(
+          step,
+          {color: '#727272', scale: 0.5},
+          {
+            color: '#fff',
+            scale: 1,
+            duration: 1,
+            delay: index * 3,
+            scrollTrigger: {
+              trigger: step,
+              toggleActions: 'play none none none',
+              start: 'top top',
+            },
+          }
+        );
+      });
+    },
+    {scope: containerRef}
+  );
+
+  useGSAP(
+    () => {
+      linesRef.current.forEach((line, index) => {
+        gsap.fromTo(
+          line,
+          {backgroundColor: '#727272', scaleX: 0, transformOrigin: 'left'},
+          {
+            backgroundColor: '#fff',
+            scaleX: 1,
+            duration: 1,
+            delay: index * 3,
+            scrollTrigger: {
+              trigger: line,
+              toggleActions: 'play none none none',
+              start: 'top top',
+            },
+          }
+        );
+      });
+    },
+    {scope: containerRef}
+  );
+
   return (
-    <WorkSection>
+    <WorkSection ref={containerRef}>
       <OuterContainer>
         <Img src={imgsrc} />
         <InnerContainer1>
@@ -19,32 +89,36 @@ function HowItWorks() {
             고객사를 위한 <BoldText>Full Service Creative</BoldText>
           </BigText>
           <InnerContainer2>
-            <InnerContainer3>
+            <InnerContainer3 ref={(el) => (stepsRef.current[0] = el)}>
               <Step>Step 1</Step>
+              <Line ref={(el) => (linesRef.current[0] = el)} />
               <StepText>
                 마케팅
                 <br />
                 상담 진단
               </StepText>
             </InnerContainer3>
-            <InnerContainer3>
+            <InnerContainer3 ref={(el) => (stepsRef.current[1] = el)}>
               <Step>Step 2</Step>
+              <Line ref={(el) => (linesRef.current[1] = el)} />
               <StepText>
                 전략적인
                 <br />
                 브랜드 컨설팅
               </StepText>
             </InnerContainer3>
-            <InnerContainer3>
+            <InnerContainer3 ref={(el) => (stepsRef.current[2] = el)}>
               <Step>Step 3</Step>
+              <Line ref={(el) => (linesRef.current[2] = el)} />
               <StepText>
                 맞춤형
                 <br />
                 최적화 디자인
               </StepText>
             </InnerContainer3>
-            <InnerContainer3>
+            <InnerContainer3 ref={(el) => (stepsRef.current[3] = el)}>
               <Step>Step 4</Step>
+              <Line ref={(el) => (linesRef.current[3] = el)} />
               <StepText>
                 꼼꼼한
                 <br />
@@ -67,6 +141,7 @@ const WorkSection = styled.section`
   color: #fff;
   padding-bottom: 0;
   width: 100vw;
+  height: 32vw;
   position: relative;
 `;
 
@@ -87,6 +162,7 @@ const InnerContainer2 = styled.div`
 const Img = styled.img`
   width: 35%;
   object-fit: cover;
+  height: 32vw;
 `;
 
 const SmallText = styled.p`
@@ -116,16 +192,16 @@ const Step = styled.p`
   font-size: 1.2vw;
   position: relative;
   font-family: 'Gotham-Light';
+`;
 
-  &::after {
-    content: '';
-    position: absolute;
-    width: 12vw;
-    height: 0.1vw;
-    background-color: #727272;
-    left: 0;
-    top: 130%;
-  }
+const Line = styled.hr`
+  position: absolute;
+  width: 12vw;
+  height: 0.01vw;
+  background-color: #727272;
+  left: 0;
+  top: 25%;
+  border: none;
 `;
 
 const StepText = styled.p`
