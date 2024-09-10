@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import ExpertiseText from './ExpertiseText';
 import ExpertiseContent from './ExpertiseContent';
 
 function HomeExpertise() {
   return (
     <ExpertiseSection>
-      <ExpertiseText />
       <ExpertiseContent />
     </ExpertiseSection>
   );
@@ -14,7 +12,7 @@ function HomeExpertise() {
 export default HomeExpertise;
 
 const ExpertiseSection = styled.section`
-  background-color: #ff5900;
+  background-color: #f6f6f6;
   padding-top: 20vw;
   overflow: hidden;
   text-align: left;

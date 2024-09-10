@@ -79,7 +79,6 @@ function ExpertiseContent() {
           </motion.div>
           <Content>MANAGE</Content>
         </LineContent>
-        <SmallText>DESIGN</SmallText>
       </LineContainer>
     </ContentSection>
   );
@@ -89,7 +88,7 @@ export default ExpertiseContent;
 
 const ContentSection = styled.div`
   position: relative;
-  padding-top: 24vw;
+  padding-top: 10vw;
 `;
 
 const ExpertLine = styled.img`
@@ -105,7 +104,7 @@ const LineContainer = styled.div`
   width: 90vw;
   height: 51vw;
 
-  &::before {
+  /* &::before {
     position: absolute;
     top: 3.2vw;
     left: 7.9vw;
@@ -113,7 +112,7 @@ const LineContainer = styled.div`
     width: 0.9vw;
     height: 0.9vw;
     background: url(${plussrc}) no-repeat center / cover;
-  }
+  } */
 `;
 
 const LineContent = styled.div<{$left?: number; $bottom: number; $right?: number}>`
@@ -130,7 +129,7 @@ const LineContent = styled.div<{$left?: number; $bottom: number; $right?: number
 
 const Line = styled.div<{$height: number}>`
   width: 0.05vw;
-  background-color: #000;
+  background-color: #1c46f5;
   margin: 1.4vw auto 2.1vw;
   height: ${(p) => p.$height}vw;
 `;
@@ -138,18 +137,11 @@ const Line = styled.div<{$height: number}>`
 const Ratio = styled.span`
   font-size: 1.25vw;
   font-family: 'Gotham';
+  color: #1c46f5;
 `;
 
 const Content = styled.span`
   font-size: 0.8vw;
   transform: rotate(-90deg) translateX(1.5625vw);
-`;
-
-const SmallText = styled.span`
-  position: absolute;
-  font-family: 'Pretendard-Bold';
-  right: -1vw;
-  top: -3vw;
-  font-size: 1.5vw;
-  transform: rotate(90deg) translateX(1.5625vw);
+  color: #1c46f5;
 `;
