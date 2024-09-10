@@ -15,13 +15,7 @@ function FieldCategory({title, text, onClick, clicked}: FieldCategoryProps) {
   return (
     <Container onClick={onClick} $clicked={clicked}>
       <div style={{display: 'flex', justifyContent: 'end'}}>
-        <Button>
-          {clicked ? (
-            <ButtonImg src={gobtnsrc} alt="button" $clicked={clicked} />
-          ) : (
-            <ButtonImg src={nobtnsrc} alt="button" $clicked={clicked} />
-          )}
-        </Button>
+        <Button>{clicked ? <ButtonImg src={gobtnsrc} alt="button" /> : <ButtonImg src={nobtnsrc} alt="button" />}</Button>
       </div>
       <InnerContainer1>
         <Star src={starsrc} alt="star img" />
@@ -43,6 +37,7 @@ const Container = styled.div<{$clicked: boolean}>`
   padding: 1.5vw 1.5vw 1.5vw 4.5vw;
   border-bottom: solid #999 0.1vw;
   cursor: pointer;
+  height: 11.5vw;
 
   &:hover {
     background-color: #d2ff52;
@@ -55,8 +50,8 @@ const Button = styled.button`
   border: none;
 `;
 
-const ButtonImg = styled.img<{$clicked: boolean}>`
-  width: ${(p) => (p.$clicked ? 3.3 : 2.5)}vw;
+const ButtonImg = styled.img`
+  width: 2.5vw;
 `;
 
 const InnerContainer1 = styled.div`
