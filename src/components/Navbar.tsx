@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import logosrc from '../assets/svg/BI_logo.svg';
-import contactsrc from '../assets/svg/contact.svg';
+import naviconsrc from '../assets/svg/nav_icon.svg';
 
 function Navbar() {
   return (
@@ -10,9 +10,7 @@ function Navbar() {
         <Logo src={logosrc} alt="Main Logo" />
       </GoToPage>
       <List>
-        <ListItem>
-          <GoToPage to="/">About us</GoToPage>
-        </ListItem>
+        <Icon src={naviconsrc} alt="nav icon" />
         <ListItem>
           <GoToPage to="/">포트폴리오</GoToPage>
         </ListItem>
@@ -25,10 +23,14 @@ function Navbar() {
         <ListItem>
           <GoToPage to="/">공공기관 대학</GoToPage>
         </ListItem>
+        <ListItem>
+          <GoToPage to="/">IT 대시보드</GoToPage>
+        </ListItem>
+        <ListItem>
+          <GoToPage to="/">About us</GoToPage>
+        </ListItem>
       </List>
-      <ContactBtn>
-        <Contact src={contactsrc} alt="contact button" />
-      </ContactBtn>
+      <div style={{width: '10vw'}}></div>
     </Nav>
   );
 }
@@ -42,40 +44,32 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled.img`
-  width: 11vw;
+  width: 10vw;
 `;
 
 const List = styled.ul`
   display: flex;
   align-items: center;
-  gap: 4.5vw;
-  padding: 0;
+  gap: 2vw;
+  padding: 0.5vw 1vw 0.5vw 0.6vw;
+  background-color: #f2f2f2;
+  border-radius: 3vw;
 `;
 
 const ListItem = styled.li`
   list-style: none;
   font-size: 0.9vw;
+`;
 
-  &:nth-child(5) {
-    font-family: 'Gotham';
-  }
+const Icon = styled.img`
+  width: 2vw;
 `;
 
 const GoToPage = styled(Link)`
   text-decoration: none;
   color: #000;
   font-weight: 600;
-  font-family: 'S-CoreDream-3Light';
-`;
-
-const ContactBtn = styled.button`
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`;
-
-const Contact = styled.img`
-  width: 7vw;
+  font-family: 'Pretendard-Light';
 `;
 
 export default Navbar;
