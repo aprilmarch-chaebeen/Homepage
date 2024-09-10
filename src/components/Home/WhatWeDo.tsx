@@ -119,7 +119,7 @@ const PageNumberContainer = styled.div`
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 0.9vw;
-  top: 66.1%;
+  top: 69%;
   z-index: 12;
 
   /* @media (max-width: 1024px) {
@@ -216,7 +216,7 @@ const Gradient = styled.div`
   width: 100vw;
   position: absolute;
   height: 20vw;
-  top: 30%;
+  top: 35%;
   z-index: 1;
   background: linear-gradient(
     to left,
@@ -235,7 +235,6 @@ const ReadMoreBtn = styled.button`
   border: none;
   background-color: transparent;
   color: #fff;
-  margin-top: 3vw;
   margin-bottom: 7vw;
   cursor: pointer;
 `;
