@@ -1,160 +1,59 @@
 import styled from 'styled-components';
-import biglogosrc from '../../assets/svg/big_logo.svg';
-import {motion} from 'framer-motion';
+// import { motion } from 'framer-motion';
+import imgsrc from '../../assets/svg/howitworks.svg';
 
-const transition = {
-  ease: 'easeInOut',
-  duration: 5,
-  y: {duration: 1},
-};
+// const transition = {
+//   ease: 'easeInOut',
+//   duration: 5,
+//   y: {duration: 1},
+// };
 
 function HowItWorks() {
   return (
     <WorkSection>
-      <MediumText>진행과정</MediumText>
-      <BigText>
-        How it
-        <br />
-        Works
-      </BigText>
-      <MediumText>
-        에이프릴마치는
-        <br />
-        디자인, 브랜딩, 마케팅 캠페인에 이르는 Full Service Creative를 창출하여 고객사를 지원합니다.
-      </MediumText>
-      <Steps>
-        <StepContainer $top={70} $left={0}>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 0.3}}
-          >
-            <Step>
-              01
-              <br />
-              Brand Concepting
-            </Step>
-            <Line $border={0.1} $width={24} $margin_top={0.5} $margin_btm={0.6} />
-          </motion.div>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 0.4}}
-          >
-            <StepTitle>브랜드스러움에 대한 고민</StepTitle>
-          </motion.div>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 0.5}}
-          >
-            <StepDescript>
-              Brand Strategy
-              <br />
-              Customer Experience
-              <br />
-              Brand slogan & Visual Identity
-              <br />
-              Space Concept
-            </StepDescript>
-          </motion.div>
-        </StepContainer>
-        <StepContainer $top={50} $left={28}>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 0.65}}
-          >
-            <Step>
-              02
-              <br />
-              Brand Experience Design
-            </Step>
-            <Line $border={0.1} $width={29} $margin_top={0.6} $margin_btm={0.6} />
-          </motion.div>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 0.75}}
-          >
-            <StepTitle>브랜드 경험에 대한 A부터 Z까지</StepTitle>
-          </motion.div>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 0.85}}
-          >
-            <StepDescript>
-              Brand Experience Design
-              <br />
-              Space Design & Experience
-              <br />
-              Motion & Sensory Identity
-              <br />
-              Brand Behavior System
-            </StepDescript>
-          </motion.div>
-        </StepContainer>
-        <StepContainer $top={-10} $left={60}>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 1}}
-          >
-            <Step>
-              03
-              <br />
-              Creative & Activation
-            </Step>
-          </motion.div>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 1.1}}
-          >
-            <Line $border={1.1} $width={45} $margin_top={0.7} $margin_btm={0} />
-            <Line $border={0.6} $width={45} $margin_top={1.5} $margin_btm={0} />
-            <Line $border={0.3} $width={45} $margin_top={2} $margin_btm={0} />
-            <Line $border={0.2} $width={45} $margin_top={2.4} $margin_btm={0} />
-            <Line $border={0.1} $width={45} $margin_top={3} $margin_btm={1} />
-          </motion.div>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 1.2}}
-          >
-            <StepTitle>전략적 마케팅에 대한 제안과 리딩</StepTitle>
-          </motion.div>
-          <motion.div
-            initial={{opacity: 0, y: 80}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: false}}
-            transition={{transition, delay: 1.3}}
-          >
-            <StepDescript>
-              Brand Communication
-              <br />
-              Branded Contents
-              <br />
-              Digital Marketing
-              <br />
-              Advertising
-              <br />
-              Training & Education
-            </StepDescript>
-          </motion.div>
-        </StepContainer>
-      </Steps>
-      <BigLogo src={biglogosrc} alt="big logo" />
+      <OuterContainer>
+        <Img src={imgsrc} />
+        <InnerContainer1>
+          <SmallText>How it Works</SmallText>
+          <BigText>
+            고객사를 위한 <BoldText>Full Service Creative</BoldText>
+          </BigText>
+          <InnerContainer2>
+            <InnerContainer3>
+              <Step>Step 1</Step>
+              <StepText>
+                마케팅
+                <br />
+                상담 진단
+              </StepText>
+            </InnerContainer3>
+            <InnerContainer3>
+              <Step>Step 2</Step>
+              <StepText>
+                전략적인
+                <br />
+                브랜드 컨설팅
+              </StepText>
+            </InnerContainer3>
+            <InnerContainer3>
+              <Step>Step 3</Step>
+              <StepText>
+                맞춤형
+                <br />
+                최적화 디자인
+              </StepText>
+            </InnerContainer3>
+            <InnerContainer3>
+              <Step>Step 4</Step>
+              <StepText>
+                꼼꼼한
+                <br />
+                케어 시스템
+              </StepText>
+            </InnerContainer3>
+          </InnerContainer2>
+        </InnerContainer1>
+      </OuterContainer>
     </WorkSection>
   );
 }
@@ -163,74 +62,73 @@ export default HowItWorks;
 
 const WorkSection = styled.section`
   background-color: #050505;
-  padding: 8vw 7vw;
   text-align: left;
   margin-top: 10vw;
   color: #fff;
   padding-bottom: 0;
   width: 100vw;
-  height: 59.5vw;
   position: relative;
 `;
 
-const MediumText = styled.p`
+const OuterContainer = styled.div`
+  display: flex;
+`;
+
+const InnerContainer1 = styled.div`
+  padding: 4.5vw 5.5vw;
+  width: 65%;
+`;
+
+const InnerContainer2 = styled.div`
+  display: flex;
+  color: #727272;
+`;
+
+const Img = styled.img`
+  width: 35%;
+  object-fit: cover;
+`;
+
+const SmallText = styled.p`
+  color: #d2ff52;
   font-size: 1.2vw;
-  font-family: 'Pretendard-Regular';
+  font-family: 'Cardo';
   margin: 0;
-  line-height: 1.6;
 `;
 
 const BigText = styled.h2`
-  font-family: 'Gotham';
-  margin-top: 0.7vw;
-  margin-bottom: 2vw;
+  font-family: 'Pretendard-ExtraLight';
+  margin-top: 1.2vw;
+  margin-bottom: 10vw;
   line-height: 1.1;
-  font-size: 4vw;
+  font-size: 2.3vw;
 `;
 
-const Steps = styled.div`
-  position: relative;
-  height: 20vw;
+const BoldText = styled.span`
+  font-family: 'Pretendard-SemiBold';
 `;
 
-const StepContainer = styled.div<{$top: number; $left: number}>`
-  position: absolute;
-  top: ${(p) => p.$top}%;
-  left: ${(p) => p.$left}%;
+const InnerContainer3 = styled.div`
+  width: 25%;
 `;
 
 const Step = styled.p`
-  font-size: 1.5vw;
-  font-family: 'Gotham-light';
-  margin: 0;
-  line-height: 1.1;
+  font-size: 1.2vw;
+  position: relative;
+  font-family: 'Gotham-Light';
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 12vw;
+    height: 0.1vw;
+    background-color: #727272;
+    left: 0;
+    top: 130%;
+  }
 `;
 
-const Line = styled.hr<{$border: number; $width?: number; $margin_top: number; $margin_btm: number}>`
-  border: 0;
-  height: 0;
-  border-top: ${(p) => p.$border}vw solid;
-  width: ${(p) => p.$width}vw;
-  margin-top: ${(p) => p.$margin_top}vw;
-  margin-bottom: ${(p) => p.$margin_btm}vw;
-`;
-
-const StepTitle = styled.h3`
-  font-family: 'GmarketSansMedium';
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 2vw;
-`;
-
-const StepDescript = styled.p`
-  font-family: 'Pretendard-Regular';
-  font-size: 1vw;
-  line-height: 1.9;
-`;
-
-const BigLogo = styled.img`
-  height: 12vw;
-  position: absolute;
-  top: 57.5vw;
-  left: 65.5vw;
+const StepText = styled.p`
+  font-size: 1.7vw;
+  font-family: 'Pretendard-SemiBold';
 `;
