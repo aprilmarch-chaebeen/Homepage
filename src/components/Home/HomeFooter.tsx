@@ -11,6 +11,10 @@ import emailsrc from '../../assets/svg/e-mail.svg';
 function HomeFooter() {
   const [upHovered, setUpHovered] = useState(false);
 
+  const handleUpClicked = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
   return (
     <Footer>
       <Circle src={circlebsrc} alt="blue circle" />
@@ -41,7 +45,7 @@ function HomeFooter() {
         <Info>E.cyj@aprilmarch.design</Info>
         <Info>Seoul, Songpa-gu, Songpa-Daero 167, TERRA tower building A</Info>
       </InfoContainer>
-      <Up onMouseEnter={() => setUpHovered(true)} onMouseLeave={() => setUpHovered(false)}>
+      <Up onMouseEnter={() => setUpHovered(true)} onMouseLeave={() => setUpHovered(false)} onClick={handleUpClicked}>
         {upHovered ? <Arrow src={upbsrc} alt="up black" /> : <Arrow src={upwsrc} alt="up white" />}
       </Up>
       <Statue src={statuesrc} alt="statue img" />
