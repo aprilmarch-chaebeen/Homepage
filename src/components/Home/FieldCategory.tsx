@@ -3,6 +3,7 @@ import nobtnsrc from '../../assets/svg/no_btn.svg';
 import starsrc from '../../assets/svg/star_b.svg';
 import smallsrc from '../../assets/svg/small_creativity.svg';
 import gobtnsrc from '../../assets/svg/go_btn.svg';
+import {useState} from 'react';
 
 interface FieldCategoryProps {
   title: string;
@@ -12,10 +13,12 @@ interface FieldCategoryProps {
 }
 
 function FieldCategory({title, text, onClick, clicked}: FieldCategoryProps) {
+  const [hovered, setHovered] = useState(false);
+
   return (
-    <Container onClick={onClick} $clicked={clicked}>
+    <Container onClick={onClick} $clicked={clicked} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       <div style={{display: 'flex', justifyContent: 'end'}}>
-        <Button>{clicked ? <ButtonImg src={gobtnsrc} alt="button" /> : <ButtonImg src={nobtnsrc} alt="button" />}</Button>
+        <Button>{clicked || hovered ? <ButtonImg src={gobtnsrc} alt="button" /> : <ButtonImg src={nobtnsrc} alt="button" />}</Button>
       </div>
       <InnerContainer1>
         <Star src={starsrc} alt="star img" />
