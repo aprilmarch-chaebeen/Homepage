@@ -151,7 +151,7 @@ const SlideContainer = styled(Swiper)`
   & .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    top: 23.4vw;
+    top: 23.2vw;
   }
 
   & .swiper-button-prev::after {
