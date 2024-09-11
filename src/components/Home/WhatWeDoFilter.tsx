@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import styled, {css} from 'styled-components';
 import checksrc from '../../assets/svg/check.svg';
-import cursorsrc from '../../assets/svg/cursor.svg';
 
 function WhatWeDoFilter() {
   const [nowFilter, setNowFilter] = useState('all');
@@ -73,7 +72,6 @@ const FilterBtn = styled.button<{$clicked: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: url(${cursorsrc}), pointer;
   ${(p) =>
     p.$clicked &&
     css`

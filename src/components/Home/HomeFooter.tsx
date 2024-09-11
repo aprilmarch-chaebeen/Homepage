@@ -7,7 +7,6 @@ import statuesrc from '../../assets/svg/statue_g.svg';
 import {useState} from 'react';
 import Marquee from 'react-fast-marquee';
 import emailsrc from '../../assets/svg/e-mail.svg';
-import cursorsrc from '../../assets/svg/cursor.svg';
 
 function HomeFooter() {
   const [upHovered, setUpHovered] = useState(false);
@@ -120,7 +119,6 @@ const Up = styled.button`
   border: none;
   top: 47%;
   right: 8%;
-  cursor: url(${cursorsrc}), pointer;
   &:hover {
     background-color: #d2ff52;
   }

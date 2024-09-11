@@ -7,7 +7,6 @@ import Support from './pages/Support';
 import About from './pages/About';
 import styled from 'styled-components';
 import MouseStalker from './components/MouseStalker';
-import cursorsrc from './assets/svg/cursor.svg';
 import {useRef} from 'react';
 
 function App() {
@@ -32,5 +31,4 @@ export default App;
 
 const AppSection = styled.section`
   height: 100vh;
-  cursor: url(${cursorsrc}), pointer;
 `;

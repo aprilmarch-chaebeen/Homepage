@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import fieldsrc from '../../assets/svg/field_img.svg';
-import cursorsrc from '../../assets/svg/cursor_img.svg';
 
 interface FieldDescriptProps {
   descript: string[];
@@ -55,5 +54,4 @@ const Img = styled.img`
   border-radius: 1vw;
   width: 42vw;
   box-sizing: border-box;
-  cursor: url(${cursorsrc}), pointer;
 `;

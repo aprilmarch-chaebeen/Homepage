@@ -1,4 +1,5 @@
 import {forwardRef, useEffect, useImperativeHandle, useRef} from 'react';
+import cursorsrc from '../assets/svg/cursor.svg';
 import stalker1src from '../assets/svg/stalker1.svg';
 import stalekr2src from '../assets/svg/stalker2.svg';
 import gsap from 'gsap';
@@ -45,8 +46,8 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
 
     const onMove = ({clientX, clientY}: MouseEvent) => {
       const rect = container.getBoundingClientRect();
-      const x = clientX - rect.left;
-      const y = clientY - rect.top;
+      const x = clientX - rect.left + 2;
+      const y = clientY - rect.top + 2;
 
       circlesRef.current.forEach((ref) => ref.moveTo(x, y));
     };
@@ -64,6 +65,7 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
 
   return (
     <div>
+      <Circle ref={addCircleRef} src={cursorsrc} delay={0} />
       <Circle ref={addCircleRef} src={stalker1src} delay={0.1} />
       <Circle ref={addCircleRef} src={stalekr2src} delay={0.2} />
     </div>
