@@ -25,7 +25,8 @@ function HowItWorks() {
             trigger: containerRef.current,
             pin: false,
             scrub: 1,
-            start: 'top top',
+            start: 'top -10%',
+            end: 'top 25%',
           },
         }
       );
@@ -43,11 +44,11 @@ function HowItWorks() {
             color: '#fff',
             scale: 1,
             duration: 1,
-            delay: index * 3,
+            delay: index * 2 + 1,
             scrollTrigger: {
               trigger: step,
               toggleActions: 'play none none none',
-              start: 'top top',
+              start: 'top 25%',
             },
           }
         );
@@ -66,11 +67,11 @@ function HowItWorks() {
             backgroundColor: '#fff',
             scaleX: 1,
             duration: 1,
-            delay: index * 3,
+            delay: index * 2 + 1,
             scrollTrigger: {
               trigger: line,
               toggleActions: 'play none none none',
-              start: 'top top',
+              start: 'top 25%',
             },
           }
         );
