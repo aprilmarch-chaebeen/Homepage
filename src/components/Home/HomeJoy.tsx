@@ -30,11 +30,10 @@ function HomeJoy() {
             scrollTrigger: {
               trigger: svg,
               start: 'top top',
-
               scrub: true,
             },
           })
-          .from(svg, {opacity: 0, transformOrigin: 'left'});
+          .from(svg, {opacity: 0, duration: 5});
       });
     },
     {scope: svgsRef}
@@ -140,7 +139,6 @@ const CircleContainer = styled.div`
   position: relative;
   margin: auto 0;
   margin-right: 5vw;
-  cursor: pointer;
 `;
 
 const CircleAnimation = keyframes`

@@ -1,6 +1,7 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
 import styled, {css} from 'styled-components';
 import moresrc from '../../assets/svg/read_more.svg';
+import cursorsrc from '../../assets/svg/cursor.svg';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -245,6 +246,7 @@ const ReadMoreBtn = styled.button`
   background-color: transparent;
   color: #fff;
   margin-bottom: 7vw;
+  cursor: url(${cursorsrc}), pointer;
 `;
 
 const ReadMore = styled.img`

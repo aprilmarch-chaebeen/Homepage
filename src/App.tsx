@@ -6,10 +6,16 @@ import Voucher from './pages/Voucher';
 import Support from './pages/Support';
 import About from './pages/About';
 import styled from 'styled-components';
+import MouseStalker from './components/MouseStalker';
+import cursorsrc from './assets/svg/cursor.svg';
+import {useRef} from 'react';
 
 function App() {
+  const sectionRef = useRef<HTMLElement>(null);
+
   return (
-    <AppSection>
+    <AppSection ref={sectionRef}>
+      <MouseStalker containerRef={sectionRef} />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,4 +32,5 @@ export default App;
 
 const AppSection = styled.section`
   height: 100vh;
+  cursor: url(${cursorsrc}), pointer;
 `;

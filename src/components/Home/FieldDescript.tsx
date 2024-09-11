@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import fieldsrc from '../../assets/svg/field_img.svg';
-import cursorsrc from '../../assets/svg/cursor.svg';
+import cursorsrc from '../../assets/svg/cursor_img.svg';
 
 interface FieldDescriptProps {
   descript: string[];
