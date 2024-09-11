@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import logosrc from '../assets/svg/BI_logo.svg';
-import naviconsrc from '../assets/svg/nav_icon.svg';
+import naviconsrc from '../assets/svg/star.svg';
 
 function Navbar() {
   return (
@@ -10,7 +10,9 @@ function Navbar() {
         <Logo src={logosrc} alt="Main Logo" />
       </GoToPage>
       <List>
-        <Icon src={naviconsrc} alt="nav icon" />
+        <Circle>
+          <Icon src={naviconsrc} alt="nav icon" />
+        </Circle>
         <ListItem>
           <GoToPage to="/">포트폴리오</GoToPage>
         </ListItem>
@@ -61,8 +63,28 @@ const ListItem = styled.li`
   font-size: 0.9vw;
 `;
 
-const Icon = styled.img`
+const IconAnimation = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const Circle = styled.div`
   width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  background-color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Icon = styled.img`
+  width: 1vw;
+  animation: ${IconAnimation} 7s linear infinite;
 `;
 
 const GoToPage = styled(Link)`
