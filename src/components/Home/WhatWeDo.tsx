@@ -34,11 +34,11 @@ function WhatWeDo() {
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        //   pauseOnMouseEnter: true,
+        // }}
         pagination={{
           type: 'progressbar',
         }}
@@ -60,7 +60,8 @@ function WhatWeDo() {
           </Slide>
         ))}
       </SlideContainer>
-      <Gradient></Gradient>
+      <GradientRight></GradientRight>
+      <GradientLeft></GradientLeft>
       <ReadMoreBtn>
         <ReadMore src={moresrc} alt="read more button" />
       </ReadMoreBtn>
@@ -143,6 +144,7 @@ const SlideContainer = styled(Swiper)`
   width: 100vw;
   height: 33vw;
   position: relative;
+  cursor: pointer;
 
   & .swiper-wrapper {
     margin-bottom: 3rem;
@@ -191,8 +193,10 @@ const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
     p.$idx === p.$nowIdx &&
     css`
       &:hover {
-        width: 31vw !important;
-        transition: width 0.5s ease-in-out !important;
+        /* width: 31vw !important; */
+        /* transition: width 0.5s ease-in-out !important; */
+        transform: scaleX(1.6) scaleY(1.65);
+        transition: transform 0.5s ease-in-out !important;
       }
     `}
 `;
@@ -206,27 +210,33 @@ const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
     p.$idx === p.$nowIdx &&
     css`
       &:hover {
-        width: 31vw !important;
-        transition: width 0.5s ease-in-out !important;
+        /* width: 31vw !important; */
+        /* transition: width 0.5s ease-in-out !important; */
+        transform: scaleX(1.6) scaleY(1.65);
+        transition: transform 0.5s ease-in-out !important;
+        object-fit: contain;
       }
     `}
 `;
 
-const Gradient = styled.div`
-  width: 100vw;
+const GradientRight = styled.div`
+  width: 15vw;
   position: absolute;
   height: 20vw;
   top: 35%;
+  right: 0;
   z-index: 1;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.8) 5%,
-    rgba(255, 255, 255, 0) 10%,
-    rgba(255, 255, 255, 0) 90%,
-    rgba(255, 255, 255, 0.8) 95%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+`;
+
+const GradientLeft = styled.div`
+  width: 15vw;
+  position: absolute;
+  height: 20vw;
+  top: 35%;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
 `;
 
 const PageNumber = styled.span``;
