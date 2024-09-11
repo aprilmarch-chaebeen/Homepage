@@ -72,7 +72,7 @@ function Customers() {
 export default Customers;
 
 const BigText = styled.p`
-  margin-top: 10vw;
+  margin-top: 17vw;
   margin-bottom: 1.2vw;
   font-family: 'Cardo';
   font-size: 1.2vw;
