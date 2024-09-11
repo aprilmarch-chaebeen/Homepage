@@ -19,7 +19,7 @@ const JourneySection = styled.section`
   padding: 13vw 0;
   height: 90vw;
   position: relative;
-  z-index: -2;
+  z-index: 0;
 `;
 
 const Line = styled.hr`
