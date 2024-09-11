@@ -36,7 +36,6 @@ const Container = styled.div<{$clicked: boolean}>`
   background-color: ${(p) => (p.$clicked ? '#d2ff52' : '#f6f6f6')};
   padding: 1.5vw 1.5vw 1.5vw 4.5vw;
   border-bottom: solid #999 0.1vw;
-  cursor: pointer;
   height: 11.5vw;
 
   &:hover {
@@ -46,7 +45,6 @@ const Container = styled.div<{$clicked: boolean}>`
 
 const Button = styled.button`
   background-color: transparent;
-  cursor: pointer;
   border: none;
 `;
 

@@ -144,7 +144,6 @@ const SlideContainer = styled(Swiper)`
   width: 100vw;
   height: 33vw;
   position: relative;
-  cursor: pointer;
 
   & .swiper-wrapper {
     margin-bottom: 3rem;
@@ -246,7 +245,6 @@ const ReadMoreBtn = styled.button`
   background-color: transparent;
   color: #fff;
   margin-bottom: 7vw;
-  cursor: pointer;
 `;
 
 const ReadMore = styled.img`

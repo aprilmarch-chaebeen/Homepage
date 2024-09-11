@@ -98,7 +98,6 @@ const Contact = styled.button`
   font-family: 'Poppins';
   font-weight: 500;
   font-size: 1.1vw;
-  cursor: pointer;
   border: none;
   width: 13.5vw;
   height: 3.6vw;
@@ -118,7 +117,6 @@ const Up = styled.button`
   position: absolute;
   border-radius: 50%;
   border: none;
-  cursor: pointer;
   top: 47%;
   right: 8%;
 

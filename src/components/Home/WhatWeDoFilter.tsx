@@ -65,7 +65,6 @@ const Container = styled.li`
 
 const FilterBtn = styled.button<{$clicked: boolean}>`
   border: none;
-  cursor: pointer;
   color: #222;
   background-color: transparent;
   font-size: 1.2vw;
