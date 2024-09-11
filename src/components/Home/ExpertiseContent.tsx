@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import linesrc from '../../assets/svg/expertise_line.svg';
+import linebsrc from '../../assets/svg/expertise_line_b.svg';
 import plussrc from '../../assets/svg/expertise_plus.svg';
 import {motion} from 'framer-motion';
 
@@ -12,7 +13,10 @@ const transition = {
 function ExpertiseContent() {
   return (
     <ContentSection>
-      <ExpertLine src={linesrc} alt="expertise line" />
+      <ExpertLine src={linebsrc} alt="expertise line" />
+      <motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{once: false}} transition={transition} style={{originX: 1}}>
+        <BlueExpertLine src={linesrc} alt="blue expertise line" />
+      </motion.div>
       <LineContainer>
         <LineContent $left={0} $bottom={0}>
           <Ratio>35</Ratio>
@@ -96,6 +100,13 @@ const ExpertLine = styled.img`
   position: relative;
   width: 90vw;
   height: 45vw;
+`;
+
+const BlueExpertLine = styled.img`
+  position: absolute;
+  width: 90vw;
+  height: 45vw;
+  bottom: 0;
 `;
 
 const LineContainer = styled.div`
