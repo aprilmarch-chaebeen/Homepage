@@ -7,6 +7,7 @@ import gsap from 'gsap';
 interface Circleprops {
   src: string;
   delay: number;
+  size?: number;
 }
 
 interface CircleHandle {
@@ -17,7 +18,7 @@ interface MouseStalkerProps {
   containerRef: React.RefObject<HTMLElement>;
 }
 
-const Circle = forwardRef<CircleHandle, Circleprops>(({src, delay}, ref) => {
+const Circle = forwardRef<CircleHandle, Circleprops>(({src, delay, size}, ref) => {
   const el = useRef<HTMLImageElement>(null);
   useImperativeHandle(ref, () => {
     return {
@@ -29,7 +30,9 @@ const Circle = forwardRef<CircleHandle, Circleprops>(({src, delay}, ref) => {
     };
   }, [delay]);
 
-  return <img src={src} alt="mouse stalker" ref={el} style={{position: 'absolute', zIndex: '1000'}} />;
+  return (
+    <img src={src} alt="mouse stalker" ref={el} style={{position: 'absolute', zIndex: '1000', width: `${size}px`, height: `${size}px`}} />
+  );
 });
 
 function MouseStalker({containerRef}: MouseStalkerProps) {
@@ -65,7 +68,7 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
 
   return (
     <div>
-      <Circle ref={addCircleRef} src={cursorsrc} delay={0} />
+      <Circle ref={addCircleRef} src={cursorsrc} delay={0} size={35} />
       <Circle ref={addCircleRef} src={stalker1src} delay={0.1} />
       <Circle ref={addCircleRef} src={stalekr2src} delay={0.2} />
     </div>
