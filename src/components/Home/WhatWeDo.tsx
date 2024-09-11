@@ -28,7 +28,7 @@ function WhatWeDo() {
       <SlideCover></SlideCover>
       <PageNumberContainer>
         <PageNumber>{nowIndex < 10 ? '0' + nowIndex : nowIndex}</PageNumber>
-        <PageNumber>30</PageNumber>
+        <PageNumber>35</PageNumber>
       </PageNumberContainer>
       <SlideContainer
         slidesPerView="auto"
@@ -41,15 +41,16 @@ function WhatWeDo() {
         }}
         pagination={{
           type: 'progressbar',
+          clickable: true,
         }}
         navigation={true}
         modules={[Pagination, Navigation, EffectCoverflow, Autoplay]}
         effect="coverflow"
         coverflowEffect={{
           rotate: 0,
-          stretch: 0.5,
-          depth: 100,
-          modifier: 3,
+          stretch: 100,
+          depth: 150,
+          modifier: 1.5,
           slideShadows: true,
         }}
         onSlideChange={(swiper) => handleSlideChange(swiper)}
@@ -112,16 +113,15 @@ const SlideCover = styled.div`
 `;
 
 const PageNumberContainer = styled.div`
-  width: 56vw;
+  width: 59vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 50%);
   font-size: 0.9vw;
-  top: 69%;
-  z-index: 12;
+  top: 79.35%;
 
   /* @media (max-width: 1024px) {
     top: 73.2%;
@@ -152,26 +152,26 @@ const SlideContainer = styled(Swiper)`
   & .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    top: 23.2vw;
+    top: 22.6vw;
   }
 
   & .swiper-button-prev::after {
     font-size: 0.9vw !important;
     color: #000;
     position: absolute;
-    left: 19vw;
+    left: 18vw;
   }
 
   & .swiper-button-next::after {
     font-size: 0.9vw !important;
     color: #000 !important;
     position: absolute;
-    right: 19vw;
+    right: 18vw;
   }
 
   & .swiper-pagination-progressbar {
-    top: 23vw;
-    width: 50vw;
+    top: 22.3vw;
+    width: 55vw;
     left: 50%;
     transform: translate(-50%, 50%);
     background: #ccc;
@@ -222,7 +222,7 @@ const GradientRight = styled.div`
   width: 15vw;
   position: absolute;
   height: 20vw;
-  top: 35%;
+  top: 40%;
   right: 0;
   z-index: 1;
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
@@ -232,7 +232,7 @@ const GradientLeft = styled.div`
   width: 15vw;
   position: absolute;
   height: 20vw;
-  top: 35%;
+  top: 40%;
   left: 0;
   z-index: 1;
   background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
@@ -244,7 +244,9 @@ const ReadMoreBtn = styled.button`
   border: none;
   background-color: transparent;
   color: #fff;
-  margin-bottom: 7vw;
+  position: absolute;
+  top: 88%;
+  transform: translate(-50%, 50%);
 `;
 
 const ReadMore = styled.img`
