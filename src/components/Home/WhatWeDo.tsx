@@ -34,11 +34,11 @@ function WhatWeDo() {
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        //   pauseOnMouseEnter: true,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
         pagination={{
           type: 'progressbar',
         }}
