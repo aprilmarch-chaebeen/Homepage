@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import styled, {keyframes} from 'styled-components';
 import logosrc from '../assets/svg/BI_logo.svg';
-import naviconsrc from '../assets/svg/star.svg';
+import naviconsrc from '../assets/svg/star_w.svg';
 
 function Navbar() {
   return (
