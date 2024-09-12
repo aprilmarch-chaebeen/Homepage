@@ -71,6 +71,7 @@ const Star = styled.img`
 const Text = styled.h3`
   font-size: 2.1vw;
   font-family: 'Pretendard-Light';
+  margin: 1.6vw 0;
 `;
 
 const InnerContainer2 = styled.div`
