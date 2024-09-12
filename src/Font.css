@@ -22,7 +22,7 @@
   font-family: 'Gotham';
   font-style: normal;
   font-weight: 700;
-  src: url('./assets/font/GothamPro-Bold.woff2') format('woff2');
+  src: url('./assets/font/Gotham-Bold.ttf') format('ttf');
 }
 
 @font-face {
@@ -76,13 +76,13 @@
 @font-face {
   font-family: 'Gotham-Light';
   font-style: normal;
-  src: url('./assets/font/GothamPro-Light.woff2') format('woff2');
+  src: url('./assets/font/Gotham-XLight_2.ttf') format('ttf');
 }
 
 @font-face {
   font-family: 'Gotham-Medium';
   font-style: normal;
-  src: url('./assets/font/GothamPro-Medium.woff2') format('woff2');
+  src: url('./assets/font/Gotham-Light.ttf') format('ttf');
 }
 
 @font-face {
