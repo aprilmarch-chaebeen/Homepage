@@ -16,7 +16,7 @@ function HowItWorks() {
     () => {
       gsap.fromTo(
         containerRef.current,
-        {scale: 0.3, borderRadius: 500, ease: 'none'},
+        {scale: 0.7, borderRadius: 50, ease: 'none'},
         {
           scale: 1,
           borderRadius: 0,
@@ -25,7 +25,7 @@ function HowItWorks() {
             trigger: containerRef.current,
             pin: false,
             scrub: 1,
-            start: 'top -10%',
+            start: 'center 10%',
             end: 'top 25%',
           },
         }
