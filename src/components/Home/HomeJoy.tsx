@@ -79,7 +79,7 @@ const Section = styled.section`
 `;
 
 const Line1 = styled.hr`
-  background-color: #d0d0d0;
+  background-color: #ededed;
   border: 0;
   transform: rotate(28.54deg);
   position: absolute;
@@ -91,7 +91,7 @@ const Line1 = styled.hr`
 `;
 
 const Line2 = styled.hr`
-  background-color: #d0d0d0;
+  background-color: #ededed;
   border: 0;
   transform: rotate(53.04deg);
   position: absolute;
