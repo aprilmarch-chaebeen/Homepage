@@ -61,6 +61,10 @@ const List = styled.ul`
 const ListItem = styled.li`
   list-style: none;
   font-size: 0.9vw;
+
+  &:nth-child(7) {
+    margin-right: 1vw;
+  }
 `;
 
 const IconAnimation = keyframes`

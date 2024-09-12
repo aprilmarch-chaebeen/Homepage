@@ -22,7 +22,7 @@ function WhatWeDoFilter() {
       <Container>
         <FilterBtn onClick={() => setNowFilter('uiux')} $clicked={nowFilter === 'uiux'}>
           {nowFilter === 'uiux' && <Check src={checksrc} alt="check icon" />}
-          UI UX
+          UIㆍUX
         </FilterBtn>
       </Container>
       <Container>
@@ -47,17 +47,18 @@ const FilterContainer = styled.ul`
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  width: 35vw;
-  height: 2.5vw;
+  width: 27vw;
+  height: 2.2vw;
   background-color: #f2f2f2;
   padding: 0.2vw;
-  margin: 4vw auto;
+  margin: 2.5vw auto;
   border-radius: 29px;
 `;
 
 const Container = styled.li`
   display: flex;
   justify-content: center;
+  font-family: 'Gotham-Book';
   &:nth-child(1) {
     font-family: 'Pretendard-Regular';
   }
@@ -67,8 +68,8 @@ const FilterBtn = styled.button<{$clicked: boolean}>`
   border: none;
   color: #222;
   background-color: transparent;
-  font-size: 1.2vw;
-  padding: 0.3vw 1vw;
+  font-size: 1vw;
+  padding: 0.3vw 0.8vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +79,9 @@ const FilterBtn = styled.button<{$clicked: boolean}>`
       color: #fff;
       background-color: #171717;
       border-radius: 29px;
+      &:nth-child(1) {
+        font-family: 'Pretendard-Regular';
+      }
     `}
 `;
 

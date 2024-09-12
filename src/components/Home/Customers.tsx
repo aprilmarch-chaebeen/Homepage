@@ -72,7 +72,7 @@ function Customers() {
 export default Customers;
 
 const BigText = styled.p`
-  margin-top: 17vw;
+  margin-top: 15vw;
   margin-bottom: 1.2vw;
   font-family: 'Cardo';
   font-size: 1.2vw;
@@ -81,10 +81,10 @@ const BigText = styled.p`
 
 const MediumText = styled.p`
   font-family: 'Pretendard-Light';
-  font-size: 2.3vw;
+  font-size: 2.1vw;
   margin: 0;
-  margin-bottom: 1.5vw;
-  line-height: 1.4;
+  margin-bottom: 1.3vw;
+  line-height: 1.2;
 `;
 
 const BoldText = styled.span`
@@ -93,9 +93,9 @@ const BoldText = styled.span`
 
 const SmallText = styled.p`
   font-family: 'Pretendard-Light';
-  font-size: 1.2vw;
+  font-size: 0.9vw;
   margin: 0;
   color: #555;
-  margin-bottom: 3vw;
-  line-height: 1.7;
+  margin-bottom: 3.2vw;
+  line-height: 1.6;
 `;

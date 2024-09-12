@@ -25,7 +25,7 @@ function WhatWeDo() {
       </MediumText>
       <SmallText>디자인과 브랜딩을 향한 우리의 전문성과 열정, 진심의 영향력은 든든한 믿음과 새로운 기쁨을 전달합니다.</SmallText>
       <WhatWeDoFilter />
-      <SlideCover></SlideCover>
+
       <PageNumberContainer>
         <PageNumber>{nowIndex < 10 ? '0' + nowIndex : nowIndex}</PageNumber>
         <PageNumber>35</PageNumber>
@@ -48,7 +48,7 @@ function WhatWeDo() {
         effect="coverflow"
         coverflowEffect={{
           rotate: 0,
-          stretch: 100,
+          stretch: 60,
           depth: 150,
           modifier: 1.5,
           slideShadows: true,
@@ -60,6 +60,7 @@ function WhatWeDo() {
             <SlideImg src={require(`../../assets/images/img${i + 1}.svg`).default} alt={`img ${i + 1}`} $idx={i} $nowIdx={nowIndex - 1} />
           </Slide>
         ))}
+        <SlideCover></SlideCover>
       </SlideContainer>
       <GradientRight></GradientRight>
       <GradientLeft></GradientLeft>
@@ -86,10 +87,10 @@ const BigText = styled.p`
 
 const MediumText = styled.p`
   font-family: 'Pretendard-Light';
-  font-size: 2.3vw;
+  font-size: 2.1vw;
   margin: 0;
   margin-bottom: 1.5vw;
-  line-height: 1.4;
+  line-height: 1.2;
 `;
 
 const BoldText = styled.span`
@@ -98,7 +99,7 @@ const BoldText = styled.span`
 
 const SmallText = styled.p`
   font-family: 'Pretendard-Light';
-  font-size: 1.2vw;
+  font-size: 0.9vw;
   margin: 0;
   color: #555;
 `;
@@ -106,22 +107,23 @@ const SmallText = styled.p`
 const SlideCover = styled.div`
   background-color: #fff;
   width: 100vw;
-  height: 4.6vw;
+  height: 5vw;
   position: absolute;
   z-index: 10;
-  margin-top: 17.5vw;
+  top: 52%;
 `;
 
 const PageNumberContainer = styled.div`
-  width: 59vw;
+  width: 54.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 50%);
-  font-size: 0.9vw;
-  top: 79.35%;
+  font-size: 1vw;
+  top: 71%;
+  z-index: 12;
 
   /* @media (max-width: 1024px) {
     top: 73.2%;
@@ -152,30 +154,32 @@ const SlideContainer = styled(Swiper)`
   & .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    top: 22.6vw;
+    top: 19.5vw;
+    z-index: 12;
   }
 
   & .swiper-button-prev::after {
     font-size: 0.9vw !important;
     color: #000;
     position: absolute;
-    left: 18vw;
+    left: 20vw;
   }
 
   & .swiper-button-next::after {
     font-size: 0.9vw !important;
     color: #000 !important;
     position: absolute;
-    right: 18vw;
+    right: 20vw;
   }
 
   & .swiper-pagination-progressbar {
-    top: 22.3vw;
-    width: 55vw;
+    top: 19.2vw;
+    width: 50vw;
+    height: 0.2vw;
     left: 50%;
     transform: translate(-50%, 50%);
     background: #ccc;
-    height: 0.2vw;
+    z-index: 13;
   }
 
   & .swiper-pagination-progressbar-fill {
@@ -245,10 +249,11 @@ const ReadMoreBtn = styled.button`
   background-color: transparent;
   color: #fff;
   position: absolute;
-  top: 88%;
+  top: 75%;
   transform: translate(-50%, 50%);
+  z-index: 12;
 `;
 
 const ReadMore = styled.img`
-  width: 11.5vw;
+  width: 11.2vw;
 `;

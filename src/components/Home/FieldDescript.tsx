@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import fieldsrc from '../../assets/svg/field_img.svg';
+import cursorsrc from '../../assets/svg/cursor_img.svg';
 
 interface FieldDescriptProps {
   descript: string[];
@@ -23,30 +24,31 @@ function FieldDescript({descript}: FieldDescriptProps) {
 export default FieldDescript;
 
 const Container = styled.div`
+  text-align: center;
   padding: 5vw 3vw;
 `;
 
 const SmallText = styled.p`
   font-family: 'Pretendard-SemiBold';
-  font-size: 1vw;
+  font-size: 0.9vw;
   color: #777;
 `;
 
 const BigText = styled.h3`
   font-family: 'Pretendard-Medium';
-  font-size: 2.3vw;
+  font-size: 2vw;
   color: #222;
 `;
 
 const MediumText = styled.p`
   font-family: 'Pretendard-Light';
-  font-size: 1.4vw;
+  font-size: 1vw;
   color: #444;
   margin: 0;
 `;
 
 const TextContainer = styled.div`
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 5vw;
 `;
 
@@ -54,4 +56,5 @@ const Img = styled.img`
   border-radius: 1vw;
   width: 42vw;
   box-sizing: border-box;
+  cursor: url(${cursorsrc}), pointer;
 `;

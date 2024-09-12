@@ -33,10 +33,10 @@ const Line = styled.hr`
 `;
 
 const BigText = styled.h3`
-  font-family: 'Gotham';
+  font-family: 'Gotham-Black';
   margin: 0;
   text-align: left;
   margin-left: 7vw;
   margin-bottom: 5vw;
-  font-size: 3.4vw;
+  font-size: 3.2vw;
 `;

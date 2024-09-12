@@ -37,9 +37,12 @@ export default FieldCategory;
 
 const Container = styled.div<{$clicked: boolean}>`
   background-color: ${(p) => (p.$clicked ? '#d2ff52' : '#f6f6f6')};
-  padding: 1.5vw 1.5vw 1.5vw 4.5vw;
+  padding: 1.2vw 1vw 1.2vw 6.8vw;
   border-bottom: solid #999 0.1vw;
-  height: 11.5vw;
+  height: 11vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   &:hover {
     background-color: #d2ff52;
@@ -52,7 +55,7 @@ const Button = styled.button`
 `;
 
 const ButtonImg = styled.img`
-  width: 2.5vw;
+  width: 2.1vw;
 `;
 
 const InnerContainer1 = styled.div`
@@ -61,14 +64,13 @@ const InnerContainer1 = styled.div`
 `;
 
 const Star = styled.img`
-  width: 2vw;
+  width: 1.8vw;
   margin-right: 1.5vw;
 `;
 
 const Text = styled.h3`
-  font-size: 2.3vw;
+  font-size: 2.1vw;
   font-family: 'Pretendard-Light';
-  margin: 1vw 0 1.5vw 0;
 `;
 
 const InnerContainer2 = styled.div`
@@ -78,13 +80,13 @@ const InnerContainer2 = styled.div`
 `;
 
 const SmallImg = styled.img`
-  width: 5vw;
+  width: 4.9vw;
   margin: 0;
   margin-right: 0.3vw;
 `;
 
 const SmallText = styled.p`
-  font-size: 1.1vw;
+  font-size: 0.9vw;
   font-family: 'Pretendard-Regular';
   color: #555;
   margin: 0;

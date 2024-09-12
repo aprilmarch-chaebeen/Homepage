@@ -15,7 +15,7 @@ function FlowText() {
 export default FlowText;
 
 const Section = styled.section`
-  padding: 10vw 0;
+  padding: 9vw 0;
 `;
 
 const Img = styled.img`

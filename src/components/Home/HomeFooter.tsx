@@ -102,6 +102,9 @@ const Contact = styled.button`
   width: 13.5vw;
   height: 3.6vw;
   border-radius: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const SmallText = styled.p`
