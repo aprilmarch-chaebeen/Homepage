@@ -1,4 +1,4 @@
-import {forwardRef, useEffect, useImperativeHandle, useRef} from 'react';
+import {forwardRef, useImperativeHandle, useLayoutEffect, useRef} from 'react';
 import cursorsrc from '../assets/svg/cursor.svg';
 import stalker1src from '../assets/svg/stalker1.svg';
 import stalekr2src from '../assets/svg/stalker2.svg';
@@ -40,7 +40,7 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
 
   circlesRef.current = [];
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
@@ -55,9 +55,17 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
       circlesRef.current.forEach((ref) => ref.moveTo(x, y));
     };
 
-    container.addEventListener('pointermove', onMove);
+    container.addEventListener('mousemove', onMove);
+    container.addEventListener('mousedown', onMove);
+    container.addEventListener('mouseup', onMove);
+    container.addEventListener('mouseout', onMove);
 
-    return () => container.removeEventListener('pointermove', onMove);
+    return () => {
+      container.removeEventListener('mousemove', onMove);
+      container.removeEventListener('mousedown', onMove);
+      container.removeEventListener('mouseup', onMove);
+      container.removeEventListener('mouseout', onMove);
+    };
   }, [containerRef]);
 
   const addCircleRef = (ref: CircleHandle | null) => {
