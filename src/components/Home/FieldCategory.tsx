@@ -37,9 +37,9 @@ export default FieldCategory;
 
 const Container = styled.div<{$clicked: boolean}>`
   background-color: ${(p) => (p.$clicked ? '#d2ff52' : '#f6f6f6')};
-  padding: 1.2vw 1vw 1.2vw 6.8vw;
+  padding: 1.3vw 1vw 1.3vw 6.8vw;
   border-bottom: solid #999 0.1vw;
-  height: 11vw;
+  height: 9.5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
