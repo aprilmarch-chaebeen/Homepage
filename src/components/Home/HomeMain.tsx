@@ -114,6 +114,7 @@ const CircleContainer = styled.div`
   position: relative;
   margin: auto 0;
   margin-right: 5vw;
+  will-change: transform;
 `;
 
 const CircleAnimation = keyframes`
