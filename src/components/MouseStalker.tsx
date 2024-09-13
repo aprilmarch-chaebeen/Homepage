@@ -55,16 +55,18 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
       circlesRef.current.forEach((ref) => ref.moveTo(x, y));
     };
 
-    container.addEventListener('mousemove', onMove);
-    container.addEventListener('mousedown', onMove);
-    container.addEventListener('mouseup', onMove);
-    container.addEventListener('mouseout', onMove);
+    // container.addEventListener('mousemove', onMove);
+    // container.addEventListener('mousedown', onMove);
+    // container.addEventListener('mouseup', onMove);
+    // container.addEventListener('mouseout', onMove);
+    container.addEventListener('pointermove', onMove);
 
     return () => {
-      container.removeEventListener('mousemove', onMove);
-      container.removeEventListener('mousedown', onMove);
-      container.removeEventListener('mouseup', onMove);
-      container.removeEventListener('mouseout', onMove);
+      // container.removeEventListener('mousemove', onMove);
+      // container.removeEventListener('mousedown', onMove);
+      // container.removeEventListener('mouseup', onMove);
+      // container.removeEventListener('mouseout', onMove);
+      container.removeEventListener('pointermove', onMove);
     };
   }, [containerRef]);
 
