@@ -53,16 +53,16 @@ function Customers() {
         <br />
         쌓아온 노하우를 바탕으로 브랜드가 직면한 어려움을 해결해 드립니다.
       </SmallText>
-      <Marquee autoFill={true} direction="right" speed={20}>
+      <Marquee autoFill={true} direction="right" speed={10}>
         <ImageFlow srcSet={[svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg9, svg10]} />
       </Marquee>
-      <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={300}>
+      <Marquee autoFill={true} speed={10} gradient={true} gradientWidth={300}>
         <ImageFlow srcSet={[svg11, svg12, svg13, svg14, svg15, svg16, svg17, svg18, svg19]} />
       </Marquee>
-      <Marquee autoFill={true} direction="right" speed={20} gradient={true} gradientWidth={500}>
+      <Marquee autoFill={true} direction="right" speed={10} gradient={true} gradientWidth={500}>
         <ImageFlow srcSet={[svg20, svg21, svg22, svg23, svg24, svg25, svg26, svg27, svg28]} />
       </Marquee>
-      <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={700}>
+      <Marquee autoFill={true} speed={10} gradient={true} gradientWidth={700}>
         <ImageFlow srcSet={[svg29, svg30, svg31, svg32, svg33, svg34, svg35, svg36, svg37]} />
       </Marquee>
     </section>
@@ -73,7 +73,7 @@ export default Customers;
 
 const BigText = styled.p`
   margin-top: 15vw;
-  margin-bottom: 1.2vw;
+  margin-bottom: 1.4vw;
   font-family: 'Cardo';
   font-size: 1.2vw;
   color: #1c46f5;
@@ -83,7 +83,7 @@ const MediumText = styled.p`
   font-family: 'Pretendard-Light';
   font-size: 2.1vw;
   margin: 0;
-  margin-bottom: 1.3vw;
+  margin-bottom: 1.45vw;
   line-height: 1.2;
 `;
 

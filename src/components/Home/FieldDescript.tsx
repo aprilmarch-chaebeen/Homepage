@@ -35,7 +35,7 @@ const SmallText = styled.p`
 `;
 
 const BigText = styled.h3`
-  font-family: 'Pretendard-Medium';
+  font-family: 'Pretendard-Regular';
   font-size: 2vw;
   color: #222;
 `;

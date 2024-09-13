@@ -19,7 +19,7 @@ function HomeMain() {
         onMouseLeave={() => setBrandingHovered(false)}
         hovered={uxuiHovered || digitalHovered || dashboardHovered}
         nowHovered={brandingHovered}
-        width={25}
+        width={23}
       />
       <HomeMainText
         idx={1}
@@ -27,7 +27,7 @@ function HomeMain() {
         onMouseLeave={() => setUxuiHovered(false)}
         hovered={digitalHovered || dashboardHovered}
         nowHovered={uxuiHovered}
-        width={35}
+        width={33}
       />
       <SmallText src={creativesrc} alt="creative design svg" $hovered={digitalHovered || dashboardHovered} />
       <HomeMainText
@@ -36,14 +36,14 @@ function HomeMain() {
         onMouseLeave={() => setDigitalHovered(false)}
         hovered={dashboardHovered}
         nowHovered={digitalHovered}
-        width={20}
+        width={18}
       />
       <HomeMainText
         idx={3}
         onMouseEnter={() => setDashboardHovered(true)}
         onMouseLeave={() => setDashboardHovered(false)}
         nowHovered={dashboardHovered}
-        width={42}
+        width={40}
       />
       <Container>
         <div style={{width: '10vw'}}></div>
@@ -67,15 +67,15 @@ const MainSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  line-height: 1;
-  margin: 7vw 0;
+  line-height: 0.8;
+  margin: 5vw 0;
 `;
 
 const SmallText = styled.img<{$hovered: boolean | undefined}>`
   width: 12vw;
   transition: transform 0.6s;
   transform: ${(p) => (p.$hovered ? css`translateY(-6vw)` : css`translateY(0)`)};
-  margin: 1vw 0;
+  margin: 0.8vw 0 0.3vw 0;
 `;
 
 const Container = styled.div`
@@ -99,7 +99,7 @@ const TextContainer = styled.div`
 `;
 
 const Text = styled.p`
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   font-family: 'Satoshi';
   font-weight: 500;
   margin: 0;

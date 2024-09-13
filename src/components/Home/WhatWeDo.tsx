@@ -28,17 +28,17 @@ function WhatWeDo() {
 
       <PageNumberContainer>
         <PageNumber>{nowIndex < 10 ? '0' + nowIndex : nowIndex}</PageNumber>
-        <PageNumber>35</PageNumber>
+        <PageNumberG>35</PageNumberG>
       </PageNumberContainer>
       <SlideContainer
-        slidesPerView="auto"
+        slidesPerView={3}
         centeredSlides={true}
         loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        //   pauseOnMouseEnter: true,
+        // }}
         pagination={{
           type: 'progressbar',
           clickable: true,
@@ -48,8 +48,8 @@ function WhatWeDo() {
         effect="coverflow"
         coverflowEffect={{
           rotate: 0,
-          stretch: 60,
-          depth: 150,
+          stretch: 0,
+          depth: 160,
           modifier: 1.5,
           slideShadows: true,
         }}
@@ -79,7 +79,7 @@ const WhatWeDoSec = styled.section`
 
 const BigText = styled.p`
   margin-top: 15vw;
-  margin-bottom: 1.2vw;
+  margin-bottom: 2.1vw;
   font-family: 'Cardo';
   font-size: 1.2vw;
   color: #1c46f5;
@@ -89,8 +89,8 @@ const MediumText = styled.p`
   font-family: 'Pretendard-Light';
   font-size: 2.1vw;
   margin: 0;
-  margin-bottom: 1.5vw;
-  line-height: 1.2;
+  margin-bottom: 2.5vw;
+  line-height: 1.4;
 `;
 
 const BoldText = styled.span`
@@ -110,19 +110,19 @@ const SlideCover = styled.div`
   height: 5vw;
   position: absolute;
   z-index: 10;
-  top: 52%;
+  top: 63%;
 `;
 
 const PageNumberContainer = styled.div`
-  width: 54.5vw;
+  width: 42.4vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  left: 50%;
+  left: 50.8%;
   transform: translate(-50%, 50%);
   font-size: 1vw;
-  top: 71%;
+  top: 81.9%;
   z-index: 12;
 
   /* @media (max-width: 1024px) {
@@ -143,9 +143,10 @@ const PageNumberContainer = styled.div`
 `;
 
 const SlideContainer = styled(Swiper)`
-  width: 100vw;
+  width: 48vw;
   height: 33vw;
   position: relative;
+  margin-right: 26.5vw;
 
   & .swiper-wrapper {
     margin-bottom: 3rem;
@@ -154,29 +155,29 @@ const SlideContainer = styled(Swiper)`
   & .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    top: 19.5vw;
+    top: 24.3vw;
     z-index: 12;
   }
 
   & .swiper-button-prev::after {
-    font-size: 0.9vw !important;
+    font-size: 0.8vw !important;
     color: #000;
     position: absolute;
-    left: 20vw;
+    left: 2.6vw;
   }
 
   & .swiper-button-next::after {
-    font-size: 0.9vw !important;
+    font-size: 0.8vw !important;
     color: #000 !important;
     position: absolute;
-    right: 20vw;
+    right: 0vw;
   }
 
   & .swiper-pagination-progressbar {
-    top: 19.2vw;
-    width: 50vw;
+    top: 24vw;
+    width: 39vw;
     height: 0.2vw;
-    left: 50%;
+    left: 52.5%;
     transform: translate(-50%, 50%);
     background: #ccc;
     z-index: 13;
@@ -190,35 +191,31 @@ const SlideContainer = styled(Swiper)`
 
 const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
   width: 20vw;
-  height: 22vw;
+  height: 25vw;
   position: relative;
   ${(p) =>
     p.$idx === p.$nowIdx &&
     css`
-      &:hover {
-        /* width: 31vw !important; */
-        /* transition: width 0.5s ease-in-out !important; */
+      /* &:hover {
         transform: scaleX(1.6) scaleY(1.65);
         transition: transform 0.5s ease-in-out !important;
-      }
+      } */
     `}
 `;
 
 const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
-  height: 20vw;
+  height: 25vw;
   width: 20vw;
   object-fit: cover;
   border-radius: 10px;
   ${(p) =>
     p.$idx === p.$nowIdx &&
     css`
-      &:hover {
-        /* width: 31vw !important; */
-        /* transition: width 0.5s ease-in-out !important; */
+      /* &:hover {
         transform: scaleX(1.6) scaleY(1.65);
         transition: transform 0.5s ease-in-out !important;
         object-fit: contain;
-      }
+      } */
     `}
 `;
 
@@ -244,12 +241,16 @@ const GradientLeft = styled.div`
 
 const PageNumber = styled.span``;
 
+const PageNumberG = styled.span`
+  color: #888;
+`;
+
 const ReadMoreBtn = styled.button`
   border: none;
   background-color: transparent;
   color: #fff;
   position: absolute;
-  top: 75%;
+  top: 87%;
   transform: translate(-50%, 50%);
   z-index: 12;
 `;

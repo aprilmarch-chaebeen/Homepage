@@ -111,6 +111,7 @@ const SmallText = styled.p`
   font-family: 'Pretendard-Medium';
   font-size: 1.1vw;
   color: #222;
+  margin: 1.3vw 0;
 `;
 
 const Up = styled.button`
@@ -161,7 +162,7 @@ const InfoContainer = styled.div`
 `;
 
 const Info = styled.p`
-  color: #444;
+  color: #666;
   font-family: 'Gotham-Book';
   font-size: 1vw;
 `;

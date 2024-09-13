@@ -53,7 +53,7 @@ function HomeField() {
         />
         <FieldCategory title={'신사업・신규브랜드'} text={'New Business & Brand'} onClick={handleNewClicked} clicked={newClicked} />
         <FieldCategory title={'IT 대시보드'} text={'IT Dashboard'} onClick={handleItClicked} clicked={itClicked} />
-        <FieldCategory title={'공공기관 대학'} text={'Public University'} onClick={handlePublicClicked} clicked={publicClicked} />
+        <FieldCategory title={'공공기관・대학'} text={'Public University'} onClick={handlePublicClicked} clicked={publicClicked} />
       </CategorySection>
       <DescriptSection>
         {voucherClicked && <FieldDescript descript={voucher} />}
