@@ -2,11 +2,13 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from '../app/store';
 
 export interface HomeFilterState {
-  value: string;
+  filter: string;
+  num: number;
 }
 
 const initialState: HomeFilterState = {
-  value: 'all',
+  filter: 'all',
+  num: 28,
 };
 
 export const homeFilterSlice = createSlice({
@@ -15,12 +17,16 @@ export const homeFilterSlice = createSlice({
   reducers: {
     homeFilter: (state, action: PayloadAction<string>) => {
       const filter = action.payload;
-      state.value = filter;
+      state.filter = filter;
+    },
+    filterNum: (state, action: PayloadAction<number>) => {
+      const num = action.payload;
+      state.num = num;
     },
   },
 });
 
-export const {homeFilter} = homeFilterSlice.actions;
+export const {homeFilter, filterNum} = homeFilterSlice.actions;
 
 export default homeFilterSlice.reducer;
-export const selectHomeFilterValue = (state: RootState) => state.homeFilter.value;
+export const selectHomeFilterValue = (state: RootState) => state.homeFilter;
