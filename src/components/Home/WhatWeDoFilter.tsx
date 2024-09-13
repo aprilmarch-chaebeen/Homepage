@@ -1,67 +1,72 @@
 import styled, {css} from 'styled-components';
 import checksrc from '../../assets/svg/check.svg';
 import {useAppDispatch, useAppSelector} from '../../hook/reduxHook';
-import {homeFilter, selectHomeFilterValue} from '../../reducers/homeFilterSlice';
+import {filterNum, homeFilter, selectHomeFilterValue} from '../../reducers/homeFilterSlice';
 
 function WhatWeDoFilter() {
   const dispatch = useAppDispatch();
-  const filter = useAppSelector(selectHomeFilterValue);
+  const home = useAppSelector(selectHomeFilterValue);
 
   const handleAllClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     dispatch(homeFilter('all'));
+    dispatch(filterNum(28));
   };
 
   const handleBxClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     dispatch(homeFilter('bx'));
+    dispatch(filterNum(25));
   };
 
   const handleUiuxClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     dispatch(homeFilter('ux'));
+    dispatch(filterNum(12));
   };
 
   const handlePublicClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    dispatch(homeFilter('public'));
+    dispatch(homeFilter('pub'));
+    dispatch(filterNum(6));
     ``;
   };
 
   const handleVoucherClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     dispatch(homeFilter('voucher'));
+    dispatch(filterNum(7));
   };
 
   return (
     <FilterContainer>
       <Container>
-        <FilterBtn onClick={(e) => handleAllClicked(e)} $clicked={filter === 'all'}>
-          {filter === 'all' && <Check src={checksrc} alt="check icon" />}
+        <FilterBtn onClick={(e) => handleAllClicked(e)} $clicked={home.filter === 'all'}>
+          {home.filter === 'all' && <Check src={checksrc} alt="check icon" />}
           <Text>All</Text>
         </FilterBtn>
       </Container>
       <Container>
-        <FilterBtn onClick={(e) => handleBxClicked(e)} $clicked={filter === 'bx'}>
-          {filter === 'bx' && <Check src={checksrc} alt="check icon" />}
+        <FilterBtn onClick={(e) => handleBxClicked(e)} $clicked={home.filter === 'bx'}>
+          {home.filter === 'bx' && <Check src={checksrc} alt="check icon" />}
           <Text>BX</Text>
         </FilterBtn>
       </Container>
       <Container>
-        <FilterBtn onClick={(e) => handleUiuxClicked(e)} $clicked={filter === 'ux'}>
-          {filter === 'ux' && <Check src={checksrc} alt="check icon" />}
+        <FilterBtn onClick={(e) => handleUiuxClicked(e)} $clicked={home.filter === 'ux'}>
+          {home.filter === 'ux' && <Check src={checksrc} alt="check icon" />}
           <Text>UIㆍUX</Text>
         </FilterBtn>
       </Container>
       <Container>
-        <FilterBtn onClick={(e) => handlePublicClicked(e)} $clicked={filter === 'public'}>
-          {filter === 'public' && <Check src={checksrc} alt="check icon" />}
+        <FilterBtn onClick={(e) => handlePublicClicked(e)} $clicked={home.filter === 'pub'}>
+          {home.filter === 'pub' && <Check src={checksrc} alt="check icon" />}
           <Text>PUBLIC</Text>
         </FilterBtn>
       </Container>
       <Container>
-        <FilterBtn onClick={(e) => handleVoucherClicked(e)} $clicked={filter === 'voucher'}>
-          {filter === 'voucher' && <Check src={checksrc} alt="check icon" />}
+        <FilterBtn onClick={(e) => handleVoucherClicked(e)} $clicked={home.filter === 'voucher'}>
+          {home.filter === 'voucher' && <Check src={checksrc} alt="check icon" />}
           <Text>VOUCHER</Text>
         </FilterBtn>
       </Container>

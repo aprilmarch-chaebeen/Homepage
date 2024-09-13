@@ -1,21 +1,22 @@
-import {Swiper, SwiperSlide} from 'swiper/react';
-import styled, {css} from 'styled-components';
+// import {Swiper, SwiperSlide} from 'swiper/react';
+import styled from 'styled-components';
 import moresrc from '../../assets/svg/read_more.svg';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+// import 'swiper/css/navigation';
 
-import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules';
-import {useState} from 'react';
+// import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules';
+// import {useState} from 'react';
 import WhatWeDoFilter from './WhatWeDoFilter';
+import WhatWeDoSlide from './WhatWeDoSlide';
 
 function WhatWeDo() {
-  const [nowIndex, setNowIndex] = useState(0);
+  // const [nowIndex, setNowIndex] = useState(0);
 
-  const handleSlideChange = (swiper: any) => {
-    setNowIndex(swiper.realIndex + 1);
-  };
+  // const handleSlideChange = (swiper: any) => {
+  //   setNowIndex(swiper.realIndex + 1);
+  // };
 
   return (
     <WhatWeDoSec>
@@ -25,8 +26,8 @@ function WhatWeDo() {
       </MediumText>
       <SmallText>디자인과 브랜딩을 향한 우리의 전문성과 열정, 진심의 영향력은 든든한 믿음과 새로운 기쁨을 전달합니다.</SmallText>
       <WhatWeDoFilter />
-
-      <PageNumberContainer>
+      <WhatWeDoSlide />
+      {/* <PageNumberContainer>
         <PageNumber>{nowIndex < 10 ? '0' + nowIndex : nowIndex}</PageNumber>
         <PageNumberG>35</PageNumberG>
       </PageNumberContainer>
@@ -63,7 +64,7 @@ function WhatWeDo() {
         <SlideCover></SlideCover>
       </SlideContainer>
       <GradientRight></GradientRight>
-      <GradientLeft></GradientLeft>
+      <GradientLeft></GradientLeft> */}
       <ReadMoreBtn>
         <ReadMore src={moresrc} alt="read more button" />
       </ReadMoreBtn>
@@ -104,146 +105,130 @@ const SmallText = styled.p`
   color: #555;
 `;
 
-const SlideCover = styled.div`
-  background-color: #fff;
-  width: 100vw;
-  height: 5vw;
-  position: absolute;
-  z-index: 10;
-  top: 63%;
-`;
+// const SlideCover = styled.div`
+//   background-color: #fff;
+//   width: 100vw;
+//   height: 5vw;
+//   position: absolute;
+//   z-index: 10;
+//   top: 63%;
+// `;
 
-const PageNumberContainer = styled.div`
-  width: 42.4vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  left: 50.8%;
-  transform: translate(-50%, 50%);
-  font-size: 1vw;
-  top: 81.9%;
-  z-index: 12;
+// const PageNumberContainer = styled.div`
+//   width: 42.4vw;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   position: absolute;
+//   left: 50.8%;
+//   transform: translate(-50%, 50%);
+//   font-size: 1vw;
+//   top: 81.9%;
+//   z-index: 12;
+// `;
 
-  /* @media (max-width: 1024px) {
-    top: 73.2%;
-  }
-  @media (max-width: 600px) {
-    top: 73.5%;
-  }
-  @media (max-width: 450px) {
-    top: 73.3%;
-  }
-  @media (max-width: 380px) {
-    top: 73%;
-  }
-  @media (max-width: 360px) {
-    top: 73.4%;
-  } */
-`;
+// const SlideContainer = styled(Swiper)`
+//   width: 48vw;
+//   height: 33vw;
+//   position: relative;
+//   margin-right: 26.5vw;
 
-const SlideContainer = styled(Swiper)`
-  width: 48vw;
-  height: 33vw;
-  position: relative;
-  margin-right: 26.5vw;
+//   & .swiper-wrapper {
+//     margin-bottom: 3rem;
+//   }
 
-  & .swiper-wrapper {
-    margin-bottom: 3rem;
-  }
+//   & .swiper-button-prev,
+//   .swiper-button-next {
+//     position: absolute;
+//     top: 24.3vw;
+//     z-index: 12;
+//   }
 
-  & .swiper-button-prev,
-  .swiper-button-next {
-    position: absolute;
-    top: 24.3vw;
-    z-index: 12;
-  }
+//   & .swiper-button-prev::after {
+//     font-size: 0.8vw !important;
+//     color: #000;
+//     position: absolute;
+//     left: 2.6vw;
+//   }
 
-  & .swiper-button-prev::after {
-    font-size: 0.8vw !important;
-    color: #000;
-    position: absolute;
-    left: 2.6vw;
-  }
+//   & .swiper-button-next::after {
+//     font-size: 0.8vw !important;
+//     color: #000 !important;
+//     position: absolute;
+//     right: 0vw;
+//   }
 
-  & .swiper-button-next::after {
-    font-size: 0.8vw !important;
-    color: #000 !important;
-    position: absolute;
-    right: 0vw;
-  }
+//   & .swiper-pagination-progressbar {
+//     top: 24vw;
+//     width: 39vw;
+//     height: 0.2vw;
+//     left: 52.5%;
+//     transform: translate(-50%, 50%);
+//     background: #ccc;
+//     z-index: 13;
+//   }
 
-  & .swiper-pagination-progressbar {
-    top: 24vw;
-    width: 39vw;
-    height: 0.2vw;
-    left: 52.5%;
-    transform: translate(-50%, 50%);
-    background: #ccc;
-    z-index: 13;
-  }
+//   & .swiper-pagination-progressbar-fill {
+//     background: #000;
+//     height: 0.2vw;
+//   }
+// `;
 
-  & .swiper-pagination-progressbar-fill {
-    background: #000;
-    height: 0.2vw;
-  }
-`;
+// const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
+//   width: 20vw;
+//   height: 25vw;
+//   position: relative;
+//   ${(p) =>
+//     p.$idx === p.$nowIdx &&
+//     css`
+//       /* &:hover {
+//         transform: scaleX(1.6) scaleY(1.65);
+//         transition: transform 0.5s ease-in-out !important;
+//       } */
+//     `}
+// `;
 
-const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
-  width: 20vw;
-  height: 25vw;
-  position: relative;
-  ${(p) =>
-    p.$idx === p.$nowIdx &&
-    css`
-      /* &:hover {
-        transform: scaleX(1.6) scaleY(1.65);
-        transition: transform 0.5s ease-in-out !important;
-      } */
-    `}
-`;
+// const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
+//   height: 25vw;
+//   width: 20vw;
+//   object-fit: cover;
+//   border-radius: 10px;
+//   ${(p) =>
+//     p.$idx === p.$nowIdx &&
+//     css`
+//       /* &:hover {
+//         transform: scaleX(1.6) scaleY(1.65);
+//         transition: transform 0.5s ease-in-out !important;
+//         object-fit: contain;
+//       } */
+//     `}
+// `;
 
-const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
-  height: 25vw;
-  width: 20vw;
-  object-fit: cover;
-  border-radius: 10px;
-  ${(p) =>
-    p.$idx === p.$nowIdx &&
-    css`
-      /* &:hover {
-        transform: scaleX(1.6) scaleY(1.65);
-        transition: transform 0.5s ease-in-out !important;
-        object-fit: contain;
-      } */
-    `}
-`;
+// const GradientRight = styled.div`
+//   width: 15vw;
+//   position: absolute;
+//   height: 20vw;
+//   top: 40%;
+//   right: 0;
+//   z-index: 1;
+//   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+// `;
 
-const GradientRight = styled.div`
-  width: 15vw;
-  position: absolute;
-  height: 20vw;
-  top: 40%;
-  right: 0;
-  z-index: 1;
-  background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
-`;
+// const GradientLeft = styled.div`
+//   width: 15vw;
+//   position: absolute;
+//   height: 20vw;
+//   top: 40%;
+//   left: 0;
+//   z-index: 1;
+//   background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+// `;
 
-const GradientLeft = styled.div`
-  width: 15vw;
-  position: absolute;
-  height: 20vw;
-  top: 40%;
-  left: 0;
-  z-index: 1;
-  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
-`;
+// const PageNumber = styled.span``;
 
-const PageNumber = styled.span``;
-
-const PageNumberG = styled.span`
-  color: #888;
-`;
+// const PageNumberG = styled.span`
+//   color: #888;
+// `;
 
 const ReadMoreBtn = styled.button`
   border: none;

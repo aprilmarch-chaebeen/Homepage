@@ -11,14 +11,14 @@ import styled, {keyframes} from 'styled-components';
 function BallAnimation() {
   return (
     <BallContainer>
-      <Ball src={uxsrc} alt="ux ball" $top={5} $left={51} $duration={1.25} $reverse="alternate" />
-      <Ball src={identitysrc} alt="identity ball" $top={20} $left={17} $duration={2.75} $reverse="alternate-reverse" />
-      <Ball src={trendsrc} alt="trend & insights ball" $top={27} $left={33} $duration={2.05} $reverse="alternate" />
-      <Ball src={videosrc} alt="video production ball" $top={24} $left={60} $duration={1.75} $reverse="alternate-reverse" />
-      <Ball src={digitalsrc} alt="digital marketing ball" $top={43} $left={70} $duration={2.15} $reverse="alternate" />
-      <Ball src={websrc} alt="web build ball" $top={49} $left={43} $duration={1.95} $reverse="alternate-reverse" />
-      <Ball src={besrc} alt="be ball" $top={60} $left={18} $duration={2.25} $reverse="alternate" />
-      <Ball src={designsrc} alt="creative design ball" $top={62} $left={60} $duration={1.75} $reverse="alternate-reverse" />
+      <Ball src={uxsrc} alt="ux ball" $top={5} $left={51} $duration={1.25} $reverse="alternate" loading="lazy" />
+      <Ball src={identitysrc} alt="identity ball" $top={20} $left={17} $duration={2.75} $reverse="alternate-reverse" loading="lazy" />
+      <Ball src={trendsrc} alt="trend & insights ball" $top={27} $left={33} $duration={2.05} $reverse="alternate" loading="lazy" />
+      <Ball src={videosrc} alt="video production ball" $top={24} $left={60} $duration={1.75} $reverse="alternate-reverse" loading="lazy" />
+      <Ball src={digitalsrc} alt="digital marketing ball" $top={43} $left={70} $duration={2.15} $reverse="alternate" loading="lazy" />
+      <Ball src={websrc} alt="web build ball" $top={49} $left={43} $duration={1.95} $reverse="alternate-reverse" loading="lazy" />
+      <Ball src={besrc} alt="be ball" $top={60} $left={18} $duration={2.25} $reverse="alternate" loading="lazy" />
+      <Ball src={designsrc} alt="creative design ball" $top={62} $left={60} $duration={1.75} $reverse="alternate-reverse" loading="lazy" />
     </BallContainer>
   );
 }
@@ -30,6 +30,7 @@ const BallContainer = styled.div`
   justify-content: center;
   padding: 0 7vw;
   position: relative;
+  will-change: transform;
 `;
 
 const Animation = keyframes`
