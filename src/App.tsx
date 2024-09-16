@@ -15,28 +15,21 @@ function App() {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <Section>
-      {/* <Loading /> */}
-      <AppSection ref={sectionRef}>
-        <MouseStalker containerRef={sectionRef} />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/voucher" element={<Voucher />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </AppSection>
-    </Section>
+    <AppSection ref={sectionRef}>
+      <MouseStalker containerRef={sectionRef} />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/voucher" element={<Voucher />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </AppSection>
   );
 }
 
 export default App;
-
-const Section = styled.section`
-  height: 100vh;
-`;
 
 const AppSection = styled.section`
   height: 100vh;
