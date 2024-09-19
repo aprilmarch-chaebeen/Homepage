@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import BallAnimation from './BallAnimation';
+// import BallAnimation2 from './BallAnimation2';
 
 function HomeJourney() {
   return (
     <JourneySection>
       <BigText>Work Journey Map.</BigText>
       <BallAnimation />
+      {/* <BallAnimation2 /> */}
       <Line />
     </JourneySection>
   );
@@ -16,8 +18,8 @@ export default HomeJourney;
 const JourneySection = styled.section`
   background-color: #000;
   color: #fff;
-  padding: 13vw 0;
-  height: 90vw;
+  padding: 10vw 0;
+  height: 35vw;
   position: relative;
   z-index: 0;
 `;
@@ -37,6 +39,6 @@ const BigText = styled.h3`
   margin: 0;
   text-align: left;
   margin-left: 7vw;
-  margin-bottom: 5vw;
+  margin-bottom: 3vw;
   font-size: 3.2vw;
 `;
