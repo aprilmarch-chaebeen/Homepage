@@ -56,6 +56,11 @@ const List = styled.ul`
   padding: 0.5vw 1vw 0.5vw 0.6vw;
   background-color: #f2f2f2;
   border-radius: 3vw;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  z-index: 100;
 `;
 
 const ListItem = styled.li`
@@ -87,7 +92,7 @@ const Circle = styled.div`
 `;
 
 const Icon = styled.img`
-  width: 1vw;
+  width: 0.9vw;
   animation: ${IconAnimation} 7s linear infinite;
   /* margin-left: 0.1vw; */
   margin-bottom: 0.05vw;
