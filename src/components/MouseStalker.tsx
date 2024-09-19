@@ -2,7 +2,6 @@ import {forwardRef, useImperativeHandle, useLayoutEffect, useRef} from 'react';
 import cursorsrc from '../assets/svg/cursor.svg';
 import stalker1src from '../assets/svg/stalker1.svg';
 import stalekr2src from '../assets/svg/stalker2.svg';
-import gsap from 'gsap';
 
 interface Circleprops {
   src: string;
@@ -24,14 +23,21 @@ const Circle = forwardRef<CircleHandle, Circleprops>(({src, delay, size}, ref) =
     return {
       moveTo(x, y) {
         if (el.current) {
-          gsap.to(el.current, {x, y, delay});
+          setTimeout(() => {
+            el.current!.style.transform = `translate(${x}px, ${y}px)`;
+          }, delay * 1000);
         }
       },
     };
   }, [delay]);
 
   return (
-    <img src={src} alt="mouse stalker" ref={el} style={{position: 'absolute', zIndex: '1000', width: `${size}px`, height: `${size}px`}} />
+    <img
+      src={src}
+      alt="mouse stalker"
+      ref={el}
+      style={{position: 'absolute', zIndex: '1000', width: `${size}px`, height: `${size}px`, transition: 'transform 0.2s ease'}}
+    />
   );
 });
 
