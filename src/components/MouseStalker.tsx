@@ -1,4 +1,4 @@
-import {useLayoutEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import cursorsrc from '../assets/svg/cursor.svg';
 import stalker1src from '../assets/svg/stalker1.svg';
 import stalekr2src from '../assets/svg/stalker2.svg';
@@ -11,10 +11,9 @@ interface MouseStalkerProps {
 function MouseStalker({containerRef}: MouseStalkerProps) {
   const [positions, setPositions] = useState({x: 0, y: 0});
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    console.log(container);
 
     const onMove = ({clientX, clientY}: MouseEvent) => {
       const rect = container.getBoundingClientRect();
