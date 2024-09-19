@@ -49,7 +49,7 @@ const MediumText = styled.p`
 
 const TextContainer = styled.div`
   line-height: 1.6;
-  margin-bottom: 2vw;
+  margin-bottom: 2.5vw;
 `;
 
 const Img = styled.img`
