@@ -205,7 +205,7 @@ const CarouselRight = styled.img`
   position: absolute;
   height: 19.3vw;
   top: 43.2%;
-  right: -3.8%;
+  right: -3.8vw;
   z-index: 10;
 `;
 
@@ -214,6 +214,6 @@ const CarouselLeft = styled.img`
   position: absolute;
   height: 19.3vw;
   top: 43.2%;
-  left: -2.44%;
+  left: -2.35vw;
   z-index: 10;
 `;
