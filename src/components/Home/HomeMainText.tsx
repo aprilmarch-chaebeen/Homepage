@@ -47,7 +47,7 @@ function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, wid
       <NonTextContainer>
         {nowHovered && (
           <DescriptContainer>
-            <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={500}>
+            <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={600}>
               <Descript>{hoverDescriptions[idx]}</Descript>
               <Star src={starsrc} alt="star src" />
             </Marquee>
