@@ -9,7 +9,8 @@ import styled from 'styled-components';
 // import FlowText from '../components/Home/FlowText';
 // import HomeField from '../components/Home/HomeField';
 // import HomeJoy from '../components/Home/HomeJoy';
-import React, { Suspense } from 'react';
+import React, {Suspense, useRef} from 'react';
+import MouseStalker from '../components/MouseStalker';
 
 const WhatWeDo = React.lazy(() => import('../components/Home/WhatWeDo'));
 const Customers = React.lazy(() => import('../components/Home/Customers'));
@@ -22,8 +23,10 @@ const HomeField = React.lazy(() => import('../components/Home/HomeField'));
 const HomeJoy = React.lazy(() => import('../components/Home/HomeJoy'));
 
 function Home() {
+  const sectionRef = useRef<HTMLElement>(null);
   return (
-    <HomeSection>
+    <HomeSection ref={sectionRef}>
+      <MouseStalker containerRef={sectionRef} />
       <HomeMain />
       <Suspense>
         <WhatWeDo />
@@ -35,7 +38,7 @@ function Home() {
         <HomeExpertise />
         <HomeJourney />
         <HomeFooter />
-      </Suspense> 
+      </Suspense>
     </HomeSection>
   );
 }
