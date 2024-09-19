@@ -14,6 +14,7 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
   useLayoutEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+    console.log(container);
 
     const onMove = ({clientX, clientY}: MouseEvent) => {
       const rect = container.getBoundingClientRect();
@@ -21,6 +22,7 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
       const y = clientY - rect.top + 2;
 
       setPositions({x, y});
+      console.log(x, y);
     };
 
     container.addEventListener('mousemove', onMove);
@@ -39,8 +41,8 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
   return (
     <div>
       <Circle src={cursorsrc} $delay={0} $size={35} x={positions.x} y={positions.y} />
-      <Circle src={stalker1src} $delay={0.1} x={positions.x} y={positions.y} />
-      <Circle src={stalekr2src} $delay={0.2} x={positions.x} y={positions.y} />
+      <Circle src={stalker1src} $delay={0.09} x={positions.x} y={positions.y} />
+      <Circle src={stalekr2src} $delay={0.09} x={positions.x} y={positions.y} />
     </div>
   );
 }
