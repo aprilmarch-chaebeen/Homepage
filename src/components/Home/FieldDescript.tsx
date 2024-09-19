@@ -1,12 +1,17 @@
 import styled from 'styled-components';
-import fieldsrc from '../../assets/svg/field_img.svg';
 import cursorsrc from '../../assets/svg/cursor_img.svg';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Autoplay} from 'swiper/modules';
+
+import 'swiper/css';
 
 interface FieldDescriptProps {
   descript: string[];
+  name: string;
+  num: number;
 }
 
-function FieldDescript({descript}: FieldDescriptProps) {
+function FieldDescript({descript, name, num}: FieldDescriptProps) {
   return (
     <Container>
       <SmallText>{descript[0]}</SmallText>
@@ -16,7 +21,21 @@ function FieldDescript({descript}: FieldDescriptProps) {
         <MediumText>{descript[2]}</MediumText>
         <MediumText>{descript[2]}</MediumText>
       </TextContainer>
-      <Img src={fieldsrc} alt="field img" />
+      <Swiper
+        loop={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        modules={[Autoplay]}
+      >
+        {Array.from({length: num}, (_, i) => (
+          <SwiperSlide key={i}>
+            <Img src={require(`../../assets/images/field/${name}/${name}${i}.svg`).default} alt={`img ${i + 1}`} loading="lazy" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Container>
   );
 }

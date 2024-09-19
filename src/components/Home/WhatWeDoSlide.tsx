@@ -50,7 +50,7 @@ function WhatWeDoSlide() {
         {Array.from({length: home.num}, (_, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
             <SlideImg
-              src={require(`../../assets/images/${home.filter}/${home.filter}${i}.svg`).default}
+              src={require(`../../assets/images/whatwedo/${home.filter}/${home.filter}${i}.svg`).default}
               alt={`img ${i + 1}`}
               $idx={i}
               $nowIdx={nowIndex - 1}
