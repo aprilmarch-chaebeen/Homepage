@@ -7,10 +7,14 @@ import Support from './pages/Support';
 import About from './pages/About';
 // import Loading from './pages/Loading';
 import styled from 'styled-components';
+import {useRef} from 'react';
+import MouseStalker from './components/MouseStalker';
 
 function App() {
+  const sectionRef = useRef<HTMLElement>(null);
   return (
-    <AppSection>
+    <AppSection ref={sectionRef}>
+      <MouseStalker containerRef={sectionRef} />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
