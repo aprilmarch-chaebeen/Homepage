@@ -89,7 +89,7 @@ const Circle = styled.div`
 const Icon = styled.img`
   width: 1vw;
   animation: ${IconAnimation} 7s linear infinite;
-  margin-left: 0.1vw;
+  /* margin-left: 0.1vw; */
   margin-bottom: 0.05vw;
 `;
 
