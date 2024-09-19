@@ -25,7 +25,7 @@ function HowItWorks() {
             trigger: containerRef.current,
             pin: false,
             scrub: 1,
-            start: 'center 10%',
+            start: 'top -10%',
             end: 'top 25%',
           },
         }

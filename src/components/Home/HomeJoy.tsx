@@ -29,11 +29,11 @@ function HomeJoy() {
             opacity: 1,
             scrollTrigger: {
               trigger: svg,
-              start: 'top top',
+              start: 'top -10%',
               scrub: true,
             },
           })
-          .from(svg, {opacity: 0, duration: 5});
+          .from(svg, {opacity: 0, duration: 10});
       });
     },
     {scope: svgsRef}
