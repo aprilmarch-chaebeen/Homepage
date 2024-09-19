@@ -1,27 +1,64 @@
-import {useEffect, useState} from 'react';
+import {forwardRef, useImperativeHandle, useEffect, useRef} from 'react';
 import cursorsrc from '../assets/svg/cursor.svg';
 import stalker1src from '../assets/svg/stalker1.svg';
 import stalekr2src from '../assets/svg/stalker2.svg';
-import styled from 'styled-components';
+
+interface Circleprops {
+  src: string;
+  delay: number;
+  size?: number;
+}
+
+interface CircleHandle {
+  moveTo: (x: number, y: number) => void;
+}
 
 interface MouseStalkerProps {
   containerRef: React.RefObject<HTMLElement>;
 }
 
+const Circle = forwardRef<CircleHandle, Circleprops>(({src, delay, size}, ref) => {
+  const el = useRef<HTMLImageElement>(null);
+  useImperativeHandle(ref, () => {
+    return {
+      moveTo(x, y) {
+        if (el.current) {
+          setTimeout(() => {
+            el.current!.style.transform = `translate(${x}px, ${y}px)`;
+          }, delay * 1000);
+        }
+      },
+    };
+  }, [delay]);
+
+  return (
+    <img
+      src={src}
+      alt="mouse stalker"
+      ref={el}
+      style={{position: 'absolute', zIndex: '1000', width: `${size}px`, height: `${size}px`, transition: 'transform 0.2s ease'}}
+    />
+  );
+});
+
 function MouseStalker({containerRef}: MouseStalkerProps) {
-  const [positions, setPositions] = useState({x: 0, y: 0});
+  const circlesRef = useRef<CircleHandle[]>([]);
+
+  circlesRef.current = [];
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+
+    const {width, height} = container.getBoundingClientRect();
+    circlesRef.current.forEach((ref) => ref.moveTo(width / 2, height / 2));
 
     const onMove = ({clientX, clientY}: MouseEvent) => {
       const rect = container.getBoundingClientRect();
       const x = clientX - rect.left + 2;
       const y = clientY - rect.top + 2;
 
-      setPositions({x, y});
-      console.log(x, y);
+      circlesRef.current.forEach((ref) => ref.moveTo(x, y));
     };
 
     container.addEventListener('mousemove', onMove);
@@ -37,33 +74,19 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
     };
   }, [containerRef]);
 
+  const addCircleRef = (ref: CircleHandle | null) => {
+    if (ref) {
+      circlesRef.current.push(ref);
+    }
+  };
+
   return (
     <div>
-      <Circle src={cursorsrc} $delay={0} $size={35} x={positions.x} y={positions.y} />
-      <Circle src={stalker1src} $delay={0.09} x={positions.x} y={positions.y} />
-      <Circle src={stalekr2src} $delay={0.09} x={positions.x} y={positions.y} />
+      <Circle ref={addCircleRef} src={cursorsrc} delay={0} size={35} />
+      <Circle ref={addCircleRef} src={stalker1src} delay={0.1} />
+      <Circle ref={addCircleRef} src={stalekr2src} delay={0.2} />
     </div>
   );
 }
 
 export default MouseStalker;
-
-interface CircleProps {
-  src: string;
-  $size?: number;
-  $delay: number;
-  x: number;
-  y: number;
-}
-
-const Circle = styled.img.attrs<CircleProps>(({x, y}) => ({
-  style: {
-    transform: `translate(${x}px, ${y}px)`,
-  },
-}))<CircleProps>`
-  position: absolute;
-  z-index: 1000;
-  width: ${(p) => (p.$size ? p.$size : 25)}px;
-  height: ${(p) => (p.$size ? p.$size : 25)}px;
-  transition: transform 0.2s ease ${(p) => p.$delay}s;
-`;
