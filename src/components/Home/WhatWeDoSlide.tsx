@@ -85,7 +85,7 @@ const PageNumberContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  left: 50.8%;
+  left: 50.3%;
   transform: translate(-50%, 50%);
   font-size: 1vw;
   top: 82.1%;
@@ -113,7 +113,7 @@ const SlideContainer = styled(Swiper)`
     font-size: 0.8vw !important;
     color: #000;
     position: absolute;
-    left: 2.6vw;
+    left: 2.4vw;
   }
 
   & .swiper-button-next::after {
@@ -204,7 +204,7 @@ const CarouselRight = styled.img`
   width: 31vw;
   position: absolute;
   height: 19.3vw;
-  top: 43.1%;
+  top: 43.2%;
   right: -3.8%;
   z-index: 10;
 `;
@@ -213,7 +213,7 @@ const CarouselLeft = styled.img`
   width: 31vw;
   position: absolute;
   height: 19.3vw;
-  top: 43.1%;
-  left: -1.47%;
+  top: 43.2%;
+  left: -2.44%;
   z-index: 10;
 `;
