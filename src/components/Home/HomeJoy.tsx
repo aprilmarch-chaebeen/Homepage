@@ -66,6 +66,15 @@ function HomeJoy() {
       </Container>
       <Line1 />
       <Line2 />
+      <SmallText $top={37} $left={31}>
+        에이프릴마치는 당신의 길잡이 입니다
+      </SmallText>
+      <SmallText $top={55.5} $left={42}>
+        에이프릴마치는 당신의 나침반 입니다
+      </SmallText>
+      <SmallText $top={73.6} $left={60}>
+        에이프릴마치는 당신의 디딤돌 입니다
+      </SmallText>
     </Section>
   );
 }
@@ -162,4 +171,13 @@ const Contact = styled.img`
   height: 0.9vw;
   left: 0;
   transform: translate(28%, 520%);
+`;
+
+const SmallText = styled.span<{$top: number; $left: number}>`
+  position: absolute;
+  font-family: 'Pretendard-Medium';
+  font-size: 0.9vw;
+  color: #444;
+  top: ${(p) => p.$top}%;
+  left: ${(p) => p.$left}%;
 `;
