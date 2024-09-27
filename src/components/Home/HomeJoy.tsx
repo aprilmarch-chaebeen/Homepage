@@ -133,7 +133,7 @@ const TextImg = styled.img`
   height: 13vw;
   position: relative;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     height: 15vw;
   }
 `;
@@ -143,7 +143,7 @@ const BlueTextImg = styled.img`
   position: absolute;
   right: 0;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     height: 15vw;
   }
 `;
@@ -189,7 +189,7 @@ const SmallText = styled.span<{$top: number; $left: number}>`
   top: ${(p) => p.$top}%;
   left: ${(p) => p.$left}%;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1.2vw;
   }
 `;

@@ -66,7 +66,7 @@ const Ball = styled.img`
   width: 9vw;
   margin-right: 2vw;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 16vw;
   }
 `;

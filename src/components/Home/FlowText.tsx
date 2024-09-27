@@ -17,7 +17,7 @@ export default FlowText;
 const Section = styled.section`
   padding: 9vw 0;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     padding: 13vw 0;
   }
 `;
@@ -26,7 +26,7 @@ const Img = styled.img`
   width: 110vw;
   margin-right: 5vw;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 120vw;
   }
 `;

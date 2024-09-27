@@ -2,6 +2,8 @@ import {Link} from 'react-router-dom';
 import styled, {keyframes} from 'styled-components';
 import logosrc from '../assets/svg/BI_logo.svg';
 import naviconsrc from '../assets/svg/star_w.svg';
+import menusrc from '../assets/svg/menu.svg';
+// import NavbarMenu from './Home/NavbarMenu';
 
 function Navbar() {
   return (
@@ -34,7 +36,9 @@ function Navbar() {
           <GoToPage to="/about">About us</GoToPage>
         </ListItem>
       </List>
-      <div style={{width: '10vw'}}></div>
+      <Box></Box>
+      <Menu src={menusrc} alt="menu btn" />
+      {/* <NavbarMenu /> */}
     </Nav>
   );
 }
@@ -46,16 +50,26 @@ const Nav = styled.nav`
   padding: 1vw 3.7vw;
   height: 3.5vw;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     padding: 2vw 4.7vw;
+  }
+
+  @media (max-width: 480px) {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+    padding: 3vw 6vw;
+    height: auto;
   }
 `;
 
 const Logo = styled.img`
   width: 10vw;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 15vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 30vw;
   }
 `;
 
@@ -72,9 +86,13 @@ const List = styled.ul`
   transform: translate(-50%, 10%);
   z-index: 100;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     padding: 0.6vw 0.6vw 0.5vw 0.6vw;
     width: 50vw;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
   }
 `;
 
@@ -86,7 +104,7 @@ const ListItem = styled.li`
     margin-right: 1vw;
   }
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1.2vw;
   }
 `;
@@ -109,7 +127,7 @@ const Circle = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 3vw;
     height: 3vw;
   }
@@ -121,7 +139,7 @@ const Icon = styled.img`
   /* margin-left: 0.1vw; */
   margin-bottom: 0.05vw;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 1.5vw;
   }
 `;
@@ -131,6 +149,24 @@ const GoToPage = styled(Link)`
   color: #000;
   font-weight: 600;
   font-family: 'Pretendard-Light';
+`;
+
+const Box = styled.div`
+  width: 10vw;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const Menu = styled.img`
+  display: none;
+
+  @media (max-width: 480px) {
+    display: block;
+    width: 7.5vw;
+    cursor: pointer;
+  }
 `;
 
 export default Navbar;

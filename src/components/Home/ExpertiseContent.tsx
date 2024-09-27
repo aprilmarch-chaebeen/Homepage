@@ -150,7 +150,7 @@ const Ratio = styled.span`
   font-family: 'Gotham';
   color: #1c46f5;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1.5vw;
   }
 `;
@@ -160,7 +160,7 @@ const Content = styled.span`
   transform: rotate(-90deg) translateX(1.5625vw);
   color: #1c46f5;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1vw;
   }
 `;

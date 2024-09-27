@@ -72,7 +72,7 @@ const InnerContainer = styled.div`
 const Logo = styled.img`
   width: 7vw;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 8vw;
   }
 `;
@@ -89,7 +89,7 @@ const SmallText = styled.p`
   color: #111;
   margin: 1.3vw 0;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1.2vw;
   }
 `;
@@ -114,7 +114,7 @@ const Up = styled.button`
     background-color: #d2ff52;
   }
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 5vw;
     height: 5vw;
   }
@@ -151,7 +151,7 @@ const InfoStrong1 = styled.p`
   font-size: 1.3vw;
   margin: 0;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1.5vw;
   }
 `;
@@ -163,7 +163,7 @@ const InfoStrong2 = styled.p`
   font-size: 1.1vw;
   margin: 0;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1.3vw;
   }
 `;
@@ -175,7 +175,7 @@ const Info1 = styled.p`
   font-size: 1vw;
   margin: 0;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1.2vw;
   }
 `;
@@ -186,7 +186,7 @@ const Info2 = styled.p`
   font-size: 0.9vw;
   margin: 0;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1vw;
   }
 `;

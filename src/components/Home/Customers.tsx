@@ -78,7 +78,7 @@ const BigText = styled.p`
   font-size: 1.2vw;
   color: #1c46f5;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1.5vw;
   }
 `;
@@ -90,7 +90,7 @@ const MediumText = styled.p`
   margin-bottom: 1.45vw;
   line-height: 1.2;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 2.5vw;
   }
 `;
@@ -107,7 +107,7 @@ const SmallText = styled.p`
   margin-bottom: 3.2vw;
   line-height: 1.6;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 1.4vw;
   }
 `;

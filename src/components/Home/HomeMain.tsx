@@ -20,6 +20,7 @@ function HomeMain() {
         hovered={uxuiHovered || digitalHovered || dashboardHovered}
         nowHovered={brandingHovered}
         width={28}
+        mobileWidth={64}
       />
       <HomeMainText
         idx={1}
@@ -28,6 +29,7 @@ function HomeMain() {
         hovered={digitalHovered || dashboardHovered}
         nowHovered={uxuiHovered}
         width={38}
+        mobileWidth={84}
       />
       <SmallText src={creativesrc} alt="creative design svg" $hovered={digitalHovered || dashboardHovered} />
       <HomeMainText
@@ -37,6 +39,7 @@ function HomeMain() {
         hovered={dashboardHovered}
         nowHovered={digitalHovered}
         width={26}
+        mobileWidth={50}
       />
       <HomeMainText
         idx={3}
@@ -68,6 +71,10 @@ const MainSection = styled.section`
   align-items: center;
   line-height: 0.8;
   margin: 5vw 0;
+
+  @media (max-width: 480px) {
+    margin: 28vw 0;
+  }
 `;
 
 const SmallText = styled.img<{$hovered: boolean | undefined}>`
@@ -75,6 +82,10 @@ const SmallText = styled.img<{$hovered: boolean | undefined}>`
   transition: transform 0.6s;
   transform: ${(p) => (p.$hovered ? 'translateY(-6vw)' : 'translateY(0)')};
   margin: 0.8vw 0 0.3vw 0;
+
+  @media (max-width: 480px) {
+    width: 34vw;
+  }
 `;
 
 const Container = styled.div`
@@ -108,7 +119,7 @@ const Text = styled.p`
     margin-top: 3vw;
   }
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     font-size: 2.3vw;
 
     &:nth-child(1) {
@@ -139,7 +150,7 @@ const Circle = styled.img`
   width: 6vw;
   animation: ${CircleAnimation} 7s linear infinite;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 8vw;
   }
 `;

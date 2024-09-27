@@ -13,6 +13,9 @@ import brandingbsrc from '../../assets/svg/branding_b.svg';
 import uxuibsrc from '../../assets/svg/uxui_b.svg';
 import digitalbsrc from '../../assets/svg/digital_b.svg';
 import itbsrc from '../../assets/svg/it_dashboard_b.svg';
+// import itmobilesrc from '../../assets/svg/it_dashboard_mobile.svg';
+// import ithmobilesrc from '../../assets/svg/it_dashobard_h_mobile.svg';
+// import itbmobilesrc from '../../assets/svg/it_dashboard_b_mobile.svg';
 
 const hoverDescriptions = [
   '당신의 꿈을 담은 브랜드를 만듭니다',
@@ -34,15 +37,16 @@ interface HomeMainTextProp {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   width: number;
+  mobileWidth?: number;
 }
 
-function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, width}: HomeMainTextProp) {
+function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, width, mobileWidth}: HomeMainTextProp) {
   return (
     <TextContainer onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} $hovered={hovered}>
       {nowHovered ? (
-        <BigText src={hoverTextImgs[idx]} alt="hovered text img" $hovered={nowHovered} $width={width} />
+        <BigText src={hoverTextImgs[idx]} alt="hovered text img" $hovered={nowHovered} $width={width} $mwidth={mobileWidth} />
       ) : (
-        <BigText src={textImgs[idx]} alt="text img" $hovered={nowHovered} $width={width} />
+        <BigText src={textImgs[idx]} alt="text img" $hovered={nowHovered} $width={width} $mwidth={mobileWidth} />
       )}
       <NonTextContainer>
         {nowHovered && (
@@ -53,7 +57,7 @@ function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, wid
             </Marquee>
           </DescriptContainer>
         )}
-        <BlurText src={blurTextImgs[idx]} alt="blur text img" $width={width} />
+        <BlurText src={blurTextImgs[idx]} alt="blur text img" $width={width} $mwidth={mobileWidth} />
       </NonTextContainer>
     </TextContainer>
   );
@@ -94,15 +98,19 @@ const NonTextContainer = styled.div`
   left: 50%;
 `;
 
-const BigText = styled.img<{$hovered: boolean | undefined; $width: number}>`
+const BigText = styled.img<{$hovered: boolean | undefined; $width: number; $mwidth?: number}>`
   width: ${(p) => p.$width}vw;
   margin: 0;
   line-height: 0.9;
   transition: transform 0.6s;
   transform: ${(p) => (p.$hovered ? css`translateY(-5vw)` : css`translateY(0)`)};
+
+  @media (max-width: 480px) {
+    width: ${(p) => p.$mwidth}vw;
+  }
 `;
 
-const BlurText = styled.img<{$width: number}>`
+const BlurText = styled.img<{$width: number; $mwidth?: number}>`
   width: ${(p) => p.$width}vw;
   filter: blur(3px);
   margin: 0;
@@ -119,6 +127,10 @@ const BlurText = styled.img<{$width: number}>`
     transition:
       opacity 1s ease-in-out,
       visibility 1s ease-in-out;
+  }
+
+  @media (max-width: 480px) {
+    width: ${(p) => p.$mwidth}vw;
   }
 `;
 
