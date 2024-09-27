@@ -81,7 +81,7 @@ const PageNumberContainer = styled.div`
   left: 49%;
   transform: translate(-50%, 50%);
   font-size: 1vw;
-  top: 82.1%;
+  top: 85.9%;
   z-index: 12;
 `;
 
@@ -161,7 +161,7 @@ const GradientRight = styled.div`
   width: 15vw;
   position: absolute;
   height: 20vw;
-  top: 42%;
+  top: 55%;
   right: 0;
   z-index: 11;
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
@@ -171,7 +171,7 @@ const GradientLeft = styled.div`
   width: 15vw;
   position: absolute;
   height: 20vw;
-  top: 42%;
+  top: 55%;
   left: 0;
   z-index: 11;
   background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
@@ -187,8 +187,8 @@ const CarouselRight = styled.img`
   width: 31vw;
   position: absolute;
   height: 19.3vw;
-  top: 43.2%;
-  right: -3.8vw;
+  top: 55.2%;
+  right: -3.78vw;
   z-index: 10;
 `;
 
@@ -196,7 +196,7 @@ const CarouselLeft = styled.img`
   width: 31vw;
   position: absolute;
   height: 19.3vw;
-  top: 43.2%;
-  left: -2.29vw;
+  top: 55.2%;
+  left: -2.7vw;
   z-index: 10;
 `;

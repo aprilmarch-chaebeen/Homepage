@@ -134,7 +134,7 @@ const CircleContainer = styled.div`
   margin: auto 0;
   will-change: transform;
   top: 42vw;
-  z-index: 1000;
+  z-index: 100;
 `;
 
 const CircleAnimation = keyframes`

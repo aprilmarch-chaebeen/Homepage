@@ -2,6 +2,7 @@ import {forwardRef, useImperativeHandle, useEffect, useRef} from 'react';
 import cursorsrc from '../assets/svg/cursor.svg';
 import stalker1src from '../assets/svg/stalker1.svg';
 import stalekr2src from '../assets/svg/stalker2.svg';
+import styled from 'styled-components';
 
 interface Circleprops {
   src: string;
@@ -81,12 +82,18 @@ function MouseStalker({containerRef}: MouseStalkerProps) {
   };
 
   return (
-    <div>
+    <MouseStalkerContainer>
       <Circle ref={addCircleRef} src={cursorsrc} delay={0} size={35} />
       <Circle ref={addCircleRef} src={stalker1src} delay={0.1} />
       <Circle ref={addCircleRef} src={stalekr2src} delay={0.2} />
-    </div>
+    </MouseStalkerContainer>
   );
 }
 
 export default MouseStalker;
+
+const MouseStalkerContainer = styled.div`
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;

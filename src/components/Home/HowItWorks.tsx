@@ -61,6 +61,7 @@ const MemoizedWorkBox = memo(WorkBox);
 const WorkSection = styled.section`
   margin-top: 20vw;
   width: 100vw;
+  overflow: hidden;
 `;
 
 // WorkBox 컴포넌트
@@ -99,7 +100,6 @@ function WorkBox({text, imgsrc}: WorkBoxProps) {
   );
 }
 
-// 스타일 컴포넌트
 const Container = styled.div`
   display: flex;
   width: 100vw;
