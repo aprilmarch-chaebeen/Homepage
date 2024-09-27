@@ -3,9 +3,19 @@ import styled, {keyframes} from 'styled-components';
 import logosrc from '../assets/svg/BI_logo.svg';
 import naviconsrc from '../assets/svg/star_w.svg';
 import menusrc from '../assets/svg/menu.svg';
-// import NavbarMenu from './Home/NavbarMenu';
+import NavbarMenu from './Home/NavbarMenu';
+import {useAppDispatch, useAppSelector} from '../hook/reduxHook';
+import {menuValue, openMenu} from '../reducers/homeMenuSlice';
 
 function Navbar() {
+  const menuState = useAppSelector(menuValue);
+  const dispatch = useAppDispatch();
+
+  const handleMenuClicked = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    dispatch(openMenu());
+  };
+
   return (
     <Nav>
       <GoToPage to="/">
@@ -37,8 +47,10 @@ function Navbar() {
         </ListItem>
       </List>
       <Box></Box>
-      <Menu src={menusrc} alt="menu btn" />
-      {/* <NavbarMenu /> */}
+      <MenuBtn onClick={(e) => handleMenuClicked(e)}>
+        <Menu src={menusrc} alt="menu btn" />
+      </MenuBtn>
+      {menuState && <NavbarMenu />}
     </Nav>
   );
 }
@@ -159,14 +171,18 @@ const Box = styled.div`
   }
 `;
 
-const Menu = styled.img`
+const MenuBtn = styled.button`
   display: none;
 
   @media (max-width: 480px) {
     display: block;
     width: 7.5vw;
     cursor: pointer;
+    background: transparent;
+    border: none;
   }
 `;
+
+const Menu = styled.img``;
 
 export default Navbar;
