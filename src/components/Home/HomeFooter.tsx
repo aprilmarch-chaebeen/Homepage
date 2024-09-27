@@ -1,12 +1,9 @@
 import styled from 'styled-components';
-import circlebsrc from '../../assets/svg/circle_b.svg';
 import logosrc from '../../assets/svg/logo_b.svg';
 import upwsrc from '../../assets/svg/up_w.svg';
 import upbsrc from '../../assets/svg/up_b.svg';
 import statuesrc from '../../assets/svg/statue_g.svg';
 import {useState} from 'react';
-import Marquee from 'react-fast-marquee';
-import emailsrc from '../../assets/svg/e-mail.svg';
 
 function HomeFooter() {
   const [upHovered, setUpHovered] = useState(false);
@@ -17,33 +14,30 @@ function HomeFooter() {
 
   return (
     <Footer>
-      <Circle src={circlebsrc} alt="blue circle" />
-      <Line />
-      <OuterContainer>
-        <InnerContainer $width={65}>
-          <Logo src={logosrc} alt="logo img" />
-          <div>
-            <Contact>CONTACT US</Contact>
-          </div>
-        </InnerContainer>
-        <InnerContainer $width={35}>
+      <InnerContainer>
+        <Logo src={logosrc} alt="logo img" />
+        <TextContainer>
           <SmallText>바우처</SmallText>
+          <SmallLine></SmallLine>
           <SmallText>신규브랜드ㆍ신사업</SmallText>
+          <SmallLine></SmallLine>
           <SmallText>공공기관ㆍ대학</SmallText>
+          <SmallLine></SmallLine>
           <SmallText>IT 대시보드</SmallText>
+          <SmallLine></SmallLine>
           <SmallText>포트폴리오</SmallText>
+          <SmallLine></SmallLine>
           <SmallText>About us</SmallText>
-        </InnerContainer>
-      </OuterContainer>
-      <MarqueeContainer>
-        <Marquee autoFill={true} speed={20}>
-          <EmailImg src={emailsrc} alt="email img" />
-        </Marquee>
-      </MarqueeContainer>
+        </TextContainer>
+      </InnerContainer>
+      <Line />
       <InfoContainer>
-        <Info>T.02-6929-0990</Info>
-        <Info>E.cyj@aprilmarch.design</Info>
-        <Info>Seoul, Songpa-gu, Songpa-Daero 167, TERRA tower building A</Info>
+        <InfoStrong style={{fontSize: '1.3vw'}}>상담문의</InfoStrong>
+        <InfoStrong>T.02-6929-099</InfoStrong>
+        <InfoStrong>E.cyj@aprilmarch.design</InfoStrong>
+        <Info>대표 차유정 | 주소 123456 서울특별시 송파구 송파대로 167, 테라타워 Aehd</Info>
+        <Info>통신판매업 신고 1234-1234-1234 | 사업자등록번호 123-456-7890</Info>
+        <Info style={{fontFamily: 'Pretendard-Regular', fontSize: '0.9vw'}}>Copyright Aprilmarch. All rights reserved.</Info>
       </InfoContainer>
       <Up onMouseEnter={() => setUpHovered(true)} onMouseLeave={() => setUpHovered(false)} onClick={handleUpClicked}>
         {upHovered ? <Arrow src={upbsrc} alt="up black" /> : <Arrow src={upwsrc} alt="up white" />}
@@ -56,18 +50,10 @@ function HomeFooter() {
 export default HomeFooter;
 
 const Footer = styled.footer`
-  padding: 2vw 4vw;
+  padding: 3vw 9vw 5vw 9vw;
   background-color: #f6f6f6;
   position: relative;
-  height: 40vw;
   z-index: 0;
-`;
-
-const Circle = styled.img`
-  width: 1.9vw;
-  height: 1.9vw;
-  display: flex;
-  margin-left: 1vw;
 `;
 
 const Line = styled.hr`
@@ -75,53 +61,45 @@ const Line = styled.hr`
   background-color: #d2d2d2;
   width: 100%;
   height: 0.1vw;
+  margin: 1.5vw 0 2vw 0;
 `;
 
-const OuterContainer = styled.div`
+const InnerContainer = styled.div`
   display: flex;
-  padding: 4vw 0;
-`;
-
-const InnerContainer = styled.div<{$width: number}>`
-  text-align: left;
-  width: ${(p) => p.$width}%;
+  justify-content: space-between;
 `;
 
 const Logo = styled.img`
   width: 7vw;
-  margin-bottom: 5vw;
 `;
 
-const Contact = styled.button`
-  background-color: #1c46f5;
-  color: #fff;
-  font-family: 'Poppins';
-  font-weight: 500;
-  font-size: 1.1vw;
-  border: none;
-  width: 13.5vw;
-  height: 3.6vw;
-  border-radius: 30vw;
+const TextContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
 const SmallText = styled.p`
-  font-family: 'Pretendard-Medium';
+  font-family: 'Pretendard-Bold';
   font-size: 1.1vw;
-  color: #222;
+  color: #111;
   margin: 1.3vw 0;
 `;
 
+const SmallLine = styled.div`
+  border-left: 0.1vw solid #111;
+  height: 1vw;
+  margin: 0 1.5vw;
+`;
+
 const Up = styled.button`
-  width: 3.8vw;
-  height: 3.8vw;
+  width: 4vw;
+  height: 4vw;
   background-color: #2c2c2c;
   position: absolute;
   border-radius: 50%;
   border: none;
-  top: 47%;
+  top: 60%;
   right: 8%;
   &:hover {
     background-color: #d2ff52;
@@ -138,31 +116,28 @@ const Arrow = styled.img`
 const Statue = styled.img`
   position: absolute;
   bottom: 0;
-  width: 30vw;
-  right: 0;
+  width: 22vw;
+  right: 4vw;
   z-index: -1;
 `;
 
-const MarqueeContainer = styled.div`
-  position: absolute;
-  bottom: 11%;
-  z-index: 1;
-  left: 0;
-`;
-
-const EmailImg = styled.img`
-  height: 10vw;
-  margin-right: 3vw;
-`;
-
 const InfoContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 11vw;
+  text-align: left;
+  line-height: 1.8;
+`;
+
+const InfoStrong = styled.p`
+  color: #333;
+  font-family: 'NotoSansKR';
+  font-weight: 600;
+  font-size: 1.1vw;
+  margin: 0;
 `;
 
 const Info = styled.p`
   color: #666;
-  font-family: 'Gotham-Book';
+  font-family: 'NotoSansKR';
+  font-weight: 400;
   font-size: 1vw;
+  margin: 0;
 `;
