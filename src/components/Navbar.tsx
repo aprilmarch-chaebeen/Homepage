@@ -45,10 +45,18 @@ const Nav = styled.nav`
   align-items: center;
   padding: 1vw 3.7vw;
   height: 3.5vw;
+
+  @media (min-width: 1280px) {
+    padding: 2vw 4.7vw;
+  }
 `;
 
 const Logo = styled.img`
   width: 10vw;
+
+  @media (min-width: 1280px) {
+    width: 15vw;
+  }
 `;
 
 const List = styled.ul`
@@ -63,6 +71,11 @@ const List = styled.ul`
   left: 50%;
   transform: translate(-50%, 10%);
   z-index: 100;
+
+  @media (min-width: 1280px) {
+    padding: 0.6vw 0.6vw 0.5vw 0.6vw;
+    width: 50vw;
+  }
 `;
 
 const ListItem = styled.li`
@@ -71,6 +84,10 @@ const ListItem = styled.li`
 
   &:nth-child(7) {
     margin-right: 1vw;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 1.2vw;
   }
 `;
 
@@ -91,6 +108,11 @@ const Circle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 1280px) {
+    width: 3vw;
+    height: 3vw;
+  }
 `;
 
 const Icon = styled.img`
@@ -98,6 +120,10 @@ const Icon = styled.img`
   animation: ${IconAnimation} 7s linear infinite;
   /* margin-left: 0.1vw; */
   margin-bottom: 0.05vw;
+
+  @media (min-width: 1280px) {
+    width: 1.5vw;
+  }
 `;
 
 const GoToPage = styled(Link)`

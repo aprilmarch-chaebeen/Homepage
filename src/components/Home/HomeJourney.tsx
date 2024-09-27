@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import BallAnimation from './BallAnimation';
-// import BallAnimation2 from './BallAnimation2';
 
 function HomeJourney() {
   return (
     <JourneySection>
       <BigText>Work Journey Map.</BigText>
       <BallAnimation />
-      {/* <BallAnimation2 /> */}
       <Line />
     </JourneySection>
   );
@@ -22,6 +20,7 @@ const JourneySection = styled.section`
   height: 35vw;
   position: relative;
   z-index: 0;
+  overflow: hidden;
 `;
 
 const Line = styled.hr`

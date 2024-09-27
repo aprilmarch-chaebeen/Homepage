@@ -32,12 +32,12 @@ function HomeFooter() {
       </InnerContainer>
       <Line />
       <InfoContainer>
-        <InfoStrong style={{fontSize: '1.3vw'}}>상담문의</InfoStrong>
-        <InfoStrong>T.02-6929-099</InfoStrong>
-        <InfoStrong>E.cyj@aprilmarch.design</InfoStrong>
-        <Info>대표 차유정 | 주소 123456 서울특별시 송파구 송파대로 167, 테라타워 Aehd</Info>
-        <Info>통신판매업 신고 1234-1234-1234 | 사업자등록번호 123-456-7890</Info>
-        <Info style={{fontFamily: 'Pretendard-Regular', fontSize: '0.9vw'}}>Copyright Aprilmarch. All rights reserved.</Info>
+        <InfoStrong1>상담문의</InfoStrong1>
+        <InfoStrong2>T.02-6929-099</InfoStrong2>
+        <InfoStrong2>E.cyj@aprilmarch.design</InfoStrong2>
+        <Info1>대표 차유정 | 주소 123456 서울특별시 송파구 송파대로 167, 테라타워 Aehd</Info1>
+        <Info1>통신판매업 신고 1234-1234-1234 | 사업자등록번호 123-456-7890</Info1>
+        <Info2>Copyright Aprilmarch. All rights reserved.</Info2>
       </InfoContainer>
       <Up onMouseEnter={() => setUpHovered(true)} onMouseLeave={() => setUpHovered(false)} onClick={handleUpClicked}>
         {upHovered ? <Arrow src={upbsrc} alt="up black" /> : <Arrow src={upwsrc} alt="up white" />}
@@ -71,6 +71,10 @@ const InnerContainer = styled.div`
 
 const Logo = styled.img`
   width: 7vw;
+
+  @media (min-width: 1280px) {
+    width: 8vw;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -84,6 +88,10 @@ const SmallText = styled.p`
   font-size: 1.1vw;
   color: #111;
   margin: 1.3vw 0;
+
+  @media (min-width: 1280px) {
+    font-size: 1.2vw;
+  }
 `;
 
 const SmallLine = styled.div`
@@ -101,8 +109,14 @@ const Up = styled.button`
   border: none;
   top: 60%;
   right: 8%;
+
   &:hover {
     background-color: #d2ff52;
+  }
+
+  @media (min-width: 1280px) {
+    width: 5vw;
+    height: 5vw;
   }
 `;
 
@@ -111,6 +125,10 @@ const Arrow = styled.img`
   position: absolute;
   top: 40%;
   right: 33%;
+
+  @media (min-width: 1280px) {
+    width: 1.8vw;
+  }
 `;
 
 const Statue = styled.img`
@@ -126,18 +144,49 @@ const InfoContainer = styled.div`
   line-height: 1.8;
 `;
 
-const InfoStrong = styled.p`
+const InfoStrong1 = styled.p`
+  color: #333;
+  font-family: 'NotoSansKR';
+  font-weight: 600;
+  font-size: 1.3vw;
+  margin: 0;
+
+  @media (min-width: 1280px) {
+    font-size: 1.5vw;
+  }
+`;
+
+const InfoStrong2 = styled.p`
   color: #333;
   font-family: 'NotoSansKR';
   font-weight: 600;
   font-size: 1.1vw;
   margin: 0;
+
+  @media (min-width: 1280px) {
+    font-size: 1.3vw;
+  }
 `;
 
-const Info = styled.p`
+const Info1 = styled.p`
   color: #666;
   font-family: 'NotoSansKR';
   font-weight: 400;
   font-size: 1vw;
   margin: 0;
+
+  @media (min-width: 1280px) {
+    font-size: 1.2vw;
+  }
+`;
+
+const Info2 = styled.p`
+  color: #666;
+  font-family: 'Pretendard-Regular';
+  font-size: 0.9vw;
+  margin: 0;
+
+  @media (min-width: 1280px) {
+    font-size: 1vw;
+  }
 `;

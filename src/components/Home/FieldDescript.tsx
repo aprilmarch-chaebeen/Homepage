@@ -51,6 +51,10 @@ const SmallText = styled.p`
   font-family: 'Pretendard-SemiBold';
   font-size: 0.9vw;
   color: #777;
+
+  @media (min-width: 1280px) {
+    font-size: 1.2vw;
+  }
 `;
 
 const BigText = styled.h3<{$pad?: number}>`
@@ -58,6 +62,10 @@ const BigText = styled.h3<{$pad?: number}>`
   font-size: 2vw;
   color: #222;
   padding: 0 ${(p) => p.$pad || 0}vw;
+
+  @media (min-width: 1280px) {
+    font-size: 2.7vw;
+  }
 `;
 
 const MediumText = styled.p`
@@ -65,6 +73,10 @@ const MediumText = styled.p`
   font-size: 1vw;
   color: #444;
   margin: 0;
+
+  @media (min-width: 1280px) {
+    font-size: 1.3vw;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -77,4 +89,8 @@ const Img = styled.img`
   width: 42vw;
   box-sizing: border-box;
   cursor: url(${cursorsrc}), pointer;
+
+  @media (min-width: 1280px) {
+    width: 44vw;
+  }
 `;

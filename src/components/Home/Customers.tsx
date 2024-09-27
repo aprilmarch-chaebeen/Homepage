@@ -77,6 +77,10 @@ const BigText = styled.p`
   font-family: 'Cardo';
   font-size: 1.2vw;
   color: #1c46f5;
+
+  @media (min-width: 1280px) {
+    font-size: 1.5vw;
+  }
 `;
 
 const MediumText = styled.p`
@@ -85,6 +89,10 @@ const MediumText = styled.p`
   margin: 0;
   margin-bottom: 1.45vw;
   line-height: 1.2;
+
+  @media (min-width: 1280px) {
+    font-size: 2.5vw;
+  }
 `;
 
 const BoldText = styled.span`
@@ -98,4 +106,8 @@ const SmallText = styled.p`
   color: #555;
   margin-bottom: 3.2vw;
   line-height: 1.6;
+
+  @media (min-width: 1280px) {
+    font-size: 1.4vw;
+  }
 `;

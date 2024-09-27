@@ -19,7 +19,7 @@ function HomeMain() {
         onMouseLeave={() => setBrandingHovered(false)}
         hovered={uxuiHovered || digitalHovered || dashboardHovered}
         nowHovered={brandingHovered}
-        width={23}
+        width={28}
       />
       <HomeMainText
         idx={1}
@@ -27,7 +27,7 @@ function HomeMain() {
         onMouseLeave={() => setUxuiHovered(false)}
         hovered={digitalHovered || dashboardHovered}
         nowHovered={uxuiHovered}
-        width={33}
+        width={38}
       />
       <SmallText src={creativesrc} alt="creative design svg" $hovered={digitalHovered || dashboardHovered} />
       <HomeMainText
@@ -36,14 +36,14 @@ function HomeMain() {
         onMouseLeave={() => setDigitalHovered(false)}
         hovered={dashboardHovered}
         nowHovered={digitalHovered}
-        width={18}
+        width={26}
       />
       <HomeMainText
         idx={3}
         onMouseEnter={() => setDashboardHovered(true)}
         onMouseLeave={() => setDashboardHovered(false)}
         nowHovered={dashboardHovered}
-        width={40}
+        width={45}
       />
       <Container>
         <TextContainer>
@@ -107,6 +107,14 @@ const Text = styled.p`
   &:nth-child(1) {
     margin-top: 3vw;
   }
+
+  @media (min-width: 1280px) {
+    font-size: 2.3vw;
+
+    &:nth-child(1) {
+      margin-top: 3.5vw;
+    }
+  }
 `;
 
 const CircleContainer = styled.div`
@@ -130,6 +138,10 @@ const CircleAnimation = keyframes`
 const Circle = styled.img`
   width: 6vw;
   animation: ${CircleAnimation} 7s linear infinite;
+
+  @media (min-width: 1280px) {
+    width: 8vw;
+  }
 `;
 
 const CircleLogo = styled.img`

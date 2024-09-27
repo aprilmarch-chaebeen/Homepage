@@ -149,10 +149,18 @@ const Ratio = styled.span`
   font-size: 1.25vw;
   font-family: 'Gotham';
   color: #1c46f5;
+
+  @media (min-width: 1280px) {
+    font-size: 1.5vw;
+  }
 `;
 
 const Content = styled.span`
   font-size: 0.8vw;
   transform: rotate(-90deg) translateX(1.5625vw);
   color: #1c46f5;
+
+  @media (min-width: 1280px) {
+    font-size: 1vw;
+  }
 `;

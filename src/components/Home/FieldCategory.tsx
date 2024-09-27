@@ -44,6 +44,12 @@ const Container = styled.div<{$clicked: boolean}>`
   &:hover {
     background-color: #d2ff52;
   }
+
+  @media (min-width: 1280px) {
+    padding: 1.5vw 1.5vw 1.5vw 4.8vw;
+    height: 11.5vw;
+    justify-content: space-between;
+  }
 `;
 
 const Button = styled.button`
@@ -53,22 +59,40 @@ const Button = styled.button`
 
 const ButtonImg = styled.img`
   width: 2.1vw;
+
+  @media (min-width: 1280px) {
+    width: 2.5vw;
+  }
 `;
 
 const InnerContainer1 = styled.div`
   display: flex;
   align-items: center;
+
+  @media (min-width: 1280px) {
+    margin-bottom: 2vw;
+  }
 `;
 
 const Star = styled.img`
   width: 1.8vw;
   margin-right: 1.5vw;
+
+  @media (min-width: 1280px) {
+    width: 2.3vw;
+    margin-right: 1.5vw;
+  }
 `;
 
 const Text = styled.h3`
   font-size: 2.1vw;
   font-family: 'Pretendard-Light';
   margin: 1.6vw 0;
+
+  @media (min-width: 1280px) {
+    font-size: 2.5vw;
+    margin: 0;
+  }
 `;
 
 const InnerContainer2 = styled.div`
@@ -81,4 +105,8 @@ const SmallImg = styled.img`
   height: 1.5vw;
   margin: 0;
   margin-right: 0.3vw;
+
+  @media (min-width: 1280px) {
+    height: 2vw;
+  }
 `;

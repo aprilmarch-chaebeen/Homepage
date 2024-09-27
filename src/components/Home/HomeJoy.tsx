@@ -132,12 +132,20 @@ const Rect = styled.img`
 const TextImg = styled.img`
   height: 13vw;
   position: relative;
+
+  @media (min-width: 1280px) {
+    height: 15vw;
+  }
 `;
 
 const BlueTextImg = styled.img`
   height: 13vw;
   position: absolute;
   right: 0;
+
+  @media (min-width: 1280px) {
+    height: 15vw;
+  }
 `;
 
 const Circle = styled.img`
@@ -180,4 +188,8 @@ const SmallText = styled.span<{$top: number; $left: number}>`
   color: #444;
   top: ${(p) => p.$top}%;
   left: ${(p) => p.$left}%;
+
+  @media (min-width: 1280px) {
+    font-size: 1.2vw;
+  }
 `;
