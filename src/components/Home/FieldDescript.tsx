@@ -6,20 +6,20 @@ import {Autoplay} from 'swiper/modules';
 import 'swiper/css';
 
 interface FieldDescriptProps {
-  descript: string[];
+  descript: Array<string | JSX.Element>;
   name: string;
   num: number;
+  pad?: number;
 }
 
-function FieldDescript({descript, name, num}: FieldDescriptProps) {
+function FieldDescript({descript, name, num, pad}: FieldDescriptProps) {
   return (
     <Container>
       <SmallText>{descript[0]}</SmallText>
-      <BigText>{descript[1]}</BigText>
+      <BigText $pad={pad}>{descript[1]}</BigText>
       <TextContainer>
         <MediumText>{descript[2]}</MediumText>
-        <MediumText>{descript[2]}</MediumText>
-        <MediumText>{descript[2]}</MediumText>
+        <MediumText>{descript[3]}</MediumText>
       </TextContainer>
       <Swiper
         loop={true}
@@ -44,7 +44,7 @@ export default FieldDescript;
 
 const Container = styled.div`
   text-align: center;
-  padding: 5vw 3vw;
+  padding: 3vw;
 `;
 
 const SmallText = styled.p`
@@ -53,10 +53,11 @@ const SmallText = styled.p`
   color: #777;
 `;
 
-const BigText = styled.h3`
-  font-family: 'Pretendard-Regular';
+const BigText = styled.h3<{$pad?: number}>`
+  font-family: 'Pretendard-Light';
   font-size: 2vw;
   color: #222;
+  padding: 0 ${(p) => p.$pad || 0}vw;
 `;
 
 const MediumText = styled.p`

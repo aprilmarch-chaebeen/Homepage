@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 import nobtnsrc from '../../assets/svg/no_btn.svg';
 import starsrc from '../../assets/svg/star_b.svg';
-import smallsrc from '../../assets/svg/small_creativity.svg';
 import gobtnsrc from '../../assets/svg/go_btn.svg';
 import {useState} from 'react';
 
 interface FieldCategoryProps {
   title: string;
-  text: string;
   onClick: () => void;
   clicked: boolean;
+  name: string;
 }
 
-function FieldCategory({title, text, onClick, clicked}: FieldCategoryProps) {
+function FieldCategory({title, onClick, clicked, name}: FieldCategoryProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -25,9 +24,7 @@ function FieldCategory({title, text, onClick, clicked}: FieldCategoryProps) {
         <Text>{title}</Text>
       </InnerContainer1>
       <InnerContainer2>
-        <SmallImg src={smallsrc} alt="small img" />
-        <SmallText>•</SmallText>
-        <SmallText>{text}</SmallText>
+        <SmallImg src={require(`../../assets/images/field_category/${name}_key.svg`).default} alt="small img" />
       </InnerContainer2>
     </Container>
   );
@@ -81,15 +78,7 @@ const InnerContainer2 = styled.div`
 `;
 
 const SmallImg = styled.img`
-  width: 4.9vw;
-  margin: 0;
-  margin-right: 0.3vw;
-`;
-
-const SmallText = styled.p`
-  font-size: 0.9vw;
-  font-family: 'Pretendard-Regular';
-  color: #555;
+  height: 1.5vw;
   margin: 0;
   margin-right: 0.3vw;
 `;
