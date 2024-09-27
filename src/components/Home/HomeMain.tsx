@@ -3,7 +3,7 @@ import HomeMainText from './HomeMainText';
 import {useState} from 'react';
 import creativesrc from '../../assets/svg/creative.svg';
 import circlesrc from '../../assets/svg/circle_back.svg';
-import logosrc from '../../assets/svg/circle_logo.svg';
+import contactsrc from '../../assets/svg/contact_us.svg';
 
 function HomeMain() {
   const [brandingHovered, setBrandingHovered] = useState(false);
@@ -55,7 +55,7 @@ function HomeMain() {
         </TextContainer>
         <CircleContainer>
           <Circle src={circlesrc} alt="circle img" />
-          <CircleLogo src={logosrc} alt="circle logo img" />
+          <CircleLogo src={contactsrc} alt="circle logo img" />
         </CircleContainer>
       </Container>
     </MainSection>
@@ -157,7 +157,8 @@ const Circle = styled.img`
 
 const CircleLogo = styled.img`
   position: absolute;
-  width: 3.5vw;
-  left: 0;
+  width: 4vw;
+  left: -6.5%;
   transform: translate(35%, 110%);
+  top: 35%;
 `;
