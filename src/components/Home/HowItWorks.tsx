@@ -1,211 +1,168 @@
 import styled from 'styled-components';
-import imgsrc from '../../assets/svg/howitworks.svg';
-import gsap from 'gsap';
-import {useGSAP} from '@gsap/react';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import {useRef} from 'react';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/css';
+import {Autoplay} from 'swiper/modules';
+import {memo} from 'react';
 
-gsap.registerPlugin(ScrollTrigger);
+// 텍스트 배열 정의
+const boxText1 = [
+  '마케팅의 경쟁력, 브랜드의 지속성을',
+  '모두 담을 수 있는 곳을 찾는다면?',
+  '에이프릴마치는 마케팅에 직접적으로',
+  '도움이 될 수 있는 디자인의 정확한 방향을 제시합니다',
+];
+const boxText2 = [
+  '마케팅과 디자인,',
+  '어디서부터 어떻게 해야할지 잘 모르겠다면?',
+  '무엇이 필요한지 어떤것을 먼저 시작해야하는지부터',
+  '함께 고민하는 에이프릴마치가 처음부터 끝까지 함께합니다',
+];
+const boxText3 = [
+  '지금에 안주하지 않고',
+  '우리의 브랜드가 더 높이 도약할 수 있도록',
+  '에이프릴마치의 풍부한 경험과 노하우로',
+  '고객의 브랜드가 더 높이 도약할 수 있도록 디딤돌이 되어드립니다.',
+];
 
 function HowItWorks() {
-  const containerRef = useRef<HTMLElement>(null);
-  const stepsRef = useRef<HTMLDivElement[] | null[]>([]);
-  const linesRef = useRef<HTMLElement[] | null[]>([]);
-
-  useGSAP(
-    () => {
-      gsap.fromTo(
-        containerRef.current,
-        {scale: 0.7, borderRadius: 50, ease: 'none'},
-        {
-          scale: 1,
-          borderRadius: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            pin: false,
-            scrub: 1,
-            start: 'top -10%',
-            end: 'top 25%',
-          },
-        }
-      );
-    },
-    {scope: containerRef}
-  );
-
-  useGSAP(
-    () => {
-      stepsRef.current.forEach((step, index) => {
-        gsap.fromTo(
-          step,
-          {color: '#727272', scale: 0.5},
-          {
-            color: '#fff',
-            scale: 1,
-            duration: 1,
-            delay: index * 2 + 1,
-            scrollTrigger: {
-              trigger: step,
-              toggleActions: 'play none none none',
-              start: 'top 25%',
-            },
-          }
-        );
-      });
-    },
-    {scope: containerRef}
-  );
-
-  useGSAP(
-    () => {
-      linesRef.current.forEach((line, index) => {
-        gsap.fromTo(
-          line,
-          {backgroundColor: '#727272', scaleX: 0, transformOrigin: 'left'},
-          {
-            backgroundColor: '#fff',
-            scaleX: 1,
-            duration: 1,
-            delay: index * 2 + 1,
-            scrollTrigger: {
-              trigger: line,
-              toggleActions: 'play none none none',
-              start: 'top 25%',
-            },
-          }
-        );
-      });
-    },
-    {scope: containerRef}
-  );
-
   return (
-    <WorkSection ref={containerRef}>
-      <OuterContainer>
-        <Img src={imgsrc} />
-        <InnerContainer1>
-          <SmallText>How it Works</SmallText>
-          <BigText>
-            고객사를 위한 <BoldText>Full Service Creative</BoldText>
-          </BigText>
-          <InnerContainer2>
-            <InnerContainer3 ref={(el) => (stepsRef.current[0] = el)}>
-              <Step>Step 1</Step>
-              <Line ref={(el) => (linesRef.current[0] = el)} />
-              <StepText>
-                마케팅
-                <br />
-                상담 진단
-              </StepText>
-            </InnerContainer3>
-            <InnerContainer3 ref={(el) => (stepsRef.current[1] = el)}>
-              <Step>Step 2</Step>
-              <Line ref={(el) => (linesRef.current[1] = el)} />
-              <StepText>
-                전략적인
-                <br />
-                브랜드 컨설팅
-              </StepText>
-            </InnerContainer3>
-            <InnerContainer3 ref={(el) => (stepsRef.current[2] = el)}>
-              <Step>Step 3</Step>
-              <Line ref={(el) => (linesRef.current[2] = el)} />
-              <StepText>
-                맞춤형
-                <br />
-                최적화 디자인
-              </StepText>
-            </InnerContainer3>
-            <InnerContainer3 ref={(el) => (stepsRef.current[3] = el)}>
-              <Step>Step 4</Step>
-              <Line ref={(el) => (linesRef.current[3] = el)} />
-              <StepText>
-                꼼꼼한
-                <br />
-                케어 시스템
-              </StepText>
-            </InnerContainer3>
-          </InnerContainer2>
-        </InnerContainer1>
-      </OuterContainer>
+    <WorkSection>
+      <Swiper
+        slidesPerView="auto"
+        centeredSlides={true}
+        loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        modules={[Autoplay]}
+      >
+        <SwiperSlide>
+          <MemoizedWorkBox text={boxText1} imgsrc={require('../../assets/images/howitworks/work0.svg').default} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <MemoizedWorkBox text={boxText2} imgsrc={require('../../assets/images/howitworks/work1.svg').default} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <MemoizedWorkBox text={boxText3} imgsrc={require('../../assets/images/howitworks/work2.svg').default} />
+        </SwiperSlide>
+      </Swiper>
     </WorkSection>
   );
 }
 
 export default HowItWorks;
 
+// 메모이제이션된 WorkBox 컴포넌트
+const MemoizedWorkBox = memo(WorkBox);
+
+// 스타일 정의
 const WorkSection = styled.section`
-  background-color: #050505;
-  text-align: left;
-  margin-top: 10vw;
-  color: #fff;
-  padding-bottom: 0;
+  margin-top: 20vw;
   width: 100vw;
-  height: 32vw;
-  position: relative;
 `;
 
-const OuterContainer = styled.div`
+// WorkBox 컴포넌트
+interface WorkBoxProps {
+  text: string[];
+  imgsrc: string;
+}
+
+function WorkBox({text, imgsrc}: WorkBoxProps) {
+  return (
+    <Container>
+      <ImgBox $imgsrc={imgsrc}>
+        <ImgText>에이프릴마치는</ImgText>
+        <ImgText>당신의</ImgText>
+        <ImgText>
+          <span style={{marginRight: '16vw'}}>[</span>
+          <span>]</span>
+        </ImgText>
+        <ImgText>입니다</ImgText>
+      </ImgBox>
+      <TextBox>
+        <Title>How It Works</Title>
+        <SubTitle>
+          {text[0]}
+          <br />
+          {text[1]}
+        </SubTitle>
+        <Divider />
+        <Descript>
+          {text[2]}
+          <br />
+          {text[3]}
+        </Descript>
+      </TextBox>
+    </Container>
+  );
+}
+
+// 스타일 컴포넌트
+const Container = styled.div`
   display: flex;
+  width: 100vw;
+  height: 100%;
+  align-items: center;
 `;
 
-const InnerContainer1 = styled.div`
-  padding: 4.5vw 5.5vw;
-  width: 65%;
-`;
-
-const InnerContainer2 = styled.div`
+const ImgBox = styled.div<{$imgsrc: string}>`
+  background-image: url(${(props) => props.$imgsrc});
+  background-size: cover;
+  background-position: center;
+  width: 28vw;
+  height: 25vw;
   display: flex;
-  color: #727272;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pretendard-Bold';
+  font-size: 3vw;
+  color: #fff;
 `;
 
-const Img = styled.img`
-  width: 35%;
-  object-fit: cover;
-  height: 32vw;
-`;
-
-const SmallText = styled.p`
-  color: #d2ff52;
-  font-size: 1.2vw;
-  font-family: 'Cardo';
+const ImgText = styled.p`
   margin: 0;
 `;
 
-const BigText = styled.h2`
-  font-family: 'Pretendard-ExtraLight';
-  margin-top: 1.2vw;
-  margin-bottom: 10vw;
-  line-height: 1.1;
-  font-size: 2.3vw;
+const TextBox = styled.div`
+  width: 72vw;
+  background-color: #000;
+  height: 25vw;
+  text-align: left;
 `;
 
-const BoldText = styled.span`
+const Title = styled.h2`
+  font-family: 'Poppins';
+  font-weight: 300;
+  color: #d2ff52;
+  font-size: 1vw;
+  margin-left: 5vw;
+  margin-top: 3vw;
+`;
+
+const SubTitle = styled.h3`
   font-family: 'Pretendard-SemiBold';
-`;
-
-const InnerContainer3 = styled.div`
-  width: 25%;
-`;
-
-const Step = styled.p`
-  font-size: 1.2vw;
-  position: relative;
-  font-family: 'Gotham-Light';
-`;
-
-const Line = styled.hr`
-  position: absolute;
-  width: 12vw;
-  height: 0.01vw;
-  background-color: #727272;
-  left: 0;
-  top: 25%;
-  border: none;
-`;
-
-const StepText = styled.p`
+  color: #fff;
   font-size: 1.7vw;
-  font-family: 'Pretendard-SemiBold';
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  line-height: 1.7;
+  margin-left: 5vw;
+`;
+
+const Divider = styled.div`
+  border-left: 0.1vw solid #fff;
+  height: 4vw;
+  margin-left: 5vw;
+`;
+
+const Descript = styled.p`
+  font-family: 'Pretendard-ExtraLight';
+  color: #eee;
+  font-size: 1.5vw;
+  line-height: 1.5;
+  margin-left: 5vw;
+  margin-top: 1vw;
 `;
