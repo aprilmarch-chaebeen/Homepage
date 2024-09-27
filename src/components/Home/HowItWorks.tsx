@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-import {Autoplay} from 'swiper/modules';
+// import {Autoplay} from 'swiper/modules';
 import {memo} from 'react';
 
 // 텍스트 배열 정의
@@ -31,12 +31,12 @@ function HowItWorks() {
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        modules={[Autoplay]}
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        //   pauseOnMouseEnter: true,
+        // }}
+        // modules={[Autoplay]}
       >
         <SwiperSlide>
           <MemoizedWorkBox text={boxText1} imgsrc={require('../../assets/images/howitworks/work0.svg').default} />
@@ -54,17 +54,13 @@ function HowItWorks() {
 
 export default HowItWorks;
 
-// 메모이제이션된 WorkBox 컴포넌트
 const MemoizedWorkBox = memo(WorkBox);
 
-// 스타일 정의
 const WorkSection = styled.section`
   margin-top: 20vw;
-  width: 100vw;
   overflow: hidden;
 `;
 
-// WorkBox 컴포넌트
 interface WorkBoxProps {
   text: string[];
   imgsrc: string;
@@ -102,7 +98,6 @@ function WorkBox({text, imgsrc}: WorkBoxProps) {
 
 const Container = styled.div`
   display: flex;
-  width: 100vw;
   height: 100%;
   align-items: center;
 `;

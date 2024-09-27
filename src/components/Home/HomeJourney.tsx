@@ -26,7 +26,6 @@ const JourneySection = styled.section`
 const Line = styled.hr`
   border: 0;
   background-color: #d2ff52;
-  width: 100vw;
   position: absolute;
   z-index: -1;
   height: 0.1vw;

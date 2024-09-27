@@ -44,5 +44,4 @@ const SmallText = styled.p`
 const CardContainer = styled.div`
   display: flex;
   gap: 0.05vw;
-  width: 100vw;
 `;

@@ -89,7 +89,6 @@ function HomeField() {
 export default HomeField;
 
 const Section = styled.section`
-  width: 100vw;
   display: flex;
 `;
 
