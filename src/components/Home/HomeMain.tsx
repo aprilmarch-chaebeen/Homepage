@@ -1,15 +1,39 @@
 import styled, {keyframes} from 'styled-components';
 import HomeMainText from './HomeMainText';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import creativesrc from '../../assets/svg/creative.svg';
 import circlesrc from '../../assets/svg/circle_back.svg';
 import contactsrc from '../../assets/svg/contact_us.svg';
+import contactmsrc from '../../assets/svg/contact_mobile.svg';
 
 function HomeMain() {
   const [brandingHovered, setBrandingHovered] = useState(false);
   const [uxuiHovered, setUxuiHovered] = useState(false);
   const [digitalHovered, setDigitalHovered] = useState(false);
   const [dashboardHovered, setDashboardHovered] = useState(false);
+
+  const [itImgIdx, setItImgIdx] = useState(3);
+  const [contactSrc, setContactSrc] = useState(contactsrc);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 480) {
+        setItImgIdx(4);
+        setContactSrc(contactmsrc);
+      } else {
+        setItImgIdx(3);
+        setContactSrc(contactSrc);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <MainSection>
@@ -39,14 +63,15 @@ function HomeMain() {
         hovered={dashboardHovered}
         nowHovered={digitalHovered}
         width={26}
-        mobileWidth={50}
+        mobileWidth={46}
       />
       <HomeMainText
-        idx={3}
+        idx={itImgIdx}
         onMouseEnter={() => setDashboardHovered(true)}
         onMouseLeave={() => setDashboardHovered(false)}
         nowHovered={dashboardHovered}
         width={45}
+        mobileWidth={67}
       />
       <Container>
         <TextContainer>
@@ -55,7 +80,7 @@ function HomeMain() {
         </TextContainer>
         <CircleContainer>
           <Circle src={circlesrc} alt="circle img" />
-          <CircleLogo src={contactsrc} alt="circle logo img" />
+          <CircleLogo src={contactSrc} alt="circle logo img" />
         </CircleContainer>
       </Container>
     </MainSection>
@@ -84,14 +109,13 @@ const SmallText = styled.img<{$hovered: boolean | undefined}>`
   margin: 0.8vw 0 0.3vw 0;
 
   @media (max-width: 480px) {
-    width: 34vw;
+    width: 29vw;
   }
 `;
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  width: 100vw;
 `;
 
 const TextContainer = styled.div`
@@ -105,6 +129,14 @@ const TextContainer = styled.div`
     width: 3.5vw;
     height: 0.25vw;
     background-color: #000;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 17vw;
+
+    &::before {
+      content: none;
+    }
   }
 `;
 
@@ -126,6 +158,11 @@ const Text = styled.p`
       margin-top: 3.5vw;
     }
   }
+
+  @media (max-width: 480px) {
+    font-size: 5.5vw;
+    margin: 3vw 0;
+  }
 `;
 
 const CircleContainer = styled.div`
@@ -135,6 +172,10 @@ const CircleContainer = styled.div`
   will-change: transform;
   top: 42vw;
   z-index: 100;
+
+  @media (max-width: 480px) {
+    top: 50%;
+  }
 `;
 
 const CircleAnimation = keyframes`
@@ -153,6 +194,10 @@ const Circle = styled.img`
   @media (max-width: 1280px) {
     width: 8vw;
   }
+
+  @media (max-width: 480px) {
+    width: 15vw;
+  }
 `;
 
 const CircleLogo = styled.img`
@@ -161,4 +206,9 @@ const CircleLogo = styled.img`
   left: -6.5%;
   transform: translate(35%, 110%);
   top: 35%;
+
+  @media (max-width: 480px) {
+    width: 10vw;
+    top: 29%;
+  }
 `;

@@ -13,9 +13,9 @@ import brandingbsrc from '../../assets/svg/branding_b.svg';
 import uxuibsrc from '../../assets/svg/uxui_b.svg';
 import digitalbsrc from '../../assets/svg/digital_b.svg';
 import itbsrc from '../../assets/svg/it_dashboard_b.svg';
-// import itmobilesrc from '../../assets/svg/it_dashboard_mobile.svg';
-// import ithmobilesrc from '../../assets/svg/it_dashobard_h_mobile.svg';
-// import itbmobilesrc from '../../assets/svg/it_dashboard_b_mobile.svg';
+import itmobilesrc from '../../assets/svg/it_dashboard_mobile.svg';
+import ithmobilesrc from '../../assets/svg/it_dashobard_h_mobile.svg';
+import itbmobilesrc from '../../assets/svg/it_dashboard_b_mobile.svg';
 
 const hoverDescriptions = [
   '당신의 꿈을 담은 브랜드를 만듭니다',
@@ -24,11 +24,11 @@ const hoverDescriptions = [
   '한 눈에 보이는 데이터, 설계부터 결과까지 남다른 전문성을 확인할 수 있습니다',
 ];
 
-const textImgs = [brandingsrc, uxuisrc, digitalsrc, itsrc];
+const textImgs = [brandingsrc, uxuisrc, digitalsrc, itsrc, itmobilesrc];
 
-const hoverTextImgs = [brandinghsrc, uxuihsrc, digitalhsrc, ithsrc];
+const hoverTextImgs = [brandinghsrc, uxuihsrc, digitalhsrc, ithsrc, ithmobilesrc];
 
-const blurTextImgs = [brandingbsrc, uxuibsrc, digitalbsrc, itbsrc];
+const blurTextImgs = [brandingbsrc, uxuibsrc, digitalbsrc, itbsrc, itbmobilesrc];
 
 interface HomeMainTextProp {
   idx: number;
@@ -37,7 +37,7 @@ interface HomeMainTextProp {
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   width: number;
-  mobileWidth?: number;
+  mobileWidth: number;
 }
 
 function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, width, mobileWidth}: HomeMainTextProp) {
