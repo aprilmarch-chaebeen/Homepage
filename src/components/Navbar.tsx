@@ -10,26 +10,28 @@ function Navbar() {
         <Logo src={logosrc} alt="Main Logo" />
       </GoToPage>
       <List>
-        <Circle>
-          <Icon src={naviconsrc} alt="nav icon" />
-        </Circle>
+        <GoToPage to="/">
+          <Circle>
+            <Icon src={naviconsrc} alt="nav icon" />
+          </Circle>
+        </GoToPage>
         <ListItem>
-          <GoToPage to="/">포트폴리오</GoToPage>
+          <GoToPage to="/portfolio">포트폴리오</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/">바우처</GoToPage>
+          <GoToPage to="/voucher">바우처</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/">신규브랜드 신사업</GoToPage>
+          <GoToPage to="/newbusiness">신규브랜드 신사업</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/">공공기관 대학</GoToPage>
+          <GoToPage to="/public">공공기관 대학</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/">IT 대시보드</GoToPage>
+          <GoToPage to="/itdashboard">IT 대시보드</GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/">About us</GoToPage>
+          <GoToPage to="/about">About us</GoToPage>
         </ListItem>
       </List>
       <div style={{width: '10vw'}}></div>
