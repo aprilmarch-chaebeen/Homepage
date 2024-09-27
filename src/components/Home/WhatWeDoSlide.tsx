@@ -1,11 +1,10 @@
 import styled, {css} from 'styled-components';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import {Swiper, SwiperClass, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules';
-import {useCallback, useState} from 'react';
+import {useCallback, useState, useMemo} from 'react';
 import {useAppSelector} from '../../hook/reduxHook';
 import {selectHomeFilterValue} from '../../reducers/homeFilterSlice';
 
@@ -13,63 +12,57 @@ function WhatWeDoSlide() {
   const home = useAppSelector(selectHomeFilterValue);
   const [nowIndex, setNowIndex] = useState(0);
 
-  const handleSlideChange = useCallback((swiper: any) => {
+  const handleSlideChange = useCallback((swiper: SwiperClass) => {
     setNowIndex(swiper.realIndex + 1);
   }, []);
+
+  const slides = useMemo(
+    () =>
+      Array.from({length: home.num}, (_, i) => ({
+        src: require(`../../assets/images/whatwedo/${home.filter}/${home.filter}${i}.svg`).default,
+        alt: `img ${i + 1}`,
+      })),
+    [home.filter, home.num]
+  );
 
   return (
     <div>
       <PageNumberContainer>
-        <PageNumber>{nowIndex < 10 ? '0' + nowIndex : nowIndex}</PageNumber>
-        <PageGrayNumber>{home.num < 10 ? '0' + home.num : home.num}</PageGrayNumber>
+        <PageNumber>{nowIndex < 10 ? `0${nowIndex}` : nowIndex}</PageNumber>
+        <PageGrayNumber>{home.num < 10 ? `0${home.num}` : home.num}</PageGrayNumber>
       </PageNumberContainer>
+
       <SlideContainer
         slidesPerView={3}
-        centeredSlides={true}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        pagination={{
-          type: 'progressbar',
-          clickable: true,
-        }}
-        navigation={true}
+        centeredSlides
+        loop
+        autoplay={{delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true}}
+        pagination={{type: 'progressbar', clickable: true}}
+        navigation
         modules={[Pagination, Navigation, EffectCoverflow, Autoplay]}
         effect="coverflow"
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 160,
-          modifier: 1.5,
-        }}
-        onSlideChange={(swiper) => handleSlideChange(swiper)}
+        coverflowEffect={{rotate: 0, stretch: 0, depth: 160, modifier: 1.5}}
+        onSlideChange={handleSlideChange}
       >
-        {Array.from({length: home.num}, (_, i) => (
+        {slides.map((slide, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg
-              src={require(`../../assets/images/whatwedo/${home.filter}/${home.filter}${i}.svg`).default}
-              alt={`img ${i + 1}`}
-              $idx={i}
-              $nowIdx={nowIndex - 1}
-              loading="lazy"
-            />
+            <SlideImg src={slide.src} alt={slide.alt} $idx={i} $nowIdx={nowIndex - 1} loading="lazy" />
           </Slide>
         ))}
-        <SlideCover></SlideCover>
+        <SlideCover />
       </SlideContainer>
+
       <CarouselLeft src={require('../../assets/images/carousel_left.png').default} alt="carousel left" />
       <CarouselRight src={require('../../assets/images/carousel_right.png').default} alt="carousel right" />
-      <GradientRight></GradientRight>
-      <GradientLeft></GradientLeft>
+      <GradientRight />
+      <GradientLeft />
     </div>
   );
 }
 
 export default WhatWeDoSlide;
 
+// Styled Components
 const SlideCover = styled.div`
   background-color: #fff;
   width: 100vw;
@@ -85,7 +78,7 @@ const PageNumberContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  left: 50.3%;
+  left: 49%;
   transform: translate(-50%, 50%);
   font-size: 1vw;
   top: 82.1%;
@@ -109,25 +102,17 @@ const SlideContainer = styled(Swiper)`
     z-index: 12;
   }
 
-  & .swiper-button-prev::after {
-    font-size: 0.8vw !important;
-    color: #000;
-    position: absolute;
-    left: 2.4vw;
-  }
-
+  & .swiper-button-prev::after,
   & .swiper-button-next::after {
     font-size: 0.8vw !important;
-    color: #000 !important;
-    position: absolute;
-    right: 0vw;
+    color: #000;
   }
 
   & .swiper-pagination-progressbar {
     top: 24vw;
-    width: 39vw;
+    width: 38vw;
     height: 0.2vw;
-    left: 52.5%;
+    left: 50%;
     transform: translate(-50%, 50%);
     background: #ccc;
     z-index: 13;
@@ -148,13 +133,12 @@ const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
   width: 20vw;
   height: 25vw;
   position: relative;
+
   ${(p) =>
     p.$idx === p.$nowIdx &&
     css`
-      /* &:hover {
-        transform: scaleX(1.6) scaleY(1.65);
-        transition: transform 0.5s ease-in-out !important;
-      } */
+      transform: scale(1.05);
+      transition: transform 0.5s ease-in-out;
     `}
 `;
 
@@ -163,14 +147,13 @@ const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
   width: 20vw;
   object-fit: contain;
   border-radius: 10px;
+
   ${(p) =>
     p.$idx === p.$nowIdx &&
     css`
-      /* &:hover {
-        transform: scaleX(1.6) scaleY(1.65);
-        transition: transform 0.5s ease-in-out !important;
-        object-fit: contain;
-      } */
+      object-fit: contain;
+      transform: scale(1.05);
+      transition: transform 0.5s ease-in-out;
     `}
 `;
 
