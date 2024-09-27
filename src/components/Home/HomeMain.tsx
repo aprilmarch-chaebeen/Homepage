@@ -1,4 +1,4 @@
-import styled, {css, keyframes} from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import HomeMainText from './HomeMainText';
 import {useState} from 'react';
 import creativesrc from '../../assets/svg/creative.svg';
@@ -46,7 +46,6 @@ function HomeMain() {
         width={40}
       />
       <Container>
-        <div style={{width: '10vw'}}></div>
         <TextContainer>
           <Text>Marketing</Text>
           <Text>Data Infographics</Text>
@@ -74,13 +73,13 @@ const MainSection = styled.section`
 const SmallText = styled.img<{$hovered: boolean | undefined}>`
   width: 12vw;
   transition: transform 0.6s;
-  transform: ${(p) => (p.$hovered ? css`translateY(-6vw)` : css`translateY(0)`)};
+  transform: ${(p) => (p.$hovered ? 'translateY(-6vw)' : 'translateY(0)')};
   margin: 0.8vw 0 0.3vw 0;
 `;
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100vw;
 `;
 
@@ -111,10 +110,12 @@ const Text = styled.p`
 `;
 
 const CircleContainer = styled.div`
-  position: relative;
+  position: fixed;
+  right: 5vw;
   margin: auto 0;
-  margin-right: 5vw;
   will-change: transform;
+  top: 42vw;
+  z-index: 1000;
 `;
 
 const CircleAnimation = keyframes`
