@@ -56,7 +56,7 @@ const TextContainer = styled.div`
 
 const BigText = styled.h3`
   font-size: 1.8vw;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
   margin-bottom: 5.2vw;
 `;
 
@@ -69,7 +69,7 @@ const BigLogoContainer = styled.div`
   right: -3.6vw;
   top: 1.1vw;
   font-size: 16vw;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
   line-height: 1.09;
 `;
 

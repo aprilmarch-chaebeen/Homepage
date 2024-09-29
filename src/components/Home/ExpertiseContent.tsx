@@ -201,7 +201,7 @@ const Line = styled.div<{$height: number}>`
 
 const Ratio = styled.span`
   font-size: 1.25vw;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
   color: #1c46f5;
 
   @media (max-width: 1280px) {

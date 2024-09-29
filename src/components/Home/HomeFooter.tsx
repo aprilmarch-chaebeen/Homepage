@@ -101,7 +101,7 @@ const TextContainer = styled.div`
 `;
 
 const SmallText = styled.p`
-  font-family: 'Pretendard-Bold';
+  font-family: 'Pretendard-Bold', sans-serif;
   font-size: 1.1vw;
   color: #111;
   margin: 1.3vw 0;
@@ -243,7 +243,7 @@ const Info2 = styled.p`
 
 const Info3 = styled.p`
   color: #666;
-  font-family: 'Pretendard-Regular';
+  font-family: 'Pretendard-Regular', sans-serif;
   font-size: 0.9vw;
   margin: 0;
 

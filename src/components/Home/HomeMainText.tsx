@@ -175,7 +175,7 @@ const BlurText = styled.img<{$width: number; $mwidth?: number}>`
 
 const Descript = styled.p`
   width: max-content;
-  font-family: 'Pretendard-Regular';
+  font-family: 'Pretendard-Regular', sans-serif;
   font-size: 0.8vw;
   margin-right: 0.5vw;
 

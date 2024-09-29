@@ -42,7 +42,7 @@ const BigText = styled.p`
 `;
 
 const MediumText = styled.p`
-  font-family: 'Pretendard-Light';
+  font-family: 'Pretendard-Light', sans-serif;
   font-size: 2.1vw;
   margin: 0;
   margin-bottom: 2.5vw;
@@ -54,11 +54,11 @@ const MediumText = styled.p`
 `;
 
 const BoldText = styled.span`
-  font-family: 'Pretendard-SemiBold';
+  font-family: 'Pretendard-SemiBold', sans-serif;
 `;
 
 const SmallText = styled.p`
-  font-family: 'Pretendard-Light';
+  font-family: 'Pretendard-Light', sans-serif;
   font-size: 0.9vw;
   margin: 0;
   color: #555;

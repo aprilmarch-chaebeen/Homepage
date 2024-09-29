@@ -29,13 +29,13 @@ export default HomeContact;
 
 const BigText = styled.h2`
   margin-top: 12vw;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
   font-size: 2.8vw;
   margin-bottom: 2vw;
 `;
 
 const SmallText = styled.p`
-  font-family: 'Pretendard-Light';
+  font-family: 'Pretendard-Light', sans-serif;
   color: #555;
   margin-bottom: 4vw;
   font-size: 1vw;

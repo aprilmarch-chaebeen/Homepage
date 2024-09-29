@@ -97,9 +97,9 @@ const FilterContainer = styled.ul`
 const Container = styled.li`
   display: flex;
   justify-content: center;
-  font-family: 'Gotham-Book';
+  font-family: 'Gotham-Book', sans-serif;
   &:nth-child(1) {
-    font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard-Regular', sans-serif;
   }
 `;
 
@@ -120,7 +120,7 @@ const FilterBtn = styled.button<{$clicked: boolean}>`
       border-radius: 29px;
       padding: 0.3vw 1.2vw 0.37vw 0.8vw;
       &:nth-child(1) {
-        font-family: 'Pretendard-Regular';
+        font-family: 'Pretendard-Regular', sans-serif;
       }
 
       @media (max-width: 480px) {

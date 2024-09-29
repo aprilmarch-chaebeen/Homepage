@@ -80,7 +80,7 @@ const Text1 = styled.div`
   right: 34vw;
   font-size: 3vw;
   line-height: 1.5;
-  font-family: 'Gotham-Light';
+  font-family: 'Gotham-Light', sans-serif;
   font-weight: 300;
 `;
 
@@ -92,13 +92,13 @@ const Text2 = styled.div`
 
 const BigText = styled.h3`
   font-size: 2.5vw;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
   margin-bottom: 1.5vw;
 `;
 
 const SmallText = styled.p`
   font-size: 1vw;
-  font-family: 'Gotham-Light';
+  font-family: 'Gotham-Light', sans-serif;
   font-weight: 600;
 `;
 

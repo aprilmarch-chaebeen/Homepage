@@ -77,7 +77,7 @@ const Line = styled.hr`
 const TitleBox = styled.div`
   margin-right: 3.7vw;
   min-width: 10.6vw;
-  font-family: 'Gotham-Medium';
+  font-family: 'Gotham-Medium', sans-serif;
   font-size: 0.8vw;
   line-height: 1.5;
 `;
@@ -90,7 +90,7 @@ const DescriptContainer = styled.ul`
 
 const Descript = styled.li`
   list-style: none;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
   font-size: 0.8vw;
   line-height: 1.8;
 `;

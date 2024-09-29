@@ -8,7 +8,7 @@ function HomeAbout() {
       <AboutContainer>
         <BigText>ABOUT APRILMARCH</BigText>
         <TextContainer>
-          <SmallText $font="Gotham-Medium">
+          <SmallText $font="Gotham-Medium, sans-serif">
             Our expertise, passion,
             <br />
             and sincere influence
@@ -19,7 +19,7 @@ function HomeAbout() {
             <br />
             new joy to consumers.
           </SmallText>
-          <SmallText $font="Pretendard-Light">
+          <SmallText $font="Pretendard-Light, sans-serif">
             우리의 전문성과 열정,
             <br />
             진심 영향력은 고객사에게는 든든한 믿음을,
@@ -67,7 +67,7 @@ const AboutContainer = styled.div`
 `;
 
 const BigText = styled.h3`
-  font-family: 'Gotham-Medium';
+  font-family: 'Gotham-Medium', sans-serif;
   margin: 0;
   font-size: 3vw;
   text-align: left;

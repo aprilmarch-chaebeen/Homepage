@@ -186,7 +186,7 @@ const Contact = styled.img`
 
 const SmallText = styled.span<{$top: number; $left: number}>`
   position: absolute;
-  font-family: 'Pretendard-Medium';
+  font-family: 'Pretendard-Medium', sans-serif;
   font-size: 0.9vw;
   color: #444;
   top: ${(p) => p.$top}%;

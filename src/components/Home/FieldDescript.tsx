@@ -56,7 +56,7 @@ const Container = styled.div`
 `;
 
 const SmallText = styled.p`
-  font-family: 'Pretendard-SemiBold';
+  font-family: 'Pretendard-SemiBold', sans-serif;
   font-size: 0.9vw;
   color: #777;
 
@@ -70,7 +70,7 @@ const SmallText = styled.p`
 `;
 
 const BigText = styled.h3<{$pad?: number}>`
-  font-family: 'Pretendard-Light';
+  font-family: 'Pretendard-Light', sans-serif;
   font-size: 2vw;
   color: #222;
   padding: 0 ${(p) => p.$pad || 0}vw;
@@ -85,7 +85,7 @@ const BigText = styled.h3<{$pad?: number}>`
 `;
 
 const MediumText = styled.p`
-  font-family: 'Pretendard-Light';
+  font-family: 'Pretendard-Light', sans-serif;
   font-size: 1vw;
   color: #444;
   margin: 0;

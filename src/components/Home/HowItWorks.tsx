@@ -191,7 +191,7 @@ const ImgBox = styled.div<{$imgsrc: string}>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Pretendard-Bold';
+  font-family: 'Pretendard-Bold', sans-serif;
   font-size: 3vw;
   color: #fff;
 
@@ -242,7 +242,7 @@ const Title = styled.h2`
 `;
 
 const SubTitle = styled.h3`
-  font-family: 'Pretendard-SemiBold';
+  font-family: 'Pretendard-SemiBold', sans-serif;
   color: #fff;
   font-size: 1.7vw;
   margin-top: 1vw;
@@ -270,7 +270,7 @@ const Divider = styled.div`
 `;
 
 const Descript = styled.p`
-  font-family: 'Pretendard-ExtraLight';
+  font-family: 'Pretendard-ExtraLight', sans-serif;
   color: #eee;
   font-size: 1.5vw;
   line-height: 1.5;

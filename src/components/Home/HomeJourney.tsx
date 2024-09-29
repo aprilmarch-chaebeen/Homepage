@@ -43,7 +43,7 @@ const Line = styled.hr`
 `;
 
 const BigText = styled.h3`
-  font-family: 'Gotham-Black';
+  font-family: 'Gotham-Black', sans-serif;
   margin: 0;
   text-align: left;
   margin-left: 7vw;

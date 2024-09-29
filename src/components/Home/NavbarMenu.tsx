@@ -73,7 +73,7 @@ const MenuContainer = styled.div`
 `;
 
 const Menu = styled.p`
-  font-family: 'Pretendard-Regualr';
+  font-family: 'Pretendard-Regualr', sans-serif;
   font-size: 5vw;
 `;
 

@@ -167,7 +167,7 @@ const GoToPage = styled(Link)`
   text-decoration: none;
   color: #000;
   font-weight: 600;
-  font-family: 'Pretendard-Light';
+  font-family: 'Pretendard-Light', sans-serif;
 `;
 
 const Box = styled.div`

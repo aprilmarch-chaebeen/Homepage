@@ -45,7 +45,7 @@ const SmallText = styled.p`
   font-size: 1.5vw;
   margin-top: 3rem;
   margin-bottom: 2rem;
-  font-family: 'S-CoreDream-3Light';
+  font-family: 'S-CoreDream-3Light', sans-serif;
 `;
 
 const BigText = styled.h1`
