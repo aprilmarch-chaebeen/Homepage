@@ -86,6 +86,12 @@ const FilterContainer = styled.ul`
   padding: 0.2vw;
   margin: 3.5vw auto;
   border-radius: 29px;
+
+  @media (max-width: 480px) {
+    width: 88vw;
+    height: 8.5vw;
+    margin: 10vw auto;
+  }
 `;
 
 const Container = styled.li`
@@ -116,12 +122,25 @@ const FilterBtn = styled.button<{$clicked: boolean}>`
       &:nth-child(1) {
         font-family: 'Pretendard-Regular';
       }
+
+      @media (max-width: 480px) {
+        padding: 1vw 4vw 1vw 3vw;
+      }
     `}
+
+  @media (max-width: 480px) {
+    font-size: 3.5vw; 
+    padding: 1.2vw 2.5vw;
+  }
 `;
 
 const Check = styled.img`
   width: 1vw;
   margin-right: 0.5vw;
+
+  @media (max-width: 480px) {
+    width: 3vw;
+  }
 `;
 
 const Text = styled.p`

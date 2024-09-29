@@ -30,9 +30,15 @@ const WhatWeDoSec = styled.section`
 const BigText = styled.p`
   margin-top: 15vw;
   margin-bottom: 2.1vw;
-  font-family: 'Cardo';
+  font-family: 'Poppins';
+  font-weight: 400;
   font-size: 1.2vw;
   color: #1c46f5;
+
+  @media (max-width: 480px) {
+    font-size: 4.5vw; 
+    margin-bottom: 5vw;
+  }
 `;
 
 const MediumText = styled.p`
@@ -41,6 +47,10 @@ const MediumText = styled.p`
   margin: 0;
   margin-bottom: 2.5vw;
   line-height: 1.4;
+
+  @media (max-width: 480px) {
+    font-size: 6.5vw; 
+  }
 `;
 
 const BoldText = styled.span`
@@ -52,6 +62,13 @@ const SmallText = styled.p`
   font-size: 0.9vw;
   margin: 0;
   color: #555;
+
+  @media (max-width: 480px) {
+    font-size: 3.9vw; 
+    padding: 0 21vw;
+    margin: 5vw 0;
+    line-height: 1.7;
+  }
 `;
 
 const ReadMoreBtn = styled.button`
@@ -66,4 +83,8 @@ const ReadMoreBtn = styled.button`
 
 const ReadMore = styled.img`
   width: 11.2vw;
+
+  @media (max-width: 480px) {
+    width: 36vw;
+  }
 `;

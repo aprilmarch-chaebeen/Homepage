@@ -33,7 +33,7 @@ function WhatWeDoSlide() {
       </PageNumberContainer>
 
       <SlideContainer
-        slidesPerView={3}
+        slidesPerView='auto'
         centeredSlides
         loop
         autoplay={{delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true}}
@@ -43,6 +43,11 @@ function WhatWeDoSlide() {
         effect="coverflow"
         coverflowEffect={{rotate: 0, stretch: 0, depth: 160, modifier: 1.5}}
         onSlideChange={handleSlideChange}
+        breakpoints={{
+          480: {
+            slidesPerView: 3
+          }
+        }}
       >
         {slides.map((slide, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
@@ -70,6 +75,10 @@ const SlideCover = styled.div`
   position: absolute;
   z-index: 10;
   top: 62.5%;
+
+  @media (max-width: 480px) {
+    top: 58%;
+  }
 `;
 
 const PageNumberContainer = styled.div`
@@ -83,6 +92,13 @@ const PageNumberContainer = styled.div`
   font-size: 1vw;
   top: 85.9%;
   z-index: 12;
+
+  @media (max-width: 480px) {
+    font-size: 3vw;
+    width: 69vw;
+    top: 82.5%;
+    left: 51%;
+  }
 `;
 
 const SlideContainer = styled(Swiper)`
@@ -127,6 +143,37 @@ const SlideContainer = styled(Swiper)`
   .swiper-slide-shadow-left {
     background-image: none;
   }
+
+  @media (max-width: 480px) {
+    width: 100vw;
+    height: 81vw;
+    margin: 0;
+
+    & .swiper-pagination-progressbar {
+      top: 66%;
+      width: 55vw;
+      height: 0.55vw;
+      left: 48.5%;
+    }
+
+    & .swiper-pagination-progressbar-fill {
+      height: 0.55vw;
+    }
+
+    & .swiper-button-prev {
+      top: 53.9vw;
+      left: 8.5vw;
+    }
+    & .swiper-button-next {
+      top: 53.9vw;
+      right: 11vw;
+    }
+
+      & .swiper-button-prev::after,
+      & .swiper-button-next::after {
+        font-size: 2vw !important;
+      }
+  }
 `;
 
 const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
@@ -140,6 +187,11 @@ const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
       transform: scale(1.05);
       transition: transform 0.5s ease-in-out;
     `}
+
+  @media (max-width: 480px) {
+    width: 50vw;
+    height: 55vw;
+  }
 `;
 
 const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
@@ -155,6 +207,11 @@ const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
       transform: scale(1.05);
       transition: transform 0.5s ease-in-out;
     `}
+
+  @media (max-width: 480px) {
+    width: 50vw;
+    height: 50vw;
+  }
 `;
 
 const GradientRight = styled.div`
@@ -165,6 +222,12 @@ const GradientRight = styled.div`
   right: 0;
   z-index: 11;
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+
+  @media (max-width: 480px) {
+    width: 17vw;
+    height: 50vw;
+    top: 53%;
+  }
 `;
 
 const GradientLeft = styled.div`
@@ -175,6 +238,12 @@ const GradientLeft = styled.div`
   left: 0;
   z-index: 11;
   background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+
+  @media (max-width: 480px) {
+    width: 17vw;
+    height: 50vw;
+    top: 53%;
+  }
 `;
 
 const PageNumber = styled.span``;
@@ -190,6 +259,10 @@ const CarouselRight = styled.img`
   top: 55.2%;
   right: -3.78vw;
   z-index: 10;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const CarouselLeft = styled.img`
@@ -199,4 +272,8 @@ const CarouselLeft = styled.img`
   top: 55.2%;
   left: -2.7vw;
   z-index: 10;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
