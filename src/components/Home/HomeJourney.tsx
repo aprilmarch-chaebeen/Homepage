@@ -21,6 +21,10 @@ const JourneySection = styled.section`
   position: relative;
   z-index: 0;
   overflow: hidden;
+
+  @media (max-width: 480px) {
+    height: 130vw;
+  }
 `;
 
 const Line = styled.hr`
@@ -30,6 +34,12 @@ const Line = styled.hr`
   z-index: -1;
   height: 0.1vw;
   top: 58%;
+
+  @media (max-width: 1280px) {
+    height: 0.5vw;
+    width: 100vw;
+    top: 55%;
+  }
 `;
 
 const BigText = styled.h3`
@@ -39,4 +49,11 @@ const BigText = styled.h3`
   margin-left: 7vw;
   margin-bottom: 3vw;
   font-size: 3.2vw;
+
+  @media (max-width: 480px) {
+    font-size: 6vw;
+    text-align: center;
+    margin: 0;
+    margin-top: 12vw;
+  }
 `;
