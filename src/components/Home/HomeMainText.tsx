@@ -16,11 +16,13 @@ import itbsrc from '../../assets/svg/it_dashboard_b.svg';
 import itmobilesrc from '../../assets/svg/it_dashboard_mobile.svg';
 import ithmobilesrc from '../../assets/svg/it_dashobard_h_mobile.svg';
 import itbmobilesrc from '../../assets/svg/it_dashboard_b_mobile.svg';
+import { useEffect, useState } from 'react';
 
 const hoverDescriptions = [
   '당신의 꿈을 담은 브랜드를 만듭니다',
   '모든 순간 모든 곳에서 브랜드 경험을 고민합니다',
   '브랜딩과 마케팅의 시작, 함께 고민하고 지원하겠습니다',
+  '한 눈에 보이는 데이터, 설계부터 결과까지 남다른 전문성을 확인할 수 있습니다',
   '한 눈에 보이는 데이터, 설계부터 결과까지 남다른 전문성을 확인할 수 있습니다',
 ];
 
@@ -41,6 +43,25 @@ interface HomeMainTextProp {
 }
 
 function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, width, mobileWidth}: HomeMainTextProp) {
+  const [gradientWidth, setGradientWidth] = useState(600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 480) {
+        setGradientWidth(70);
+      } else {
+        setGradientWidth(600);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <TextContainer onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} $hovered={hovered}>
       {nowHovered ? (
@@ -51,7 +72,7 @@ function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, wid
       <NonTextContainer>
         {nowHovered && (
           <DescriptContainer>
-            <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={600}>
+            <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={gradientWidth}>
               <Descript>{hoverDescriptions[idx]}</Descript>
               <Star src={starsrc} alt="star src" />
             </Marquee>
@@ -70,6 +91,11 @@ const DescriptContainer = styled.div`
   top: 0;
   transform: translate(-50%, 90%);
   width: 90vw;
+
+  @media (max-width: 480px) {
+    transform: translate(-50%, 55%);
+    background: transparent;
+  }
 `;
 
 const TextContainer = styled.div<{$hovered: boolean | undefined}>`
@@ -89,6 +115,18 @@ const TextContainer = styled.div<{$hovered: boolean | undefined}>`
   &:nth-child(5) ${DescriptContainer} {
     transform: translate(-50%, 70%);
   }
+
+  @media (max-width: 480px) {
+    transform: ${(p) => (p.$hovered ? css`translateY(-15vw)` : css`translateY(0)`)};
+
+    &:nth-child(4) ${DescriptContainer} {
+      transform: translate(-50%, 70%);
+    }
+
+    &:nth-child(5) ${DescriptContainer} {
+      transform: translate(-50%, 90%);
+    }
+  }
 `;
 
 const NonTextContainer = styled.div`
@@ -107,6 +145,7 @@ const BigText = styled.img<{$hovered: boolean | undefined; $width: number; $mwid
 
   @media (max-width: 480px) {
     width: ${(p) => p.$mwidth}vw;
+    transform: ${(p) => (p.$hovered ? css`translateY(-15vw)` : css`translateY(0)`)};
   }
 `;
 
@@ -139,6 +178,10 @@ const Descript = styled.p`
   font-family: 'Pretendard-Regular';
   font-size: 0.8vw;
   margin-right: 0.5vw;
+
+  @media (max-width: 480px) {
+    font-size: 3vw;
+  }
 `;
 
 const Star = styled.img`
