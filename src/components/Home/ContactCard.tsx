@@ -51,7 +51,7 @@ const Card = styled.div`
 `;
 
 const Title = styled.h3`
-  font-family: 'GmarketSansMedium';
+  font-family: 'GmarketSansMedium', sans-serif;
   margin: 0;
   font-size: 2vw;
   ${Card}:hover & {

@@ -74,7 +74,7 @@ export default Customers;
 const BigText = styled.p`
   margin-top: 15vw;
   margin-bottom: 1.4vw;
-  font-family: 'Cardo';
+  font-family: 'Poppins', sans-serif;
   font-size: 1.2vw;
   color: #1c46f5;
 
@@ -90,7 +90,7 @@ const BigText = styled.p`
 `;
 
 const MediumText = styled.p`
-  font-family: 'Pretendard-Light';
+  font-family: 'Pretendard-Light', sans-serif;
   font-size: 2.1vw;
   margin: 0;
   margin-bottom: 1.45vw;
@@ -106,11 +106,11 @@ const MediumText = styled.p`
 `;
 
 const BoldText = styled.span`
-  font-family: 'Pretendard-SemiBold';
+  font-family: 'Pretendard-SemiBold', sans-serif;
 `;
 
 const SmallText = styled.p`
-  font-family: 'Pretendard-Light';
+  font-family: 'Pretendard-Light', sans-serif;
   font-size: 0.9vw;
   margin: 0;
   color: #555;
