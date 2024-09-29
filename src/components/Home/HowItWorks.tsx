@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
-// import {Autoplay} from 'swiper/modules';
-import {memo} from 'react';
+import {Autoplay, Navigation} from 'swiper/modules';
+import {memo, useEffect, useState} from 'react';
+import leftsrc from '../../assets/svg/swiper_left.svg';
+import rightsrc from '../../assets/svg/swiper_right.svg';
 
 // 텍스트 배열 정의
 const boxText1 = [
@@ -25,18 +27,44 @@ const boxText3 = [
 ];
 
 function HowItWorks() {
+  const [autoplayEnabled, setAutoplayEnabled] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 480) {
+        setAutoplayEnabled(false);
+      } else {
+        setAutoplayEnabled(true);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <WorkSection>
-      <Swiper
+      <SlideContainer
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
-        // autoplay={{
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        //   pauseOnMouseEnter: true,
-        // }}
-        // modules={[Autoplay]}
+        navigation={{
+          prevEl: '.prev_button',
+          nextEl: '.next_button'
+        }}
+        autoplay={
+          autoplayEnabled
+            ? {
+                delay: 2500,
+                disableOnInteraction: false,
+              }
+            : false
+        }
+        modules={[Autoplay, Navigation]}
       >
         <SwiperSlide>
           <MemoizedWorkBox text={boxText1} imgsrc={require('../../assets/images/howitworks/work0.svg').default} />
@@ -47,7 +75,13 @@ function HowItWorks() {
         <SwiperSlide>
           <MemoizedWorkBox text={boxText3} imgsrc={require('../../assets/images/howitworks/work2.svg').default} />
         </SwiperSlide>
-      </Swiper>
+        <LeftBtn className='prev_button'>
+          <BtnImg src={leftsrc} alt="swiper button left" />
+        </LeftBtn>
+        <RightBtn className='next_button'>
+          <BtnImg src={rightsrc} alt="swiper button left" />
+        </RightBtn>
+      </SlideContainer>
     </WorkSection>
   );
 }
@@ -59,7 +93,48 @@ const MemoizedWorkBox = memo(WorkBox);
 const WorkSection = styled.section`
   margin-top: 20vw;
   overflow: hidden;
+
+  @media (max-width: 480px) {
+    margin-top: 30vw;
+    position: relative;
+  }
 `;
+
+const SlideContainer = styled(Swiper)`
+  @media (max-width: 480px) {
+    & .swiper-wrapper {
+      width: 100vw;
+    }
+  }
+`
+
+const LeftBtn = styled.div`
+  display: none;
+
+  @media (max-width: 480px) {
+    display: block;
+    position: absolute;
+    top: 94vw;
+    left: 4vw;
+    z-index: 10;
+  }
+`
+
+const RightBtn = styled.div`
+  display: none;
+
+  @media (max-width: 480px) {
+    display: block;
+    position: absolute;
+    top: 94vw;
+    right: 4vw;
+    z-index: 10;
+  }
+`
+
+const BtnImg = styled.img`
+  width: 8vw;
+`
 
 interface WorkBoxProps {
   text: string[];
@@ -73,7 +148,7 @@ function WorkBox({text, imgsrc}: WorkBoxProps) {
         <ImgText>에이프릴마치는</ImgText>
         <ImgText>당신의</ImgText>
         <ImgText>
-          <span style={{marginRight: '16vw'}}>[</span>
+          <SignLeft>[</SignLeft>
           <span>]</span>
         </ImgText>
         <ImgText>입니다</ImgText>
@@ -100,6 +175,10 @@ const Container = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
 `;
 
 const ImgBox = styled.div<{$imgsrc: string}>`
@@ -115,17 +194,37 @@ const ImgBox = styled.div<{$imgsrc: string}>`
   font-family: 'Pretendard-Bold';
   font-size: 3vw;
   color: #fff;
+
+  @media (max-width: 480px) {
+    width: 100vw;
+    height: 90vw;
+    font-size: 10vw;
+  }
 `;
 
 const ImgText = styled.p`
   margin: 0;
 `;
 
+const SignLeft = styled.span`
+  margin-right: 16vw;
+
+  @media (max-width: 480px) {
+    margin-right: 52vw;
+  }
+`
+
 const TextBox = styled.div`
   width: 72vw;
   background-color: #000;
   height: 25vw;
   text-align: left;
+
+  @media (max-width: 480px) {
+    width: 100vw;
+    height: 115vw;
+    text-align: center;
+  }
 `;
 
 const Title = styled.h2`
@@ -135,6 +234,11 @@ const Title = styled.h2`
   font-size: 1vw;
   margin-left: 5vw;
   margin-top: 3vw;
+
+  @media (max-width: 480px) {
+    font-size: 4.5vw;
+    margin: 17vw auto 5vw auto;
+  }
 `;
 
 const SubTitle = styled.h3`
@@ -145,12 +249,24 @@ const SubTitle = styled.h3`
   margin-bottom: 1vw;
   line-height: 1.7;
   margin-left: 5vw;
+
+  @media (max-width: 480px) {
+    margin: auto;
+    font-size: 5vw;
+  }
 `;
 
 const Divider = styled.div`
   border-left: 0.1vw solid #fff;
   height: 4vw;
   margin-left: 5vw;
+
+  @media (max-width: 480px) {
+    height: 13vw;
+    margin-left: 50vw;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+  }
 `;
 
 const Descript = styled.p`
@@ -160,4 +276,9 @@ const Descript = styled.p`
   line-height: 1.5;
   margin-left: 5vw;
   margin-top: 1vw;
+
+  @media (max-width: 480px) {
+    font-size: 5vw;
+    margin: 0 10vw;
+  }
 `;
