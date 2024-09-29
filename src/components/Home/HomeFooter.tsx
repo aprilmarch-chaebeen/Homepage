@@ -36,8 +36,8 @@ function HomeFooter() {
         <InfoStrong2>T.02-6929-099</InfoStrong2>
         <InfoStrong2>E.cyj@aprilmarch.design</InfoStrong2>
         <Info1>대표 차유정 | 주소 123456 서울특별시 송파구 송파대로 167, 테라타워 Aehd</Info1>
-        <Info1>통신판매업 신고 1234-1234-1234 | 사업자등록번호 123-456-7890</Info1>
-        <Info2>Copyright Aprilmarch. All rights reserved.</Info2>
+        <Info2>통신판매업 신고 1234-1234-1234 | 사업자등록번호 123-456-7890</Info2>
+        <Info3>Copyright Aprilmarch. All rights reserved.</Info3>
       </InfoContainer>
       <Up onMouseEnter={() => setUpHovered(true)} onMouseLeave={() => setUpHovered(false)} onClick={handleUpClicked}>
         {upHovered ? <Arrow src={upbsrc} alt="up black" /> : <Arrow src={upwsrc} alt="up white" />}
@@ -54,6 +54,11 @@ const Footer = styled.footer`
   background-color: #f6f6f6;
   position: relative;
   z-index: 0;
+
+  @media (max-width: 480px) {
+    padding: 6vw 5vw;
+    overflow: hidden;
+  }
 `;
 
 const Line = styled.hr`
@@ -62,6 +67,10 @@ const Line = styled.hr`
   width: 100%;
   height: 0.1vw;
   margin: 1.5vw 0 2vw 0;
+
+  @media (max-width: 480px) {
+    margin: 4vw 0 7vw 0;
+  }
 `;
 
 const InnerContainer = styled.div`
@@ -75,12 +84,20 @@ const Logo = styled.img`
   @media (max-width: 1280px) {
     width: 8vw;
   }
+
+  @media (max-width: 480px) {
+    width: 17vw;
+  }
 `;
 
 const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const SmallText = styled.p`
@@ -118,6 +135,12 @@ const Up = styled.button`
     width: 5vw;
     height: 5vw;
   }
+
+  @media (max-width: 480px) {
+    width: 12vw;
+    height: 12vw;
+    top: 30%;
+  }
 `;
 
 const Arrow = styled.img`
@@ -126,8 +149,12 @@ const Arrow = styled.img`
   top: 40%;
   right: 33%;
 
-  @media (min-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 1.8vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 4.5vw;
   }
 `;
 
@@ -137,6 +164,12 @@ const Statue = styled.img`
   width: 22vw;
   right: 4vw;
   z-index: -1;
+
+  @media (max-width: 1280px) {
+    width: 61vw;
+    bottom: -25%;
+    right: -21%;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -146,7 +179,7 @@ const InfoContainer = styled.div`
 
 const InfoStrong1 = styled.p`
   color: #333;
-  font-family: 'NotoSansKR';
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 600;
   font-size: 1.3vw;
   margin: 0;
@@ -154,11 +187,15 @@ const InfoStrong1 = styled.p`
   @media (max-width: 1280px) {
     font-size: 1.5vw;
   }
+
+  @media (max-width: 480px) {
+    font-size: 4vw;
+  }
 `;
 
 const InfoStrong2 = styled.p`
-  color: #333;
-  font-family: 'NotoSansKR';
+  color: : #333;
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 600;
   font-size: 1.1vw;
   margin: 0;
@@ -166,11 +203,15 @@ const InfoStrong2 = styled.p`
   @media (max-width: 1280px) {
     font-size: 1.3vw;
   }
+
+  @media (max-width: 480px) {
+    font-size: 3.8vw;
+  }
 `;
 
 const Info1 = styled.p`
   color: #666;
-  font-family: 'NotoSansKR';
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   font-size: 1vw;
   margin: 0;
@@ -178,9 +219,29 @@ const Info1 = styled.p`
   @media (max-width: 1280px) {
     font-size: 1.2vw;
   }
+  @media (max-width: 480px) {
+    font-size: 3.5vw;
+    width: 84vw;
+  }
 `;
 
 const Info2 = styled.p`
+  color: #666;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 1vw;
+  margin: 0;
+
+  @media (max-width: 1280px) {
+    font-size: 1.2vw;
+  }
+  @media (max-width: 480px) {
+    font-size: 3.5vw;
+    width: 52vw
+  }
+`;
+
+const Info3 = styled.p`
   color: #666;
   font-family: 'Pretendard-Regular';
   font-size: 0.9vw;
@@ -188,5 +249,9 @@ const Info2 = styled.p`
 
   @media (max-width: 1280px) {
     font-size: 1vw;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
   }
 `;
