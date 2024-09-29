@@ -81,6 +81,12 @@ const BigText = styled.p`
   @media (max-width: 1280px) {
     font-size: 1.5vw;
   }
+
+  @media (max-width: 480px) {
+    font-size: 3.5vw;
+    margin-top: 20vw;
+    margin-bottom: 5vw;
+  }
 `;
 
 const MediumText = styled.p`
@@ -92,6 +98,10 @@ const MediumText = styled.p`
 
   @media (max-width: 1280px) {
     font-size: 2.5vw;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 6.5vw;
   }
 `;
 
@@ -109,5 +119,12 @@ const SmallText = styled.p`
 
   @media (max-width: 1280px) {
     font-size: 1.4vw;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 3.9vw;
+    padding: 0 16vw;
+    margin: 5vw 0;
+    margin-bottom: 8vw;
   }
 `;

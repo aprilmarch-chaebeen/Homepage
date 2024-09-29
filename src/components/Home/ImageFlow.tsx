@@ -23,6 +23,10 @@ const ImgContainer = styled.div`
   @media (max-width: 1280px) {
     margin: 2.7vw 0;
   }
+
+  @media (max-width: 480px) {
+    margin: 5vw 0;
+  }
 `;
 
 const Logo = styled.img`
@@ -31,5 +35,9 @@ const Logo = styled.img`
 
   @media (max-width: 1280px) {
     height: 1.8vw;
+  }
+
+  @media (max-width: 480px) {
+    height: 4vw;
   }
 `;
