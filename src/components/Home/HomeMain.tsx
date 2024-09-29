@@ -5,6 +5,7 @@ import creativesrc from '../../assets/svg/creative.svg';
 import circlesrc from '../../assets/svg/circle_back.svg';
 import contactsrc from '../../assets/svg/contact_us.svg';
 import contactmsrc from '../../assets/svg/contact_mobile.svg';
+import downsrc from '../../assets/svg/down_icon.svg';
 
 function HomeMain() {
   const [brandingHovered, setBrandingHovered] = useState(false);
@@ -83,6 +84,10 @@ function HomeMain() {
           <CircleLogo src={contactSrc} alt="circle logo img" />
         </CircleContainer>
       </Container>
+      <DownContainer>
+        <Down src={downsrc} alt="down icon" />
+        <Down src={downsrc} alt="down icon" />
+      </DownContainer>
     </MainSection>
   );
 }
@@ -218,3 +223,33 @@ const CircleLogo = styled.img`
     top: 29%;
   }
 `;
+
+const DownContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 3vw;
+
+  @media (max-width: 480px) {
+    margin-top: 10vw;
+  }
+`
+
+const DownAnimation = keyframes`
+  0% {
+    transform: translateY(0);
+    filter: brightness(0.5);
+  }
+  100% {
+    transform: translateY(3vw);
+    filter: brightness(1);
+  }
+`;
+
+const Down = styled.img`
+  width: 2vw;
+  animation: ${DownAnimation} 1.2s infinite alternate;
+
+  @media (max-width: 480px) {
+    width: 5vw;
+  }
+`
