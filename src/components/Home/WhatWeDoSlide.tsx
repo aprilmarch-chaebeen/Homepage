@@ -96,7 +96,7 @@ const PageNumberContainer = styled.div`
   @media (max-width: 480px) {
     font-size: 3vw;
     width: 69vw;
-    top: 82.5%;
+    top: 83%;
     left: 51%;
   }
 `;
