@@ -98,7 +98,7 @@ const MainSection = styled.section`
   margin: 5vw 0;
 
   @media (max-width: 480px) {
-    margin: 28vw 0;
+    margin: 30vw 0;
   }
 `;
 
