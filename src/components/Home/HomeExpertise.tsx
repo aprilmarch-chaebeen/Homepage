@@ -17,4 +17,9 @@ const ExpertiseSection = styled.section`
   overflow: hidden;
   text-align: left;
   padding-left: 5.6vw;
+
+  @media (max-width: 480px) {
+    padding-top: 80vw;
+    padding-left: 0;
+  }
 `;

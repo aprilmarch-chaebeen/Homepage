@@ -3,6 +3,7 @@ import linesrc from '../../assets/svg/expertise_line.svg';
 import linebsrc from '../../assets/svg/expertise_line_b.svg';
 import plussrc from '../../assets/svg/expertise_plus.svg';
 import {motion} from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const transition = {
   ease: 'easeInOut',
@@ -11,6 +12,25 @@ const transition = {
 };
 
 function ExpertiseContent() {
+  const [mobileSize, setMobileSize] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 480) {
+        setMobileSize(true);
+      } else {
+        setMobileSize(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <ContentSection>
       <ExpertLine src={linebsrc} alt="expertise line" />
@@ -18,7 +38,7 @@ function ExpertiseContent() {
         <BlueExpertLine src={linesrc} alt="blue expertise line" />
       </motion.div>
       <LineContainer>
-        <LineContent $left={0} $bottom={0}>
+        <LineContent $left={0} $bottom={0} $hideRatioOnMobile={true}>
           <Ratio>35</Ratio>
           <motion.div
             initial={{opacity: 0, scaleY: 0}}
@@ -27,11 +47,11 @@ function ExpertiseContent() {
             transition={transition}
             style={{originY: 1}}
           >
-            <Line $height={34.8}></Line>
+            <Line $height={mobileSize ? 28 : 34.8}></Line>
           </motion.div>
           <Content>RESEARCH</Content>
         </LineContent>
-        <LineContent $left={6.5} $bottom={12.5}>
+        <LineContent $left={mobileSize ? 10 : 6.5} $bottom={mobileSize ? 9 : 12.5}>
           <Ratio>10</Ratio>
           <motion.div
             initial={{opacity: 0, scaleY: 0}}
@@ -40,11 +60,11 @@ function ExpertiseContent() {
             transition={transition}
             style={{originY: 1}}
           >
-            <Line $height={20}></Line>
+            <Line $height={mobileSize ? 27 : 20}></Line>
           </motion.div>
           <Content>PLAN</Content>
         </LineContent>
-        <LineContent $left={45} $bottom={27.6}>
+        <LineContent $left={45} $bottom={mobileSize ? 21 : 27.6}>
           <Ratio>80</Ratio>
           <motion.div
             initial={{opacity: 0, scaleY: 0}}
@@ -53,11 +73,11 @@ function ExpertiseContent() {
             transition={transition}
             style={{originY: 1}}
           >
-            <Line $height={12.2}></Line>
+            <Line $height={mobileSize ? 30 : 12.2}></Line>
           </motion.div>
           <Content>DESIGN</Content>
         </LineContent>
-        <LineContent $bottom={9.5} $right={5.1}>
+        <LineContent $bottom={mobileSize ? 9 : 9.5} $right={mobileSize ? 7 : 5.1}>
           <Ratio>15</Ratio>
           <motion.div
             initial={{opacity: 0, scaleY: 0}}
@@ -66,11 +86,11 @@ function ExpertiseContent() {
             transition={transition}
             style={{originY: 1}}
           >
-            <Line $height={3.5}></Line>
+            <Line $height={mobileSize ? 27 : 3.5}></Line>
           </motion.div>
           <Content>DEVELOP</Content>
         </LineContent>
-        <LineContent $right={0} $bottom={0}>
+        <LineContent $right={0} $bottom={0} $hideRatioOnMobile={true}>
           <Ratio>30</Ratio>
           <motion.div
             initial={{opacity: 0, scaleY: 0}}
@@ -79,7 +99,7 @@ function ExpertiseContent() {
             transition={transition}
             style={{originY: 1}}
           >
-            <Line $height={34.8}></Line>
+            <Line $height={mobileSize ? 28 : 34.8}></Line>
           </motion.div>
           <Content>MANAGE</Content>
         </LineContent>
@@ -93,6 +113,11 @@ export default ExpertiseContent;
 const ContentSection = styled.div`
   position: relative;
   padding-top: 10vw;
+
+  @media (max-width: 480px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const ExpertLine = styled.img`
@@ -100,6 +125,11 @@ const ExpertLine = styled.img`
   position: relative;
   width: 90vw;
   height: 45vw;
+
+  @media (max-width: 480px) {
+    width: 130vw;
+    height: 51vw;
+  }
 `;
 
 const BlueExpertLine = styled.img`
@@ -107,6 +137,11 @@ const BlueExpertLine = styled.img`
   width: 90vw;
   height: 45vw;
   bottom: 0;
+
+  @media (max-width: 480px) {
+    width: 130vw;
+    height: 51vw;
+  }
 `;
 
 const LineContainer = styled.div`
@@ -124,9 +159,14 @@ const LineContainer = styled.div`
     height: 0.9vw;
     background: url(${plussrc}) no-repeat center / cover;
   } */
+
+  @media (max-width: 480px) {
+    width: 95vw;
+    margin-bottom: 14vw;
+  }
 `;
 
-const LineContent = styled.div<{$left?: number; $bottom: number; $right?: number}>`
+const LineContent = styled.div<{$left?: number; $bottom: number; $right?: number; $hideRatioOnMobile?: boolean}>`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -136,6 +176,16 @@ const LineContent = styled.div<{$left?: number; $bottom: number; $right?: number
   left: ${(p) => p.$left}vw;
   bottom: ${(p) => p.$bottom}vw;
   right: ${(p) => p.$right}vw;
+
+  ${(p) =>
+    p.$hideRatioOnMobile &&
+    `
+    @media (max-width: 480px) {
+      & ${Ratio} {
+        display: none;
+      }
+    }
+  `}
 `;
 
 const Line = styled.div<{$height: number}>`
@@ -143,6 +193,10 @@ const Line = styled.div<{$height: number}>`
   background-color: #1c46f5;
   margin: 1.4vw auto 2.1vw;
   height: ${(p) => p.$height}vw;
+
+  @media (max-width: 480px) {
+    margin-top: 4vw;
+  }
 `;
 
 const Ratio = styled.span`
@@ -153,6 +207,10 @@ const Ratio = styled.span`
   @media (max-width: 1280px) {
     font-size: 1.5vw;
   }
+
+  @media (max-width: 480px) {
+    font-size: 3vw;
+  }
 `;
 
 const Content = styled.span`
@@ -162,5 +220,9 @@ const Content = styled.span`
 
   @media (max-width: 1280px) {
     font-size: 1vw;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2vw;
   }
 `;
