@@ -110,6 +110,7 @@ const SmallText = styled.img<{$hovered: boolean | undefined}>`
 
   @media (max-width: 480px) {
     width: 29vw;
+    transform: ${(p) => (p.$hovered ? 'translateY(-16vw)' : 'translateY(0)')};
   }
 `;
 
@@ -206,6 +207,11 @@ const CircleLogo = styled.img`
   left: -6.5%;
   transform: translate(35%, 110%);
   top: 35%;
+
+  @media (max-width: 1280px) {
+    width: 5.5vw;
+    left: -8%;
+  }
 
   @media (max-width: 480px) {
     width: 10vw;
