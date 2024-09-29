@@ -174,7 +174,7 @@ const CircleContainer = styled.div`
   z-index: 100;
 
   @media (max-width: 480px) {
-    top: 50%;
+    top: 120vw;
   }
 `;
 
