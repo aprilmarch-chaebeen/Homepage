@@ -50,11 +50,23 @@ const Container = styled.div<{$clicked: boolean}>`
     height: 11.5vw;
     justify-content: space-between;
   }
+
+  @media (max-width: 480px) {
+    border: none;
+    height: 38vw;
+    justify-content: center;
+    padding: 0;
+    border-top: solid #999 0.1vw;
+  }
 `;
 
 const Button = styled.button`
   background-color: transparent;
   border: none;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const ButtonImg = styled.img`
@@ -72,6 +84,11 @@ const InnerContainer1 = styled.div`
   @media (max-width: 1280px) {
     margin-bottom: 2vw;
   }
+
+  @media (max-width: 480px) {
+    display: block;
+    margin-bottom: 4vw;
+  }
 `;
 
 const Star = styled.img`
@@ -81,6 +98,10 @@ const Star = styled.img`
   @media (max-width: 1280px) {
     width: 2.3vw;
     margin-right: 1.5vw;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
   }
 `;
 
@@ -93,12 +114,20 @@ const Text = styled.h3`
     font-size: 2.5vw;
     margin: 0;
   }
+
+  @media (max-width: 480px) {
+    font-size: 6.5vw;
+  }
 `;
 
 const InnerContainer2 = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
+
+  @media (max-width: 480px) {
+    display: block;
+  }
 `;
 
 const SmallImg = styled.img`
@@ -108,5 +137,9 @@ const SmallImg = styled.img`
 
   @media (max-width: 1280px) {
     height: 2vw;
+  }
+
+  @media (max-width: 480px) {
+    height: 4.5vw;
   }
 `;

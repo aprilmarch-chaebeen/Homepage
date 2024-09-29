@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import cursorsrc from '../../assets/svg/cursor_img.svg';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
+import moresrc from '../../assets/svg/read_more.svg';
 
 import 'swiper/css';
 
@@ -36,6 +37,9 @@ function FieldDescript({descript, name, num, pad}: FieldDescriptProps) {
           </SwiperSlide>
         ))}
       </Swiper>
+      <ReadMoreBtn>
+        <ReadMore src={moresrc} alt="read more button" />
+      </ReadMoreBtn>
     </Container>
   );
 }
@@ -45,6 +49,10 @@ export default FieldDescript;
 const Container = styled.div`
   text-align: center;
   padding: 3vw;
+
+  @media (max-width: 480px) {
+    padding: 4vw;
+  }
 `;
 
 const SmallText = styled.p`
@@ -54,6 +62,10 @@ const SmallText = styled.p`
 
   @media (max-width: 1280px) {
     font-size: 1.2vw;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 3.5vw;
   }
 `;
 
@@ -66,6 +78,10 @@ const BigText = styled.h3<{$pad?: number}>`
   @media (max-width: 1280px) {
     font-size: 2.7vw;
   }
+
+  @media (max-width: 480px) {
+    font-size: 5.5vw;
+  }
 `;
 
 const MediumText = styled.p`
@@ -76,6 +92,10 @@ const MediumText = styled.p`
 
   @media (max-width: 1280px) {
     font-size: 1.3vw;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 3.8vw;
   }
 `;
 
@@ -93,4 +113,23 @@ const Img = styled.img`
   @media (max-width: 1280px) {
     width: 44vw;
   }
+
+  @media (max-width: 480px) {
+    width: 80vw;
+  }
+`;
+
+const ReadMoreBtn = styled.button`
+  display: none;
+
+  @media (max-width: 480px) {
+    display: block;
+    border: none;
+    background-color: transparent;
+    margin: 4vw 25vw;
+  }
+`;
+
+const ReadMore = styled.img`
+  width: 36vw;
 `;
