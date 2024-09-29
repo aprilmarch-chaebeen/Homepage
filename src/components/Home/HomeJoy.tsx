@@ -86,6 +86,10 @@ const Section = styled.section`
   padding: 5vw 0;
   position: relative;
   z-index: 0;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const Line1 = styled.hr`
