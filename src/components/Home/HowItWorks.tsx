@@ -228,7 +228,7 @@ const TextBox = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   color: #d2ff52;
   font-size: 1vw;

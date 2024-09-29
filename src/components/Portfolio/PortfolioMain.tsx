@@ -53,7 +53,7 @@ const BigText = styled.h1`
   font-size: 3.5vw;
   margin-top: 1rem;
   margin-bottom: 6rem;
-  font-family: 'NotoSans KR';
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: bold;
   line-height: 1.4;
 `;

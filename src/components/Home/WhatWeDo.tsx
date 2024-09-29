@@ -30,7 +30,7 @@ const WhatWeDoSec = styled.section`
 const BigText = styled.p`
   margin-top: 15vw;
   margin-bottom: 2.1vw;
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 1.2vw;
   color: #1c46f5;
