@@ -29,8 +29,7 @@ function HomeJoy() {
             opacity: 1,
             scrollTrigger: {
               trigger: svg,
-              start: 'top -30%',
-              end: 'end 50%',
+              start: 'center center',
               scrub: true,
             },
           })
