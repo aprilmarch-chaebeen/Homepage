@@ -226,7 +226,7 @@ const GradientRight = styled.div`
   @media (max-width: 480px) {
     width: 17vw;
     height: 50vw;
-    top: 53%;
+    top: 54%;
   }
 `;
 
@@ -242,7 +242,7 @@ const GradientLeft = styled.div`
   @media (max-width: 480px) {
     width: 17vw;
     height: 50vw;
-    top: 53%;
+    top: 54%;
   }
 `;
 
