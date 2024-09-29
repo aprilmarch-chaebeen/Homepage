@@ -68,8 +68,15 @@ const Nav = styled.nav`
 
   @media (max-width: 480px) {
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
-    padding: 3vw 6vw;
+    padding: 2vw 0;
     height: auto;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background: #fff;
+    z-index: 100;
+    justify-content: space-around;
+    gap: 28vw;
   }
 `;
 
