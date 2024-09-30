@@ -7,7 +7,7 @@ import designsrc from '../../assets/svg/creative_design.svg';
 import videosrc from '../../assets/svg/video.svg';
 import digitalsrc from '../../assets/svg/marketing.svg';
 import styled from 'styled-components';
-import { useEffect, useRef, useState } from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 const getPosition = (elapsedTime: number, h: number, k: number) => {
   const a = (4 * k) / Math.pow(h * 2, 2);
@@ -15,7 +15,7 @@ const getPosition = (elapsedTime: number, h: number, k: number) => {
   return ypos;
 };
 
-function useQuadBounce({ duration = 1200, start = 0, end = 10 }) {
+function useQuadBounce({duration = 1200, start = 0, end = 10}) {
   const timeStart = useRef(Date.now());
   const [value, setValue] = useState(start);
 
@@ -40,28 +40,19 @@ const Ballbgimg = [identitysrc, besrc, trendsrc, websrc, uxsrc, designsrc, video
 
 function BallAnimation() {
   const [visibleBall, setVisibleBall] = useState<number | null>(null);
-  const isMobile = window.innerWidth <= 480; 
+  const isMobile = window.innerWidth <= 480;
 
   const ballSettings = isMobile
-    ? [
-        { duration: 1200, start: 0, end: 20 },
-        { duration: 1200, start: 0, end: 20 },
-        { duration: 1200, start: 0, end: 20 },
-        { duration: 1200, start: 0, end: 20 },
-        { duration: 1200, start: 0, end: 20 },
-        { duration: 1200, start: 0, end: 20 },
-        { duration: 1200, start: 0, end: 20 },
-        { duration: 1200, start: 0, end: 20 },
-      ]
+    ? Array(8).fill({duration: 1200, start: 0, end: 20})
     : [
-        { duration: 2200, start: 0, end: 20 },
-        { duration: 1900, start: 5, end: 20 },
-        { duration: 1500, start: 8, end: 20 },
-        { duration: 1800, start: 7, end: 20 },
-        { duration: 2000, start: 5, end: 20 },
-        { duration: 1900, start: 6, end: 20 },
-        { duration: 2200, start: 2, end: 20 },
-        { duration: 1700, start: 4, end: 20 },
+        {duration: 2200, start: 0, end: 20},
+        {duration: 1900, start: 5, end: 20},
+        {duration: 1500, start: 8, end: 20},
+        {duration: 1800, start: 7, end: 20},
+        {duration: 2000, start: 5, end: 20},
+        {duration: 1900, start: 6, end: 20},
+        {duration: 2200, start: 2, end: 20},
+        {duration: 1700, start: 4, end: 20},
       ];
 
   useEffect(() => {
@@ -84,10 +75,10 @@ function BallAnimation() {
         const bounceY = useQuadBounce(settings);
         return isMobile ? (
           visibleBall === index ? (
-            <Ball key={index} src={Ballbgimg[index]} alt={`ball ${index}`} style={{ transform: `translate3d(0, ${bounceY}vw, 0)` }} />
+            <Ball key={index} src={Ballbgimg[index]} alt={`ball ${index}`} style={{transform: `translate3d(0, ${bounceY}vw, 0)`}} />
           ) : null
         ) : (
-          <Ball key={index} src={Ballbgimg[index]} alt={`ball ${index}`} style={{ transform: `translate3d(0, ${bounceY}vw, 0)` }} />
+          <Ball key={index} src={Ballbgimg[index]} alt={`ball ${index}`} style={{transform: `translate3d(0, ${bounceY}vw, 0)`}} />
         );
       })}
     </BallContainer>
