@@ -33,7 +33,7 @@ function WhatWeDoSlide() {
       </PageNumberContainer>
 
       <SlideContainer
-        slidesPerView='auto'
+        slidesPerView="auto"
         centeredSlides
         loop
         autoplay={{delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true}}
@@ -45,8 +45,8 @@ function WhatWeDoSlide() {
         onSlideChange={handleSlideChange}
         breakpoints={{
           480: {
-            slidesPerView: 3
-          }
+            slidesPerView: 3,
+          },
         }}
       >
         {slides.map((slide, i) => (
@@ -96,7 +96,7 @@ const PageNumberContainer = styled.div`
   @media (max-width: 480px) {
     font-size: 3vw;
     width: 69vw;
-    top: 83%;
+    top: 83.5%;
     left: 51%;
   }
 `;
@@ -169,10 +169,10 @@ const SlideContainer = styled(Swiper)`
       right: 11vw;
     }
 
-      & .swiper-button-prev::after,
-      & .swiper-button-next::after {
-        font-size: 2vw !important;
-      }
+    & .swiper-button-prev::after,
+    & .swiper-button-next::after {
+      font-size: 2vw !important;
+    }
   }
 `;
 
@@ -226,7 +226,6 @@ const GradientRight = styled.div`
   @media (max-width: 480px) {
     width: 17vw;
     height: 50vw;
-    top: 54%;
   }
 `;
 
@@ -242,7 +241,6 @@ const GradientLeft = styled.div`
   @media (max-width: 480px) {
     width: 17vw;
     height: 50vw;
-    top: 54%;
   }
 `;
 
