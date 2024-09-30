@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {Autoplay, Navigation} from 'swiper/modules';
-import {memo, useEffect, useState} from 'react';
+import {memo, useEffect, useState, useMemo} from 'react';
 import leftsrc from '../../assets/svg/swiper_left.svg';
 import rightsrc from '../../assets/svg/swiper_right.svg';
 
-// 텍스트 배열 정의
 const boxText1 = [
   '마케팅의 경쟁력, 브랜드의 지속성을',
   '모두 담을 수 있는 곳을 찾는다면?',
@@ -31,11 +30,7 @@ function HowItWorks() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 480) {
-        setAutoplayEnabled(false);
-      } else {
-        setAutoplayEnabled(true);
-      }
+      setAutoplayEnabled(window.innerWidth > 480);
     };
 
     handleResize();
@@ -46,47 +41,42 @@ function HowItWorks() {
     };
   }, []);
 
+  const workBoxes = useMemo(
+    () => [
+      {text: boxText1, imgSrc: require('../../assets/images/howitworks/work0.svg').default},
+      {text: boxText2, imgSrc: require('../../assets/images/howitworks/work1.svg').default},
+      {text: boxText3, imgSrc: require('../../assets/images/howitworks/work2.svg').default},
+    ],
+    []
+  );
+
   return (
     <WorkSection>
       <SlideContainer
         slidesPerView="auto"
-        centeredSlides={true}
-        loop={true}
-        navigation={{
-          prevEl: '.prev_button',
-          nextEl: '.next_button'
-        }}
-        autoplay={
-          autoplayEnabled
-            ? {
-                delay: 2500,
-                disableOnInteraction: false,
-              }
-            : false
-        }
+        centeredSlides
+        loop
+        navigation={{prevEl: '.prev_button', nextEl: '.next_button'}}
+        autoplay={autoplayEnabled ? {delay: 2500, disableOnInteraction: false} : false}
         modules={[Autoplay, Navigation]}
       >
-        <SwiperSlide>
-          <MemoizedWorkBox text={boxText1} imgsrc={require('../../assets/images/howitworks/work0.svg').default} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MemoizedWorkBox text={boxText2} imgsrc={require('../../assets/images/howitworks/work1.svg').default} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MemoizedWorkBox text={boxText3} imgsrc={require('../../assets/images/howitworks/work2.svg').default} />
-        </SwiperSlide>
-        <LeftBtn className='prev_button'>
+        {workBoxes.map((box, index) => (
+          <SwiperSlide key={index}>
+            <MemoizedWorkBox text={box.text} imgsrc={box.imgSrc} />
+          </SwiperSlide>
+        ))}
+        <LeftBtn className="prev_button">
           <BtnImg src={leftsrc} alt="swiper button left" />
         </LeftBtn>
-        <RightBtn className='next_button'>
-          <BtnImg src={rightsrc} alt="swiper button left" />
+        <RightBtn className="next_button">
+          <BtnImg src={rightsrc} alt="swiper button right" />
         </RightBtn>
       </SlideContainer>
     </WorkSection>
   );
 }
 
-export default HowItWorks;
+export default memo(HowItWorks);
 
 const MemoizedWorkBox = memo(WorkBox);
 
@@ -106,7 +96,7 @@ const SlideContainer = styled(Swiper)`
       width: 100vw;
     }
   }
-`
+`;
 
 const LeftBtn = styled.div`
   display: none;
@@ -118,7 +108,7 @@ const LeftBtn = styled.div`
     left: 4vw;
     z-index: 10;
   }
-`
+`;
 
 const RightBtn = styled.div`
   display: none;
@@ -130,11 +120,11 @@ const RightBtn = styled.div`
     right: 4vw;
     z-index: 10;
   }
-`
+`;
 
 const BtnImg = styled.img`
   width: 8vw;
-`
+`;
 
 interface WorkBoxProps {
   text: string[];
@@ -212,7 +202,7 @@ const SignLeft = styled.span`
   @media (max-width: 480px) {
     margin-right: 52vw;
   }
-`
+`;
 
 const TextBox = styled.div`
   width: 72vw;
