@@ -3,6 +3,7 @@ import cursorsrc from '../../assets/svg/cursor_img.svg';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 import moresrc from '../../assets/svg/read_more.svg';
+import {useMemo} from 'react';
 
 import 'swiper/css';
 
@@ -14,6 +15,15 @@ interface FieldDescriptProps {
 }
 
 function FieldDescript({descript, name, num, pad}: FieldDescriptProps) {
+  const slides = useMemo(
+    () =>
+      Array.from({length: num}, (_, i) => ({
+        src: require(`../../assets/images/field/${name}/${name}${i}.svg`).default,
+        alt: `img ${i + 1}`,
+      })),
+    [name, num]
+  );
+
   return (
     <Container>
       <SmallText>{descript[0]}</SmallText>
@@ -31,9 +41,9 @@ function FieldDescript({descript, name, num, pad}: FieldDescriptProps) {
         }}
         modules={[Autoplay]}
       >
-        {Array.from({length: num}, (_, i) => (
+        {slides.map((slide, i) => (
           <SwiperSlide key={i}>
-            <Img src={require(`../../assets/images/field/${name}/${name}${i}.svg`).default} alt={`img ${i + 1}`} loading="lazy" />
+            <Img src={slide.src} alt={slide.alt} loading="lazy" />
           </SwiperSlide>
         ))}
       </Swiper>

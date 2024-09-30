@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import nobtnsrc from '../../assets/svg/no_btn.svg';
 import starsrc from '../../assets/svg/star_b.svg';
 import gobtnsrc from '../../assets/svg/go_btn.svg';
-import {useState} from 'react';
+import {useState, memo, useCallback} from 'react';
 
 interface FieldCategoryProps {
   title: string;
@@ -14,23 +14,32 @@ interface FieldCategoryProps {
 function FieldCategory({title, onClick, clicked, name}: FieldCategoryProps) {
   const [hovered, setHovered] = useState(false);
 
+  const handleMouseEnter = useCallback(() => setHovered(true), []);
+  const handleMouseLeave = useCallback(() => setHovered(false), []);
+
   return (
-    <Container onClick={onClick} $clicked={clicked} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+    <Container onClick={onClick} $clicked={clicked} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div style={{display: 'flex', justifyContent: 'end'}}>
-        <Button>{clicked || hovered ? <ButtonImg src={gobtnsrc} alt="button" /> : <ButtonImg src={nobtnsrc} alt="button" />}</Button>
+        <Button>
+          {clicked || hovered ? (
+            <ButtonImg src={gobtnsrc} alt="button" loading="lazy" />
+          ) : (
+            <ButtonImg src={nobtnsrc} alt="button" loading="lazy" />
+          )}
+        </Button>
       </div>
       <InnerContainer1>
-        <Star src={starsrc} alt="star img" />
+        <Star src={starsrc} alt="star img" loading="lazy" />
         <Text>{title}</Text>
       </InnerContainer1>
       <InnerContainer2>
-        <SmallImg src={require(`../../assets/images/field_category/${name}_key.svg`).default} alt="small img" />
+        <SmallImg src={require(`../../assets/images/field_category/${name}_key.svg`).default} alt="small img" loading="lazy" />
       </InnerContainer2>
     </Container>
   );
 }
 
-export default FieldCategory;
+export default memo(FieldCategory);
 
 const Container = styled.div<{$clicked: boolean}>`
   background-color: ${(p) => (p.$clicked ? '#d2ff52' : '#f6f6f6')};
@@ -40,6 +49,7 @@ const Container = styled.div<{$clicked: boolean}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 
   &:hover {
     background-color: #d2ff52;
@@ -48,13 +58,11 @@ const Container = styled.div<{$clicked: boolean}>`
   @media (max-width: 1280px) {
     padding: 1.5vw 1.5vw 1.5vw 4.8vw;
     height: 11.5vw;
-    justify-content: space-between;
   }
 
   @media (max-width: 480px) {
     border: none;
     height: 38vw;
-    justify-content: center;
     padding: 0;
     border-top: solid #999 0.1vw;
   }
@@ -97,7 +105,6 @@ const Star = styled.img`
 
   @media (max-width: 1280px) {
     width: 2.3vw;
-    margin-right: 1.5vw;
   }
 
   @media (max-width: 480px) {
@@ -132,7 +139,6 @@ const InnerContainer2 = styled.div`
 
 const SmallImg = styled.img`
   height: 1.5vw;
-  margin: 0;
   margin-right: 0.3vw;
 
   @media (max-width: 1280px) {
