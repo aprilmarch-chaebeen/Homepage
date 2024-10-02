@@ -179,7 +179,7 @@ const InfoContainer = styled.div`
 
 const InfoStrong1 = styled.p`
   color: #333;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 600;
   font-size: 1.3vw;
   margin: 0;
@@ -194,8 +194,8 @@ const InfoStrong1 = styled.p`
 `;
 
 const InfoStrong2 = styled.p`
-  color: : #333;
-  font-family: "Noto Sans KR", sans-serif;
+  color: #333;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 600;
   font-size: 1.1vw;
   margin: 0;
@@ -211,7 +211,7 @@ const InfoStrong2 = styled.p`
 
 const Info1 = styled.p`
   color: #666;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 1vw;
   margin: 0;
@@ -227,7 +227,7 @@ const Info1 = styled.p`
 
 const Info2 = styled.p`
   color: #666;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 1vw;
   margin: 0;
@@ -237,7 +237,7 @@ const Info2 = styled.p`
   }
   @media (max-width: 480px) {
     font-size: 3.5vw;
-    width: 52vw
+    width: 52vw;
   }
 `;
 
