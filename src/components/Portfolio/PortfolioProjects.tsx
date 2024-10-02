@@ -14,12 +14,12 @@ export default PortfolioProjects;
 
 const ProjectSection = styled.section`
   text-align: center;
-  margin-top: 9rem;
+  margin-top: 17vw;
 `;
 
 const Title = styled.h2`
-  font-size: 3.5vw;
+  font-size: 3vw;
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  margin-bottom: 3rem;
+  font-weight: 500;
+  margin-bottom: 3vw;
 `;

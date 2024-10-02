@@ -2,49 +2,68 @@ import {useState} from 'react';
 import AllCategory from './AllCategory';
 import BrandingCategory from './BrandingCategory';
 import EtcCategory from './EtcCategory';
-import HomePageCategory from './HomepageCategory';
 import styled, {css} from 'styled-components';
+import WebAppCategory from './WebAppCategory';
+import EditorialCategory from './EditorialCategory';
+import {useAppDispatch} from '../../hook/reduxHook';
+import {changeFilter} from '../../reducers/portfolioFilterSlice';
+import {changeIdx} from '../../reducers/projectCurIdxSlice';
 
 function ProjectCategory() {
   const [nowCategory, setNowCategory] = useState('all');
+  const dispatch = useAppDispatch();
 
   const renderCategory = () => {
     switch (nowCategory) {
+      case 'all':
+        return <AllCategory />;
       case 'branding':
         return <BrandingCategory />;
-      case 'homepage':
-        return <HomePageCategory />;
+      case 'webapp':
+        return <WebAppCategory />;
+      case 'editorial':
+        return <EditorialCategory />;
       case 'etc':
         return <EtcCategory />;
-      case 'all':
       default:
         return <AllCategory />;
     }
   };
 
+  const handleCategoryClicked = (category: string) => {
+    setNowCategory(category);
+    dispatch(changeFilter('all'));
+    dispatch(changeIdx(1));
+  };
+
   return (
     <section>
       <Category>
-        <li>
-          <CategoryBtn onClick={() => setNowCategory('all')} $clicked={nowCategory === 'all'}>
+        <List>
+          <CategoryBtn onClick={() => handleCategoryClicked('all')} $clicked={nowCategory === 'all'}>
             전체
           </CategoryBtn>
-        </li>
-        <li>
-          <CategoryBtn onClick={() => setNowCategory('branding')} $clicked={nowCategory === 'branding'}>
-            브랜딩
+        </List>
+        <List>
+          <CategoryBtn onClick={() => handleCategoryClicked('branding')} $clicked={nowCategory === 'branding'}>
+            Branding
           </CategoryBtn>
-        </li>
-        <li>
-          <CategoryBtn onClick={() => setNowCategory('homepage')} $clicked={nowCategory === 'homepage'}>
-            홈페이지
+        </List>
+        <List>
+          <CategoryBtn onClick={() => handleCategoryClicked('webapp')} $clicked={nowCategory === 'webapp'}>
+            Web&App
           </CategoryBtn>
-        </li>
-        <li>
-          <CategoryBtn onClick={() => setNowCategory('etc')} $clicked={nowCategory === 'etc'}>
+        </List>
+        <List>
+          <CategoryBtn onClick={() => handleCategoryClicked('editorial')} $clicked={nowCategory === 'editorial'}>
+            Editorial
+          </CategoryBtn>
+        </List>
+        <List>
+          <CategoryBtn onClick={() => handleCategoryClicked('etc')} $clicked={nowCategory === 'etc'}>
             기타
           </CategoryBtn>
-        </li>
+        </List>
       </Category>
       {renderCategory()}
     </section>
@@ -58,17 +77,24 @@ const Category = styled.ul`
   justify-content: center;
 `;
 
+const List = styled.li`
+  list-style: none;
+`;
+
 const CategoryBtn = styled.button<{$clicked: boolean}>`
   border: none;
   background-color: transparent;
-  cursor: pointer;
   color: #777;
-  border-bottom: 2px solid #e0e0e0;
-  padding: 1rem 2.5rem;
+  border-bottom: 0.2vw solid #e0e0e0;
+  padding: 1vw 3vw;
+  cursor: pointer;
+  height: 3vw;
+  font-size: 1vw;
+
   ${(p) =>
     p.$clicked &&
     css`
-      color: #ff553e;
-      border-bottom: 2px solid #ff553e;
+      color: #1c46f5;
+      border-bottom: 0.2vw solid #1c46f5;
     `}
 `;

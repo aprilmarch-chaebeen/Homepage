@@ -1,5 +1,13 @@
+import NoData from './NoData';
+import SubCategory from './SubCategory';
+
 function EtcCategory() {
-  return <h1>기타</h1>;
+  return (
+    <section>
+      <SubCategory />
+      <NoData />
+    </section>
+  );
 }
 
 export default EtcCategory;
