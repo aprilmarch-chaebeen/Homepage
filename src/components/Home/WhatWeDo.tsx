@@ -13,7 +13,7 @@ function WhatWeDo() {
       <SmallText>디자인과 브랜딩을 향한 우리의 전문성과 열정, 진심의 영향력은 든든한 믿음과 새로운 기쁨을 전달합니다.</SmallText>
       <WhatWeDoFilter />
       <WhatWeDoSlide />
-      <ReadMoreBtn>
+      <ReadMoreBtn href='/portfolio'>
         <ReadMore src={moresrc} alt="read more button" />
       </ReadMoreBtn>
     </WhatWeDoSec>
@@ -71,7 +71,7 @@ const SmallText = styled.p`
   }
 `;
 
-const ReadMoreBtn = styled.button`
+const ReadMoreBtn = styled.a`
   border: none;
   background-color: transparent;
   color: #fff;

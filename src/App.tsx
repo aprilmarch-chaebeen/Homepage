@@ -1,9 +1,9 @@
-// import {Route, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar';
-// import Home from './pages/Home';
+import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
-// import Voucher from './pages/Voucher';
-// import About from './pages/About';
+import Voucher from './pages/Voucher';
+import About from './pages/About';
 // import Loading from './pages/Loading';
 import styled from 'styled-components';
 import {useRef} from 'react';
@@ -18,16 +18,15 @@ function App() {
     <AppSection ref={sectionRef}>
       <MouseStalker containerRef={sectionRef} />
       <Navbar />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/voucher" element={<Voucher />} />
-        <Route path="/newbusiness" element={<NewBusiness />} />
-        <Route path="/public" element={<Public />} />
-        <Route path="/itdashboard" element={<ITDashboard />} />
+        {/* <Route path="/newbusiness" element={<NewBusiness />} /> */}
+        {/* <Route path="/public" element={<Public />} /> */}
+        {/* <Route path="/itdashboard" element={<ITDashboard />} /> */}
         <Route path="/about" element={<About />} />
-      </Routes> */}
-      <Portfolio />
+      </Routes>
     </AppSection>
   );
 }
