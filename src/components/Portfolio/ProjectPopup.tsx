@@ -56,12 +56,12 @@ function ProjectPopup({title, descript, onClose, flag, num}: ProjectPopupProps) 
             <SlideImg src={slide.src} alt={slide.alt} />
           </Slide>
         ))}
-        <button className="btn_left">
-          <img src={leftsrc} alt="project popup prev button" />
-        </button>
-        <button className="btn_right">
-          <img src={rightsrc} alt="project popup next button" />
-        </button>
+        <LeftBtn className="btn_left">
+          <BtnImg src={leftsrc} alt="project popup prev button" />
+        </LeftBtn>
+        <RightBtn className="btn_right">
+          <BtnImg src={rightsrc} alt="project popup next button" />
+        </RightBtn>
       </SlideContainer>
     </Section>
   );
@@ -77,26 +77,28 @@ const Section = styled.section`
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 100;
+  overflow-y: auto;
 `;
 
 const TextContainer = styled.div`
   text-align: left;
+  padding: 0 27.5vw;
 `;
 
 const Title = styled.p`
   font-family: 'Pretendard-Medium', sans-serif;
   font-size: 1.3vw;
   color: #fff;
+  margin-top: 5vw;
+  margin-bottom: 0;
 `;
 
 const Descript = styled.p`
   font-family: 'Pretendard-ExtraLight', sans-serif;
   font-size: 1vw;
   color: #fff;
+  margin-top: 0.5vw;
 `;
 
 const CloseBtn = styled.button`
@@ -104,43 +106,57 @@ const CloseBtn = styled.button`
   background: transparent;
   border: none;
   position: absolute;
-  top: 5vw;
-  right: 5vw;
+  top: 2vw;
+  right: 3vw;
   width: 3vw;
   height: 3vw;
 `;
 
 const CloseImg = styled.img`
-  width: 3vw;
-  height: 3vw;
+  width: 2vw;
+  height: 2vw;
 `;
 
 const SlideContainer = styled(Swiper)`
+  position: relative;
+
   & .swiper-wrapper {
     margin-bottom: 3rem;
-  }
-  & .swiper-pagination-bullet-active {
-    width: 1.3vw !important;
-    height: 0.55vw !important;
-    background-color: #1c46f5 !important;
-    border-radius: 2vw !important;
-  }
-  & .swiper-pagination-bullet {
-    width: 0.55vw;
-    height: 0.55vw;
-    background-color: #ddd;
   }
 `;
 
 const Slide = styled(SwiperSlide)`
-  width: 50vw;
-  height: 27.144vw;
+  width: 45vw;
 `;
 
 const SlideImg = styled.img.attrs({
   loading: 'lazy',
 })`
-  width: 50vw;
-  height: 27.144vw;
+  width: 45vw;
   object-fit: cover;
 `;
+
+const LeftBtn = styled.button`
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 19vw;
+  left: 22vw;
+  z-index: 10;
+  cursor: pointer;
+`
+
+const RightBtn = styled.button`
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 19vw;
+  right: 22vw;
+  z-index: 10;
+  cursor: pointer;
+`
+
+const BtnImg = styled.img`
+  width: 2.5vw;
+  height: 2.5vw;
+`
