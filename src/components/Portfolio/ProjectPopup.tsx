@@ -27,9 +27,14 @@ function ProjectPopup({title, descript, onClose, flag, num}: ProjectPopupProps) 
     [flag, num]
   );
 
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();  // 이벤트 전파 중단
+    onClose();
+  };
+
   return (
     <Section>
-      <CloseBtn onClick={onClose}>
+      <CloseBtn onClick={handleClick}>
         <CloseImg src={closesrc} alt="project popup close button" />
       </CloseBtn>
       <TextContainer>
