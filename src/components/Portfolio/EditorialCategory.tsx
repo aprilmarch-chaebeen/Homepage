@@ -59,6 +59,7 @@ function EditorialCategory() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 1024) setSlideNum(9);
+      if (window.innerWidth <= 480) setSlideNum(10);
       else setSlideNum(16);
     };
 
@@ -116,7 +117,7 @@ const Container = styled.div`
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr 1fr;
-    padding: 0 5vw;
+    padding: 0 7vw;
     gap: 2vw;
   }
 `;

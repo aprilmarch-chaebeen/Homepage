@@ -79,7 +79,7 @@ const Pagination = styled.ul`
   @media (max-width: 480px) {
     margin-top: 15vw;
     margin-bottom: 25vw;
-    gap: 3vw;
+    gap: 7vw;
   }
 `;
 
@@ -91,23 +91,24 @@ const PageBtn = styled.button<{$disabled?: boolean}>`
   cursor: pointer;
   background: transparent;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.1vw;
+  font-size: 0.9vw;
   color: #111;
   border: none;
-  border-bottom: ${(p) => p.$disabled && '0.2vw solid #111'};
-  padding: 0 1vw;
+  border-bottom: ${(p) => p.$disabled && '0.15vw solid #111'};
+  padding: 0 0.8vw;
 
   @media (max-width: 1024px) {
     font-size: 1.6vw;
   }
 
   @media (max-width: 480px) {
-    font-size: 3vw;
+    font-size: 3.9vw;
+    border-bottom: ${(p) => p.$disabled && '0.6vw solid #111'};
   }
 `;
 
 const DoubleArrow = styled.img<{$right?: boolean}>`
-  width: 5vw;
+  width: 7vw;
   ${(p) =>
     p.$right &&
     css`
@@ -116,7 +117,7 @@ const DoubleArrow = styled.img<{$right?: boolean}>`
 `;
 
 const Arrow = styled.img<{$right?: boolean}>`
-  width: 5vw;
+  width: 7vw;
   ${(p) =>
     p.$right &&
     css`

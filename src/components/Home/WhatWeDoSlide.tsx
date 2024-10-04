@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules';
-import {useCallback, useState, useMemo} from 'react';
+import React, {useCallback, useState, useMemo} from 'react';
 import {useAppSelector} from '../../hook/reduxHook';
 import {selectHomeFilterValue} from '../../reducers/homeFilterSlice';
 
@@ -12,10 +12,12 @@ function WhatWeDoSlide() {
   const home = useAppSelector(selectHomeFilterValue);
   const [nowIndex, setNowIndex] = useState(0);
 
+  // useCallback을 사용하여 handleSlideChange 함수를 메모이제이션
   const handleSlideChange = useCallback((swiper: SwiperClass) => {
     setNowIndex(swiper.realIndex + 1);
   }, []);
 
+  // useMemo를 사용하여 slides 배열을 메모이제이션
   const slides = useMemo(
     () =>
       Array.from({length: home.num}, (_, i) => ({
@@ -34,9 +36,10 @@ function WhatWeDoSlide() {
 
       <SlideContainer
         slidesPerView="auto"
+        spaceBetween={10}
         centeredSlides
         loop
-        autoplay={{delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true}}
+        // autoplay={{delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true}}
         pagination={{type: 'progressbar', clickable: true}}
         navigation
         modules={[Pagination, Navigation, EffectCoverflow, Autoplay]}
@@ -65,7 +68,7 @@ function WhatWeDoSlide() {
   );
 }
 
-export default WhatWeDoSlide;
+export default React.memo(WhatWeDoSlide); // 컴포넌트를 memo로 감싸 불필요한 렌더링 방지
 
 // Styled Components
 const SlideCover = styled.div`
@@ -77,7 +80,7 @@ const SlideCover = styled.div`
   top: 62.5%;
 
   @media (max-width: 480px) {
-    top: 58%;
+    display: none;
   }
 `;
 
@@ -90,13 +93,13 @@ const PageNumberContainer = styled.div`
   left: 50%;
   transform: translate(-50%, 50%);
   font-size: 1vw;
-  top: 85.9%;
+  top: 84.1%;
   z-index: 12;
 
   @media (max-width: 480px) {
     font-size: 3vw;
     width: 69vw;
-    top: 83.5%;
+    top: 80.5%;
     left: 51%;
   }
 `;
@@ -146,26 +149,26 @@ const SlideContainer = styled(Swiper)`
 
   @media (max-width: 480px) {
     width: 100vw;
-    height: 81vw;
+    height: 100vw;
     margin: 0;
 
     & .swiper-pagination-progressbar {
-      top: 66%;
-      width: 55vw;
-      height: 0.55vw;
-      left: 48.5%;
+      top: 66% !important;
+      width: 55vw !important;
+      height: 0.55vw !important;
+      left: 48.5% !important;
     }
 
     & .swiper-pagination-progressbar-fill {
-      height: 0.55vw;
+      height: 0.55vw !important;
     }
 
     & .swiper-button-prev {
-      top: 53.9vw;
+      top: 66.5vw;
       left: 8.5vw;
     }
     & .swiper-button-next {
-      top: 53.9vw;
+      top: 66.5vw;
       right: 11vw;
     }
 
@@ -189,8 +192,8 @@ const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
     `}
 
   @media (max-width: 480px) {
-    width: 50vw;
-    height: 55vw;
+    width: 53vw !important;
+    height: 60vw !important;
   }
 `;
 
@@ -209,8 +212,8 @@ const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
     `}
 
   @media (max-width: 480px) {
-    width: 50vw;
-    height: 50vw;
+    width: 53vw;
+    height: 60vw;
   }
 `;
 
@@ -218,7 +221,7 @@ const GradientRight = styled.div`
   width: 15vw;
   position: absolute;
   height: 20vw;
-  top: 55%;
+  top: 53%;
   right: 0;
   z-index: 11;
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
@@ -233,7 +236,7 @@ const GradientLeft = styled.div`
   width: 15vw;
   position: absolute;
   height: 20vw;
-  top: 55%;
+  top: 53%;
   left: 0;
   z-index: 11;
   background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
@@ -254,8 +257,8 @@ const CarouselRight = styled.img`
   width: 31vw;
   position: absolute;
   height: 19.3vw;
-  top: 39.25vw;
-  right: -4.65vw;
+  top: 31.25vw;
+  right: -4.85vw;
   z-index: 10;
 
   @media (max-width: 480px) {
@@ -267,8 +270,8 @@ const CarouselLeft = styled.img`
   width: 31vw;
   position: absolute;
   height: 19.3vw;
-  top: 39.25vw;
-  left: -1.33vw;
+  top: 31.25vw;
+  left: -1.25vw;
   z-index: 10;
 
   @media (max-width: 480px) {

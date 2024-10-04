@@ -82,7 +82,7 @@ const TextContainer = styled.div`
 const Title = styled.p`
   font-family: 'Pretendard-Medium', sans-serif;
   font-size: 1.1vw;
-  margin: 0.5vw 0 0.2vw 0;
+  margin: 0.7vw 0 0.2vw 0;
   color: #222;
 
   @media (max-width: 1024px) {
@@ -97,7 +97,7 @@ const Title = styled.p`
 
 const Descript = styled.p`
   font-family: 'Pretendard-Light', sans-serif;
-  font-size: 1vw;
+  font-size: 0.9vw;
   margin: 0;
   margin-bottom: 3vw;
   color: #888;
@@ -108,10 +108,11 @@ const Descript = styled.p`
   }
 
   @media (max-width: 480px) {
-    font-size: 3.2vw;
+    font-size: 3.5vw;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    margin-bottom: 7vw;
   }
 `;

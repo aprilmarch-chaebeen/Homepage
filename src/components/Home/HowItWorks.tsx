@@ -6,6 +6,7 @@ import {memo, useEffect, useState, useMemo} from 'react';
 import leftsrc from '../../assets/svg/swiper_left.svg';
 import rightsrc from '../../assets/svg/swiper_right.svg';
 
+// Memoization된 데이터
 const boxText1 = [
   '마케팅의 경쟁력, 브랜드의 지속성을',
   '모두 담을 수 있는 곳을 찾는다면?',
@@ -28,12 +29,13 @@ const boxText3 = [
 function HowItWorks() {
   const [autoplayEnabled, setAutoplayEnabled] = useState(true);
 
+  // Resize 이벤트에 따라 autoplay 상태를 업데이트
   useEffect(() => {
     const handleResize = () => {
       setAutoplayEnabled(window.innerWidth > 480);
     };
 
-    handleResize();
+    handleResize(); // 초기 실행
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -41,6 +43,7 @@ function HowItWorks() {
     };
   }, []);
 
+  // useMemo로 슬라이드 박스 데이터를 메모이제이션
   const workBoxes = useMemo(
     () => [
       {text: boxText1, imgSrc: require('../../assets/images/howitworks/work0.svg').default},
@@ -66,10 +69,10 @@ function HowItWorks() {
           </SwiperSlide>
         ))}
         <LeftBtn className="prev_button">
-          <BtnImg src={leftsrc} alt="swiper button left" />
+          <BtnImg src={leftsrc} alt="swiper button left" loading="lazy" />
         </LeftBtn>
         <RightBtn className="next_button">
-          <BtnImg src={rightsrc} alt="swiper button right" />
+          <BtnImg src={rightsrc} alt="swiper button right" loading="lazy" />
         </RightBtn>
       </SlideContainer>
     </WorkSection>

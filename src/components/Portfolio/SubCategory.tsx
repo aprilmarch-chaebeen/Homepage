@@ -73,8 +73,10 @@ const Category = styled.ul`
   display: flex;
   justify-content: center;
   margin: 3vw 0;
-  padding: 0 20vw;
+  padding: 0 21vw;
   flex-wrap: wrap;
+  gap: 0.4vw;
+  height: 5vw;
 
   @media (max-width: 1024px) {
     margin-bottom: 7vw;
@@ -85,11 +87,17 @@ const Category = styled.ul`
     padding: 0 2vw;
     gap: 1vw;
     margin-bottom: 9vw;
+    height: 26vw;
   }
 `;
 
 const List = styled.li`
   list-style: none;
+  height: 2.1vw;
+
+  @media (max-width: 480px) {
+    height: 6.5vw;
+  }
 `;
 
 const CategoryBtn = styled.button<{$clicked: boolean}>`
@@ -100,8 +108,8 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
   border-radius: 3vw;
   padding: 0.5vw 2vw;
   font-size: 1vw;
-  margin: 0.4vw 0.4vw;
   font-family: 'Pretendard-Regular', sans-serif;
+  height: 2.1vw;
 
   ${(p) =>
     p.$clicked &&
@@ -116,7 +124,8 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
   }
 
   @media (max-width: 480px) {
-    font-size: 3vw;
+    font-size: 3.5vw;
     padding: 1vw 3vw;
+    height: 6.5vw;
   }
 `;

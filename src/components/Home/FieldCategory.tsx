@@ -64,7 +64,8 @@ const Container = styled.div<{$clicked: boolean}>`
     border: none;
     height: 38vw;
     padding: 0;
-    border-top: solid #999 0.1vw;
+    border-top: solid #ccc 0.1vw;
+    border-bottom: solid #ccc 0.1vw;
   }
 `;
 

@@ -183,7 +183,7 @@ const MenuBtn = styled.button`
 
   @media (max-width: 1024px) {
     display: block;
-    width: 7.5vw;
+    width: 9.5vw;
     cursor: pointer;
     background: transparent;
     border: none;

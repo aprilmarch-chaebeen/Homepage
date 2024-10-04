@@ -1,5 +1,7 @@
 import Marquee from 'react-fast-marquee';
 import ImageFlow from './ImageFlow';
+import React, {useMemo} from 'react';
+import styled from 'styled-components';
 import svg1 from '../../assets/svg/songpa.svg';
 import svg2 from '../../assets/svg/lotte_members.svg';
 import svg3 from '../../assets/svg/dongkook.svg';
@@ -37,12 +39,17 @@ import svg34 from '../../assets/svg/hanssem.svg';
 import svg35 from '../../assets/svg/lotte.svg';
 import svg36 from '../../assets/svg/cd.svg';
 import svg37 from '../../assets/svg/jakorea.svg';
-import styled from 'styled-components';
 
 function Customers() {
+  // useMemo로 이미지 배열을 메모이제이션하여 불필요한 재생성을 방지
+  const images1 = useMemo(() => [svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg9, svg10], []);
+  const images2 = useMemo(() => [svg11, svg12, svg13, svg14, svg15, svg16, svg17, svg18, svg19], []);
+  const images3 = useMemo(() => [svg20, svg21, svg22, svg23, svg24, svg25, svg26, svg27, svg28], []);
+  const images4 = useMemo(() => [svg29, svg30, svg31, svg32, svg33, svg34, svg35, svg36, svg37], []);
+
   return (
     <section>
-      <BigText>Clients</BigText>
+      <BigText>Client</BigText>
       <MediumText>
         에이프릴마치와 함께한
         <br />
@@ -53,23 +60,25 @@ function Customers() {
         <br />
         쌓아온 노하우를 바탕으로 브랜드가 직면한 어려움을 해결해 드립니다.
       </SmallText>
-      <Marquee autoFill={true} direction="right" speed={10}>
-        <ImageFlow srcSet={[svg1, svg2, svg3, svg4, svg5, svg6, svg7, svg8, svg9, svg10]} />
+
+      {/* Marquee 컴포넌트에 key를 설정하여 성능 최적화 */}
+      <Marquee autoFill={true} direction="right" speed={10} gradient={false} key="marquee1">
+        <ImageFlow srcSet={images1} />
       </Marquee>
-      <Marquee autoFill={true} speed={10} gradient={true} gradientWidth={300}>
-        <ImageFlow srcSet={[svg11, svg12, svg13, svg14, svg15, svg16, svg17, svg18, svg19]} />
+      <Marquee autoFill={true} speed={10} gradient={true} gradientWidth={300} key="marquee2">
+        <ImageFlow srcSet={images2} />
       </Marquee>
-      <Marquee autoFill={true} direction="right" speed={10} gradient={true} gradientWidth={500}>
-        <ImageFlow srcSet={[svg20, svg21, svg22, svg23, svg24, svg25, svg26, svg27, svg28]} />
+      <Marquee autoFill={true} direction="right" speed={10} gradient={true} gradientWidth={500} key="marquee3">
+        <ImageFlow srcSet={images3} />
       </Marquee>
-      <Marquee autoFill={true} speed={10} gradient={true} gradientWidth={700}>
-        <ImageFlow srcSet={[svg29, svg30, svg31, svg32, svg33, svg34, svg35, svg36, svg37]} />
+      <Marquee autoFill={true} speed={10} gradient={true} gradientWidth={700} key="marquee4">
+        <ImageFlow srcSet={images4} />
       </Marquee>
     </section>
   );
 }
 
-export default Customers;
+export default React.memo(Customers); // React.memo로 불필요한 재렌더링 방지
 
 const BigText = styled.p`
   margin-top: 15vw;
@@ -84,7 +93,7 @@ const BigText = styled.p`
 
   @media (max-width: 480px) {
     font-size: 3.5vw;
-    margin-top: 20vw;
+    margin-top: 40vw;
     margin-bottom: 5vw;
   }
 `;

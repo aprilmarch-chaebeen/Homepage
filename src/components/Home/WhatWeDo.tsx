@@ -28,7 +28,7 @@ const WhatWeDoSec = styled.section`
 `;
 
 const BigText = styled.p`
-  margin-top: 15vw;
+  margin-top: 7vw;
   margin-bottom: 2.1vw;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -76,7 +76,7 @@ const ReadMoreBtn = styled.a`
   background-color: transparent;
   color: #fff;
   position: absolute;
-  top: 90%;
+  top: 87%;
   transform: translate(-50%, 50%);
   z-index: 12;
 `;

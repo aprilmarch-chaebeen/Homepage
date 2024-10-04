@@ -42,36 +42,36 @@ function HomeJoy() {
   return (
     <Section>
       <Star src={starsrc} alt="star img" />
-      <Container $direct="space-between">
+      <Container1>
         <Rect src={rectsrc} alt="rectangle img" />
         <TextImg src={joy1gsrc} alt="branding text img" />
         <BlueTextImg src={joy1bsrc} alt="branding blue text img" ref={(el) => (svgsRef.current[0] = el)} />
-      </Container>
-      <Container $direct="space-between">
+      </Container1>
+      <Container2 $direct="space-between">
         <Circle src={circlesrc} alt="circle img" />
         <TextImg src={joy2gsrc} alt="uxui text img" />
         <BlueTextImg src={joy2bsrc} alt="branding blue text img" ref={(el) => (svgsRef.current[1] = el)} />
-      </Container>
-      <Container $direct="end">
+      </Container2>
+      <Container2 $direct="end">
         <TextImg src={joy3gsrc} alt="digital, it text img" />
         <BlueTextImg src={joy3bsrc} alt="branding blue text img" ref={(el) => (svgsRef.current[2] = el)} />
-      </Container>
-      <Container $direct="space-evenly">
+      </Container2>
+      <Container2 $direct="space-evenly">
         <TextImg src={joy4gsrc} alt="aprilmarch text img" />
         <CircleContainer>
           <CircleBack src={circlebacksrc} alt="circle back img" />
           <Contact src={contactsrc} alt="circle contact us" />
         </CircleContainer>
-      </Container>
+      </Container2>
       <Line1 />
       <Line2 />
-      <SmallText $top={37} $left={31}>
+      <SmallText $top={37.5} $left={31}>
         에이프릴마치는 당신의 길잡이 입니다
       </SmallText>
-      <SmallText $top={55.5} $left={42}>
+      <SmallText $top={54.5} $left={42}>
         에이프릴마치는 당신의 나침반 입니다
       </SmallText>
-      <SmallText $top={73.6} $left={60}>
+      <SmallText $top={73.4} $left={60.5}>
         에이프릴마치는 당신의 디딤돌 입니다
       </SmallText>
     </Section>
@@ -118,10 +118,20 @@ const Line2 = styled.hr`
 const Star = styled.img`
   width: 2.7vw;
   margin-top: 1vw;
-  margin-bottom: 7vw;
+  margin-bottom: 19vw;
 `;
 
-const Container = styled.div<{$direct: string}>`
+const Container1 = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 17vw;
+  right: 0;
+  width: 100vw;
+`;
+
+const Container2 = styled.div<{$direct: string}>`
   display: flex;
   justify-content: ${(p) => p.$direct};
   align-items: center;
@@ -129,7 +139,6 @@ const Container = styled.div<{$direct: string}>`
 
 const Rect = styled.img`
   height: 1.4vw;
-  margin-left: 5vw;
 `;
 
 const TextImg = styled.img`
@@ -188,7 +197,7 @@ const SmallText = styled.span<{$top: number; $left: number}>`
   position: absolute;
   font-family: 'Pretendard-Medium', sans-serif;
   font-size: 0.9vw;
-  color: #444;
+  color: #777;
   top: ${(p) => p.$top}%;
   left: ${(p) => p.$left}%;
 

@@ -57,5 +57,6 @@ const BigText = styled.h3`
     font-size: 6vw;
     text-align: center;
     margin-top: 12vw;
+    margin-left: 0;
   }
 `;

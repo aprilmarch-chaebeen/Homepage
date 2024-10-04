@@ -97,7 +97,7 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
   border-bottom: 0.2vw solid #e0e0e0;
   padding: 1vw 3vw;
   cursor: pointer;
-  height: 3.3vw;
+  height: 3.5vw;
   font-size: 1vw;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
@@ -117,9 +117,9 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
   }
 
   @media (max-width: 480px) {
-    font-size: 3vw;
-    height: 6vw;
-    border-bottom-width: 0.5vw;
-    padding: 0.5vw 3.5vw;
+    font-size: 3.9vw;
+    height: 12vw;
+    border-bottom-width: 0.7vw;
+    padding: 0.5vw 1.9vw;
   }
 `;

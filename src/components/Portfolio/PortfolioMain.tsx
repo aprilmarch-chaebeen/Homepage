@@ -33,7 +33,7 @@ function PortfolioMain() {
         </SmallContainer>
       </TextContainer>
       <SlideContainer
-        spaceBetween={25}
+        spaceBetween={10}
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
@@ -42,6 +42,11 @@ function PortfolioMain() {
           clickable: true,
         }}
         modules={[Pagination, Autoplay]}
+        breakpoints={{
+          480: {
+            spaceBetween: 25,
+          },
+        }}
       >
         {slides.map((slide, index) => (
           <Slide key={index}>
@@ -66,9 +71,9 @@ const MainSection = styled.section`
 const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 12vw;
+  padding: 0 10vw;
   align-items: end;
-  margin: 5vw 0 3vw 0;
+  margin: 4vw 0 2vw 0;
 
   @media (max-width: 1024px) {
     margin: 15vw 0 5vw 0;
@@ -78,7 +83,7 @@ const TextContainer = styled.div`
   @media (max-width: 480px) {
     display: block;
     padding: 0 5vw;
-    margin: 18vw 0 3vw 0;
+    margin: 23vw 0 3vw 0;
   }
 `;
 
@@ -86,7 +91,7 @@ const BigText = styled.h2`
   color: #1f1f1f;
   font-family: 'Satoshi', sans-serif;
   font-weight: 400;
-  font-size: 7vw;
+  font-size: 6.7vw;
   margin: 0;
 
   @media (max-width: 1024px) {
@@ -174,28 +179,28 @@ const SlideContainer = styled(Swiper)`
       margin-bottom: 8vw;
     }
     & .swiper-pagination-bullet-active {
-      width: 4vw !important;
-      height: 1.3vw !important;
+      width: 5vw !important;
+      height: 1.6vw !important;
     }
     & .swiper-pagination-bullet {
-      width: 1.3vw;
-      height: 1.3vw;
+      width: 1.6vw;
+      height: 1.6vw;
     }
   }
 `;
 
 const Slide = styled(SwiperSlide)`
-  width: 45vw;
-  height: 24.43vw;
+  width: 45vw !important;
+  height: 24.43vw !important;
 
   @media (max-width: 1024px) {
-    width: 65vw;
-    height: 35.288vw;
+    width: 65vw !important;
+    height: 35.288vw !important;
   }
 
   @media (max-width: 480px) {
-    width: 73vw;
-    height: 39.631vw;
+    width: 76vw !important;
+    height: 46.176vw !important;
   }
 `;
 
@@ -212,7 +217,7 @@ const SlideImg = styled.img.attrs({
   }
 
   @media (max-width: 480px) {
-    width: 73vw;
-    height: 39.631vw;
+    width: 76vw;
+    height: 46.176vw;
   }
 `;

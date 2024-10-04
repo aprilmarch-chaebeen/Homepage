@@ -14,7 +14,7 @@ export default PortfolioProjects;
 
 const ProjectSection = styled.section`
   text-align: center;
-  margin-top: 17vw;
+  margin-top: 13vw;
 
   @media (max-width: 1024px) {
     margin-top: 20vw;
@@ -26,7 +26,7 @@ const ProjectSection = styled.section`
 `;
 
 const Title = styled.h2`
-  font-size: 2.5vw;
+  font-size: 2.4vw;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   margin-bottom: 3vw;
@@ -36,6 +36,7 @@ const Title = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: 8vw;
+    font-size: 7vw;
+    margin-bottom: 7vw;
   }
 `;

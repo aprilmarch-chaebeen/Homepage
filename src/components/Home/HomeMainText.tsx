@@ -16,7 +16,7 @@ import itbsrc from '../../assets/svg/it_dashboard_b.svg';
 import itmobilesrc from '../../assets/svg/it_dashboard_mobile.svg';
 import ithmobilesrc from '../../assets/svg/it_dashobard_h_mobile.svg';
 import itbmobilesrc from '../../assets/svg/it_dashboard_b_mobile.svg';
-import { useEffect, useState } from 'react';
+import {useEffect, useState, useCallback, useMemo} from 'react';
 
 const hoverDescriptions = [
   '당신의 꿈을 담은 브랜드를 만듭니다',
@@ -27,9 +27,7 @@ const hoverDescriptions = [
 ];
 
 const textImgs = [brandingsrc, uxuisrc, digitalsrc, itsrc, itmobilesrc];
-
 const hoverTextImgs = [brandinghsrc, uxuihsrc, digitalhsrc, ithsrc, ithmobilesrc];
-
 const blurTextImgs = [brandingbsrc, uxuibsrc, digitalbsrc, itbsrc, itbmobilesrc];
 
 interface HomeMainTextProp {
@@ -45,22 +43,33 @@ interface HomeMainTextProp {
 function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, width, mobileWidth}: HomeMainTextProp) {
   const [gradientWidth, setGradientWidth] = useState(600);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 480) {
-        setGradientWidth(70);
-      } else {
-        setGradientWidth(600);
-      }
-    };
+  const handleResize = useCallback(() => {
+    if (window.innerWidth <= 480) {
+      setGradientWidth(70);
+    } else {
+      setGradientWidth(600);
+    }
+  }, []);
 
-    handleResize();
+  useEffect(() => {
     window.addEventListener('resize', handleResize);
+    handleResize(); // 초기 값 설정
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [handleResize]);
+
+  const hoverContent = useMemo(() => {
+    return (
+      <DescriptContainer>
+        <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={gradientWidth}>
+          <Descript>{hoverDescriptions[idx]}</Descript>
+          <Star src={starsrc} alt="star src" />
+        </Marquee>
+      </DescriptContainer>
+    );
+  }, [gradientWidth, idx]);
 
   return (
     <TextContainer onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} $hovered={hovered}>
@@ -70,14 +79,7 @@ function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, wid
         <BigText src={textImgs[idx]} alt="text img" $hovered={nowHovered} $width={width} $mwidth={mobileWidth} />
       )}
       <NonTextContainer>
-        {nowHovered && (
-          <DescriptContainer>
-            <Marquee autoFill={true} speed={20} gradient={true} gradientWidth={gradientWidth}>
-              <Descript>{hoverDescriptions[idx]}</Descript>
-              <Star src={starsrc} alt="star src" />
-            </Marquee>
-          </DescriptContainer>
-        )}
+        {nowHovered && hoverContent}
         <BlurText src={blurTextImgs[idx]} alt="blur text img" $width={width} $mwidth={mobileWidth} />
       </NonTextContainer>
     </TextContainer>
@@ -86,6 +88,7 @@ function HomeMainText({idx, hovered, nowHovered, onMouseEnter, onMouseLeave, wid
 
 export default HomeMainText;
 
+// 스타일 정의
 const DescriptContainer = styled.div`
   position: absolute;
   top: 0;
@@ -187,4 +190,8 @@ const Descript = styled.p`
 const Star = styled.img`
   width: 1vw;
   margin: 0 1vw;
+
+  @media (max-width: 480px) {
+    width: 3vw;
+  }
 `;

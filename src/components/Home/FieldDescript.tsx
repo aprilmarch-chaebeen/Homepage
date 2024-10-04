@@ -4,8 +4,8 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper/modules';
 import moresrc from '../../assets/svg/read_more.svg';
 import {useMemo} from 'react';
-
 import 'swiper/css';
+import React from 'react';
 
 interface FieldDescriptProps {
   descript: Array<string | JSX.Element>;
@@ -15,6 +15,7 @@ interface FieldDescriptProps {
 }
 
 function FieldDescript({descript, name, num, pad}: FieldDescriptProps) {
+  // useMemo로 슬라이드 데이터 캐싱
   const slides = useMemo(
     () =>
       Array.from({length: num}, (_, i) => ({
@@ -32,6 +33,7 @@ function FieldDescript({descript, name, num, pad}: FieldDescriptProps) {
         <MediumText>{descript[2]}</MediumText>
         <MediumText>{descript[3]}</MediumText>
       </TextContainer>
+
       <Swiper
         loop={true}
         autoplay={{
@@ -47,14 +49,15 @@ function FieldDescript({descript, name, num, pad}: FieldDescriptProps) {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <ReadMoreBtn>
-        <ReadMore src={moresrc} alt="read more button" />
+        <ReadMore src={moresrc} alt="read more button" loading="lazy" />
       </ReadMoreBtn>
     </Container>
   );
 }
 
-export default FieldDescript;
+export default React.memo(FieldDescript); // React.memo로 컴포넌트 메모이제이션
 
 const Container = styled.div`
   text-align: center;

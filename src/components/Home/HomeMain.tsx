@@ -1,6 +1,6 @@
 import styled, {keyframes} from 'styled-components';
 import HomeMainText from './HomeMainText';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import creativesrc from '../../assets/svg/creative.svg';
 import circlesrc from '../../assets/svg/circle_back.svg';
 import contactsrc from '../../assets/svg/contact_us.svg';
@@ -12,33 +12,32 @@ function HomeMain() {
   const [uxuiHovered, setUxuiHovered] = useState(false);
   const [digitalHovered, setDigitalHovered] = useState(false);
   const [dashboardHovered, setDashboardHovered] = useState(false);
-
   const [itImgIdx, setItImgIdx] = useState(3);
   const [contactSrc, setContactSrc] = useState(contactsrc);
 
+  // useCallback으로 메모이제이션한 함수
+  const handleResize = useCallback(() => {
+    if (window.innerWidth <= 480) {
+      setItImgIdx(4);
+      setContactSrc(contactmsrc);
+    } else {
+      setItImgIdx(3);
+      setContactSrc(contactsrc); // 원래 contactsrc로 변경
+    }
+  }, []);
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 480) {
-        setItImgIdx(4);
-        setContactSrc(contactmsrc);
-      } else {
-        setItImgIdx(3);
-        setContactSrc(contactSrc);
-      }
-    };
-
-    handleResize();
-
     window.addEventListener('resize', handleResize);
+    handleResize(); // 초기 상태 설정
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [handleResize]);
 
   return (
     <MainSection>
-      <HomeMainText
+      <MemoizedHomeMainText
         idx={0}
         onMouseEnter={() => setBrandingHovered(true)}
         onMouseLeave={() => setBrandingHovered(false)}
@@ -47,7 +46,7 @@ function HomeMain() {
         width={28}
         mobileWidth={64}
       />
-      <HomeMainText
+      <MemoizedHomeMainText
         idx={1}
         onMouseEnter={() => setUxuiHovered(true)}
         onMouseLeave={() => setUxuiHovered(false)}
@@ -57,7 +56,7 @@ function HomeMain() {
         mobileWidth={84}
       />
       <SmallText src={creativesrc} alt="creative design svg" $hovered={digitalHovered || dashboardHovered} />
-      <HomeMainText
+      <MemoizedHomeMainText
         idx={2}
         onMouseEnter={() => setDigitalHovered(true)}
         onMouseLeave={() => setDigitalHovered(false)}
@@ -66,7 +65,7 @@ function HomeMain() {
         width={26}
         mobileWidth={46}
       />
-      <HomeMainText
+      <MemoizedHomeMainText
         idx={itImgIdx}
         onMouseEnter={() => setDashboardHovered(true)}
         onMouseLeave={() => setDashboardHovered(false)}
@@ -93,6 +92,9 @@ function HomeMain() {
 }
 
 export default HomeMain;
+
+// React.memo를 사용해 HomeMainText 컴포넌트의 불필요한 재렌더링 방지
+const MemoizedHomeMainText = React.memo(HomeMainText);
 
 const MainSection = styled.section`
   display: flex;
@@ -228,11 +230,14 @@ const DownContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 3vw;
+  position: absolute;
+  top: 29vw;
 
   @media (max-width: 480px) {
     margin-top: 10vw;
+    top: 64vw;
   }
-`
+`;
 
 const DownAnimation = keyframes`
   0% {
@@ -252,4 +257,4 @@ const Down = styled.img`
   @media (max-width: 480px) {
     width: 5vw;
   }
-`
+`;
