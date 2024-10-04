@@ -78,7 +78,7 @@ const SmallText = styled.p`
   }
 
   @media (max-width: 480px) {
-    font-size: 3.5vw;
+    font-size: 3.2vw;
   }
 `;
 
@@ -108,13 +108,17 @@ const MediumText = styled.p`
   }
 
   @media (max-width: 480px) {
-    font-size: 3.8vw;
+    font-size: 3.5vw;
   }
 `;
 
 const TextContainer = styled.div`
   line-height: 1.6;
   margin-bottom: 2.5vw;
+
+  @media (max-width: 480px) {
+    margin-bottom: 6.5vw;
+  }
 `;
 
 const Img = styled.img`

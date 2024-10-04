@@ -33,7 +33,7 @@ function FieldCategory({title, onClick, clicked, name}: FieldCategoryProps) {
         <Text>{title}</Text>
       </InnerContainer1>
       <InnerContainer2>
-        <SmallImg src={require(`../../assets/images/field_category/${name}_key.svg`).default} alt="small img" loading="lazy" />
+        <SmallImg src={require(`../../assets/images/field_category/${name}_key.svg`).default} alt="small img" loading="lazy" $it={name === 'it_mobile'} />
       </InnerContainer2>
     </Container>
   );
@@ -138,7 +138,7 @@ const InnerContainer2 = styled.div`
   }
 `;
 
-const SmallImg = styled.img`
+const SmallImg = styled.img<{$it?: boolean}>`
   height: 1.5vw;
   margin-right: 0.3vw;
 
@@ -147,6 +147,6 @@ const SmallImg = styled.img`
   }
 
   @media (max-width: 480px) {
-    height: 4.5vw;
+    height: ${(p) => p.$it ? 9.5 : 4.5}vw;
   }
 `;

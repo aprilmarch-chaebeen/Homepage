@@ -65,7 +65,7 @@ const SmallText = styled.p`
 
   @media (max-width: 480px) {
     font-size: 3.9vw;
-    padding: 0 21vw;
+    padding: 0 7vw;
     margin: 5vw 0;
     line-height: 1.7;
   }

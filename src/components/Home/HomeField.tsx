@@ -9,6 +9,15 @@ const voucher = [
   '에이프릴마치는 체계적인 컨설팅과 전략적인 디자인으로 브랜드를 지원합니다',
   '에이프릴마치에서 국가 지원 사업을 시작해보세요',
 ];
+const voucher_mobile = [
+  '정부지원바우처',
+  '제조혁신바우처・전통문화바우처 수행사',
+  <>
+  에이프릴마치는 체계적인 컨설팅과<br />전략적인 디자인으로 브랜드를 지원합니다
+  </>
+  ,
+  '에이프릴마치에서 국가 지원 사업을 시작해보세요',
+];
 const newBrand = [
   '신사업・신규브랜드',
   <>
@@ -33,16 +42,27 @@ const university = [
   '디자인 실행 업무를 넘어, 사업주최와 참여기관이 이원화 된',
   '과업의 다수 운영 경험에서 쌓아온 노하우로 모두가 만족하는 결과물 창출하겠습니다',
 ];
+const university_mobile = [
+  '공공기관 대학',
+  <>
+    사업 주최와 참여기관이 이원화 된 <span style={{ fontFamily: 'Pretendard-SemiBold' }}>공공기관 운영/관리 경험 多</span>
+  </>,
+  '디자인 실행 업무를 넘어, 사업주최와 참여기관이 이원화 된',
+  <>
+  과업의 다수 운영 경험에서 쌓아온 노하우로<br />모두가 만족하는 결과물 창출하겠습니다
+  </>
+  ,
+];
 
 function HomeField() {
   const [activeIndex, setActiveIndex] = useState(0); // 활성화된 카테고리 인덱스
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480); // 모바일 여부 확인
 
   const categories = [
-    { title: '정부지원 바우처 수행사', descript: voucher, name: 'voucher' },
-    { title: '신사업・신규브랜드', descript: newBrand, name: 'new' },
-    { title: 'IT 대시보드', descript: it, name: 'it' },
-    { title: '공공기관・대학', descript: university, name: 'pub' },
+    { title: '정부지원 바우처 수행사', descript: isMobile ? voucher_mobile : voucher, name: 'voucher', mobile: 'voucher_mobile' },
+    { title: '신사업・신규브랜드', descript: newBrand, name: 'new', mobile: 'new_mobile' },
+    { title: 'IT 대시보드', descript: it, name:'it', mobile: 'it_mobile' },
+    { title: '공공기관・대학', descript: isMobile ? university_mobile : university, name: 'pub', mobile: 'pub_mobile' },
   ];
 
   const handleCategoryClick = (index: number) => {
@@ -72,7 +92,7 @@ function HomeField() {
               title={category.title}
               onClick={() => handleCategoryClick(index)}
               clicked={activeIndex === index}
-              name={category.name}
+              name={isMobile ? category.mobile : category.name}
             />
             {isMobile && activeIndex === index && (
               <FieldDescript

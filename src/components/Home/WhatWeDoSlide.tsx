@@ -162,7 +162,7 @@ const SlideContainer = styled(Swiper)`
     margin: 0;
 
     & .swiper-pagination-progressbar {
-      top: 66% !important;
+      top: 67.5% !important;
       width: 55vw !important;
       height: 0.55vw !important;
       left: 48.5% !important;
@@ -173,11 +173,11 @@ const SlideContainer = styled(Swiper)`
     }
 
     & .swiper-button-prev {
-      top: 66.5vw;
+      top: 67.8vw;
       left: 8.5vw;
     }
     & .swiper-button-next {
-      top: 66.5vw;
+      top: 67.8vw;
       right: 11vw;
     }
 
@@ -238,6 +238,7 @@ const GradientRight = styled.div`
   @media (max-width: 480px) {
     width: 17vw;
     height: 50vw;
+    top: 50%;
   }
 `;
 
@@ -253,6 +254,7 @@ const GradientLeft = styled.div`
   @media (max-width: 480px) {
     width: 17vw;
     height: 50vw;
+    top: 50%;
   }
 `;
 
