@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
 const path = require('path');
 
 module.exports = {
@@ -41,7 +42,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '/build'),
-    filename: 'bundle.[hash].js',
+    filename: '[name].[chunkhash].js',
   },
   optimization: {
     minimize: true,
@@ -56,6 +57,11 @@ module.exports = {
         },
       }),
     ],
+    usedExports: true,
+    splitChunks: {
+      name: "vendor",
+      chunks: "initial"
+    }
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
@@ -71,6 +77,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       process: 'process/browser.js',
     }),
+    new CompressionPlugin(),
   ],
   devServer: {
     host: 'localhost',
