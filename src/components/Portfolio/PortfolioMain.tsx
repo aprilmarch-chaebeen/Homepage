@@ -37,7 +37,7 @@ function PortfolioMain() {
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
-        // autoplay={{delay: 3000, disableOnInteraction: true, pauseOnMouseEnter: true}}
+        autoplay={{delay: 3000, disableOnInteraction: true, pauseOnMouseEnter: true}}
         pagination={{
           clickable: true,
         }}

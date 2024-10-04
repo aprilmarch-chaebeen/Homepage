@@ -82,8 +82,8 @@ function WebAppCategory() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 1024) setSlideNum(9);
-      if (window.innerWidth <= 480) setSlideNum(10);
+      if (window.innerWidth > 480 && window.innerWidth <= 1024) setSlideNum(9);
+      else if (window.innerWidth <= 480) setSlideNum(10);
       else setSlideNum(16);
     };
 

@@ -81,6 +81,7 @@ const Category = styled.ul`
   @media (max-width: 1024px) {
     margin-bottom: 7vw;
     padding: 0 10vw;
+    height: 7vw;
   }
 
   @media (max-width: 480px) {
@@ -94,6 +95,10 @@ const Category = styled.ul`
 const List = styled.li`
   list-style: none;
   height: 2.1vw;
+
+  @media (max-width: 1024px) {
+    height: 3vw;
+  }
 
   @media (max-width: 480px) {
     height: 6.5vw;
@@ -121,6 +126,7 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
   @media (max-width: 1024px) {
     font-size: 1.6vw;
     padding: 0.6vw 2.5vw;
+    height: 3vw;
   }
 
   @media (max-width: 480px) {
