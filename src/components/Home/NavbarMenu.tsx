@@ -20,19 +20,19 @@ function NavbarMenu() {
           <Close src={closesrc} alt="close button" />
         </CloseBtn>
         <MenuContainer>
-          <Menu>바우처</Menu>
+          <Menu href="/voucher">바우처</Menu>
           <Line></Line>
-          <Menu>신규 브랜드 신사업</Menu>
+          <Menu href="/newbusiness">신규 브랜드 신사업</Menu>
           <Line></Line>
-          <Menu>IT 대시보드</Menu>
+          <Menu href="/itdashboard">IT 대시보드</Menu>
           <Line></Line>
-          <Menu>공공기관 대학</Menu>
+          <Menu href="/public">공공기관 대학</Menu>
           <Line></Line>
-          <Menu>포트폴리오</Menu>
+          <Menu href="/portfolio">포트폴리오</Menu>
           <Line></Line>
-          <Menu>About us</Menu>
+          <Menu href="/about">About us</Menu>
           <Line></Line>
-          <Menu>Contact</Menu>
+          <Menu href="/">Contact</Menu>
         </MenuContainer>
         <LogoContainer>
           <Logo src={logosrc} alt="menu logo" />
@@ -118,9 +118,11 @@ const MenuContainer = styled.div`
   padding: 0 9vw 0 7vw;
 `;
 
-const Menu = styled.p`
+const Menu = styled.a`
   font-family: 'Pretendard-Regualr', sans-serif;
   font-size: 5vw;
+  text-decoration: none;
+  color: #111;
 
   @media (min-width: 480px) {
     font-size: 3vw;
@@ -129,6 +131,11 @@ const Menu = styled.p`
 
 const Line = styled.div`
   border-bottom: 0.1vw solid #ccc;
+  margin: 5vw 0;
+
+  @media (min-width: 480px) {
+    margin: 3vw 0;
+  }
 `;
 
 const LogoContainer = styled.div`
