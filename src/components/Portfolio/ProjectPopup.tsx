@@ -85,6 +85,10 @@ const TextContainer = styled.div`
   text-align: left;
   padding: 0 27.5vw;
 
+  @media (max-width: 1024px) {
+    padding: 0 19vw;
+  }
+
   @media (max-width: 480px) {
     padding: 0 16vw;
   }
@@ -97,6 +101,11 @@ const Title = styled.p`
   margin-top: 5vw;
   margin-bottom: 0;
 
+  @media (max-width: 1024px) {
+    font-size: 2.5vw;
+    margin-top: 12vw;
+  }
+
   @media (max-width: 480px) {
     font-size: 4vw;
     margin-top: 30vw;
@@ -108,6 +117,11 @@ const Descript = styled.p`
   font-size: 1vw;
   color: #fff;
   margin-top: 0.5vw;
+
+  @media (max-width: 1024px) {
+    font-size: 1.7vw;
+    margin: 0.7vw 0 2.5vw 0;
+  }
 
   @media (max-width: 480px) {
     font-size: 3vw;
@@ -126,6 +140,11 @@ const CloseBtn = styled.button`
   height: 3vw;
   padding: 0;
 
+  @media (max-width: 1024px) {
+    top: 3vw;
+    right: 4vw;
+  }
+
   @media (max-width: 480px) {
     top: 5vw;
     right: 7vw;
@@ -135,6 +154,11 @@ const CloseBtn = styled.button`
 const CloseImg = styled.img`
   width: 2vw;
   height: 2vw;
+
+  @media (max-width: 1024px) {
+    width: 3.5vw;
+    height: 3.5vw;
+  }
 
   @media (max-width: 480px) {
     width: 6vw;
@@ -153,6 +177,10 @@ const SlideContainer = styled(Swiper)`
 const Slide = styled(SwiperSlide)`
   width: 45vw;
 
+  @media (max-width: 1024px) {
+    width: 60vw;
+  }
+
   @media (max-width: 480px) {
     width: 64vw;
   }
@@ -163,6 +191,10 @@ const SlideImg = styled.img.attrs({
 })`
   width: 45vw;
   object-fit: cover;
+
+  @media (max-width: 1024px) {
+    width: 60vw;
+  }
 
   @media (max-width: 480px) {
     width: 64vw;
@@ -177,6 +209,11 @@ const LeftBtn = styled.button`
   left: 22vw;
   z-index: 10;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    top: 24vw;
+    left: 11vw;
+  }
 
   @media (max-width: 480px) {
     top: 28vw;
@@ -193,6 +230,11 @@ const RightBtn = styled.button`
   z-index: 10;
   cursor: pointer;
 
+  @media (max-width: 1024px) {
+    top: 24vw;
+    right: 11vw;
+  }
+
   @media (max-width: 480px) {
     top: 28vw;
     right: 4vw;
@@ -202,6 +244,11 @@ const RightBtn = styled.button`
 const BtnImg = styled.img`
   width: 2.5vw;
   height: 2.5vw;
+
+  @media (max-width: 1024px) {
+    width: 4vw;
+    height: 4vw;
+  }
 
   @media (max-width: 480px) {
     width: 7vw;
