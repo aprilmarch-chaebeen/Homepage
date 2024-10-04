@@ -13,7 +13,7 @@ function WhatWeDo() {
       <SmallText>디자인과 브랜딩을 향한 우리의 전문성과 열정, 진심의 영향력은 든든한 믿음과 새로운 기쁨을 전달합니다.</SmallText>
       <WhatWeDoFilter />
       <WhatWeDoSlide />
-      <ReadMoreBtn href='/portfolio'>
+      <ReadMoreBtn href="/portfolio">
         <ReadMore src={moresrc} alt="read more button" />
       </ReadMoreBtn>
     </WhatWeDoSec>
@@ -36,7 +36,7 @@ const BigText = styled.p`
   color: #1c46f5;
 
   @media (max-width: 480px) {
-    font-size: 4.5vw; 
+    font-size: 4.5vw;
     margin-bottom: 5vw;
   }
 `;
@@ -49,7 +49,7 @@ const MediumText = styled.p`
   line-height: 1.4;
 
   @media (max-width: 480px) {
-    font-size: 6.5vw; 
+    font-size: 6.5vw;
   }
 `;
 
@@ -64,7 +64,7 @@ const SmallText = styled.p`
   color: #555;
 
   @media (max-width: 480px) {
-    font-size: 3.9vw; 
+    font-size: 3.9vw;
     padding: 0 21vw;
     margin: 5vw 0;
     line-height: 1.7;
@@ -76,7 +76,7 @@ const ReadMoreBtn = styled.a`
   background-color: transparent;
   color: #fff;
   position: absolute;
-  top: 87%;
+  top: 90%;
   transform: translate(-50%, 50%);
   z-index: 12;
 `;

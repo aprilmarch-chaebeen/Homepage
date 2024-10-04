@@ -41,7 +41,7 @@ function WhatWeDoSlide() {
         navigation
         modules={[Pagination, Navigation, EffectCoverflow, Autoplay]}
         effect="coverflow"
-        coverflowEffect={{rotate: 0, stretch: 0, depth: 160, modifier: 1.5}}
+        coverflowEffect={{rotate: 0, stretch: 0, depth: 160, modifier: 1.5, slideShadows: false}}
         onSlideChange={handleSlideChange}
         breakpoints={{
           480: {
@@ -87,7 +87,7 @@ const PageNumberContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  left: 49%;
+  left: 50%;
   transform: translate(-50%, 50%);
   font-size: 1vw;
   top: 85.9%;
@@ -125,18 +125,18 @@ const SlideContainer = styled(Swiper)`
   }
 
   & .swiper-pagination-progressbar {
-    top: 24vw;
-    width: 38vw;
-    height: 0.2vw;
-    left: 50%;
+    top: 24vw !important;
+    width: 38vw !important;
+    height: 0.2vw !important;
+    left: 50% !important;
     transform: translate(-50%, 50%);
     background: #ccc;
     z-index: 13;
   }
 
   & .swiper-pagination-progressbar-fill {
-    background: #000;
-    height: 0.2vw;
+    background: #000 !important;
+    height: 0.2vw !important;
   }
 
   & .swiper-slide-shadow-right,
@@ -254,8 +254,8 @@ const CarouselRight = styled.img`
   width: 31vw;
   position: absolute;
   height: 19.3vw;
-  top: 55.2%;
-  right: -3.78vw;
+  top: 39.25vw;
+  right: -4.65vw;
   z-index: 10;
 
   @media (max-width: 480px) {
@@ -267,8 +267,8 @@ const CarouselLeft = styled.img`
   width: 31vw;
   position: absolute;
   height: 19.3vw;
-  top: 55.2%;
-  left: -2.4vw;
+  top: 39.25vw;
+  left: -1.33vw;
   z-index: 10;
 
   @media (max-width: 480px) {
