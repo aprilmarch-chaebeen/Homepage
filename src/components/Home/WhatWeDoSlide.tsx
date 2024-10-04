@@ -4,13 +4,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules';
-import React, {useCallback, useState, useMemo} from 'react';
+import React, {useCallback, useState, useMemo, useEffect} from 'react';
 import {useAppSelector} from '../../hook/reduxHook';
 import {selectHomeFilterValue} from '../../reducers/homeFilterSlice';
 
 function WhatWeDoSlide() {
   const home = useAppSelector(selectHomeFilterValue);
   const [nowIndex, setNowIndex] = useState(0);
+
+  const preloadImage = (src: string) => {
+    const img = new Image();
+    img.src = src;
+  };
 
   // useCallback을 사용하여 handleSlideChange 함수를 메모이제이션
   const handleSlideChange = useCallback((swiper: SwiperClass) => {
@@ -27,6 +32,10 @@ function WhatWeDoSlide() {
     [home.filter, home.num]
   );
 
+  useEffect(() => {
+    slides.forEach((slide) => preloadImage(slide.src));
+  }, [slides]);
+
   return (
     <div>
       <PageNumberContainer>
@@ -39,7 +48,7 @@ function WhatWeDoSlide() {
         spaceBetween={10}
         centeredSlides
         loop
-        // autoplay={{delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true}}
+        autoplay={{delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true}}
         pagination={{type: 'progressbar', clickable: true}}
         navigation
         modules={[Pagination, Navigation, EffectCoverflow, Autoplay]}
@@ -54,7 +63,7 @@ function WhatWeDoSlide() {
       >
         {slides.map((slide, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg src={slide.src} alt={slide.alt} $idx={i} $nowIdx={nowIndex - 1} />
+            <SlideImg src={slide.src} alt={slide.alt} $idx={i} $nowIdx={nowIndex - 1} loading="lazy" />
           </Slide>
         ))}
         <SlideCover />
