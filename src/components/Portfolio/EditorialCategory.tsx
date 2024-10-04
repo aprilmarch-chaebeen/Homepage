@@ -92,4 +92,10 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 0 15vw;
   gap: 1vw;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 5vw;
+    gap: 2vw;
+  }
 `;

@@ -1,6 +1,9 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {useAppDispatch, useAppSelector} from '../../hook/reduxHook';
 import {changeIdx, selectProjectIdxValue} from '../../reducers/projectCurIdxSlice';
+import arrowsrc from '../../assets/svg/arrow.svg';
+import doublearrowsrc from '../../assets/svg/double_arrow.svg';
+import {useEffect, useState} from 'react';
 
 interface ProjectPaginationProps {
   total: number;
@@ -9,14 +12,31 @@ interface ProjectPaginationProps {
 function ProjectPagination({total}: ProjectPaginationProps) {
   const dispatch = useAppDispatch();
   const currentIdx = useAppSelector(selectProjectIdxValue);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <Pagination>
       <List>
-        <PageBtn onClick={() => dispatch(changeIdx(1))}>First</PageBtn>
+        <PageBtn onClick={() => dispatch(changeIdx(1))}>
+          {isMobile ? <DoubleArrow src={doublearrowsrc} alt="double arrow button" /> : 'First'}
+        </PageBtn>
       </List>
       <List>
-        <PageBtn onClick={() => dispatch(changeIdx(currentIdx <= 1 ? 1 : currentIdx - 1))}>Previous</PageBtn>
+        <PageBtn onClick={() => dispatch(changeIdx(currentIdx <= 1 ? 1 : currentIdx - 1))}>
+          {isMobile ? <Arrow src={arrowsrc} alt="arrow button" /> : 'Previous'}
+        </PageBtn>
       </List>
 
       {Array.from({length: total}, (_, i) => (
@@ -28,10 +48,14 @@ function ProjectPagination({total}: ProjectPaginationProps) {
       ))}
 
       <List>
-        <PageBtn onClick={() => dispatch(changeIdx(currentIdx >= total ? total : currentIdx + 1))}>Next</PageBtn>
+        <PageBtn onClick={() => dispatch(changeIdx(currentIdx >= total ? total : currentIdx + 1))}>
+          {isMobile ? <Arrow src={arrowsrc} alt="arrow button" $right={true} /> : 'Next'}
+        </PageBtn>
       </List>
       <List>
-        <PageBtn onClick={() => dispatch(changeIdx(total))}>Last</PageBtn>
+        <PageBtn onClick={() => dispatch(changeIdx(total))}>
+          {isMobile ? <DoubleArrow src={doublearrowsrc} alt="double arrow button" $right={true} /> : 'Last'}
+        </PageBtn>
       </List>
     </Pagination>
   );
@@ -45,6 +69,12 @@ const Pagination = styled.ul`
   gap: 1.5vw;
   margin: 10vw 20vw;
   padding: 0;
+
+  @media (max-width: 480px) {
+    margin-top: 15vw;
+    margin-bottom: 25vw;
+    gap: 3vw;
+  }
 `;
 
 const List = styled.li`
@@ -60,4 +90,26 @@ const PageBtn = styled.button<{$disabled?: boolean}>`
   border: none;
   border-bottom: ${(p) => p.$disabled && '0.2vw solid #111'};
   padding: 0 1vw;
+
+  @media (max-width: 480px) {
+    font-size: 3vw;
+  }
+`;
+
+const DoubleArrow = styled.img<{$right?: boolean}>`
+  width: 5vw;
+  ${(p) =>
+    p.$right &&
+    css`
+      transform: rotateY(180deg);
+    `}
+`;
+
+const Arrow = styled.img<{$right?: boolean}>`
+  width: 5vw;
+  ${(p) =>
+    p.$right &&
+    css`
+      transform: rotateY(180deg);
+    `}
 `;

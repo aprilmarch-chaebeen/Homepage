@@ -80,6 +80,12 @@ const Category = styled.ul`
   margin: 3vw 0;
   padding: 0 20vw;
   flex-wrap: wrap;
+
+  @media (max-width: 480px) {
+    padding: 0 2vw;
+    gap: 1vw;
+    margin-bottom: 9vw;
+  }
 `;
 
 const List = styled.li`
@@ -102,4 +108,9 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
       color: #fff;
       background-color: #1c46f5;
     `}
+
+  @media (max-width: 480px) {
+    font-size: 3vw;
+    padding: 1vw 3vw;
+  }
 `;

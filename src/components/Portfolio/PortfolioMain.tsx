@@ -33,15 +33,20 @@ function PortfolioMain() {
         </SmallContainer>
       </TextContainer>
       <SlideContainer
-        spaceBetween={25}
+        spaceBetween={10}
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
-        autoplay={{delay: 3000, disableOnInteraction: true, pauseOnMouseEnter: true}}
+        // autoplay={{delay: 3000, disableOnInteraction: true, pauseOnMouseEnter: true}}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination, Autoplay]}
+        breakpoints={{
+          480: {
+            spaceBetween: 25,
+          },
+        }}
       >
         {slides.map((slide, index) => (
           <Slide key={index}>
@@ -57,6 +62,10 @@ export default memo(PortfolioMain);
 
 const MainSection = styled.section`
   text-align: center;
+
+  @media (max-width: 480px) {
+    text-align: left;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -65,6 +74,12 @@ const TextContainer = styled.div`
   padding: 0 12vw;
   align-items: end;
   margin: 5vw 0 3vw 0;
+
+  @media (max-width: 480px) {
+    display: block;
+    padding: 0 5vw;
+    margin: 18vw 0 3vw 0;
+  }
 `;
 
 const BigText = styled.h2`
@@ -72,6 +87,10 @@ const BigText = styled.h2`
   font-family: 'Satoshi', sans-serif;
   font-size: 7vw;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 15vw;
+  }
 `;
 
 const SmallContainer = styled.div`
@@ -83,6 +102,10 @@ const SmallText1 = styled.p`
   font-family: 'Pretendard-SemiBold', sans-serif;
   font-size: 1.1vw;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 4vw;
+  }
 `;
 
 const SmallText2 = styled.p`
@@ -90,11 +113,17 @@ const SmallText2 = styled.p`
   font-family: 'Pretendard-Light', sans-serif;
   font-size: 1vw;
   margin: 0.6vw 0 1vw 0;
+
+  @media (max-width: 480px) {
+    margin: 1.5vw 0 8vw 0;
+    font-size: 3.3vw;
+    width: 45vw;
+  }
 `;
 
 const SlideContainer = styled(Swiper)`
   & .swiper-wrapper {
-    margin-bottom: 3rem;
+    margin-bottom: 3vw;
   }
   & .swiper-pagination-bullet-active {
     width: 1.3vw !important;
@@ -107,11 +136,30 @@ const SlideContainer = styled(Swiper)`
     height: 0.55vw;
     background-color: #ddd;
   }
+
+  @media (max-width: 480px) {
+    & .swiper-wrapper {
+      margin-bottom: 8vw;
+    }
+    & .swiper-pagination-bullet-active {
+      width: 4vw !important;
+      height: 1.3vw !important;
+    }
+    & .swiper-pagination-bullet {
+      width: 1.3vw;
+      height: 1.3vw;
+    }
+  }
 `;
 
 const Slide = styled(SwiperSlide)`
   width: 50vw;
   height: 27.144vw;
+
+  @media (max-width: 480px) {
+    width: 73vw;
+    height: 39.631vw;
+  }
 `;
 
 const SlideImg = styled.img.attrs({
@@ -120,4 +168,9 @@ const SlideImg = styled.img.attrs({
   width: 50vw;
   height: 27.144vw;
   object-fit: cover;
+
+  @media (max-width: 480px) {
+    width: 73vw;
+    height: 39.631vw;
+  }
 `;

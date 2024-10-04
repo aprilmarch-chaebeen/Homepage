@@ -75,6 +75,11 @@ export default ProjectCategory;
 const Category = styled.ul`
   display: flex;
   justify-content: center;
+
+  @media (max-width: 480px) {
+    padding: 0 5vw;
+    margin: 5vw 0;
+  }
 `;
 
 const List = styled.li`
@@ -97,4 +102,11 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
       color: #1c46f5;
       border-bottom: 0.2vw solid #1c46f5;
     `}
+
+  @media (max-width: 480px) {
+    font-size: 3vw;
+    height: 6vw;
+    border-bottom-width: 0.5vw;
+    padding: 0.5vw 3.5vw;
+  }
 `;

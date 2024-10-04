@@ -28,7 +28,7 @@ function ProjectPopup({title, descript, onClose, flag, num}: ProjectPopupProps) 
   );
 
   const handleClick = (e: React.MouseEvent) => {
-    e.stopPropagation();  // 이벤트 전파 중단
+    e.stopPropagation(); // 이벤트 전파 중단
     onClose();
   };
 
@@ -84,6 +84,10 @@ const Section = styled.section`
 const TextContainer = styled.div`
   text-align: left;
   padding: 0 27.5vw;
+
+  @media (max-width: 480px) {
+    padding: 0 16vw;
+  }
 `;
 
 const Title = styled.p`
@@ -92,6 +96,11 @@ const Title = styled.p`
   color: #fff;
   margin-top: 5vw;
   margin-bottom: 0;
+
+  @media (max-width: 480px) {
+    font-size: 4vw;
+    margin-top: 30vw;
+  }
 `;
 
 const Descript = styled.p`
@@ -99,6 +108,11 @@ const Descript = styled.p`
   font-size: 1vw;
   color: #fff;
   margin-top: 0.5vw;
+
+  @media (max-width: 480px) {
+    font-size: 3vw;
+    margin: 2vw 0 3vw 0;
+  }
 `;
 
 const CloseBtn = styled.button`
@@ -110,11 +124,22 @@ const CloseBtn = styled.button`
   right: 3vw;
   width: 3vw;
   height: 3vw;
+  padding: 0;
+
+  @media (max-width: 480px) {
+    top: 5vw;
+    right: 7vw;
+  }
 `;
 
 const CloseImg = styled.img`
   width: 2vw;
   height: 2vw;
+
+  @media (max-width: 480px) {
+    width: 6vw;
+    height: 6vw;
+  }
 `;
 
 const SlideContainer = styled(Swiper)`
@@ -127,6 +152,10 @@ const SlideContainer = styled(Swiper)`
 
 const Slide = styled(SwiperSlide)`
   width: 45vw;
+
+  @media (max-width: 480px) {
+    width: 64vw;
+  }
 `;
 
 const SlideImg = styled.img.attrs({
@@ -134,6 +163,10 @@ const SlideImg = styled.img.attrs({
 })`
   width: 45vw;
   object-fit: cover;
+
+  @media (max-width: 480px) {
+    width: 64vw;
+  }
 `;
 
 const LeftBtn = styled.button`
@@ -144,7 +177,12 @@ const LeftBtn = styled.button`
   left: 22vw;
   z-index: 10;
   cursor: pointer;
-`
+
+  @media (max-width: 480px) {
+    top: 28vw;
+    left: 4vw;
+  }
+`;
 
 const RightBtn = styled.button`
   background: transparent;
@@ -154,9 +192,19 @@ const RightBtn = styled.button`
   right: 22vw;
   z-index: 10;
   cursor: pointer;
-`
+
+  @media (max-width: 480px) {
+    top: 28vw;
+    right: 4vw;
+  }
+`;
 
 const BtnImg = styled.img`
   width: 2.5vw;
   height: 2.5vw;
-`
+
+  @media (max-width: 480px) {
+    width: 7vw;
+    height: 7vw;
+  }
+`;

@@ -42,6 +42,10 @@ const CardContainer = styled.div`
   flex-direction: column;
   width: 16vw;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    width: 40vw;
+  }
 `;
 
 const CardButton = styled.button`
@@ -55,6 +59,11 @@ const Card = styled.img`
   background-color: #d9d9d9;
   width: 16vw;
   height: 20.861vw;
+
+  @media (max-width: 480px) {
+    width: 40vw;
+    height: 52.051vw;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -65,6 +74,11 @@ const Title = styled.p`
   font-family: 'Pretendard-Medium', sans-serif;
   font-size: 1.1vw;
   margin: 1vw 0 0.5vw 0;
+
+  @media (max-width: 480px) {
+    font-size: 3.9vw;
+    margin: 1.5vw 0 2vw 0;
+  }
 `;
 
 const Descript = styled.p`
@@ -72,4 +86,12 @@ const Descript = styled.p`
   font-size: 1vw;
   margin: 0;
   margin-bottom: 3vw;
+
+  @media (max-width: 480px) {
+    font-size: 3.2vw;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
 `;
