@@ -26,7 +26,7 @@ const ProjectSection = styled.section`
 `;
 
 const Title = styled.h2`
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   margin-bottom: 3vw;

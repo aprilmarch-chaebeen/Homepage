@@ -83,7 +83,7 @@ const Section = styled.section`
 
 const TextContainer = styled.div`
   text-align: left;
-  padding: 0 27.5vw;
+  padding: 0 32.5vw;
 
   @media (max-width: 1024px) {
     padding: 0 19vw;
@@ -98,7 +98,7 @@ const Title = styled.p`
   font-family: 'Pretendard-Medium', sans-serif;
   font-size: 1.3vw;
   color: #fff;
-  margin-top: 5vw;
+  margin-top: 4vw;
   margin-bottom: 0;
 
   @media (max-width: 1024px) {
@@ -175,7 +175,7 @@ const SlideContainer = styled(Swiper)`
 `;
 
 const Slide = styled(SwiperSlide)`
-  width: 45vw;
+  width: 35vw;
 
   @media (max-width: 1024px) {
     width: 60vw;
@@ -189,7 +189,7 @@ const Slide = styled(SwiperSlide)`
 const SlideImg = styled.img.attrs({
   loading: 'lazy',
 })`
-  width: 45vw;
+  width: 35vw;
   object-fit: cover;
 
   @media (max-width: 1024px) {
@@ -205,8 +205,8 @@ const LeftBtn = styled.button`
   background: transparent;
   border: none;
   position: absolute;
-  top: 19vw;
-  left: 22vw;
+  top: 11vw;
+  left: 26vw;
   z-index: 10;
   cursor: pointer;
 
@@ -225,8 +225,8 @@ const RightBtn = styled.button`
   background: transparent;
   border: none;
   position: absolute;
-  top: 19vw;
-  right: 22vw;
+  top: 11vw;
+  right: 26vw;
   z-index: 10;
   cursor: pointer;
 

@@ -97,8 +97,10 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
   border-bottom: 0.2vw solid #e0e0e0;
   padding: 1vw 3vw;
   cursor: pointer;
-  height: 3vw;
+  height: 3.3vw;
   font-size: 1vw;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
 
   ${(p) =>
     p.$clicked &&

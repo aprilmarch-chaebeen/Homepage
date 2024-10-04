@@ -105,8 +105,8 @@ const MemoizedProjectCard = React.memo(ProjectCard);
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 0 15vw;
-  gap: 1vw;
+  padding: 0 16vw;
+  gap: 0.9vw;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr 1fr 1fr;

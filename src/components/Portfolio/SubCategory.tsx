@@ -24,11 +24,6 @@ function SubCategory() {
         </CategoryBtn>
       </List>
       <List>
-        <CategoryBtn onClick={() => dispatch(changeFilter('fashion'))} $clicked={category === 'fashion'}>
-          패션/뷰티/쇼핑몰
-        </CategoryBtn>
-      </List>
-      <List>
         <CategoryBtn onClick={() => dispatch(changeFilter('educate'))} $clicked={category === 'educate'}>
           교육
         </CategoryBtn>
@@ -49,8 +44,8 @@ function SubCategory() {
         </CategoryBtn>
       </List>
       <List>
-        <CategoryBtn onClick={() => dispatch(changeFilter('living'))} $clicked={category === 'living'}>
-          생활/리빙
+        <CategoryBtn onClick={() => dispatch(changeFilter('fashion'))} $clicked={category === 'fashion'}>
+          패션/뷰티/쇼핑몰
         </CategoryBtn>
       </List>
       <List>
@@ -106,6 +101,7 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
   padding: 0.5vw 2vw;
   font-size: 1vw;
   margin: 0.4vw 0.4vw;
+  font-family: 'Pretendard-Regular', sans-serif;
 
   ${(p) =>
     p.$clicked &&

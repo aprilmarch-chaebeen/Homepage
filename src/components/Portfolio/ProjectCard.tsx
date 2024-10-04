@@ -82,7 +82,8 @@ const TextContainer = styled.div`
 const Title = styled.p`
   font-family: 'Pretendard-Medium', sans-serif;
   font-size: 1.1vw;
-  margin: 1vw 0 0.5vw 0;
+  margin: 0.5vw 0 0.2vw 0;
+  color: #222;
 
   @media (max-width: 1024px) {
     font-size: 1.6vw;
@@ -95,14 +96,15 @@ const Title = styled.p`
 `;
 
 const Descript = styled.p`
-  font-family: 'Pretendard-ExtraLight';
+  font-family: 'Pretendard-Light', sans-serif;
   font-size: 1vw;
   margin: 0;
   margin-bottom: 3vw;
+  color: #888;
+  line-height: 1.5;
 
   @media (max-width: 1024px) {
     font-size: 1.3vw;
-    line-height: 1.5;
   }
 
   @media (max-width: 480px) {

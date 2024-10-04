@@ -67,7 +67,7 @@ const Pagination = styled.ul`
   display: flex;
   justify-content: center;
   gap: 1.5vw;
-  margin: 10vw 20vw;
+  margin: 4vw 0 12vw 0;
   padding: 0;
 
   @media (max-width: 1024px) {

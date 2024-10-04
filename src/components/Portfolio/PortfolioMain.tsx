@@ -14,9 +14,9 @@ import {memo, useMemo} from 'react';
 function PortfolioMain() {
   const slides = useMemo(
     () => [
-      {src: slide1, alt: 'portfolio slide img1'},
+      {src: slide3, alt: 'portfolio slide img1'},
       {src: slide2, alt: 'portfolio slide img2'},
-      {src: slide3, alt: 'portfolio slide img3'},
+      {src: slide1, alt: 'portfolio slide img3'},
       {src: slide4, alt: 'portfolio slide img4'},
       {src: slide5, alt: 'portfolio slide img5'},
     ],
@@ -33,7 +33,7 @@ function PortfolioMain() {
         </SmallContainer>
       </TextContainer>
       <SlideContainer
-        spaceBetween={10}
+        spaceBetween={25}
         slidesPerView="auto"
         centeredSlides={true}
         loop={true}
@@ -42,14 +42,6 @@ function PortfolioMain() {
           clickable: true,
         }}
         modules={[Pagination, Autoplay]}
-        breakpoints={{
-          1024: {
-            spaceBetween: 25,
-          },
-          480: {
-            spaceBetween: 15,
-          },
-        }}
       >
         {slides.map((slide, index) => (
           <Slide key={index}>
@@ -93,6 +85,7 @@ const TextContainer = styled.div`
 const BigText = styled.h2`
   color: #1f1f1f;
   font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
   font-size: 7vw;
   margin: 0;
 
@@ -154,7 +147,12 @@ const SlideContainer = styled(Swiper)`
   & .swiper-pagination-bullet {
     width: 0.55vw;
     height: 0.55vw;
-    background-color: #ddd;
+    background-color: #999;
+  }
+
+  & .swiper-slide-next,
+  & .swiper-slide-prev {
+    opacity: 0.3;
   }
 
   @media (max-width: 1024px) {
@@ -187,8 +185,8 @@ const SlideContainer = styled(Swiper)`
 `;
 
 const Slide = styled(SwiperSlide)`
-  width: 50vw;
-  height: 27.144vw;
+  width: 45vw;
+  height: 24.43vw;
 
   @media (max-width: 1024px) {
     width: 65vw;
@@ -204,8 +202,8 @@ const Slide = styled(SwiperSlide)`
 const SlideImg = styled.img.attrs({
   loading: 'lazy',
 })`
-  width: 50vw;
-  height: 27.144vw;
+  width: 45vw;
+  height: 24.43vw;
   object-fit: cover;
 
   @media (max-width: 1024px) {
