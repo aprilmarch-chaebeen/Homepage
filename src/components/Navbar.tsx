@@ -66,7 +66,7 @@ const Nav = styled.nav`
     padding: 2vw 4.7vw;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 1024px) {
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
     padding: 2vw 0;
     height: auto;
@@ -110,7 +110,7 @@ const List = styled.ul`
     width: 50vw;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -181,7 +181,7 @@ const Box = styled.div`
 const MenuBtn = styled.button`
   display: none;
 
-  @media (max-width: 480px) {
+  @media (max-width: 1024px) {
     display: block;
     width: 7.5vw;
     cursor: pointer;
