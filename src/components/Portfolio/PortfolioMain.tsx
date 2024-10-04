@@ -85,7 +85,7 @@ const TextContainer = styled.div`
 const BigText = styled.h2`
   color: #1f1f1f;
   font-family: 'Satoshi', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 7vw;
   margin: 0;
 
