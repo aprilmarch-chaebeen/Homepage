@@ -1,12 +1,15 @@
 import styled from 'styled-components';
-import {memo} from 'react';
-import BallAnimation from './BallAnimation';
+import React, {memo, Suspense} from 'react';
+
+const BallAnimation = React.lazy(() => import('./BallAnimation'));
 
 function HomeJourney() {
   return (
     <JourneySection>
       <BigText>Work Journey Map.</BigText>
-      <MemoizedBallAnimation />
+      <Suspense>
+        <MemoizedBallAnimation />
+      </Suspense>
       <Line />
     </JourneySection>
   );

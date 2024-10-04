@@ -1,13 +1,14 @@
-import {useState} from 'react';
+import React, {Suspense, useState} from 'react';
 import AllCategory from './AllCategory';
-import BrandingCategory from './BrandingCategory';
 import EtcCategory from './EtcCategory';
 import styled, {css} from 'styled-components';
-import WebAppCategory from './WebAppCategory';
-import EditorialCategory from './EditorialCategory';
 import {useAppDispatch} from '../../hook/reduxHook';
 import {changeFilter} from '../../reducers/portfolioFilterSlice';
 import {changeIdx} from '../../reducers/projectCurIdxSlice';
+
+const BrandingCategory = React.lazy(() => import('./BrandingCategory'));
+const WebAppCategory = React.lazy(() => import('./WebAppCategory'));
+const EditorialCategory = React.lazy(() => import('./EditorialCategory'));
 
 function ProjectCategory() {
   const [nowCategory, setNowCategory] = useState('all');
@@ -65,7 +66,9 @@ function ProjectCategory() {
           </CategoryBtn>
         </List>
       </Category>
-      {renderCategory()}
+      <Suspense>
+        {renderCategory()}
+      </Suspense>
     </section>
   );
 }

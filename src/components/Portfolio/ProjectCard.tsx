@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import ProjectPopup from './ProjectPopup';
-import {useState} from 'react';
+import React, {Suspense, useState} from 'react';
+
+const ProjectPopup = React.lazy(() => import('./ProjectPopup'));
 
 interface ProjectCardProps {
   title: string;
@@ -30,7 +31,7 @@ function ProjectCard({title, descript, imgsrc, flag, num}: ProjectCardProps) {
         <Title>{title}</Title>
         <Descript>{descript}</Descript>
       </TextContainer>
-      {isPopupOpen && <ProjectPopup title={title} descript={descript} onClose={handlePopupClose} flag={flag} num={num} />}
+      {isPopupOpen && <Suspense><ProjectPopup title={title} descript={descript} onClose={handlePopupClose} flag={flag} num={num} /></Suspense>}
     </CardContainer>
   );
 }
