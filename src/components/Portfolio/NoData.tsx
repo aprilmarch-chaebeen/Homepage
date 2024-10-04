@@ -17,4 +17,12 @@ const Container = styled.div`
 const Text = styled.p`
   font-family: 'Pretendard-Light', sans-serif;
   font-size: 1vw;
+
+  @media (max-width: 1024px) {
+    font-size: 1.6vw;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 3vw;
+  }
 `;

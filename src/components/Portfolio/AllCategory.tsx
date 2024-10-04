@@ -28,7 +28,7 @@ import samsungsrc from '../../assets/svg/portfolio/samsung.svg';
 import {Paginate} from '../../api/paginate';
 import ProjectPagination from './ProjectPagination';
 import {selectProjectIdxValue} from '../../reducers/projectCurIdxSlice';
-import React, {useMemo} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import NoData from './NoData';
 
 interface Project {
@@ -110,10 +110,25 @@ const projects: Project[] = [
 function AllCategory() {
   const selectedCategory = useAppSelector(selectPortfolioFilterValue);
   const currentIdx = useAppSelector(selectProjectIdxValue);
+  const [slideNum, setSlideNum] = useState(16);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1024) setSlideNum(9);
+      else setSlideNum(16);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const {currentProjects, totalPages} = useMemo(() => {
-    return Paginate({projects, currentIdx, selectedCategory});
-  }, [currentIdx, selectedCategory]);
+    return Paginate({projects, currentIdx, selectedCategory, slideNum});
+  }, [currentIdx, selectedCategory, slideNum]);
 
   return (
     <section>
@@ -148,6 +163,12 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 0 15vw;
   gap: 1vw;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 10vw;
+    gap: 1.3vw;
+  }
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr 1fr;

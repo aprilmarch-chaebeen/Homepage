@@ -43,8 +43,11 @@ function PortfolioMain() {
         }}
         modules={[Pagination, Autoplay]}
         breakpoints={{
-          480: {
+          1024: {
             spaceBetween: 25,
+          },
+          480: {
+            spaceBetween: 15,
           },
         }}
       >
@@ -75,6 +78,11 @@ const TextContainer = styled.div`
   align-items: end;
   margin: 5vw 0 3vw 0;
 
+  @media (max-width: 1024px) {
+    margin: 15vw 0 5vw 0;
+    padding: 0 2vw;
+  }
+
   @media (max-width: 480px) {
     display: block;
     padding: 0 5vw;
@@ -87,6 +95,10 @@ const BigText = styled.h2`
   font-family: 'Satoshi', sans-serif;
   font-size: 7vw;
   margin: 0;
+
+  @media (max-width: 1024px) {
+    font-size: 9vw;
+  }
 
   @media (max-width: 480px) {
     font-size: 15vw;
@@ -103,6 +115,10 @@ const SmallText1 = styled.p`
   font-size: 1.1vw;
   margin: 0;
 
+  @media (max-width: 1024px) {
+    font-size: 1.9vw;
+  }
+
   @media (max-width: 480px) {
     font-size: 4vw;
   }
@@ -113,6 +129,10 @@ const SmallText2 = styled.p`
   font-family: 'Pretendard-Light', sans-serif;
   font-size: 1vw;
   margin: 0.6vw 0 1vw 0;
+
+  @media (max-width: 1024px) {
+    font-size: 1.7vw;
+  }
 
   @media (max-width: 480px) {
     margin: 1.5vw 0 8vw 0;
@@ -137,6 +157,20 @@ const SlideContainer = styled(Swiper)`
     background-color: #ddd;
   }
 
+  @media (max-width: 1024px) {
+    & .swiper-wrapper {
+      margin-bottom: 5vw;
+    }
+    & .swiper-pagination-bullet-active {
+      width: 1.8vw !important;
+      height: 0.8vw !important;
+    }
+    & .swiper-pagination-bullet {
+      width: 0.8vw;
+      height: 0.8vw;
+    }
+  }
+
   @media (max-width: 480px) {
     & .swiper-wrapper {
       margin-bottom: 8vw;
@@ -156,6 +190,11 @@ const Slide = styled(SwiperSlide)`
   width: 50vw;
   height: 27.144vw;
 
+  @media (max-width: 1024px) {
+    width: 65vw;
+    height: 35.288vw;
+  }
+
   @media (max-width: 480px) {
     width: 73vw;
     height: 39.631vw;
@@ -168,6 +207,11 @@ const SlideImg = styled.img.attrs({
   width: 50vw;
   height: 27.144vw;
   object-fit: cover;
+
+  @media (max-width: 1024px) {
+    width: 65vw;
+    height: 35.288vw;
+  }
 
   @media (max-width: 480px) {
     width: 73vw;

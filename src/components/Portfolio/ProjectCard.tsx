@@ -43,6 +43,10 @@ const CardContainer = styled.div`
   width: 16vw;
   cursor: pointer;
 
+  @media (max-width: 1024px) {
+    width: 25vw;
+  }
+
   @media (max-width: 480px) {
     width: 40vw;
   }
@@ -60,6 +64,11 @@ const Card = styled.img`
   width: 16vw;
   height: 20.861vw;
 
+  @media (max-width: 1024px) {
+    width: 25vw;
+    height: 32.685vw;
+  }
+
   @media (max-width: 480px) {
     width: 40vw;
     height: 52.051vw;
@@ -75,6 +84,10 @@ const Title = styled.p`
   font-size: 1.1vw;
   margin: 1vw 0 0.5vw 0;
 
+  @media (max-width: 1024px) {
+    font-size: 1.6vw;
+  }
+
   @media (max-width: 480px) {
     font-size: 3.9vw;
     margin: 1.5vw 0 2vw 0;
@@ -86,6 +99,11 @@ const Descript = styled.p`
   font-size: 1vw;
   margin: 0;
   margin-bottom: 3vw;
+
+  @media (max-width: 1024px) {
+    font-size: 1.3vw;
+    line-height: 1.5;
+  }
 
   @media (max-width: 480px) {
     font-size: 3.2vw;

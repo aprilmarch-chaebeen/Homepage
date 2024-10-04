@@ -70,6 +70,12 @@ const Pagination = styled.ul`
   margin: 10vw 20vw;
   padding: 0;
 
+  @media (max-width: 1024px) {
+    margin-top: 8vw;
+    margin-bottom: 25vw;
+    gap: 2vw;
+  }
+
   @media (max-width: 480px) {
     margin-top: 15vw;
     margin-bottom: 25vw;
@@ -90,6 +96,10 @@ const PageBtn = styled.button<{$disabled?: boolean}>`
   border: none;
   border-bottom: ${(p) => p.$disabled && '0.2vw solid #111'};
   padding: 0 1vw;
+
+  @media (max-width: 1024px) {
+    font-size: 1.6vw;
+  }
 
   @media (max-width: 480px) {
     font-size: 3vw;

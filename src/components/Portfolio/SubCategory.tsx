@@ -81,6 +81,11 @@ const Category = styled.ul`
   padding: 0 20vw;
   flex-wrap: wrap;
 
+  @media (max-width: 1024px) {
+    margin-bottom: 7vw;
+    padding: 0 10vw;
+  }
+
   @media (max-width: 480px) {
     padding: 0 2vw;
     gap: 1vw;
@@ -108,6 +113,11 @@ const CategoryBtn = styled.button<{$clicked: boolean}>`
       color: #fff;
       background-color: #1c46f5;
     `}
+
+  @media (max-width: 1024px) {
+    font-size: 1.6vw;
+    padding: 0.6vw 2.5vw;
+  }
 
   @media (max-width: 480px) {
     font-size: 3vw;
