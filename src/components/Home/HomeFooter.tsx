@@ -54,10 +54,14 @@ const Footer = styled.footer`
   background-color: #f6f6f6;
   position: relative;
   z-index: 0;
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    padding: 3vw 3vw 5vw 3vw;
+  }
 
   @media (max-width: 480px) {
     padding: 6vw 5vw;
-    overflow: hidden;
   }
 `;
 
@@ -67,6 +71,10 @@ const Line = styled.hr`
   width: 100%;
   height: 0.1vw;
   margin: 1.5vw 0 2vw 0;
+
+  @media (max-width: 1024px) {
+    margin: 2vw 0 2.5vw 0;
+  }
 
   @media (max-width: 480px) {
     margin: 4vw 0 7vw 0;
@@ -83,6 +91,10 @@ const Logo = styled.img`
 
   @media (max-width: 1280px) {
     width: 8vw;
+  }
+
+  @media (max-width: 1024px) {
+    width: 9vw;
   }
 
   @media (max-width: 480px) {
@@ -109,12 +121,20 @@ const SmallText = styled.p`
   @media (max-width: 1280px) {
     font-size: 1.2vw;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 1.6vw;
+  }
 `;
 
 const SmallLine = styled.div`
   border-left: 0.1vw solid #111;
   height: 1vw;
   margin: 0 1.5vw;
+
+  @media (max-width: 1024px) {
+    height: 1.3vw;
+  }
 `;
 
 const Up = styled.button`
@@ -170,6 +190,12 @@ const Statue = styled.img`
     bottom: -25%;
     right: -21%;
   }
+
+  @media (max-width: 1024px) {
+    width: 30vw;
+    bottom: -15%;
+    right: -4%;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -188,6 +214,10 @@ const InfoStrong1 = styled.p`
     font-size: 1.5vw;
   }
 
+  @media (max-width: 1024px) {
+    font-size: 1.8vw;
+  }
+
   @media (max-width: 480px) {
     font-size: 4vw;
   }
@@ -202,6 +232,10 @@ const InfoStrong2 = styled.p`
 
   @media (max-width: 1280px) {
     font-size: 1.3vw;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.7vw;
   }
 
   @media (max-width: 480px) {
@@ -219,6 +253,11 @@ const Info1 = styled.p`
   @media (max-width: 1280px) {
     font-size: 1.2vw;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 1.5vw;
+  }
+
   @media (max-width: 480px) {
     font-size: 3.5vw;
     width: 84vw;
@@ -235,6 +274,11 @@ const Info2 = styled.p`
   @media (max-width: 1280px) {
     font-size: 1.2vw;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 1.5vw;
+  }
+
   @media (max-width: 480px) {
     font-size: 3.5vw;
     width: 52vw;
@@ -249,6 +293,10 @@ const Info3 = styled.p`
 
   @media (max-width: 1280px) {
     font-size: 1vw;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.2vw;
   }
 
   @media (max-width: 480px) {
