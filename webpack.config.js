@@ -6,6 +6,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: process.env.MODE,
@@ -58,9 +59,12 @@ module.exports = {
       }),
     ],
     usedExports: true,
+    sideEffects: false,
     splitChunks: {
       name: "vendor",
-      chunks: "initial"
+      chunks: "all",
+      minSize: 20000, // 최소 청크 크기 (20KB)
+      maxSize: 50000,
     }
   },
   plugins: [
@@ -78,6 +82,10 @@ module.exports = {
       process: 'process/browser.js',
     }),
     new CompressionPlugin(),
+    new BundleAnalyzerPlugin({
+	    analyzerMode: "static",
+	    generateStatsFile: true,
+    }),
   ],
   devServer: {
     host: 'localhost',
