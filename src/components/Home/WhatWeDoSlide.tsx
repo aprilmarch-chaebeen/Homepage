@@ -63,7 +63,7 @@ function WhatWeDoSlide() {
       >
         {slides.map((slide, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg src={slide.src} alt={slide.alt} $idx={i} $nowIdx={nowIndex - 1} loading="lazy" />
+            <SlideImg src={slide.src} alt={slide.alt} $idx={i} $nowIdx={nowIndex - 1} />
           </Slide>
         ))}
         <SlideCover />
@@ -108,8 +108,8 @@ const PageNumberContainer = styled.div`
   @media (max-width: 480px) {
     font-size: 3vw;
     width: 69vw;
-    top: 80.5%;
-    left: 51%;
+    top: 80.8%;
+    left: 49.5%;
   }
 `;
 
@@ -173,12 +173,12 @@ const SlideContainer = styled(Swiper)`
     }
 
     & .swiper-button-prev {
-      top: 67.8vw;
+      top: 68.2vw;
       left: 8.5vw;
     }
     & .swiper-button-next {
-      top: 67.8vw;
-      right: 11vw;
+      top: 68.2vw;
+      right: 10vw;
     }
 
     & .swiper-button-prev::after,
