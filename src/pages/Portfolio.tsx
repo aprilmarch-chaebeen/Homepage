@@ -1,4 +1,5 @@
-import React, {Suspense} from 'react';
+import {Suspense} from 'react';
+import * as React from 'react'
 
 const PortfolioMain = React.lazy(() => import('../components/Portfolio/PortfolioMain'));
 const PortfolioProjects = React.lazy(() => import('../components/Portfolio/PortfolioProjects'));

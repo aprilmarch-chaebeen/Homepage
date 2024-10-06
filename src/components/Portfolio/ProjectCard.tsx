@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import React, {Suspense, useState} from 'react';
+import {Suspense, useState} from 'react';
+import * as React from 'react'
 
 const ProjectPopup = React.lazy(() => import('./ProjectPopup'));
 

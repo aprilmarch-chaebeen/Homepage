@@ -1,10 +1,11 @@
-import React, {Suspense, useState} from 'react';
+import {Suspense, useState} from 'react';
 import AllCategory from './AllCategory';
 import EtcCategory from './EtcCategory';
 import styled, {css} from 'styled-components';
 import {useAppDispatch} from '../../hook/reduxHook';
 import {changeFilter} from '../../reducers/portfolioFilterSlice';
 import {changeIdx} from '../../reducers/projectCurIdxSlice';
+import * as React from 'react'
 
 const BrandingCategory = React.lazy(() => import('./BrandingCategory'));
 const WebAppCategory = React.lazy(() => import('./WebAppCategory'));
