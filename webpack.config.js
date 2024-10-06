@@ -85,6 +85,7 @@ module.exports = {
     new BundleAnalyzerPlugin({
 	    analyzerMode: "static",
 	    generateStatsFile: true,
+      openAnalyzer: false,
     }),
   ],
   devServer: {

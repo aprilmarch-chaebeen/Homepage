@@ -1,16 +1,17 @@
 import {Route, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Portfolio from './pages/Portfolio';
 import Voucher from './pages/Voucher';
 import About from './pages/About';
 // import Loading from './pages/Loading';
 import styled from 'styled-components';
-import {useRef} from 'react';
+import React, {Suspense, useRef} from 'react';
 import MouseStalker from './components/MouseStalker';
 // import NewBusiness from './pages/NewBusiness';
 // import Public from './pages/Public';
 // import ITDashboard from './pages/ITDashboard';
+
+const Home = React.lazy(() => import('./pages/Home'));
+const Portfolio = React.lazy(() => import('./pages/Portfolio'));
 
 function App() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -18,6 +19,7 @@ function App() {
     <AppSection ref={sectionRef}>
       <MouseStalker containerRef={sectionRef} />
       <Navbar />
+      <Suspense>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
@@ -27,6 +29,7 @@ function App() {
         {/* <Route path="/itdashboard" element={<ITDashboard />} /> */}
         <Route path="/about" element={<About />} />
       </Routes>
+      </Suspense>
     </AppSection>
   );
 }
