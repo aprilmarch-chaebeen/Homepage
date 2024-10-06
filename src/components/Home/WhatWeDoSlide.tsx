@@ -37,7 +37,6 @@ function WhatWeDoSlide() {
     slides.forEach((slide) => preloadImage(slide.src));
   }, [slides]);
 
-
   // Resize 이벤트에 따라 autoplay 상태를 업데이트
   // useEffect(() => {
   //   const handleResize = () => {
@@ -208,6 +207,7 @@ const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
   width: 20vw;
   height: 25vw;
   position: relative;
+  background-color: #d9d9d9;
 
   ${(p) =>
     p.$idx === p.$nowIdx &&

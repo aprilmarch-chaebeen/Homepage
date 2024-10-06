@@ -192,6 +192,7 @@ const SlideContainer = styled(Swiper)`
 const Slide = styled(SwiperSlide)`
   width: 45vw !important;
   height: 24.43vw !important;
+  background-color: #d9d9d9;
 
   @media (max-width: 1024px) {
     width: 65vw !important;
