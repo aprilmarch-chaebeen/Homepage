@@ -1,8 +1,9 @@
 import HomeMain from '../components/Home/HomeMain';
 import styled from 'styled-components';
-import React, {Suspense} from 'react';
+import {Suspense} from 'react';
+import * as React from 'react'
+import WhatWeDo from '../components/Home/WhatWeDo';
 
-const WhatWeDo = React.lazy(() => import('../components/Home/WhatWeDo'));
 const Customers = React.lazy(() => import('../components/Home/Customers'));
 const HowItWorks = React.lazy(() => import('../components/Home/HowItWorks'));
 const HomeExpertise = React.lazy(() => import('../components/Home/HomeExpertise'));
