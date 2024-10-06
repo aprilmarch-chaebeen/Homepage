@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import {memo, Suspense} from 'react';
-import * as React from 'react'
+import React, {memo, Suspense} from 'react';
 
 const BallAnimation = React.lazy(() => import('./BallAnimation'));
 

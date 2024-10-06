@@ -4,9 +4,8 @@ import Voucher from './pages/Voucher';
 import About from './pages/About';
 // import Loading from './pages/Loading';
 import styled from 'styled-components';
-import {Suspense, useRef} from 'react';
+import React, {Suspense, useRef} from 'react';
 import MouseStalker from './components/MouseStalker';
-import * as React from 'react'
 // import NewBusiness from './pages/NewBusiness';
 // import Public from './pages/Public';
 // import ITDashboard from './pages/ITDashboard';

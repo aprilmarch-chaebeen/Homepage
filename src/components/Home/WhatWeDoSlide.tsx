@@ -11,6 +11,7 @@ import {selectHomeFilterValue} from '../../reducers/homeFilterSlice';
 function WhatWeDoSlide() {
   const home = useAppSelector(selectHomeFilterValue);
   const [nowIndex, setNowIndex] = useState(0);
+  const [autoplayEnabled, setAutoplayEnabled] = useState(true);
 
   const preloadImage = (src: string) => {
     const img = new Image();
@@ -36,6 +37,21 @@ function WhatWeDoSlide() {
     slides.forEach((slide) => preloadImage(slide.src));
   }, [slides]);
 
+
+  // Resize 이벤트에 따라 autoplay 상태를 업데이트
+  useEffect(() => {
+    const handleResize = () => {
+      setAutoplayEnabled(window.innerWidth > 480);
+    };
+
+    handleResize(); // 초기 실행
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div>
       <PageNumberContainer>
@@ -48,7 +64,7 @@ function WhatWeDoSlide() {
         spaceBetween={10}
         centeredSlides
         loop
-        autoplay={{delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true}}
+        autoplay={autoplayEnabled ? {delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true} : false}
         pagination={{type: 'progressbar', clickable: true}}
         navigation
         modules={[Pagination, Navigation, EffectCoverflow, Autoplay]}

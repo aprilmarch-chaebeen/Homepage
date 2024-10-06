@@ -1,7 +1,6 @@
 import HomeMain from '../components/Home/HomeMain';
 import styled from 'styled-components';
-import {Suspense} from 'react';
-import * as React from 'react'
+import React, {Suspense} from 'react';
 import WhatWeDo from '../components/Home/WhatWeDo';
 
 const Customers = React.lazy(() => import('../components/Home/Customers'));
