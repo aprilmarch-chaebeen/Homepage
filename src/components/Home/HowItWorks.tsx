@@ -210,7 +210,7 @@ const SignLeft = styled.span`
 `;
 
 const TextBox = styled.div`
-  width: 60vw;
+  width: 43.5vw;
   background-color: #000;
   height: 25vw;
   text-align: left;
