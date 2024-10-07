@@ -24,14 +24,28 @@ function WhatWeDoSlide() {
   }, []);
 
   // useMemo를 사용하여 slides 배열을 메모이제이션
-  const slides = useMemo(
-    () =>
-      Array.from({length: home.num}, (_, i) => ({
-        src: require(`../../assets/images/whatwedo/${home.filter}/${home.filter}${i}.svg`).default,
+  const slides = useMemo(() => {
+    return Array.from({length: home.num}, (_, i) => {
+      let imageSrc;
+      try {
+        // 먼저 SVG 파일을 시도
+        imageSrc = require(`../../assets/images/whatwedo/${home.filter}/${home.filter}${i}.svg`).default;
+      } catch (error) {
+        try {
+          // SVG 파일이 없으면 JPG 파일을 시도
+          imageSrc = require(`../../assets/images/whatwedo/${home.filter}/${home.filter}${i}.jpg`).default;
+        } catch (error) {
+          // JPG 파일도 없으면 기본값 처리
+          imageSrc = '';
+        }
+      }
+
+      return {
+        src: imageSrc,
         alt: `img ${i + 1}`,
-      })),
-    [home.filter, home.num]
-  );
+      };
+    });
+  }, [home.filter, home.num]);
 
   useEffect(() => {
     slides.forEach((slide) => preloadImage(slide.src));
@@ -78,7 +92,7 @@ function WhatWeDoSlide() {
       >
         {slides.map((slide, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg src={slide.src} alt={slide.alt} $idx={i} $nowIdx={nowIndex - 1} />
+            <SlideImg src={slide.src} alt={slide.alt} $idx={i} $nowIdx={nowIndex - 1} loading="lazy" />
           </Slide>
         ))}
         <SlideCover />
@@ -227,13 +241,13 @@ const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
   object-fit: contain;
   border-radius: 10px;
 
-  ${(p) =>
+  /* ${(p) =>
     p.$idx === p.$nowIdx &&
     css`
       object-fit: contain;
       transform: scale(1.05);
       transition: transform 0.5s ease-in-out;
-    `}
+    `} */
 
   @media (max-width: 480px) {
     width: 53vw;

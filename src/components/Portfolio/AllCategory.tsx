@@ -5,9 +5,7 @@ import {useAppSelector} from '../../hook/reduxHook';
 import {selectPortfolioFilterValue} from '../../reducers/portfolioFilterSlice';
 import rivalsrc from '../../assets/svg/portfolio/rival.svg';
 import dongkwangsrc from '../../assets/svg/portfolio/dongkwang.svg';
-import cupsrc from '../../assets/svg/portfolio/cup.svg';
 import lpointsrc from '../../assets/svg/portfolio/lpoint.svg';
-import koreasrc from '../../assets/svg/portfolio/korea.svg';
 import lgdnssrc from '../../assets/svg/portfolio/lgdns.svg';
 import lgcnssrc from '../../assets/svg/portfolio/lgcns.svg';
 import eastersrc from '../../assets/svg/portfolio/easter.svg';
@@ -15,14 +13,9 @@ import xsolutionsrc from '../../assets/svg/portfolio/xsolution.svg';
 import buttersrc from '../../assets/svg/portfolio/butter.svg';
 import lgcns24src from '../../assets/svg/portfolio/lgcns24.svg';
 import kbsrc from '../../assets/svg/portfolio/kb.svg';
-import optimasrc from '../../assets/svg/portfolio/optima.svg';
-import lgsrc from '../../assets/svg/portfolio/lg.svg';
 import misiksrc from '../../assets/svg/portfolio/misik.svg';
-import kbssrc from '../../assets/svg/portfolio/kbs.svg';
-import collegesrc from '../../assets/svg/portfolio/college.svg';
 import abbottsrc from '../../assets/svg/portfolio/abbott.svg';
 import camfurssrc from '../../assets/svg/portfolio/camfurs.svg';
-import dksrc from '../../assets/svg/portfolio/dk.svg';
 import limesrc from '../../assets/svg/portfolio/lime.svg';
 import samsungsrc from '../../assets/svg/portfolio/samsung.svg';
 import {Paginate} from '../../api/paginate';
@@ -60,7 +53,7 @@ const projects: Project[] = [
   {
     title: 'CUP BY CUP',
     descript: '브랜딩, 웹 반응형 사이트 제작, 3D 모션 그래픽, 상품제작, 상세페이지',
-    imgsrc: cupsrc,
+    imgsrc: require('../../assets/images/project/cup.jpg').default,
     category: ['all', 'fashion'],
     flag: 'cup',
     num: 2,
@@ -69,7 +62,7 @@ const projects: Project[] = [
   {
     title: '무형문화재 보존',
     descript: '브랜딩, 웹 반응형 사이트 제작',
-    imgsrc: koreasrc,
+    imgsrc: require('../../assets/images/project/korea.jpg').default,
     category: ['all', 'public'],
     flag: 'korea',
     num: 2,
@@ -81,21 +74,49 @@ const projects: Project[] = [
   {title: '버터몰', descript: '웹 반응형 사이트 제작, 상세페이지', imgsrc: buttersrc, category: ['all', 'fashion'], flag: 'butter', num: 4},
   {title: 'LG CNS MOP 24년도', descript: '웹 반응형 사이트 제작', imgsrc: lgcns24src, category: ['all', 'it'], flag: 'lgcns24', num: 2},
   {title: 'KB 국민카드', descript: '웹 반응형 사이트 제작', imgsrc: kbsrc, category: ['all', 'finance'], flag: 'kb', num: 2},
-  {title: '옵티마솔루션', descript: '웹 반응형 사이트 제작', imgsrc: optimasrc, category: ['all', 'it'], flag: 'optima', num: 2},
-  {title: 'LG Optapex', descript: '브랜딩, 웹 반응형 사이트 제작', imgsrc: lgsrc, category: ['all', 'it'], flag: 'lg', num: 2},
+  {
+    title: '옵티마솔루션',
+    descript: '웹 반응형 사이트 제작',
+    imgsrc: require('../../assets/images/project/optima.jpg').default,
+    category: ['all', 'it'],
+    flag: 'optima',
+    num: 2,
+  },
+  {
+    title: 'LG Optapex',
+    descript: '브랜딩, 웹 반응형 사이트 제작',
+    imgsrc: require('../../assets/images/project/lg.jpg').default,
+    category: ['all', 'it'],
+    flag: 'lg',
+    num: 2,
+  },
   {title: '미식', descript: '패키지, 제품촬영, 광고 CF', imgsrc: misiksrc, category: ['all', 'fashion'], flag: 'misik', num: 5},
-  {title: 'KBS', descript: '굿즈 제작', imgsrc: kbssrc, category: ['all', 'entertain', 'public'], flag: 'kbs', num: 4},
+  {
+    title: 'KBS',
+    descript: '굿즈 제작',
+    imgsrc: require('../../assets/images/project/kbs.jpg').default,
+    category: ['all', 'entertain', 'public'],
+    flag: 'kbs',
+    num: 4,
+  },
   {
     title: '서울마이칼리지',
     descript: '브랜딩, 홍보물 제작',
-    imgsrc: collegesrc,
+    imgsrc: require('../../assets/images/project/college.jpg').default,
     category: ['all', 'public', 'educate'],
     flag: 'college',
     num: 2,
   },
   {title: 'Abbott', descript: '홍보물 제작', imgsrc: abbottsrc, category: ['all', 'medical'], flag: 'abbott', num: 9},
   {title: '캠퍼스라인', descript: '카탈로그', imgsrc: camfurssrc, category: ['all', 'fashion'], flag: 'camfurs', num: 12},
-  {title: '동국대학교', descript: '브로슈어, 굿즈, 홍보물 제작', imgsrc: dksrc, category: ['all', 'educate'], flag: 'dk', num: 10},
+  {
+    title: '동국대학교',
+    descript: '브로슈어, 굿즈, 홍보물 제작',
+    imgsrc: require('../../assets/images/project/dk.jpg').default,
+    category: ['all', 'educate'],
+    flag: 'dk',
+    num: 10,
+  },
   {
     title: '롯데 멤버스 Lime',
     descript: 'PPT 제작, 카탈로그, 굿즈 제작',

@@ -5,17 +5,14 @@ import {useAppSelector} from '../../hook/reduxHook';
 import {selectPortfolioFilterValue} from '../../reducers/portfolioFilterSlice';
 import rivalsrc from '../../assets/svg/portfolio/rival.svg';
 import dongkwangsrc from '../../assets/svg/portfolio/dongkwang.svg';
-import cupsrc from '../../assets/svg/portfolio/cup.svg';
 import lpointsrc from '../../assets/svg/portfolio/lpoint.svg';
-import koreasrc from '../../assets/svg/portfolio/korea.svg';
 import lgdnssrc from '../../assets/svg/portfolio/lgdns.svg';
+import kbsrc from '../../assets/svg/portfolio/kb.svg';
 import lgcnssrc from '../../assets/svg/portfolio/lgcns.svg';
 import eastersrc from '../../assets/svg/portfolio/easter.svg';
 import xsolutionsrc from '../../assets/svg/portfolio/xsolution.svg';
 import buttersrc from '../../assets/svg/portfolio/butter.svg';
 import lgcns24src from '../../assets/svg/portfolio/lgcns24.svg';
-import kbsrc from '../../assets/svg/portfolio/kb.svg';
-import optimasrc from '../../assets/svg/portfolio/optima.svg';
 import {selectProjectIdxValue} from '../../reducers/projectCurIdxSlice';
 import {Paginate} from '../../api/paginate';
 import ProjectPagination from './ProjectPagination';
@@ -51,7 +48,7 @@ const projects: Project[] = [
   {
     title: 'CUP BY CUP',
     descript: '브랜딩, 웹 반응형 사이트 제작, 3D 모션 그래픽, 상품제작, 상세페이지',
-    imgsrc: cupsrc,
+    imgsrc: require('../../assets/images/project/cup.jpg').default,
     category: ['all', 'fashion'],
     flag: 'cup',
     num: 2,
@@ -60,7 +57,7 @@ const projects: Project[] = [
   {
     title: '무형문화재 보존',
     descript: '브랜딩, 웹 반응형 사이트 제작',
-    imgsrc: koreasrc,
+    imgsrc: require('../../assets/images/project/korea.jpg').default,
     category: ['all', 'public'],
     flag: 'korea',
     num: 2,
@@ -72,7 +69,14 @@ const projects: Project[] = [
   {title: '버터몰', descript: '웹 반응형 사이트 제작, 상세페이지', imgsrc: buttersrc, category: ['all', 'fashion'], flag: 'butter', num: 4},
   {title: 'LG CNS MOP 24년도', descript: '웹 반응형 사이트 제작', imgsrc: lgcns24src, category: ['all', 'it'], flag: 'lgcns24', num: 2},
   {title: 'KB 국민카드', descript: '웹 반응형 사이트 제작', imgsrc: kbsrc, category: ['all', 'finance'], flag: 'kbs', num: 4},
-  {title: '옵티마솔루션', descript: '웹 반응형 사이트 제작', imgsrc: optimasrc, category: ['all', 'it'], flag: 'optima', num: 2},
+  {
+    title: '옵티마솔루션',
+    descript: '웹 반응형 사이트 제작',
+    imgsrc: require('../../assets/images/project/optima.jpg').default,
+    category: ['all', 'it'],
+    flag: 'optima',
+    num: 2,
+  },
 ];
 
 function WebAppCategory() {

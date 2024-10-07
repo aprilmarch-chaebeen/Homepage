@@ -19,7 +19,7 @@ function FieldDescript({descript, name, num, pad}: FieldDescriptProps) {
   const slides = useMemo(
     () =>
       Array.from({length: num}, (_, i) => ({
-        src: require(`../../assets/images/field/${name}/${name}${i}.svg`).default,
+        src: require(`../../assets/images/field/${name}/${name}${i}.jpg`).default,
         alt: `img ${i + 1}`,
       })),
     [name, num]

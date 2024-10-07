@@ -67,7 +67,7 @@ function ProjectPopup({title, descript, onClose, flag, num}: ProjectPopupProps) 
       >
         {slides.map((slide, index) => (
           <Slide key={index}>
-            <SlideImg src={slide.src} alt={slide.alt} />
+            <SlideImg src={slide.src} alt={slide.alt} loading="lazy" />
           </Slide>
         ))}
         <LeftBtn className="btn_left">
