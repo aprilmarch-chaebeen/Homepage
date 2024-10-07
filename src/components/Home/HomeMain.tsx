@@ -78,7 +78,7 @@ function HomeMain() {
           <Text>Marketing</Text>
           <Text>Data Infographics</Text>
         </TextContainer>
-        <CircleContainer>
+        <CircleContainer href="/contact">
           <Circle src={circlesrc} alt="circle img" />
           <CircleLogo src={contactSrc} alt="circle logo img" />
         </CircleContainer>
@@ -130,21 +130,8 @@ const TextContainer = styled.div`
   margin: 3.5vw 0;
   position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    transform: translate(-50%, 0%);
-    width: 3.5vw;
-    height: 0.25vw;
-    background-color: #000;
-  }
-
   @media (max-width: 480px) {
     margin-top: 17vw;
-
-    &::before {
-      content: none;
-    }
   }
 `;
 
@@ -173,7 +160,7 @@ const Text = styled.p`
   }
 `;
 
-const CircleContainer = styled.div`
+const CircleContainer = styled.a`
   position: fixed;
   right: 5vw;
   margin: auto 0;

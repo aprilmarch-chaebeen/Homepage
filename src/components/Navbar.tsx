@@ -46,7 +46,9 @@ function Navbar() {
           <GoToPage to="/about">About us</GoToPage>
         </ListItem>
       </List>
-      <Box></Box>
+      <Box href="/contact">
+        <Contact>프로젝트 문의</Contact>
+      </Box>
       <MenuBtn onClick={(e) => handleMenuClicked(e)}>
         <Menu src={menusrc} alt="menu btn" />
       </MenuBtn>
@@ -170,12 +172,20 @@ const GoToPage = styled(Link)`
   font-family: 'Pretendard-Light', sans-serif;
 `;
 
-const Box = styled.div`
+const Box = styled.a`
   width: 10vw;
+  text-decoration: none;
+  cursor: pointer;
 
   @media (max-width: 480px) {
     display: none;
   }
+`;
+
+const Contact = styled.p`
+  font-family: 'Pretendard-Light', sans-serif;
+  font-size: 0.9vw;
+  color: #000;
 `;
 
 const MenuBtn = styled.button`

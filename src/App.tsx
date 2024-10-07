@@ -12,6 +12,7 @@ import MouseStalker from './components/MouseStalker';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const Portfolio = React.lazy(() => import('./pages/Portfolio'));
+const Contact = React.lazy(() => import('./pages/Contact'));
 
 function App() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -20,15 +21,16 @@ function App() {
       <MouseStalker containerRef={sectionRef} />
       <Navbar />
       <Suspense>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/voucher" element={<Voucher />} />
-        {/* <Route path="/newbusiness" element={<NewBusiness />} /> */}
-        {/* <Route path="/public" element={<Public />} /> */}
-        {/* <Route path="/itdashboard" element={<ITDashboard />} /> */}
-        <Route path="/about" element={<About />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/voucher" element={<Voucher />} />
+          {/* <Route path="/newbusiness" element={<NewBusiness />} /> */}
+          {/* <Route path="/public" element={<Public />} /> */}
+          {/* <Route path="/itdashboard" element={<ITDashboard />} /> */}
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </Suspense>
     </AppSection>
   );
