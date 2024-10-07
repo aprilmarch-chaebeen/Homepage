@@ -168,6 +168,8 @@ const Container = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
+  justify-content: center;
+  background: #000;
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -208,7 +210,7 @@ const SignLeft = styled.span`
 `;
 
 const TextBox = styled.div`
-  width: 72vw;
+  width: 60vw;
   background-color: #000;
   height: 25vw;
   text-align: left;
