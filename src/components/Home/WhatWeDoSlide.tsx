@@ -207,7 +207,6 @@ const Slide = styled(SwiperSlide)<{$idx: number; $nowIdx: number}>`
   width: 20vw;
   height: 25vw;
   position: relative;
-  background-color: #d9d9d9;
 
   ${(p) =>
     p.$idx === p.$nowIdx &&
@@ -227,6 +226,7 @@ const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
   width: 20vw;
   object-fit: contain;
   border-radius: 10px;
+  background-color: #d9d9d9;
 
   ${(p) =>
     p.$idx === p.$nowIdx &&
