@@ -18,14 +18,28 @@ interface ProjectPopupProps {
 }
 
 function ProjectPopup({title, descript, onClose, flag, num}: ProjectPopupProps) {
-  const slides = useMemo(
-    () =>
-      Array.from({length: num}, (_, i) => ({
-        src: require(`../../assets/images/portfolio/${flag}/${flag}${i}.svg`).default,
+  const slides = useMemo(() => {
+    return Array.from({length: num}, (_, i) => {
+      let imageSrc;
+      try {
+        // 먼저 SVG 파일을 시도
+        imageSrc = require(`../../assets/images/portfolio/${flag}/${flag}${i}.svg`).default;
+      } catch (error) {
+        try {
+          // SVG 파일이 없으면 JPG 파일을 시도
+          imageSrc = require(`../../assets/images/portfolio/${flag}/${flag}${i}.jpg`).default;
+        } catch (error) {
+          // JPG 파일도 없으면 기본값 처리
+          imageSrc = '';
+        }
+      }
+
+      return {
+        src: imageSrc,
         alt: `img ${i + 1}`,
-      })),
-    [flag, num]
-  );
+      };
+    });
+  }, [flag, num]);
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation(); // 이벤트 전파 중단
