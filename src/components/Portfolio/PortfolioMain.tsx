@@ -1,7 +1,6 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
 import styled from 'styled-components';
 import slide1 from '../../assets/svg/portfolio/portfolio_slide1.svg';
-import slide3 from '../../assets/svg/portfolio/portfolio_slide3.svg';
 import slide4 from '../../assets/svg/portfolio/portfolio_slide4.svg';
 import slide5 from '../../assets/svg/portfolio/portfolio_slide5.svg';
 
@@ -13,7 +12,7 @@ import {memo, useMemo} from 'react';
 function PortfolioMain() {
   const slides = useMemo(
     () => [
-      {src: slide3, alt: 'portfolio slide img1'},
+      {src: require('../../assets/images/portfolio_main/slide3.jpg').default, alt: 'portfolio slide img1'},
       {src: require('../../assets/images/portfolio_main/slide2.jpg').default, alt: 'portfolio slide img2'},
       {src: slide1, alt: 'portfolio slide img3'},
       {src: slide4, alt: 'portfolio slide img4'},

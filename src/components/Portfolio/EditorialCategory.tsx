@@ -6,7 +6,6 @@ import {selectPortfolioFilterValue} from '../../reducers/portfolioFilterSlice';
 import abbottsrc from '../../assets/svg/portfolio/abbott.svg';
 import camfurssrc from '../../assets/svg/portfolio/camfurs.svg';
 import limesrc from '../../assets/svg/portfolio/lime.svg';
-import samsungsrc from '../../assets/svg/portfolio/samsung.svg';
 import ProjectPagination from './ProjectPagination';
 import {selectProjectIdxValue} from '../../reducers/projectCurIdxSlice';
 import {Paginate} from '../../api/paginate';
@@ -65,7 +64,14 @@ const projects: Project[] = [
     flag: 'lime',
     num: 9,
   },
-  {title: '삼성증권', descript: 'PPT 제작', imgsrc: samsungsrc, category: ['all', 'finance'], flag: 'samsung', num: 7},
+  {
+    title: '삼성증권',
+    descript: 'PPT 제작',
+    imgsrc: require('../../assets/images/project/samsung.jpg').default,
+    category: ['all', 'finance'],
+    flag: 'samsung',
+    num: 7,
+  },
 ];
 
 function EditorialCategory() {
