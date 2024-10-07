@@ -33,10 +33,8 @@ function HomeFooter() {
       <Line />
       <InfoContainer>
         <InfoStrong1>상담문의</InfoStrong1>
-        <InfoStrong2>T.02-6929-099</InfoStrong2>
-        <InfoStrong2>E.cyj@aprilmarch.design</InfoStrong2>
-        <Info1>대표 차유정 | 주소 123456 서울특별시 송파구 송파대로 167, 테라타워 Aehd</Info1>
-        <Info2>통신판매업 신고 1234-1234-1234 | 사업자등록번호 123-456-7890</Info2>
+        <InfoStrong2>T.02-6929-099 &nbsp;&nbsp; E.cyj@aprilmarch.design</InfoStrong2>
+        <Info1>CEO Cha yu jeong | Seoul, Songpa-gu, Songpa-Daero 167, TERRA tower building A</Info1>
         <Info3>Copyright Aprilmarch. All rights reserved.</Info3>
       </InfoContainer>
       <Up onMouseEnter={() => setUpHovered(true)} onMouseLeave={() => setUpHovered(false)} onClick={handleUpClicked}>
@@ -226,7 +224,7 @@ const InfoStrong1 = styled.p`
 const InfoStrong2 = styled.p`
   color: #333;
   font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.1vw;
   margin: 0;
 
@@ -246,9 +244,10 @@ const InfoStrong2 = styled.p`
 const Info1 = styled.p`
   color: #666;
   font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1vw;
   margin: 0;
+  margin-bottom: 1.5vw;
 
   @media (max-width: 1280px) {
     font-size: 1.2vw;
@@ -261,27 +260,6 @@ const Info1 = styled.p`
   @media (max-width: 480px) {
     font-size: 3.5vw;
     width: 84vw;
-  }
-`;
-
-const Info2 = styled.p`
-  color: #666;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 400;
-  font-size: 1vw;
-  margin: 0;
-
-  @media (max-width: 1280px) {
-    font-size: 1.2vw;
-  }
-
-  @media (max-width: 1024px) {
-    font-size: 1.5vw;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 3.5vw;
-    width: 52vw;
   }
 `;
 
