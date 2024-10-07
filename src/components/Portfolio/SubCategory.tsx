@@ -72,7 +72,7 @@ export default SubCategory;
 const Category = styled.ul`
   display: flex;
   justify-content: center;
-  margin: 3vw 0;
+  margin: 2vw 0 3vw 0;
   padding: 0 21vw;
   flex-wrap: wrap;
   gap: 0.4vw;

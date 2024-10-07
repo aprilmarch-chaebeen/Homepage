@@ -11,7 +11,7 @@ function NoData() {
 export default NoData;
 
 const Container = styled.div`
-  padding: 15vw 0;
+  padding: 15vw 0 20vw 0;
 `;
 
 const Text = styled.p`
