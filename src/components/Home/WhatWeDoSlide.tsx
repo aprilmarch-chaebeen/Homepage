@@ -226,7 +226,6 @@ const SlideImg = styled.img<{$idx: number; $nowIdx: number}>`
   width: 20vw;
   object-fit: contain;
   border-radius: 10px;
-  background-color: #d9d9d9;
 
   ${(p) =>
     p.$idx === p.$nowIdx &&
