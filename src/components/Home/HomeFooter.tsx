@@ -33,7 +33,7 @@ function HomeFooter() {
       <Line />
       <InfoContainer>
         <InfoStrong1>상담문의</InfoStrong1>
-        <InfoStrong2>T.02-6929-099 &nbsp;&nbsp; E.cyj@aprilmarch.design</InfoStrong2>
+        <InfoStrong2>T.02-6929-099 &nbsp;&nbsp; E.jjw@aprilmarch.design</InfoStrong2>
         <Info1>CEO Cha yu jeong | Seoul, Songpa-gu, Songpa-Daero 167, TERRA tower building A</Info1>
         <Info3>Copyright Aprilmarch. All rights reserved.</Info3>
       </InfoContainer>
@@ -85,7 +85,7 @@ const InnerContainer = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 7vw;
+  width: 5vw;
 
   @media (max-width: 1280px) {
     width: 8vw;
@@ -112,7 +112,7 @@ const TextContainer = styled.div`
 
 const SmallText = styled.p`
   font-family: 'Pretendard-Bold', sans-serif;
-  font-size: 1.1vw;
+  font-size: 0.9vw;
   color: #111;
   margin: 1.3vw 0;
 
@@ -127,8 +127,8 @@ const SmallText = styled.p`
 
 const SmallLine = styled.div`
   border-left: 0.1vw solid #111;
-  height: 1vw;
-  margin: 0 1.5vw;
+  height: 0.8vw;
+  margin: 0 1vw;
 
   @media (max-width: 1024px) {
     height: 1.3vw;
@@ -205,7 +205,7 @@ const InfoStrong1 = styled.p`
   color: #333;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 600;
-  font-size: 1.3vw;
+  font-size: 1vw;
   margin: 0;
 
   @media (max-width: 1280px) {
@@ -225,7 +225,7 @@ const InfoStrong2 = styled.p`
   color: #333;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 1.1vw;
+  font-size: 0.9vw;
   margin: 0;
 
   @media (max-width: 1280px) {
@@ -245,7 +245,7 @@ const Info1 = styled.p`
   color: #666;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
-  font-size: 1vw;
+  font-size: 0.8vw;
   margin: 0;
   margin-bottom: 1.5vw;
 
@@ -266,7 +266,7 @@ const Info1 = styled.p`
 const Info3 = styled.p`
   color: #666;
   font-family: 'Pretendard-Regular', sans-serif;
-  font-size: 0.9vw;
+  font-size: 0.7vw;
   margin: 0;
 
   @media (max-width: 1280px) {

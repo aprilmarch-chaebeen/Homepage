@@ -33,7 +33,12 @@ function FieldCategory({title, onClick, clicked, name}: FieldCategoryProps) {
         <Text>{title}</Text>
       </InnerContainer1>
       <InnerContainer2>
-        <SmallImg src={require(`../../assets/images/field_category/${name}_key.svg`).default} alt="small img" loading="lazy" $it={name === 'it_mobile'} />
+        <SmallImg
+          src={require(`../../assets/images/field_category/${name}_key.svg`).default}
+          alt="small img"
+          loading="lazy"
+          $it={name === 'it_mobile'}
+        />
       </InnerContainer2>
     </Container>
   );
@@ -44,8 +49,8 @@ export default memo(FieldCategory);
 const Container = styled.div<{$clicked: boolean}>`
   background-color: ${(p) => (p.$clicked ? '#d2ff52' : '#f6f6f6')};
   padding: 1.3vw 1vw 1.3vw 6.8vw;
-  border-bottom: solid #999 0.1vw;
-  height: 9.5vw;
+  border-bottom: solid #ccc 0.1vw;
+  height: 10.5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -147,6 +152,6 @@ const SmallImg = styled.img<{$it?: boolean}>`
   }
 
   @media (max-width: 480px) {
-    height: ${(p) => p.$it ? 9.5 : 4.5}vw;
+    height: ${(p) => (p.$it ? 9.5 : 4.5)}vw;
   }
 `;

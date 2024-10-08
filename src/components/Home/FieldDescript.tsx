@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import cursorsrc from '../../assets/svg/cursor_img.svg';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {Autoplay} from 'swiper/modules';
+import {Autoplay, Pagination} from 'swiper/modules';
 import moresrc from '../../assets/svg/read_more.svg';
 import {useMemo} from 'react';
 import 'swiper/css';
@@ -34,21 +34,24 @@ function FieldDescript({descript, name, num, pad}: FieldDescriptProps) {
         <MediumText>{descript[3]}</MediumText>
       </TextContainer>
 
-      <Swiper
+      <SlideContainer
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 1500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
-        modules={[Autoplay]}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Pagination]}
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
             <Img src={slide.src} alt={slide.alt} loading="lazy" />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </SlideContainer>
 
       <ReadMoreBtn>
         <ReadMore src={moresrc} alt="read more button" loading="lazy" />
@@ -118,6 +121,23 @@ const TextContainer = styled.div`
 
   @media (max-width: 480px) {
     margin-bottom: 6.5vw;
+  }
+`;
+
+const SlideContainer = styled(Swiper)`
+  & .swiper-wrapper {
+    margin-bottom: 3vw;
+  }
+  & .swiper-pagination-bullet-active {
+    width: 1.3vw !important;
+    height: 0.55vw !important;
+    background-color: #1c46f5 !important;
+    border-radius: 2vw !important;
+  }
+  & .swiper-pagination-bullet {
+    width: 0.55vw;
+    height: 0.55vw;
+    background-color: #999;
   }
 `;
 

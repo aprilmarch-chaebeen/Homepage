@@ -45,14 +45,14 @@ function BallAnimation() {
   const ballSettings = isMobile
     ? Array(8).fill({duration: 1200, start: 0, end: 20})
     : [
-        {duration: 2200, start: 0, end: 20},
-        {duration: 1900, start: 5, end: 20},
-        {duration: 1500, start: 8, end: 20},
-        {duration: 1800, start: 7, end: 20},
-        {duration: 2000, start: 5, end: 20},
-        {duration: 1900, start: 6, end: 20},
-        {duration: 2200, start: 2, end: 20},
-        {duration: 1700, start: 4, end: 20},
+        {duration: 2700, start: 0, end: 20},
+        {duration: 2400, start: 5, end: 20},
+        {duration: 2000, start: 8, end: 20},
+        {duration: 2300, start: 7, end: 20},
+        {duration: 2500, start: 5, end: 20},
+        {duration: 1800, start: 6, end: 20},
+        {duration: 2700, start: 2, end: 20},
+        {duration: 2200, start: 4, end: 20},
       ];
 
   useEffect(() => {

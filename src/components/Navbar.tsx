@@ -16,34 +16,50 @@ function Navbar() {
     dispatch(openMenu());
   };
 
+  const handleNavClicked = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
   return (
     <Nav>
-      <GoToPage to="/">
+      <GoToPage to="/" onClick={handleNavClicked}>
         <Logo src={logosrc} alt="Main Logo" />
       </GoToPage>
       <List>
-        <GoToPage to="/">
+        <GoToPage to="/" onClick={handleNavClicked}>
           <Circle>
             <Icon src={naviconsrc} alt="nav icon" />
           </Circle>
         </GoToPage>
         <ListItem>
-          <GoToPage to="/portfolio">포트폴리오</GoToPage>
+          <GoToPage to="/portfolio" onClick={handleNavClicked}>
+            포트폴리오
+          </GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/voucher">바우처</GoToPage>
+          <GoToPage to="/" onClick={handleNavClicked}>
+            바우처
+          </GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/newbusiness">신규브랜드 신사업</GoToPage>
+          <GoToPage to="/" onClick={handleNavClicked}>
+            신규브랜드 신사업
+          </GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/public">공공기관 대학</GoToPage>
+          <GoToPage to="/" onClick={handleNavClicked}>
+            공공기관 대학
+          </GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/itdashboard">IT 대시보드</GoToPage>
+          <GoToPage to="/" onClick={handleNavClicked}>
+            IT 대시보드
+          </GoToPage>
         </ListItem>
         <ListItem>
-          <GoToPage to="/about">About us</GoToPage>
+          <GoToPage to="/" onClick={handleNavClicked}>
+            About us
+          </GoToPage>
         </ListItem>
       </List>
       <Box href="/contact">

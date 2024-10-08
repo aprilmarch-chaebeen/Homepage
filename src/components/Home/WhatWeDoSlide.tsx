@@ -4,19 +4,27 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import {Pagination, Navigation, EffectCoverflow, Autoplay} from 'swiper/modules';
-import React, {useCallback, useState, useMemo, useEffect} from 'react';
+import React, {useCallback, useState, useMemo, useEffect, useRef} from 'react';
 import {useAppSelector} from '../../hook/reduxHook';
 import {selectHomeFilterValue} from '../../reducers/homeFilterSlice';
 
 function WhatWeDoSlide() {
   const home = useAppSelector(selectHomeFilterValue);
   const [nowIndex, setNowIndex] = useState(0);
+  const swiperRef = useRef<SwiperClass | null>(null);
   // const [autoplayEnabled, setAutoplayEnabled] = useState(true);
 
   const preloadImage = (src: string) => {
     const img = new Image();
     img.src = src;
   };
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(0);
+      setNowIndex(1);
+    }
+  }, [home]);
 
   // useCallback을 사용하여 handleSlideChange 함수를 메모이제이션
   const handleSlideChange = useCallback((swiper: SwiperClass) => {
@@ -73,6 +81,7 @@ function WhatWeDoSlide() {
       </PageNumberContainer>
 
       <SlideContainer
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         slidesPerView="auto"
         spaceBetween={10}
         centeredSlides
@@ -92,7 +101,9 @@ function WhatWeDoSlide() {
       >
         {slides.map((slide, i) => (
           <Slide key={i} $idx={i} $nowIdx={nowIndex - 1}>
-            <SlideImg src={slide.src} alt={slide.alt} $idx={i} $nowIdx={nowIndex - 1} loading="lazy" />
+            <a href="/portfolio">
+              <SlideImg src={slide.src} alt={slide.alt} $idx={i} $nowIdx={nowIndex - 1} loading="lazy" />
+            </a>
           </Slide>
         ))}
         <SlideCover />
@@ -298,7 +309,7 @@ const CarouselRight = styled.img`
   position: absolute;
   height: 19.3vw;
   top: 31.25vw;
-  right: -4.85vw;
+  right: -4.45vw;
   z-index: 10;
 
   @media (max-width: 480px) {
@@ -311,7 +322,7 @@ const CarouselLeft = styled.img`
   position: absolute;
   height: 19.3vw;
   top: 31.25vw;
-  left: -1.25vw;
+  left: -0.85vw;
   z-index: 10;
 
   @media (max-width: 480px) {

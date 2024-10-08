@@ -3,8 +3,6 @@ import {useAppDispatch, useAppSelector} from '../../hook/reduxHook';
 import {changeIdx, selectProjectIdxValue} from '../../reducers/projectCurIdxSlice';
 import arrowsrc from '../../assets/svg/arrow.svg';
 import doublearrowsrc from '../../assets/svg/double_arrow.svg';
-import {useEffect, useState} from 'react';
-
 interface ProjectPaginationProps {
   total: number;
 }
@@ -12,30 +10,17 @@ interface ProjectPaginationProps {
 function ProjectPagination({total}: ProjectPaginationProps) {
   const dispatch = useAppDispatch();
   const currentIdx = useAppSelector(selectProjectIdxValue);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <Pagination>
       <List>
         <PageBtn onClick={() => dispatch(changeIdx(1))}>
-          {isMobile ? <DoubleArrow src={doublearrowsrc} alt="double arrow button" /> : 'First'}
+          <DoubleArrow src={doublearrowsrc} alt="double arrow button" />
         </PageBtn>
       </List>
       <List>
         <PageBtn onClick={() => dispatch(changeIdx(currentIdx <= 1 ? 1 : currentIdx - 1))}>
-          {isMobile ? <Arrow src={arrowsrc} alt="arrow button" /> : 'Previous'}
+          <Arrow src={arrowsrc} alt="arrow button" />
         </PageBtn>
       </List>
 
@@ -49,12 +34,12 @@ function ProjectPagination({total}: ProjectPaginationProps) {
 
       <List>
         <PageBtn onClick={() => dispatch(changeIdx(currentIdx >= total ? total : currentIdx + 1))}>
-          {isMobile ? <Arrow src={arrowsrc} alt="arrow button" $right={true} /> : 'Next'}
+          <Arrow src={arrowsrc} alt="arrow button" $right={true} />
         </PageBtn>
       </List>
       <List>
         <PageBtn onClick={() => dispatch(changeIdx(total))}>
-          {isMobile ? <DoubleArrow src={doublearrowsrc} alt="double arrow button" $right={true} /> : 'Last'}
+          <DoubleArrow src={doublearrowsrc} alt="double arrow button" $right={true} />
         </PageBtn>
       </List>
     </Pagination>
@@ -91,10 +76,10 @@ const PageBtn = styled.button<{$disabled?: boolean}>`
   cursor: pointer;
   background: transparent;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.9vw;
+  font-size: 0.85vw;
   color: #111;
   border: none;
-  border-bottom: ${(p) => p.$disabled && '0.15vw solid #111'};
+  border-bottom: ${(p) => p.$disabled && '0.12vw solid #111'};
   padding: 0 0.8vw;
 
   @media (max-width: 1024px) {
@@ -108,19 +93,25 @@ const PageBtn = styled.button<{$disabled?: boolean}>`
 `;
 
 const DoubleArrow = styled.img<{$right?: boolean}>`
-  width: 7vw;
+  width: 1.4vw;
   ${(p) =>
     p.$right &&
     css`
       transform: rotateY(180deg);
     `}
+  @media (max-width: 480px) {
+    width: 7vw;
+  }
 `;
 
 const Arrow = styled.img<{$right?: boolean}>`
-  width: 7vw;
+  width: 1.4vw;
   ${(p) =>
     p.$right &&
     css`
       transform: rotateY(180deg);
     `}
+  @media (max-width: 480px) {
+    width: 7vw;
+  }
 `;
